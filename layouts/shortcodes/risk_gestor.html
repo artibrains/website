@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="app-container">
+    <div id="patient-container"></div>
+    <div class="controls-panel">
+        <h3>Ajustar Umbral de Decisión: <span id="threshold-value">50%</span></h3>
+        <p class="explanation">
+            Este es el nivel de "desconfianza" del modelo. Si la probabilidad de que un paciente falte supera este
+            umbral, le enviaremos un recordatorio (predicción: <span class="color-box predicted-miss"></span> Faltará).
+            Si no, confiaremos en que acudirá (predicción: <span class="color-box predicted-attend"></span> Acudirá). El
+            número que aparece representa el porcentaje de confianza de que el paciente no acuda a su cita.
+        </p>
+        <input type="range" id="threshold-slider" min="0" max="100" value="50">
+        <div class="button-group">
+            <button id="reset-btn">Generar Nuevos Pacientes</button>
+            <button id="find-optimal-btn">Encontrar Umbral Óptimo</button>
+        </div>
+        <div id="dashboard">
+            <div id="confusion-matrix">
+                <div class="cell empty"></div>
+                <div class="cell header">Predicción: Faltará</div>
+                <div class="cell header">Predicción: Acudirá</div>
+
+                <div class="cell header">Realidad: Faltó</div>
+                <div class="cell" id="vp"
+                    title="Verdaderos Positivos: Pacientes que iban a faltar y les enviamos un recordatorio. ¡Bien hecho!">
+                    0</div>
+                <div class="cell fn-cell" id="fn"
+                    title="Falsos Negativos: Pacientes que iban a faltar pero no les avisamos. ¡El peor error, coste muy alto!">
+                    0</div>
+
+                <div class="cell header">Realidad: Acudió</div>
+                <div class="cell" id="fp"
+                    title="Falsos Positivos: Pacientes que iban a acudir pero les enviamos un recordatorio innecesario. Un pequeño coste.">
+                    0</div>
+                <div class="cell" id="vn"
+                    title="Verdaderos Negativos: Pacientes que iban a acudir y no les enviamos recordatorio. ¡Ahorro!">0
+                </div>
+            </div>
+            <div id="outcomes">
+                <h4>Resultados Económicos:</h4>
+                <p>Citas Perdidas (FN): <span id="citas-perdidas">0</span></p>
+                <p>Coste de Recordatorios (VP+FP): <span id="coste-recordatorios">0€</span></p>
+                <p class="total-cost">Coste Total: <span id="coste-total">0€</span></p>
+                <p class="formula"><strong>Fórmula:</strong> (Nº Recordatorios × 5€) + (Nº Citas Perdidas × 25€)</p>
+            </div>
+        </div>
+        <div id="optimal-graph-container">
+            <h3>Coste Total por Umbral</h3>
+            <canvas id="cost-chart"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/risk_gestor/risk_gestor.js"></script>

@@ -1,0 +1,344 @@
+/*
+ * CSS específico para el simulador de complejidad y regularización
+ * Utiliza el sistema CSS unificado de interactive-demos.css
+ */
+
+@import url('/css/interactive-demos.css');
+
+/* Layout principal */
+#main-content {
+    display: flex;
+    gap: var(--demo-spacing-lg);
+}
+
+.graph-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--demo-spacing-md);
+}
+
+.controls-panel {
+    flex: 1;
+    background: var(--demo-bg-secondary);
+    padding: var(--demo-spacing-lg);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    height: fit-content;
+    position: sticky;
+    top: var(--demo-spacing-md);
+}
+
+.controls-panel h2 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--demo-secondary);
+    font-size: 1.5em;
+    margin-bottom: var(--demo-spacing-md);
+}
+
+.controls-panel p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--MAIN-TEXT-color, #444);
+    margin-bottom: var(--demo-spacing-md);
+}
+
+/* Controles específicos */
+.control-group {
+    margin-bottom: var(--demo-spacing-lg);
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: var(--demo-spacing-sm);
+    font-weight: 600;
+    color: var(--demo-secondary);
+}
+
+/* Rangos personalizados */
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: var(--demo-bg-muted);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--demo-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--demo-secondary);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--demo-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Botones específicos */
+button {
+    display: block;
+    width: 100%;
+    padding: var(--demo-spacing-sm) var(--demo-spacing-md);
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: var(--demo-border-radius);
+    transition: all 0.2s ease;
+    border: none;
+    color: white;
+    background: var(--demo-primary);
+    margin-bottom: var(--demo-spacing-sm);
+}
+
+button:hover {
+    background: var(--demo-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--demo-shadow-hover);
+}
+
+button:last-child {
+    margin-bottom: 0;
+}
+
+/* Contenedores de gráficos */
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    margin-bottom: var(--demo-spacing-md);
+}
+
+.chart-container:last-child {
+    margin-bottom: 0;
+}
+
+canvas {
+    border: 1px solid var(--demo-border);
+    border-radius: calc(var(--demo-border-radius) / 2);
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navegación por tabs */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--demo-spacing-xl);
+    border-bottom: 1px solid var(--demo-border);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: var(--demo-spacing-sm) var(--demo-spacing-lg);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    color: var(--MAIN-TEXT-color, #666);
+    margin: 0;
+    border-radius: 0;
+    width: auto;
+}
+
+.tab-button:hover {
+    color: var(--demo-primary);
+    background: rgba(52, 152, 219, 0.05);
+    transform: none;
+    box-shadow: none;
+}
+
+.tab-button.active {
+    color: var(--demo-primary);
+    border-bottom-color: var(--demo-primary);
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.tab-content {
+    display: none;
+    animation: demo-tab-fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Título principal */
+.main-header {
+    text-align: center;
+    border-bottom: 1px solid var(--demo-border);
+    padding-bottom: var(--demo-spacing-md);
+    margin-bottom: var(--demo-spacing-lg);
+}
+
+.main-header h1 {
+    color: var(--demo-primary);
+    margin: 0;
+}
+
+.main-header .intro {
+    max-width: 700px;
+    margin: var(--demo-spacing-sm) auto 0 auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: var(--MAIN-TEXT-color, #555);
+}
+
+/* Títulos de paneles */
+.graph-panel h3 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--demo-primary);
+    font-size: 1.3em;
+    margin-bottom: var(--demo-spacing-sm);
+}
+
+/* Cajas de información */
+.info-box {
+    background: rgba(52, 152, 219, 0.05);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    margin: var(--demo-spacing-md) 0;
+}
+
+.info-box h4 {
+    margin-top: 0;
+    color: var(--demo-primary);
+    font-size: 1em;
+}
+
+.info-box ul {
+    margin: var(--demo-spacing-sm) 0 0 0;
+    padding-left: var(--demo-spacing-md);
+}
+
+/* Indicador de mejora encontrada */
+.improvement-found {
+    background: linear-gradient(135deg, var(--demo-success) 0%, #a8e6cf 100%);
+    color: white;
+    padding: var(--demo-spacing-md);
+    border-radius: var(--demo-border-radius);
+    margin: var(--demo-spacing-md) 0;
+    font-weight: 600;
+    text-align: center;
+    animation: improveFlash 2s ease-in-out;
+}
+
+@keyframes improveFlash {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Display de rangos */
+.controls-range-display {
+    display: inline-block;
+    background: var(--demo-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-left: var(--demo-spacing-xs);
+}
+
+/* Botón de encontrar mejor modelo */
+.find-best-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    padding: var(--demo-spacing-md) var(--demo-spacing-lg);
+    border-radius: var(--demo-border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--demo-spacing-md);
+}
+
+.find-best-button:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--demo-shadow-hover);
+}
+
+/* Botones específicos por tema */
+.button-complexity {
+    background: linear-gradient(135deg, var(--demo-danger) 0%, #c0392b 100%);
+}
+
+.button-complexity:hover {
+    background: linear-gradient(135deg, #c0392b 0%, var(--demo-danger) 100%);
+}
+
+.button-regularization {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+.button-regularization:hover {
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #main-content {
+        flex-direction: column;
+    }
+
+    .controls-panel {
+        position: static;
+        order: -1;
+        /* Mueve los controles arriba en móvil */
+    }
+
+    .tab-navigation {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    .main-header .intro {
+        font-size: 1em;
+    }
+}

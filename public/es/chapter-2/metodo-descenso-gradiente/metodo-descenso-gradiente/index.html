@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Aprende cómo el algoritmo de descenso del gradiente encuentra puntos mínimos de funciones complejas para optimizar modelos de machine learning.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2.5 - El Método del Descenso del Gradiente :: Cerebros Artificiales">
+    <meta name="twitter:description" content="Aprende cómo el algoritmo de descenso del gradiente encuentra puntos mínimos de funciones complejas para optimizar modelos de machine learning.">
+    <meta property="og:url" content="http://localhost:1313/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html">
+    <meta property="og:site_name" content="Cerebros Artificiales">
+    <meta property="og:title" content="2.5 - El Método del Descenso del Gradiente :: Cerebros Artificiales">
+    <meta property="og:description" content="Aprende cómo el algoritmo de descenso del gradiente encuentra puntos mínimos de funciones complejas para optimizar modelos de machine learning.">
+    <meta property="og:locale" content="es">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2 - Modelos de aprendizaje automático">
+    <meta itemprop="name" content="2.5 - El Método del Descenso del Gradiente :: Cerebros Artificiales">
+    <meta itemprop="description" content="Aprende cómo el algoritmo de descenso del gradiente encuentra puntos mínimos de funciones complejas para optimizar modelos de machine learning.">
+    <meta itemprop="wordCount" content="873">
+    <title>2.5 - El Método del Descenso del Gradiente :: Cerebros Artificiales</title>
+    <link href="http://localhost:1313/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708801" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708801" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759708801" rel="stylesheet">
+    <link href="/css/theme.css?1759708801" rel="stylesheet">
+    <link href="/css/format-html.css?1759708801" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/es\/chapter-2\/metodo-descenso-gradiente\/metodo-descenso-gradiente\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar en el portapapeles`;
+      window.T_Copied_to_clipboard = `¡Copiado al portapapeles!`;
+      window.T_Copy_link_to_clipboard = `Copiar enlace al portapapeles`;
+      window.T_Link_copied_to_clipboard = `¡Enlace copiado al portapapeles!`;
+      window.T_Reset_view = `Restablecer vista`;
+      window.T_View_reset = `¡Ver reajuste!`;
+      window.T_No_results_found = `No se han encontrado resultados para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menú (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Tabla de contenido (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#demostración-interactiva">Demostración Interactiva</a></li>
+    <li><a href="#conceptos-fundamentales">Conceptos Fundamentales</a>
+      <ul>
+        <li><a href="#qué-es-el-gradiente">¿Qué es el Gradiente?</a></li>
+        <li><a href="#criterio-de-parada">Criterio de Parada</a></li>
+        <li><a href="#parámetros-clave">Parámetros Clave</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/index.html"><span itemprop="name">Cerebros Artificiales: Cómo piensan las máquinas</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/chapter-2/index.html"><span itemprop="name">2 - Modelos de aprendizaje automático</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2.5 - El Método del Descenso del Gradiente</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html" title="2.2 - Comparando Error Absoluto (L1) vs Error Cuadrático (L2) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-2/code/regresion-lineal-desde-cero/index.html" title="⚡ Regresión lineal desde cero (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Más"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="25---el-método-del-descenso-del-gradiente">2.5 - El Método del Descenso del Gradiente</h1>
+
+<h2 id="introducción">Introducción</h2>
+<p>El <strong>Método del Descenso del Gradiente</strong> es el algoritmo fundamental que permite a los modelos de machine learning &ldquo;aprender&rdquo; encontrando los valores óptimos de sus parámetros. Funciona como un explorador que busca el punto más bajo de una montaña siguiendo siempre la dirección de mayor descenso.</p>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+
+
+
+
+
+
+<div class="medical-context">
+    <h2>Contexto Médico</h2>
+    
+    <div class="algorithm-badge demo-mb-sm">
+        <span class="status-indicator status-info"></span>
+        <strong>Tipo:</strong> Optimización
+        
+        | <strong>Nivel:</strong> Intermediate
+        
+    </div>
+    
+
+    <div class="scenario-text">
+        
+        <p><strong>Escenario:</strong> Un investigador médico necesita ajustar múltiples parámetros de un modelo que predice la efectividad de tratamientos. Debe encontrar la combinación óptima que minimice el error de predicción entre miles de posibilidades.</p>
+        
+        
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            El descenso del gradiente permite encontrar automáticamente la configuración óptima de parámetros del modelo médico, optimizando la precisión de las predicciones sin necesidad de probar manualmente todas las combinaciones posibles.
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="demo-separator demo-mb-lg"></div>
+<h2 id="demostración-interactiva">Demostración Interactiva</h2>
+
+
+
+
+
+<div class="demo-container ">
+    
+    <h3 class="demo-title">Explorador del Descenso del Gradiente</h3>
+    
+
+    
+
+<link rel="stylesheet" href="/css/main.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto Médico: Optimización de Parámetros Terapéuticos</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>Imagina:</strong> Tu modelo de IA requiere ajusta de forma automática sus parámetros. Para
+                realizar ajustes precisos, es crucial encontrar los valores óptimos que minimicen la función de
+                pérdida del modelo. </p>
+            </p>
+            <p class="highlight">El descenso del gradiente ayuda a identificar los valores que minimizan la función de
+                pérdida, alcanzando un mínimo. El valor mínimo que se alcanza depende de la tasa de aprendizaje y del
+                punto de partida.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <p class="intro">Explora en 1D y 2D cómo el descenso del gradiente converge hacia el mínimo de una función. Ajusta
+        el tipo de tasa de aprendizaje y el punto de partida para comprender mejor su comportamiento en entornos médicos
+        reales.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo funciona?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>Selecciona la función</h3>
+                <p>Introduce una función que simule la pérdida del modelo (por ejemplo, error en niveles sanguíneos) y
+                    elige un punto inicial.</p>
+            </div>
+            <div class="column">
+                <h3>Ajusta la tasa de aprendizaje</h3>
+                <p>Prueba con tasa constante o decreciente (simple o exponencial) y observa cómo afecta la velocidad y
+                    estabilidad de la convergencia.</p>
+            </div>
+            <div class="column">
+                <h3>Observa el proceso</h3>
+                <p>Visualiza paso a paso cómo el algoritmo desciende hasta el mínimo, controlando también normatividad
+                    del gradiente para detenerse en un punto óptimo.</p>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        Después de que el equipo decidiera usar la regresión lineal, Marta explicó cómo el <strong>método del descenso
+            del gradiente</strong> les permitiría encontrar automáticamente los mejores valores para los parámetros
+        <em>w</em> (peso) y <em>b</em> (sesgo). Como él mismo dijo, es como "bajar una montaña a ciegas", donde en cada
+        paso se busca la dirección de máxima pendiente para descender.
+    </p>
+    <p>
+        En esta simulación, puedes visualizar ese proceso. El gráfico de la izquierda muestra la superficie de la
+        función de coste (en este caso, el Error Cuadrático Medio o MSE). Cada punto en esta superficie representa el
+        error total para una combinación específica de <em>w</em> y <em>b</em>. El objetivo es encontrar el punto más
+        bajo del valle.
+    </p>
+    <p>
+        Usa los controles para iniciar el algoritmo. Observa cómo los parámetros se actualizan en cada iteración
+        (gráfico de la derecha), siguiendo la dirección opuesta al gradiente, hasta converger en la solución óptima que
+        minimiza el error. Puedes experimentar con diferentes tasas de aprendizaje (<em>learning rate</em>) para ver
+        cómo afecta a la velocidad y estabilidad del proceso, un punto que Marta y Luis discutieron para afinar su
+        modelo.
+    </p>
+</div>
+
+<link rel="stylesheet" href="/css/gradient-descens-graphs.css">
+<div class="container responsive-container">
+    
+    <div class="tabs" style="margin-left: 10px;">
+        <button class="tab-button active" onclick="showTab('1d')">1D (y = f(x))</button>
+        <button class="tab-button" onclick="showTab('2d')">2D (z = f(x, y))</button>
+    </div>
+    <div class="controls-panel">
+
+
+        <h3 class="controls-panel-title  demo-mb-md">Controles y Configuración</h3>
+
+        <div id="controls-1d" class="active ">
+            <div class="control-section">
+                <div class="demo-control-group">
+                    <label for="functionInput1D" class="control-label">Función f(x):</label>
+                    <input type="text" id="functionInput1D" value="x^2">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputX" class="control-label">Punto Inicial (x₀):</label>
+                    <input type="number" id="startPointInputX" value="8" step="any">
+                </div>
+            </div>
+        </div>
+        
+        <div id="controls-2d">
+            <div class="control-section">
+                <div class="demo-control-group">
+                    <label for="functionInput2D" class="control-label">Función f(x, y):</label>
+                    <input type="text" id="functionInput2D" value="(x^2 + y - 11)^2 + (x + y^2 - 7)^2">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputX2D">Punto Inicial (x₀):</label>
+                    <input type="number" id="startPointInputX2D" value="-4" step="any">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputY2D">Punto Inicial (y₀):</label>
+                    <input type="number" id="startPointInputY2D" value="4" step="any">
+                </div>
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group"><label for="learningRateType">Tipo de Tasa de Aprendizaje
+                    (α):</label>
+                <select id="learningRateType">
+                    <option value="constant" selected>Constante</option>
+                    <option value="decaySimple">Decreciente (Simple: α₀ / √iter)</option>
+                    <option value="decayExponential">Decreciente (Exponencial: α₀ * γ^iter)</option>
+                </select>
+            </div>
+            
+            <div id="lrExplanationDiv" class="explanation-box" style="margin: 20px 0;">
+                <div id="lrExplanationText" style="margin-bottom: 15px;">
+                    Selecciona un tipo de tasa de aprendizaje para ver su descripción.
+                </div>
+                <button id="showLrModalBtn">Comparar modos</button>
+            </div>
+
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <div id="lrConstantDiv">
+                    <label for="learningRateConstant">Valor de α (Constante o Inicial α₀):</label>
+                    <input type="number" id="learningRateConstant" value="0.1" step="any" min="0">
+                </div>
+            </div>
+            <div class="demo-control-group">
+                <div id="lrExponentialDiv" style="display: none;">
+                    <label for="learningRateDecayRate">Factor Decaimiento Exponencial (γ):</label>
+                    <input type="number" id="learningRateDecayRate" value="0.95" step="0.01" min="0.1" max="1.0">
+                    <small>Valor entre 0 y 1 (e.g., 0.95). Más cercano a 1, más lento decae.</small>
+                </div>
+            </div>
+            <div class="demo-control-group">
+                <label for="maxIterations">Máx. Iteraciones (N):</label>
+                <input type="number" id="maxIterations" value="50" min="1" step="1">
+            </div>
+            <div class="demo-control-group">
+                <label for="tolerance">Tolerancia (|∇f|):</label>
+                <input type="number" id="tolerance" value="0.001" step="any" min="0">
+            </div>
+        </div>
+
+        <div class="button-group controls-below-plot">
+            <button class="demo-btn demo-btn-primary demo-btn-full-width" id="startButton">Iniciar /
+                Continuar</button>
+            <button class="demo-btn demo-btn-primary demo-btn-full-width" id="stepButton">Paso
+                Siguiente</button>
+            <button class="demo-btn demo-btn-secondary demo-btn-full-width" id="resetButton">Reiniciar</button>
+        </div>
+    </div>
+
+
+    
+    <div id="lrModal" class="modal-lr" style="display:none;">
+        <div class="modal-lr-content">
+            <span id="closeLrModalBtn" class="modal-lr-close">&times;</span>
+            <h2>Comparativa de Modos de Convergencia</h2>
+            <table class="lr-compare-table">
+                <thead>
+                    <tr>
+                        <th>Modo</th>
+                        <th>Ventajas</th>
+                        <th>Inconvenientes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Constante</strong><br><small>α fijo</small></td>
+                        <td>
+                            <ul>
+                                <li>Fácil de entender y configurar.</li>
+                                <li>Puede ser eficiente si se elige bien α.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Si α es muy grande, puede diverger (no converge).</li>
+                                <li>Si α es muy pequeño, la convergencia es muy lenta.</li>
+                                <li>No se adapta a la cercanía del mínimo.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decreciente Simple</strong><br><small>α₀ / √iter</small></td>
+                        <td>
+                            <ul>
+                                <li>Empieza con pasos grandes y los reduce automáticamente.</li>
+                                <li>Reduce el riesgo de saltarse el mínimo al final.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Puede reducir demasiado rápido y estancarse lejos del mínimo.</li>
+                                <li>La velocidad de reducción depende mucho de α₀.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decreciente Exponencial</strong><br><small>α₀ · γ^iter</small></td>
+                        <td>
+                            <ul>
+                                <li>Permite controlar con precisión la velocidad de reducción.</li>
+                                <li>Puede ajustarse para converger rápido y luego afinar despacio.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Requiere ajustar dos parámetros (α₀ y γ).</li>
+                                <li>Si γ es muy bajo, puede dejar de avanzar pronto.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <main class="main-panel responsive-main" style="grid-area: visualization;">
+        <div class="main-content-wrapper">
+            <h2 class="main-title">Gráfica de la Función</h2>
+            <div id="plotDiv1D" class="plot-container tab-content active" style="height:500px; min-height:300px;">
+            </div>
+            <div id="plotDiv2D" class="plot-container tab-content" style="height:500px; min-height:300px;"></div>
+            <div id="finalResultBox" class="explanation-box" style="display:none; margin-top:18px;"></div>
+        </div>
+
+        <div class="bottom-panels">
+            <div class="error-plot-area">
+                <h2 class="main-title">Evolución del Error (|∇f|)</h2>
+                <div id="errorPlotDiv" class="plot-container"></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="/js/Metodo-del-descenco-del-gradiente/descenso-gradiente.js"></script>
+
+
+</div>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<h3 id="qué-es-el-gradiente">¿Qué es el Gradiente?</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    El Gradiente como Brújula Matemática
+  </summary>
+  <div class="box-content">
+<p>El <strong>gradiente</strong> (∇f) es un vector que apunta en la dirección de mayor crecimiento de una función. En optimización:</p>
+<ul>
+<li><strong>Dirección</strong>: Indica hacia dónde la función crece más rápidamente</li>
+<li><strong>Magnitud</strong>: Su longitud indica qué tan empinada es la pendiente</li>
+<li><strong>Descenso</strong>: Para minimizar, vamos en dirección <strong>opuesta</strong> al gradiente</li>
+</ul>
+  </div>
+</details>
+<h3 id="criterio-de-parada">Criterio de Parada</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    ¿Cuándo Detenerse?
+  </summary>
+  <div class="box-content">
+<h4 id="norma-del-gradiente-f">Norma del Gradiente (|∇f|)</h4>
+<p>Imagina el gradiente como una flecha indicando la subida más empinada. La <strong>norma</strong> es simplemente la longitud de esa flecha:</p>
+<ul>
+<li><strong>Flecha larga</strong> → Pendiente fuerte → Seguir optimizando</li>
+<li><strong>Flecha corta</strong> → Terreno plano → Cerca del mínimo</li>
+<li><strong>Criterio</strong>: Detenerse cuando |∇f| &lt; tolerancia (ej: 0.001)</li>
+</ul>
+<p>Esto nos indica que hemos llegado al &ldquo;valle&rdquo; donde el terreno es casi plano.</p>
+  </div>
+</details>
+<h3 id="parámetros-clave">Parámetros Clave</h3>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Tasa de Aprendizaje (Learning Rate)
+  </summary>
+  <div class="box-content">
+<ul>
+<li>
+<p><strong>Demasiado alta</strong>: El algoritmo puede &ldquo;saltar&rdquo; sobre el mínimo</p>
+</li>
+<li>
+<p><strong>Demasiado baja</strong>: Convergencia muy lenta</p>
+</li>
+<li>
+<p><strong>Óptima</strong>: Balance entre velocidad y precisión</p>
+</li>
+</ul>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Limpiar Terminal">Limpiar</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal iniciado...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/es/index.html">
+            <div class="logo-title">Cerebros Artificiales</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/es/index.html"><a class="padding" href="/es/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-1/index.html"><a class="padding" href="/es/chapter-1/index.html">1 - El Comienzo del Viaje</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/es/chapter-2/index.html"><a class="padding" href="/es/chapter-2/index.html">2 - Modelos de aprendizaje automático</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-2/linear-regression/juego-regresion-lineal/index.html"><a class="padding" href="/es/chapter-2/linear-regression/juego-regresion-lineal/index.html">2.1 - Juego de Regresión Lineal</a></li>
+            <li class="" data-nav-id="/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html"><a class="padding" href="/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html">2.2 - Comparando Error Absoluto (L1) vs Error Cuadrático (L2)</a></li>
+            <li class="active " data-nav-id="/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html"><a class="padding" href="/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html">2.5 - El Método del Descenso del Gradiente</a></li>
+            <li class="" data-nav-id="/es/chapter-2/code/regresion-lineal-desde-cero/index.html"><a class="padding" href="/es/chapter-2/code/regresion-lineal-desde-cero/index.html">⚡ Regresión lineal desde cero</a></li>
+            <li class="" data-nav-id="/es/chapter-2/code/regresion-lineal-sklearn/index.html"><a class="padding" href="/es/chapter-2/code/regresion-lineal-sklearn/index.html">⚡ Regresión lineal con sklearn</a></li>
+            <li class="" data-nav-id="/es/chapter-2/bibliography/bibliografia-regresion-lineal/index.html"><a class="padding" href="/es/chapter-2/bibliography/bibliografia-regresion-lineal/index.html">📚 Regresión lineal</a></li>
+            <li class="" data-nav-id="/es/chapter-2/bibliography/bibliografia-descenso-gradiente/index.html"><a class="padding" href="/es/chapter-2/bibliography/bibliografia-descenso-gradiente/index.html">📚 Descenso del Gradiente</a></li></ul></li>
+            <li class="" data-nav-id="/es/chapter-3/index.html"><a class="padding" href="/es/chapter-3/index.html">3 - Sistemas de clasificación y evaluación de modelos</a><ul id="R-subsections-9a957cc6839aa1b33676870e792c5474" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-4/index.html"><a class="padding" href="/es/chapter-4/index.html">4 - Algoritmos de Clasificación en Profundidad</a><ul id="R-subsections-c227eed7e9ba3e21264f72020206734e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-5/index.html"><a class="padding" href="/es/chapter-5/index.html">5 - Aprendizaje No Supervisado: Descubriendo lo Invisible</a><ul id="R-subsections-84f97cef1a12d542f1272e0c68ba3612" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-6/index.html"><a class="padding" href="/es/chapter-6/index.html">6 - Dentro de la Mente de la Máquina: Redes Neuronales</a><ul id="R-subsections-353c43515a76f18e138bc04573502da7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-7/index.html"><a class="padding" href="/es/chapter-7/index.html">7 - La Revolución del Lenguaje - Entendiendo los LLMs </a><ul id="R-subsections-211eabc86fd80b431779fcc37efd887b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/conference-notes/index.html"><a class="padding" href="/es/conference-notes/index.html">8 - Recursos de IA</a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Idioma</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html" lang="es" selected data-selected>Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html" lang="en">English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Tema</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759708801" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759708801" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759708801"></script>
+    <script src="/js/theme.js?1759708801" defer></script>
+  </body>
+</html>

@@ -1,0 +1,964 @@
+/* 
+ * CSS Unificado para todas las Demostraciones Interactivas de IA
+ * Integrado con el tema Hugo Relearn para máxima homogeneidad
+ */
+
+/* === VARIABLES CSS UNIFICADAS === */
+:root {
+    /* Colores principales integrados con el tema */
+    --demo-primary: var(--MAIN-PRIMARY-color, #3498db);
+    --demo-secondary: var(--MAIN-SECONDARY-color, #2c3e50);
+    --demo-success: #27ae60;
+    --demo-warning: #f39c12;
+    --demo-danger: #e74c3c;
+    --demo-info: #3498db;
+
+    /* Colores específicos para clasificación */
+    --demo-cat-color: #e74c3c;
+    --demo-dog-color: #f39c12;
+    --demo-test-color: #9b59b6;
+
+    /* Colores de fondo - MEJORADOS para mejor contraste */
+    --demo-bg-primary: var(--MAIN-BG-color, #ffffff);
+    --demo-bg-secondary: #f8f9fa;
+    --demo-bg-muted: #e9ecef;
+    --demo-bg-interactive: #f4f6f9;
+    --demo-bg-gradient: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+
+    /* NUEVO: Colores específicos para demos */
+    --demo-bg-hover: #f1f3f5;
+    --demo-bg-active: #e1e5e9;
+    --demo-text-primary: var(--MAIN-TEXT-color, #333333);
+    --demo-text-secondary: #6c757d;
+    --demo-text-muted: #868e96;
+
+    /* Bordes y sombras - MEJORADOS */
+    --demo-border: #dee2e6;
+    --demo-border-light: #e9ecef;
+    --demo-border-interactive: #cbd5e0;
+    --demo-border-radius: 8px;
+    --demo-border-radius-lg: 12px;
+    --demo-border-radius-large: 12px;
+    --demo-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --demo-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --demo-shadow-large: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --demo-shadow-interactive: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+    /* Espaciado consistente */
+    --demo-spacing-xs: 0.05rem;
+    --demo-spacing-sm: 0.15rem;
+    --demo-spacing-md: 0.25rem;
+    --demo-spacing-lg: 1rem;
+    --demo-spacing-xl: 1.5rem;
+
+    /* Tipografía */
+    --demo-font-family: var(--MAIN-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto);
+    --demo-font-mono: 'Courier New', Courier, monospace;
+
+    /* NUEVO: Tamaños de fuente consistentes */
+    --demo-font-size-sm: 0.875rem;
+    --demo-font-size-base: 1rem;
+    --demo-font-size-lg: 1.125rem;
+    --demo-font-size-xl: 1.25rem;
+}
+
+/* === VARIABLES PARA MODO OSCURO === */
+[data-theme="dark"],
+:root:has(.relearn-theme-dark) {
+    --demo-bg-primary: #1e1e1e;
+    --demo-bg-secondary: #2d2d2d;
+    --demo-bg-muted: #383838;
+    --demo-bg-interactive: #2a2a2a;
+    --demo-bg-gradient: linear-gradient(135deg, #2d3e50 0%, #34495e 100%);
+    --demo-bg-hover: #3a3a3a;
+    --demo-bg-active: #454545;
+
+    --demo-text-primary: #ffffff;
+    --demo-text-secondary: #b0b0b0;
+    --demo-text-muted: #888888;
+
+    --demo-border: #404040;
+    --demo-border-light: #505050;
+    --demo-border-interactive: #606060;
+
+    --demo-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --demo-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --demo-shadow-large: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --demo-shadow-interactive: 0 6px 20px rgba(0, 0, 0, 0.4);
+
+    --demo-primary: #5dade2;
+    --demo-secondary: #85929e;
+    --demo-success: #58d68d;
+    --demo-warning: #f7dc6f;
+    --demo-danger: #ec7063;
+    --demo-info: #5dade2;
+}
+
+/* === CONTENEDOR PRINCIPAL DE DEMO INTERACTIVA === */
+
+/* Wrapper principal que agrupa toda la demostración */
+.demo-container {
+    background: var(--demo-bg-interactive);
+    border: 2px solid var(--demo-border-interactive);
+    border-radius: var(--demo-border-radius-large);
+    box-shadow: var(--demo-shadow-interactive);
+    padding: var(--demo-spacing-lg);
+    margin: var(--demo-spacing-xl) 0;
+    position: relative;
+}
+
+.demo-container::before {
+    content: "🔬 Demostración Interactiva";
+    position: absolute;
+    top: -12px;
+    left: var(--demo-spacing-lg);
+    background: var(--demo-bg-primary);
+    padding: 4px 12px;
+    border-radius: var(--demo-border-radius);
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--demo-primary);
+    border: 1px solid var(--demo-border-interactive);
+}
+
+/* Título de la demo dentro del contenedor */
+.demo-title {
+    text-align: center;
+    color: var(--demo-primary);
+    margin: 0 0 var(--demo-spacing-lg) 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+/* === ESTRUCTURA BASE DE DEMOS === */
+
+/* Contenedor principal de demo interactiva */
+.interactive-demo {
+    background-color: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-lg);
+    margin-bottom: var(--demo-spacing-lg);
+    box-shadow: var(--demo-shadow);
+}
+
+/* Layout en grid para demos (usado por KNN y otros) */
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--demo-spacing-lg);
+    margin: var(--demo-spacing-lg) 0;
+}
+
+.demo-grid-single {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* === CONTROLES UNIFICADOS === */
+
+/* Panel de controles mejorado */
+.demo-controls {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-lg);
+    margin-bottom: var(--demo-spacing-lg);
+    display: flex;
+    gap: var(--demo-spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: var(--demo-shadow);
+}
+
+.control-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 5px;
+    border-left: 10px solid #328be9;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    background-color: var(--demo-bg-secondary);
+}
+
+/* Grupo de control individual mejorado */
+.control-group {
+    flex: 1;
+    min-width: 220px;
+    max-width: 300px;
+    padding: var(--demo-spacing-md);
+    background-color: var(--demo-bg-secondary);
+    border-radius: var(--demo-border-radius);
+    border: 1px solid var(--demo-border-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.control-group:hover {
+    box-shadow: var(--demo-shadow-hover);
+    border-color: var(--demo-primary);
+}
+
+.control-group h3 {
+    margin-top: 0;
+    margin-bottom: var(--demo-spacing-sm);
+    color: var(--demo-primary);
+    font-size: 1.1em;
+    text-align: center;
+    border-bottom: 1px solid var(--demo-border-light);
+    padding-bottom: var(--demo-spacing-xs);
+}
+
+.control-group p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: var(--demo-spacing-md);
+    flex-grow: 1;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Controles de entrada mejorados */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--demo-spacing-sm);
+    margin-bottom: var(--demo-spacing-sm);
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--demo-spacing-sm);
+    background-color: var(--demo-bg-primary);
+    padding: var(--demo-spacing-sm);
+    border-radius: var(--demo-border-radius);
+    border: 1px solid var(--demo-border-light);
+    width: 100%;
+}
+
+.slider-container label {
+    font-weight: 600;
+    min-width: 80px;
+    color: var(--demo-secondary);
+    font-size: 0.9em;
+}
+
+/* Estilos para sliders completamente unificados */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(to right, var(--demo-border), var(--demo-border));
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+input[type="range"]:hover {
+    background: linear-gradient(to right, var(--demo-primary), var(--demo-primary));
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--demo-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--demo-bg-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: var(--demo-secondary);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--demo-primary);
+    border-radius: 50%;
+    border: 2px solid var(--demo-bg-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: var(--demo-secondary);
+}
+
+/* Inputs numéricos mejorados */
+input[type="number"] {
+    width: 70px;
+    padding: var(--demo-spacing-xs);
+    border-radius: var(--demo-border-radius);
+    border: 1px solid var(--demo-border);
+    text-align: center;
+    font-family: var(--demo-font-mono);
+    font-weight: 600;
+    background: var(--demo-bg-primary);
+    transition: border-color 0.2s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--demo-primary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Checkboxes y labels mejorados */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--demo-spacing-xs);
+    padding: var(--demo-spacing-xs);
+}
+
+/* === SISTEMA DE BOTONES COMPLETAMENTE UNIFICADO === */
+
+/* Botones base - aplicado a TODOS los botones en demos */
+.demo-button,
+.demo-controls button,
+.control-group button,
+button[class*="demo"],
+#controls button,
+.kmeans-container button,
+.interactive-demo button,
+input[type="button"],
+input[type="submit"] {
+    /* Reset y base */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Estructura */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--demo-spacing-sm) var(--demo-spacing-md);
+    min-width: 120px;
+    min-height: 40px;
+
+    /* Tipografía */
+    font-family: var(--demo-font-family);
+    font-size: 0.95em;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.2;
+
+    /* Estilo visual */
+    background: var(--demo-primary);
+    color: white;
+    border: 2px solid var(--demo-primary);
+    border-radius: var(--demo-border-radius);
+    box-shadow: var(--demo-shadow);
+
+    /* Comportamiento */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+/* Estados de hover para botones */
+.demo-button:hover,
+.demo-controls button:hover,
+.control-group button:hover,
+button[class*="demo"]:hover,
+#controls button:hover,
+.kmeans-container button:hover,
+.interactive-demo button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background: var(--demo-secondary);
+    border-color: var(--demo-secondary);
+    box-shadow: var(--demo-shadow-hover);
+    transform: translateY(-1px);
+}
+
+/* Estados de focus para accesibilidad */
+.demo-button:focus,
+.demo-controls button:focus,
+.control-group button:focus,
+button[class*="demo"]:focus,
+#controls button:focus,
+.kmeans-container button:focus,
+.interactive-demo button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+/* Estados activos */
+.demo-button:active,
+.demo-controls button:active,
+.control-group button:active,
+button[class*="demo"]:active,
+#controls button:active,
+.kmeans-container button:active,
+.interactive-demo button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: var(--demo-shadow);
+}
+
+/* Botones deshabilitados */
+.demo-button:disabled,
+.demo-controls button:disabled,
+.control-group button:disabled,
+button[class*="demo"]:disabled,
+#controls button:disabled,
+.kmeans-container button:disabled,
+.interactive-demo button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--demo-bg-muted);
+    border-color: var(--demo-border);
+    color: #666;
+    transform: none;
+    box-shadow: none;
+}
+
+.demo-button:disabled:hover,
+.demo-controls button:disabled:hover,
+.control-group button:disabled:hover,
+button[class*="demo"]:disabled:hover,
+#controls button:disabled:hover,
+.kmeans-container button:disabled:hover,
+.interactive-demo button:disabled:hover,
+input[type="button"]:disabled:hover,
+input[type="submit"]:disabled:hover {
+    background: var(--demo-bg-muted);
+    border-color: var(--demo-border);
+    transform: none;
+    box-shadow: none;
+}
+
+/* === VARIANTES DE BOTONES === */
+
+/* Botón de éxito */
+.demo-button-success,
+button.success,
+.btn-success {
+    background: var(--demo-success) !important;
+    border-color: var(--demo-success) !important;
+}
+
+.demo-button-success:hover,
+button.success:hover,
+.btn-success:hover {
+    background: #229954 !important;
+    border-color: #229954 !important;
+}
+
+/* Botón de advertencia */
+.demo-button-warning,
+button.warning,
+.btn-warning {
+    background: var(--demo-warning) !important;
+    border-color: var(--demo-warning) !important;
+}
+
+.demo-button-warning:hover,
+button.warning:hover,
+.btn-warning:hover {
+    background: #e67e22 !important;
+    border-color: #e67e22 !important;
+}
+
+/* Botón de peligro */
+.demo-button-danger,
+button.danger,
+.btn-danger {
+    background: var(--demo-danger) !important;
+    border-color: var(--demo-danger) !important;
+}
+
+.demo-button-danger:hover,
+button.danger:hover,
+.btn-danger:hover {
+    background: #c0392b !important;
+    border-color: #c0392b !important;
+}
+
+/* Botón secundario */
+.demo-button-secondary,
+button.secondary,
+.btn-secondary {
+    background: var(--demo-bg-primary) !important;
+    color: var(--demo-primary) !important;
+    border-color: var(--demo-primary) !important;
+}
+
+.demo-button-secondary:hover,
+button.secondary:hover,
+.btn-secondary:hover {
+    background: var(--demo-primary) !important;
+    color: white !important;
+}
+
+/* Grupos de botones */
+.button-group {
+    display: flex;
+    gap: var(--demo-spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--demo-spacing-md);
+    align-items: center;
+}
+
+
+
+/* === VISUALIZACIÓN Y CANVAS === */
+
+/* Contenedores de visualización mejorados */
+.canvas-container,
+.visualization-container {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-lg);
+    margin: var(--demo-spacing-md) 0;
+    text-align: center;
+    box-shadow: var(--demo-shadow);
+}
+
+.canvas-container h2,
+.visualization-container h2 {
+    color: var(--demo-primary);
+    margin: 0 0 var(--demo-spacing-md) 0;
+    font-size: 1.2em;
+}
+
+.canvas-container canvas,
+.visualization-container canvas {
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    box-shadow: var(--demo-shadow);
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Bloque de descripción */
+.description-block {
+    background: var(--demo-bg-gradient);
+    border-left: 5px solid var(--demo-primary);
+    padding: var(--demo-spacing-lg);
+    border-radius: var(--demo-border-radius-large);
+    box-shadow: var(--demo-shadow-large);
+    margin: var(--demo-spacing-lg) 0;
+}
+
+.description-block h4 {
+    color: var(--demo-primary);
+    margin-bottom: var(--demo-spacing-sm);
+    font-size: 1.3rem;
+}
+
+.description-block ol {
+    padding-left: var(--demo-spacing-lg);
+}
+
+.description-block li {
+    margin-bottom: var(--demo-spacing-xs);
+}
+
+/* === COMPONENTES ESPECÍFICOS === */
+
+/* Iconos informativos */
+.info-icon {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--demo-primary);
+    border: 1px solid var(--demo-primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.info-icon:hover {
+    background-color: var(--demo-primary);
+    color: white;
+}
+
+/* Contenedores de pacientes/datos */
+.patients-container {
+    background: var(--demo-bg-primary);
+    border-radius: var(--demo-border-radius);
+    box-shadow: var(--demo-shadow);
+    padding: var(--demo-spacing-md);
+    margin: var(--demo-spacing-md) 0;
+}
+
+.patient-card {
+    background: var(--demo-bg-primary);
+    border-radius: var(--demo-border-radius);
+    box-shadow: var(--demo-shadow);
+    padding: var(--demo-spacing-sm);
+    margin: var(--demo-spacing-xs);
+    border: 1px solid var(--demo-border-light);
+    transition: all 0.2s ease;
+}
+
+.patient-card:hover {
+    box-shadow: var(--demo-shadow-hover);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 1024px) {
+    .demo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--demo-spacing-md);
+    }
+
+    .demo-controls {
+        flex-direction: column;
+        gap: var(--demo-spacing-md);
+    }
+
+    .control-group {
+        min-width: unset;
+    }
+
+    .demo-results {
+        flex-direction: column;
+        gap: var(--demo-spacing-md);
+    }
+
+    .result-group:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid var(--demo-border);
+        padding-bottom: var(--demo-spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .interactive-demo {
+        padding: var(--demo-spacing-md);
+    }
+
+    .demo-controls {
+        padding: var(--demo-spacing-md) 0;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .demo-button,
+    .demo-controls button {
+        min-width: 200px;
+    }
+
+    input[type="range"] {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .control-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-container {
+        padding: var(--demo-spacing-md);
+        margin: var(--demo-spacing-md) 0;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: var(--demo-spacing-xs);
+    }
+}
+
+/* === MEJORAS DE ACCESIBILIDAD === */
+
+/* Focus visible para elementos interactivos */
+.demo-button:focus-visible,
+.control-group button:focus-visible,
+input[type="range"]:focus-visible,
+input[type="number"]:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--demo-primary);
+    outline-offset: 2px;
+}
+
+/* Estados de error y validación */
+.input-error {
+    border-color: var(--demo-danger) !important;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
+}
+
+.input-success {
+    border-color: var(--demo-success) !important;
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2) !important;
+}
+
+/* Mensajes de ayuda y error */
+.input-help {
+    font-size: var(--demo-font-size-sm);
+    color: var(--demo-text-secondary);
+    margin-top: var(--demo-spacing-xs);
+    line-height: 1.4;
+}
+
+.input-error-message {
+    font-size: var(--demo-font-size-sm);
+    color: var(--demo-danger);
+    margin-top: var(--demo-spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--demo-spacing-xs);
+}
+
+.input-error-message::before {
+    content: '⚠️';
+    font-size: 0.9em;
+}
+
+/* === MEJORAS PARA CONTROLES ESPECÍFICOS === */
+
+/* Selects mejorados */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--demo-bg-primary) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23666" d="M6 8L0 2h12z"/></svg>') no-repeat right 8px center;
+    background-size: 12px;
+    padding: var(--demo-spacing-sm) 30px var(--demo-spacing-sm) var(--demo-spacing-sm);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    color: var(--demo-text-primary);
+    font-family: var(--demo-font-family);
+    font-size: var(--demo-font-size-base);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+select:hover {
+    border-color: var(--demo-border-interactive);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--demo-primary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Checkboxes y radios custom */
+.custom-checkbox,
+.custom-radio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--demo-spacing-sm);
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox input,
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox .checkmark,
+.custom-radio .checkmark {
+    width: 18px;
+    height: 18px;
+    background: var(--demo-bg-primary);
+    border: 2px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.custom-radio .checkmark {
+    border-radius: 50%;
+}
+
+.custom-checkbox:hover .checkmark,
+.custom-radio:hover .checkmark {
+    border-color: var(--demo-primary);
+}
+
+.custom-checkbox input:checked+.checkmark,
+.custom-radio input:checked+.checkmark {
+    background: var(--demo-primary);
+    border-color: var(--demo-primary);
+}
+
+.custom-checkbox input:checked+.checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.custom-radio input:checked+.checkmark::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* === RESPONSIVE IMPROVEMENTS === */
+
+@media (max-width: 768px) {
+    .control-group {
+        gap: var(--demo-spacing-sm);
+    }
+
+    .slider-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--demo-spacing-xs);
+    }
+
+    .slider-container label {
+        min-width: auto;
+        text-align: center;
+    }
+
+    input[type="range"] {
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .demo-button {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .control-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-container {
+        padding: var(--demo-spacing-md);
+        margin: var(--demo-spacing-md) 0;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: var(--demo-spacing-xs);
+    }
+}
+
+/* === ANIMACIONES Y TRANSICIONES MEJORADAS === */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Transiciones suaves para cambios de tema */
+* {
+    transition: background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Excepciones para elementos que no deben tener transición */
+.chart-container canvas,
+.chart-container svg,
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    transition: none;
+}

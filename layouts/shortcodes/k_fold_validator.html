@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="interactive-demo">
+
+
+    <div id="data-container"></div>
+
+    <div class="legend">
+        <div class="legend-item"><span class="legend-color train-color"></span><span>Entrenamiento</span></div>
+        <div class="legend-item"><span class="legend-color test-color"></span><span>Prueba</span></div>
+        <div class="legend-item"><span class="legend-color fold-color"></span><span>Grupos K-Fold</span></div>
+    </div>
+
+    <div class="demo-controls">
+        <div class="control-group">
+            <h3>Método 1: División Simple</h3>
+            <p>Pulsa varias veces. ¿Confiarías en una métrica tan volátil para un diagnóstico?</p>
+            <div class="button-group">
+                <button id="run-simple-split-btn">Ejecutar División Simple</button>
+            </div>
+        </div>
+        <div class="control-group">
+            <h3>Método 2: Validación Cruzada</h3>
+            <p>Selecciona 'K' y ejecuta varias veces. El resultado será estable y confiable.</p>
+            <div class="button-controls">
+                <div class="input-group">
+                    <label for="k-folds-input">K-Folds:</label>
+                    <input type="number" id="k-folds-input" value="5" min="2" max="10">
+                </div>
+                <div class="button-group">
+                    <button id="run-k-fold-btn">Ejecutar K-Fold</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="global-controls">
+        <button id="regenerate-data-btn">Regenerar Datos y Limpiar Historial</button>
+    </div>
+
+    <div class="demo-results">
+        <div class="result-group">
+            <h4>Resultados de la División Simple</h4>
+            <h3 id="simple-result-latest" class="result-latest"></h3>
+            <h5>Historial de Errores (%):</h5>
+            <div id="simple-result-history" class="history-log"></div>
+        </div>
+        <div class="result-group">
+            <h4>Resultados de Validación Cruzada</h4>
+            <div id="k-fold-process"></div>
+            <h3 id="k-fold-final-result-latest" class="result-latest"></h3>
+            <h5>Historial de Errores Promedio (%):</h5>
+            <div id="k-fold-history" class="history-log"></div>
+        </div>
+    </div>
+</div>
+<script src="/js/k_fold_validator/k_fold_validator.js"></script>

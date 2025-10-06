@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Visualización interactiva de cómo un árbol de decisión construye reglas para clasificar, inspirado en el juego &#39;Quién es Quién&#39;.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Árbol de Decisión: El Juego del Triaje :: Cerebros Artificiales">
+    <meta name="twitter:description" content="Visualización interactiva de cómo un árbol de decisión construye reglas para clasificar, inspirado en el juego &#39;Quién es Quién&#39;.">
+    <meta property="og:url" content="http://localhost:1313/es/chapter-4/decision-tree/decision-tree/index.html">
+    <meta property="og:site_name" content="Cerebros Artificiales">
+    <meta property="og:title" content="Árbol de Decisión: El Juego del Triaje :: Cerebros Artificiales">
+    <meta property="og:description" content="Visualización interactiva de cómo un árbol de decisión construye reglas para clasificar, inspirado en el juego &#39;Quién es Quién&#39;.">
+    <meta property="og:locale" content="es">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="4 - Algoritmos de Clasificación en Profundidad">
+    <meta itemprop="name" content="Árbol de Decisión: El Juego del Triaje :: Cerebros Artificiales">
+    <meta itemprop="description" content="Visualización interactiva de cómo un árbol de decisión construye reglas para clasificar, inspirado en el juego &#39;Quién es Quién&#39;.">
+    <meta itemprop="wordCount" content="502">
+    <title>Árbol de Decisión: El Juego del Triaje :: Cerebros Artificiales</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759571811" rel="stylesheet">
+    <link href="/css/theme.css?1759571811" rel="stylesheet">
+    <link href="/css/format-html.css?1759571811" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/es\/chapter-4\/decision-tree\/decision-tree\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar en el portapapeles`;
+      window.T_Copied_to_clipboard = `¡Copiado al portapapeles!`;
+      window.T_Copy_link_to_clipboard = `Copiar enlace al portapapeles`;
+      window.T_Link_copied_to_clipboard = `¡Enlace copiado al portapapeles!`;
+      window.T_Reset_view = `Restablecer vista`;
+      window.T_View_reset = `¡Ver reajuste!`;
+      window.T_No_results_found = `No se han encontrado resultados para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/es/chapter-4/decision-tree/decision-tree/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menú (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Tabla de contenido (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#demostración-interactiva">Demostración Interactiva</a></li>
+    <li><a href="#conceptos-fundamentales">Conceptos Fundamentales</a>
+      <ul>
+        <li><a href="#cómo-construye-las-preguntas">¿Cómo Construye las Preguntas?</a></li>
+        <li><a href="#ventajas-y-limitaciones">Ventajas y Limitaciones</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/index.html"><span itemprop="name">Cerebros Artificiales: Cómo piensan las máquinas</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/chapter-4/index.html"><span itemprop="name">4 - Algoritmos de Clasificación en Profundidad</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Árbol de Decisión: El Juego del Triaje</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-4/knn/knn/index.html" title="K-Nearest Neighbors (K-NN): Clasificación por Proximidad (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-5/index.html" title="5 - Aprendizaje No Supervisado: Descubriendo lo Invisible (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Más"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="árbol-de-decisión-el-juego-del-triaje">Árbol de Decisión: El Juego del Triaje</h1>
+
+<h2 id="introducción">Introducción</h2>
+<p>Un <strong>Árbol de Decisión</strong> es un modelo predictivo que aprende una serie de reglas simples, similares a un diagrama de flujo, para llegar a una conclusión. Al igual que en el juego &lsquo;Quién es Quién&rsquo;, el algoritmo busca la secuencia de preguntas más eficiente para clasificar un caso con la menor cantidad de pasos posible.</p>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+
+
+
+
+
+
+<div class="medical-context">
+    <h2>Contexto Médico</h2>
+    
+    <div class="algorithm-badge demo-mb-sm">
+        <span class="status-indicator status-info"></span>
+        <strong>Tipo:</strong> Clasificación Interpretable
+        
+        | <strong>Nivel:</strong> Beginner
+        
+    </div>
+    
+
+    <div class="scenario-text">
+        
+        <p><strong>Escenario:</strong> Un médico de urgencias necesita un sistema de triaje que le ayude a clasificar pacientes rápidamente. Basándose en síntomas y datos básicos, debe determinar la prioridad de atención sin revisar historiales completos.</p>
+        
+        
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            Un Árbol de Decisión construye el &lsquo;protocolo de preguntas&rsquo; perfecto. Aprende qué características son las más distintivas para clasificar a los pacientes, permitiendo al médico tomar decisiones rápidas y fundamentadas siguiendo un camino claro y explicable.
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="demo-separator demo-mb-lg"></div>
+<h2 id="demostración-interactiva">Demostración Interactiva</h2>
+
+
+
+
+
+<div class="demo-container ">
+    
+    <h3 class="demo-title">Constructor de Árboles de Decisión</h3>
+    
+
+    
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+<div id="setup-container">
+    <h2>Paso 1: Selecciona los Personajes (entre 2 y 49)</h2>
+    <div class="description-block">
+        <h4>Características de los Personajes</h4>
+        <p>Cada personaje se define por un conjunto de características. Algunas son binarias (con respuestas
+            'Sí' o 'No'), mientras que otras son categóricas (con múltiples valores posibles). El algoritmo
+            utiliza estas características para encontrar las preguntas más eficientes.</p>
+    </div>
+    <div id="controls">
+        <div class="control-group">
+            <label for="random-count">Seleccionar al azar:</label>
+            <input type="number" id="random-count" value="16" min="2" max="49">
+            <button id="random-select-btn">Selección Aleatoria</button>
+        </div>
+    </div>
+    <div id="character-grid">
+        
+    </div>
+    <div id="training-controls">
+        <div class="control-group">
+            <input type="checkbox" id="binary-questions-only">
+            <label for="binary-questions-only">Solo preguntas Sí/No</label>
+        </div>
+        <div class="control-group">
+            <button id="train-btn" disabled>Entrenar Árbol</button>
+        </div>
+    </div>
+</div>
+
+<div id="training-container" class="hidden">
+    <h2>Paso 2: Construyendo el Árbol...</h2>
+    <div id="current-step-display">
+        <p id="current-step-info">El árbol se está construyendo...</p>
+        <div id="current-group-display"></div>
+    </div>
+    <div id="main-content-area">
+        <div id="tree-container">
+            <div id="cy-container"></div>
+            <div id="spinner" class="hidden"></div>
+            <div id="tree-controls">
+                <button id="zoom-in-btn" title="Acercar">+</button>
+                <button id="zoom-out-btn" title="Alejar">-</button>
+                <button id="fit-btn" title="Centrar Vista">⛶</button>
+            </div>
+        </div>
+        <div id="details-panel">
+            <h3>Detalles de la Decisión</h3>
+            <div id="algorithm-description">
+                <h4>¿Cómo Funciona el Algoritmo?</h4>
+                <p>El árbol se construye usando un algoritmo de 'Divide y Vencerás'. En cada paso, el
+                    sistema
+                    evalúa todas las preguntas posibles y elige la que mejor divide al grupo actual de
+                    personajes.</p>
+                <ul>
+                    <li><strong>Modo Normal:</strong> Se prioriza la pregunta que genera el <strong>mayor
+                            número
+                            de subgrupos</strong>. Como desempate, se elige la que crea el subgrupo más
+                        pequeño.
+                    </li>
+                    <li><strong>Modo Sí/No:</strong> Se elige la pregunta que crea la partición más
+                        <strong>equilibrada</strong>, minimizando la diferencia de tamaño entre el grupo
+                        'Sí' y
+                        el 'No'.
+                    </li>
+            </div>
+            <div id="calculation-details">
+                <p>El árbol se está construyendo... o haz clic en un nodo de pregunta para ver sus cálculos.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="actions-container">
+        <button id="reset-btn" class="hidden">Empezar de Nuevo</button>
+    </div>
+</div>
+
+
+
+<div id="tooltip" class="hidden"></div>
+
+<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+<script src="/js/decision-tree/people-data.js"></script>
+<script src="/js/decision-tree/decision-tree.js"></script>
+
+
+</div>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<h3 id="cómo-construye-las-preguntas">¿Cómo Construye las Preguntas?</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    División Óptima
+  </summary>
+  <div class="box-content">
+<p>En cada nodo del árbol, el algoritmo busca la pregunta que mejor separe los datos en grupos más &ldquo;puros&rdquo; (homogéneos). Esto se mide usando métricas como:</p>
+<ul>
+<li><strong>Entropía</strong>: Mide el desorden en los datos</li>
+<li><strong>Índice de Gini</strong>: Probabilidad de clasificar incorrectamente</li>
+<li><strong>Ganancia de información</strong>: Cuánto reduce la incertidumbre una pregunta</li>
+</ul>
+  </div>
+</details>
+<h3 id="ventajas-y-limitaciones">Ventajas y Limitaciones</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Interpretabilidad
+  </summary>
+  <div class="box-content">
+<p><strong>Ventajas principales:</strong></p>
+<ul>
+<li>Fáciles de interpretar y explicar</li>
+<li>No requieren normalización de datos</li>
+<li>Manejan tanto variables numéricas como categóricas</li>
+<li>Pueden modelar relaciones no lineales</li>
+</ul>
+<p><strong>Limitaciones importantes:</strong></p>
+<ul>
+<li>Propensos al sobreajuste con datos complejos</li>
+<li>Inestables (pequeños cambios pueden generar árboles muy diferentes)</li>
+<li>Pueden crear sesgos hacia variables con más niveles</li>
+</ul>
+  </div>
+</details>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Prevención del Sobreajuste
+  </summary>
+  <div class="box-content">
+<p>Para evitar que el árbol memorice los datos de entrenamiento:</p>
+<ul>
+<li><strong>Poda</strong>: Eliminar ramas que no mejoran la generalización</li>
+<li><strong>Profundidad máxima</strong>: Limitar cuántos niveles puede tener</li>
+<li><strong>Mínimo de muestras</strong>: Requerir un número mínimo de casos por hoja</li>
+</ul>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Limpiar Terminal">Limpiar</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal iniciado...");
+        }
+    });
+</script>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Control de la Complejidad
+  </summary>
+  <div class="box-content">
+<p>Los árboles pueden crecer demasiado y sobreajustarse a los datos de entrenamiento. Por eso es importante controlar su profundidad máxima y el número mínimo de muestras por nodo.</p>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Limpiar Terminal">Limpiar</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal iniciado...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/es/index.html">
+            <div class="logo-title">Cerebros Artificiales</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/es/index.html"><a class="padding" href="/es/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-1/index.html"><a class="padding" href="/es/chapter-1/index.html">1 - El Comienzo del Viaje</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-2/index.html"><a class="padding" href="/es/chapter-2/index.html">2 - Modelos de aprendizaje automático</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-3/index.html"><a class="padding" href="/es/chapter-3/index.html">3 - Sistemas de clasificación y evaluación de modelos</a><ul id="R-subsections-9a957cc6839aa1b33676870e792c5474" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/es/chapter-4/index.html"><a class="padding" href="/es/chapter-4/index.html">4 - Algoritmos de Clasificación en Profundidad</a><ul id="R-subsections-c227eed7e9ba3e21264f72020206734e" class="collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-4/knn/knn/index.html"><a class="padding" href="/es/chapter-4/knn/knn/index.html">K-Nearest Neighbors (K-NN): Clasificación por Proximidad</a></li>
+            <li class="active " data-nav-id="/es/chapter-4/decision-tree/decision-tree/index.html"><a class="padding" href="/es/chapter-4/decision-tree/decision-tree/index.html">Árbol de Decisión: El Juego del Triaje</a></li></ul></li>
+            <li class="" data-nav-id="/es/chapter-5/index.html"><a class="padding" href="/es/chapter-5/index.html">5 - Aprendizaje No Supervisado: Descubriendo lo Invisible</a><ul id="R-subsections-84f97cef1a12d542f1272e0c68ba3612" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-6/index.html"><a class="padding" href="/es/chapter-6/index.html">6 - Dentro de la Mente de la Máquina: Redes Neuronales</a><ul id="R-subsections-353c43515a76f18e138bc04573502da7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-7/index.html"><a class="padding" href="/es/chapter-7/index.html">7 - La Revolución del Lenguaje - Entendiendo los LLMs </a><ul id="R-subsections-211eabc86fd80b431779fcc37efd887b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/conference-notes/index.html"><a class="padding" href="/es/conference-notes/index.html">8 - Recursos de IA</a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Idioma</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-4/decision-tree/decision-tree/index.html" lang="es" selected data-selected>Español</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Tema</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759571811" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759571811" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759571811"></script>
+    <script src="/js/theme.js?1759571811" defer></script>
+  </body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="An interactive simulation to understand how Artificial Intelligence learns through reinforcement.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning) :: Artificial Brains">
+    <meta name="twitter:description" content="An interactive simulation to understand how Artificial Intelligence learns through reinforcement.">
+    <meta property="og:url" content="http://localhost:1313/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html">
+    <meta property="og:site_name" content="Artificial Brains">
+    <meta property="og:title" content="1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning) :: Artificial Brains">
+    <meta property="og:description" content="An interactive simulation to understand how Artificial Intelligence learns through reinforcement.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="1 - The Beginning of the Journey">
+    <meta property="article:published_time" content="2023-10-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="name" content="1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning) :: Artificial Brains">
+    <meta itemprop="description" content="An interactive simulation to understand how Artificial Intelligence learns through reinforcement.">
+    <meta itemprop="datePublished" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="wordCount" content="322">
+    <title>1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning) :: Artificial Brains</title>
+    <link href="http://localhost:1313/es/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759706053" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759706053" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759706053" rel="stylesheet">
+    <link href="/css/theme.css?1759706053" rel="stylesheet">
+    <link href="/css/format-html.css?1759706053" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/\/chapter-1\/cheese-mouse-game\/cheese-mouse-game\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#fundamental-theoretical-concepts">Fundamental Theoretical Concepts</a>
+      <ul>
+        <li><a href="#elements-of-reinforcement-learning">Elements of Reinforcement Learning</a></li>
+        <li><a href="#learning-methodology">Learning Methodology</a></li>
+      </ul>
+    </li>
+    <li><a href="#block-training-statistical-robustness">Block Training: Statistical Robustness</a>
+      <ul>
+        <li><a href="#real-world-applications">Real-World Applications</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">How Machines Think</span><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/chapter-1/index.html"><span itemprop="name">1 - The Beginning of the Journey</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning)</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-1/index.html" title="1 - The Beginning of the Journey (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-1/lighthill/lighthill/index.html" title="1.4 - The Lighthill Report (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="14-interactive-game-mouse-and-cheese-reinforcement-learning">1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning)</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Reinforcement Learning is a type of AI that learns to make decisions through trial and error, similar to how an animal learns to navigate a maze to find food. The &ldquo;agent&rdquo; (our mouse) explores an environment and receives &ldquo;rewards&rdquo; for actions that bring it closer to its goal.</p>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+
+
+
+
+
+
+<div class="medical-context">
+    <h2>Medical Context</h2>
+    
+
+    <div class="scenario-text">
+        
+        <p><strong>Scenario:</strong> The mouse must learn to find the cheese on a board.</p>
+        
+        
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            explores different strategies, focusing on actions that lead to getting cheese. When a sequence leads to success, that route is positively reinforced. Over time, it learns the most efficient strategy.
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="demo-separator demo-mb-lg"></div>
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+<link rel="stylesheet" href="/css/raton-queso-game.css">
+
+<div class="demo-wrapper">
+    <div class="controls-panel">
+        <h3 class="controls-panel-title  demo-mb-md">Controls
+            and Configuration</h3>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="gridRows" class="control-label">Board
+                    rows:</label>
+                <input type="number" id="gridRows" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <label for="gridCols" class="control-label">Board
+                    columns:</label>
+                <input type="number" id="gridCols" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <button onclick="reiniciar()" id="btnReiniciar" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    🔁 Restart Board
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularPartida()" id="btnSimular"
+                    class="demo-btn demo-btn-primary demo-btn-full-width">
+                    ▶️ Simulate 1 Game (Visual)
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="numSim" class="control-label">Number of
+                    games:</label>
+                <input type="number" id="numSim" value="10" min="1" max="1000" class="demo-control-input" />
+
+            </div>
+            <div class="demo-control-group">
+                <button onclick="simularMultiplesPartidas()" id="btnSimularMulti"
+                    class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    ▶️ Simulate Multiple Games
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularBloquesDeEntrenamiento()" id="btnSimularBloques"
+                    class="demo-btn demo-btn-success demo-btn-full-width">
+                    ⚡ Train (10 blocks x 100
+                    games)
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="demo-content-panel demo-flex-container">
+        <div class="demo-chart-container">
+            <h3 class="demo-chart-title">Mouse and Cheese
+                Game</h3>
+            <div class="grid" id="tablero">
+                
+            </div>
+        </div>
+
+        <div class="demo-info-card">
+            <div class="demo-info-card-header">Action
+                Values per Square</div>
+            <div id="estadoVasos" class="overflow-x-auto">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modal" class="demo-modal">
+    <div class="demo-modal-content">
+        <button onclick="cerrarModal()" class="demo-modal-close">&times;</button>
+        <h2 class="demo-mb-md">Training Progress</h2>
+        <div id="progreso" class="demo-info-card demo-mb-sm">Starting...</div>
+        <div id="progreso-detalle" class="demo-mb-md" style="font-size: 0.9em; color: var(--MAIN-TEXT-color, #666);">
+        </div>
+        <button onclick="cerrarModal()" class="demo-btn demo-btn-primary">Close</button>
+    </div>
+</div>
+
+<script>
+    
+    window.gameLanguage = "en";
+</script>
+<script src="/js/raton-queso-game.js"></script>
+<h2 id="fundamental-theoretical-concepts">Fundamental Theoretical Concepts</h2>
+<h3 id="elements-of-reinforcement-learning">Elements of Reinforcement Learning</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Basic Components
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Agent:</strong> The mouse that makes decisions</li>
+<li><strong>Environment:</strong> The board with squares, cheese and traps</li>
+<li><strong>States:</strong> Each position (row, column) on the board</li>
+<li><strong>Actions:</strong> Possible movements (↑↓←→)</li>
+<li><strong>Rewards:</strong> Positive feedback (cheese) or negative (trap)</li>
+<li><strong>Policy:</strong> The learned strategy for choosing actions</li>
+</ul>
+  </div>
+</details>
+<h3 id="learning-methodology">Learning Methodology</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Reinforcement Process
+  </summary>
+  <div class="box-content">
+<ol>
+<li><strong>Initial exploration:</strong> The agent takes semi-random actions based on equiprobable probabilities</li>
+<li><strong>Experience:</strong> Each trajectory generates a state-action-reward sequence</li>
+<li><strong>Update:</strong> Successful actions increase their selection probability</li>
+<li><strong>Convergence:</strong> Gradually, an optimal policy emerges</li>
+</ol>
+  </div>
+</details>
+<h2 id="block-training-statistical-robustness">Block Training: Statistical Robustness</h2>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Why Train in Independent Blocks?
+  </summary>
+  <div class="box-content">
+<p>Block training (10 experiments × 100 games) simulates a rigorous scientific process:</p>
+<ul>
+<li><strong>Cross-validation:</strong> Each block is an independent experiment that should reach similar conclusions</li>
+<li><strong>Variance reduction:</strong> Multiple experiments minimize the effect of initial randomness</li>
+<li><strong>Robust convergence:</strong> Ensures learning doesn&rsquo;t depend on specific initial conditions</li>
+<li><strong>Knowledge aggregation:</strong> The final result combines learning from multiple &ldquo;virtual agents&rdquo;</li>
+</ul>
+  </div>
+</details>
+<h3 id="real-world-applications">Real-World Applications</h3>
+<p>This type of reinforcement learning has direct applications in:</p>
+<ul>
+<li><strong>Personalized medicine:</strong> Optimization of treatment protocols</li>
+<li><strong>Robotics:</strong> Autonomous navigation in complex environments</li>
+<li><strong>Finance:</strong> Adaptive trading strategies</li>
+<li><strong>Games:</strong> Development of AI that surpasses human players (AlphaGo, OpenAI Five)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Clear Terminal">Clear</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal started...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> Oct 27, 2023
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="">
+            <div class="logo-title">Artificial Brains</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/chapter-1/index.html"><a class="padding" href="/chapter-1/index.html">1 - The Beginning of the Journey</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html"><a class="padding" href="/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html">1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning)</a></li>
+            <li class="" data-nav-id="/chapter-1/lighthill/lighthill/index.html"><a class="padding" href="/chapter-1/lighthill/lighthill/index.html">1.4 - The Lighthill Report</a></li>
+            <li class="" data-nav-id="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html"><a class="padding" href="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html">1.5 Deep Blue vs AlphaGo</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Language</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html" lang="es">Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-1/cheese-mouse-game/cheese-mouse-game/index.html" lang="en" selected data-selected>English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759706053" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759706053" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759706053"></script>
+    <script src="/js/theme.js?1759706053" defer></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{{ $lang := (.Get "lang") | default .Site.Language.Lang }}
+
+{{/* Diccionario de traducciones */}}
+{{ $translations := dict
+"es" (dict
+"terminal_started" "Terminal iniciado..."
+"clear_terminal" "Limpiar"
+)
+"en" (dict
+"terminal_started" "Terminal started..."
+"clear_terminal" "Clear"
+)
+}}
+
+{{ $t := index $translations $lang }}
+
+{{ partial "terminal.html" (dict "lang" $lang "translations" $t) }}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("{{ $t.terminal_started }}");
+        }
+    });
+</script>

@@ -1,0 +1,684 @@
+<!-- ...existing code... -->
+<style>
+    /* Componente promocional del libro "Cerebros Artificiales" adaptado al tema Relearn */
+    .lpc-container {
+        /* Mapeo dinámico a variables del tema */
+        --lpc-bg: var(--INTERNAL-MAIN-BG-color);
+        --lpc-card-bg: color-mix(in srgb, var(--INTERNAL-MAIN-BG-color) 94%, var(--INTERNAL-MAIN-TEXT-color));
+        --lpc-text: var(--INTERNAL-MAIN-TEXT-color);
+        --lpc-text-header: var(--INTERNAL-MAIN-TITLES-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
+        --lpc-text-muted: color-mix(in srgb, var(--INTERNAL-MAIN-TEXT-color) 60%, var(--INTERNAL-MAIN-BG-color));
+        --lpc-accent: var(--INTERNAL-PRIMARY-color);
+        --lpc-accent-2: var(--INTERNAL-SECONDARY-color, var(--INTERNAL-PRIMARY-color));
+        --lpc-accent-3: var(--INTERNAL-ACCENT-color, var(--INTERNAL-PRIMARY-color));
+        --lpc-border: color-mix(in srgb, var(--INTERNAL-MAIN-TEXT-color) 18%, var(--INTERNAL-MAIN-BG-color));
+        --lpc-shadow: 0 4px 12px -2px rgba(0, 0, 0, .18), 0 10px 28px -6px rgba(0, 0, 0, .22);
+        --lpc-radius: 14px;
+        background: var(--lpc-bg);
+        color: var(--lpc-text);
+        font-family: var(--INTERNAL-MAIN-font, system-ui, -apple-system, Segoe UI, Roboto, sans-serif);
+        transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+    }
+
+    .lpc-section {
+        padding: clamp(3rem, 6vw, 5rem) 1rem;
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+    .lpc-section h1,
+    .lpc-section h2,
+    .lpc-section h3 {
+        color: var(--lpc-text-header);
+        margin: 0 0 1rem;
+    }
+
+    .lpc-section h1 {
+        font-size: clamp(2.4rem, 5vw, 3.2rem);
+        line-height: 1.15;
+    }
+
+    .lpc-section h2 {
+        font-size: clamp(1.8rem, 3.6vw, 2.2rem);
+    }
+
+    .lpc-section h3 {
+        font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+    }
+
+    .lpc-section-subtitle {
+        color: var(--lpc-text-muted);
+        max-width: 760px;
+        margin: .75rem 0 0;
+    }
+
+    .lpc-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .lpc-2col,
+    .lpc-3col {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width:768px) {
+        .lpc-2col {
+            grid-template-columns: 1.2fr .8fr;
+            align-items: center;
+        }
+
+        .lpc-3col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .lpc-section h1,
+    .lpc-section h2,
+    .lpc-section h3 {
+        color: var(--lpc-text-header);
+        margin: 0 0 1rem;
+    }
+
+    .lpc-section h1 {
+        font-size: clamp(2.4rem, 5vw, 3.2rem);
+        line-height: 1.15;
+    }
+
+    .lpc-section h2 {
+        font-size: clamp(1.8rem, 3.6vw, 2.2rem);
+    }
+
+    .lpc-section h3 {
+        font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+    }
+
+    .lpc-section-subtitle {
+        color: var(--lpc-text-muted);
+        max-width: 760px;
+        margin: .75rem 0 0;
+    }
+
+    .lpc-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .lpc-2col {
+        grid-template-columns: 1fr;
+    }
+
+    .lpc-3col {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .lpc-2col {
+            grid-template-columns: 1.2fr .8fr;
+            align-items: center;
+        }
+
+        .lpc-3col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* Hero */
+    .lpc-hero {
+        position: relative;
+        border-radius: clamp(0px, 1vw, 18px);
+        overflow: hidden;
+        background:
+            radial-gradient(1400px 500px at 15% -15%, color-mix(in oklab, var(--lpc-accent) 24%, transparent), transparent 65%),
+            radial-gradient(1000px 420px at 110% 15%, color-mix(in oklab, var(--lpc-accent-2) 20%, transparent), transparent 65%),
+            linear-gradient(135deg, color-mix(in oklab, var(--lpc-card-bg) 85%, #000) 0%, var(--lpc-card-bg) 70%);
+        box-shadow: inset 0 0 0 1px var(--lpc-border), 0 8px 32px -8px rgba(0, 0, 0, .35);
+    }
+
+    .lpc-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(180deg, rgba(255, 255, 255, .05) 0%, rgba(255, 255, 255, 0) 60%),
+            linear-gradient(45deg, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, 0) 55%);
+        mix-blend-mode: overlay;
+        pointer-events: none;
+    }
+
+    .lpc-hero .eyebrow {
+        color: var(--lpc-accent);
+        font-weight: 600;
+        letter-spacing: .4px;
+        text-transform: uppercase;
+        font-size: .9rem;
+        margin-bottom: .75rem;
+    }
+
+    .lpc-hero .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .6rem;
+        margin-top: 1.25rem;
+    }
+
+    .lpc-hero .badge {
+        border: 1px solid var(--lpc-border);
+        color: var(--lpc-text-muted);
+        padding: .35rem .7rem;
+        border-radius: 999px;
+        font-size: .85rem;
+        background: var(--lpc-card-bg);
+    }
+
+    .lpc-hero .mock {
+        background: var(--lpc-card-bg);
+        border: 1px solid var(--lpc-border);
+        border-radius: var(--lpc-radius);
+        padding: 1.25rem;
+        box-shadow: var(--lpc-shadow);
+    }
+
+    .lpc-hero .mock .cover {
+        width: 160px;
+        height: 220px;
+        border: 1px solid var(--lpc-border);
+        border-radius: 6px;
+        background:
+            linear-gradient(135deg, var(--lpc-accent) 0%, var(--lpc-accent-2) 100%);
+        display: inline-block;
+    }
+
+    .lpc-cta {
+        display: flex;
+        gap: .75rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+    }
+
+    .lpc-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        padding: .85rem 1.25rem .9rem;
+        border-radius: 12px;
+        border: 1px solid color-mix(in srgb, var(--lpc-accent) 55%, var(--lpc-border));
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: .3px;
+        position: relative;
+        background: linear-gradient(180deg, color-mix(in srgb, var(--lpc-accent) 94%, #fff) 0%, var(--lpc-accent) 90%);
+        color: #fff;
+        box-shadow: 0 2px 6px -1px rgba(0, 0, 0, .35), 0 3px 14px -2px color-mix(in srgb, var(--lpc-accent) 55%, transparent);
+        transition: transform .22s cubic-bezier(.4, .4, 0, 1), box-shadow .22s ease, filter .22s ease;
+    }
+
+    .lpc-btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(120deg, rgba(255, 255, 255, .35) 0%, rgba(255, 255, 255, 0) 55%);
+        mix-blend-mode: overlay;
+        opacity: .55;
+        pointer-events: none;
+        transition: opacity .3s ease;
+    }
+
+    .lpc-btn:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.05) saturate(1.05);
+        box-shadow: 0 10px 26px -6px rgba(0, 0, 0, .45), 0 18px 46px -18px color-mix(in srgb, var(--lpc-accent) 65%, transparent);
+    }
+
+    .lpc-btn:hover::after {
+        opacity: .8;
+    }
+
+    .lpc-btn-secondary {
+        background: linear-gradient(160deg, color-mix(in srgb, var(--lpc-card-bg) 94%, transparent) 0%, color-mix(in srgb, var(--lpc-card-bg) 80%, var(--lpc-accent) 8%) 100%);
+        color: var(--lpc-accent);
+        border-color: color-mix(in srgb, var(--lpc-accent) 40%, var(--lpc-border));
+        box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .2);
+    }
+
+    .lpc-btn-secondary:hover {
+        color: var(--lpc-accent);
+    }
+
+    /* Tarjetas y elementos reutilizables */
+    .lpc-card {
+        background: linear-gradient(145deg, color-mix(in srgb, var(--lpc-card-bg) 96%, transparent) 0%, color-mix(in srgb, var(--lpc-card-bg) 85%, var(--lpc-accent) 2%) 100%);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        border: 1px solid color-mix(in srgb, var(--lpc-border) 80%, transparent);
+        border-radius: var(--lpc-radius);
+        padding: 1.45rem 1.5rem 1.55rem;
+        position: relative;
+        isolation: isolate;
+        transition: transform .28s cubic-bezier(.4, .4, 0, 1), box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .lpc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, color-mix(in srgb, var(--lpc-accent) 10%, transparent), transparent 60%);
+        opacity: .35;
+        border-radius: inherit;
+        pointer-events: none;
+        mix-blend-mode: plus-lighter;
+        transition: opacity .3s ease;
+    }
+
+    .lpc-card:hover {
+        transform: translateY(-6px) scale(1.015);
+        box-shadow: 0 6px 20px -4px rgba(0, 0, 0, .25), 0 14px 40px -10px rgba(0, 0, 0, .35);
+        border-color: color-mix(in srgb, var(--lpc-accent) 35%, var(--lpc-border));
+    }
+
+    .lpc-card:hover::before {
+        opacity: .55;
+    }
+
+    .lpc-chip {
+        display: inline-block;
+        background: color-mix(in oklab, var(--lpc-accent-3) 16%, transparent);
+        color: var(--lpc-text-header);
+        padding: .25rem .6rem;
+        border-radius: 999px;
+        font-size: .8rem;
+        border: 1px dashed var(--lpc-border);
+    }
+
+    /* Caracteres */
+    .lpc-character-card {
+        text-align: left;
+    }
+
+    .lpc-character-card .icon {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .role {
+        color: var(--lpc-text-muted);
+        font-size: .95rem;
+        margin-top: .15rem;
+    }
+
+    /* Lista de aprendizaje */
+    .lpc-list {
+        display: grid;
+        gap: .8rem;
+        margin: 1rem 0 0;
+    }
+
+    .lpc-list li {
+        list-style: none;
+        padding-left: 1.8rem;
+        position: relative;
+    }
+
+    .lpc-list li::before {
+        content: "✔";
+        color: var(--lpc-accent-3);
+        position: absolute;
+        left: .2rem;
+        top: .05rem;
+        font-weight: 700;
+    }
+
+    /* Capítulos / módulos */
+    .lpc-chapter-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .lpc-chapter-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .lpc-chapter-card .number {
+        font-size: .85rem;
+        color: var(--lpc-text-muted);
+    }
+
+    .lpc-chapter-card .link {
+        text-decoration: none;
+        color: var(--lpc-accent);
+        font-weight: 600;
+    }
+
+    /* Social proof / métrica */
+    .lpc-stats {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        margin-top: 1.5rem;
+    }
+
+    .lpc-stat {
+        background: linear-gradient(145deg, var(--lpc-card-bg), color-mix(in srgb, var(--lpc-card-bg) 85%, var(--lpc-accent-2) 12%));
+        border: 1px solid color-mix(in srgb, var(--lpc-accent-2) 30%, var(--lpc-border));
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .lpc-stat::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .25), transparent 60%);
+        mix-blend-mode: overlay;
+        opacity: .45;
+    }
+
+    .lpc-stat b {
+        display: block;
+        font-size: 1.15rem;
+        margin-bottom: .25rem;
+    }
+
+    /* Amazon / compra */
+    .lpc-amazon {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    @media (min-width: 860px) {
+        .lpc-amazon {
+            grid-template-columns: .8fr 1.2fr;
+        }
+    }
+
+    .lpc-amazon .status {
+        display: inline-block;
+        background: linear-gradient(120deg, #ffba42, #ff9800);
+        color: #111;
+        padding: .38rem .8rem;
+        border-radius: 999px;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .5px;
+        box-shadow: 0 2px 6px -2px rgba(0, 0, 0, .35);
+    }
+
+    /* FAQ */
+    .lpc-faq details {
+        border: 1px solid color-mix(in srgb, var(--lpc-border) 80%, transparent);
+        border-radius: 14px;
+        background: linear-gradient(150deg, color-mix(in srgb, var(--lpc-card-bg) 96%, transparent), color-mix(in srgb, var(--lpc-card-bg) 82%, var(--lpc-accent-2) 4%));
+        padding: 1rem 1.1rem;
+        position: relative;
+        transition: border-color .3s ease, background .4s ease;
+    }
+
+    .lpc-faq details+details {
+        margin-top: .9rem;
+    }
+
+    .lpc-faq summary {
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        outline: none;
+    }
+
+    .lpc-faq details[open] {
+        border-color: color-mix(in srgb, var(--lpc-accent-2) 45%, var(--lpc-border));
+    }
+
+    .lpc-faq details[open] summary {
+        color: var(--lpc-accent-2);
+    }
+
+    /* Separador */
+    .lpc-sep {
+        height: 1px;
+        background: var(--lpc-border);
+        border: 0;
+        margin: 0;
+    }
+</style>
+
+<div class="lpc-container">
+
+    <!-- HERO -->
+    <section class="lpc-section lpc-hero">
+        <div class="lpc-grid lpc-2col">
+            <div>
+                <h3>Un viaje guiado al corazón de la máquina</h3>
+
+                <p class="lpc-section-subtitle">
+                    Una historia en el Hospital Minermont que hace comprensible el camino completo:
+                    de los modelos clásicos al corazón de los LLMs. Ficción narrativa con referencias reales y datos
+                    técnicos ciertos.
+                </p>
+                <div class="badge-row">
+                    <span class="badge">Ciencia + Narrativa</span>
+                    <span class="badge">Edición bilingüe (ES/EN)</span>
+                    <span class="badge">Guías prácticas (Prompting, Métricas, K‑Means, Transformers)</span>
+                </div>
+                <div class="lpc-cta">
+                    <a href="#" class="lpc-btn lpc-btn-primary">🛒 Comprar en Amazon</a>
+                    <a href="#" class="lpc-btn lpc-btn-secondary">📄 Descargar muestra (PDF)</a>
+                </div>
+            </div>
+            <div class="mock">
+                <div class="cover" aria-label="Portada del libro"></div>
+                <p style="margin:.8rem 0 0; color:var(--lpc-text-muted);">Entiende el núcleo: aprendizaje,
+                    generalización, métricas de clasificación, representación, atención, fundamentos de Transformers y
+                    RLHF.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <hr class="lpc-sep" />
+
+    <!-- VALOR DIFERENCIAL -->
+    <section class="lpc-section">
+        <h2>Comprende la IA desde dentro</h2>
+
+        <div class="lpc-stats">
+            <div class="lpc-stat"><b>Historia</b> Ficticia, con rigor técnico</div>
+            <div class="lpc-stat"><b>Contenido</b> Referencias y definiciones precisas</div>
+        </div>
+        <p class="lpc-section-subtitle">
+            No es un manual de recetas: es un viaje para construir intuición y conectar cada pieza con su porqué. Una
+            novela técnica que humaniza la IA, con apuntes
+            formales que no esconden las matemáticas ni la implementación.
+        </p>
+        <br>
+        <div class="lpc-grid lpc-3col">
+            <div class="lpc-card">
+                <h3>De la intuición a la matemática</h3>
+                <p>La narrativa te sitúa en problemas reales; las notas técnicas explican el fundamento: coste,
+                    gradiente, regularización y validación.</p>
+                <span class="lpc-chip">Intuición que se sostiene</span>
+            </div>
+            <div class="lpc-card">
+                <h3>Del algoritmo a la generalización</h3>
+                <p>Por qué los modelos aprenden, cuándo se equivocan y cómo medimos lo que de verdad importa para
+                    decidir en la práctica.</p>
+                <span class="lpc-chip">Rigor sin fricción</span>
+            </div>
+            <div class="lpc-card">
+                <h3>Camino a los LLMs</h3>
+                <p>De RNNs y sus límites a Transformers: tokenización, embeddings, codificación posicional y atención
+                    como mecanismo central.</p>
+                <span class="lpc-chip">Del “cómo” al “por qué”</span>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- QUÉ APRENDERÁS -->
+    <section class="lpc-section">
+        <h2>Qué aprenderás</h2>
+        <ul class="lpc-list">
+            <li>Cómo el descenso del gradiente minimiza una función de coste y por qué la tasa de aprendizaje importa.
+            </li>
+            <li>Qué significa generalizar: sobreajuste, regularización y validación cruzada bien aplicada.</li>
+            <li>Clasificación binaria: de la regresión logística a SVM y el papel del margen.</li>
+            <li>Multiclase y métricas clínicas: precisión por clase, recall, ROC/AUC y validación en el mundo real.</li>
+            <li>Clustering con K‑Means: elección de K (método del codo), centroides e inercia para descubrir riesgos
+                ocultos.</li>
+            <li>Redes neuronales: del perceptrón al MLP, activaciones y backpropagation sin cajas negras mágicas.</li>
+            <li>El paso a LLMs: tokenización, embeddings, geometría del significado y la atención que captura contexto
+                global.</li>
+            <li>Por qué los senos y cosenos en la posición, y cómo la arquitectura Transformer compone significado a
+                gran escala.</li>
+        </ul>
+    </section>
+
+    <hr class="lpc-sep" />
+
+    <!-- MAPA / ÍNDICE ORIENTADO A TU CONTENIDO -->
+    <section class="lpc-section" id="chapters">
+        <h2>El mapa de tu viaje</h2>
+        <p class="lpc-section-subtitle">De los fundamentos a los LLMs, con paradas en lo que necesitas para implementar
+            con seguridad.</p>
+
+        <div class="lpc-grid lpc-chapter-grid">
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 01</p>
+                <h3>Introducción y contexto</h3>
+                <p>De Turing a AlphaFold. Por qué ahora y qué cambia en la práctica.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 02</p>
+                <h3>Regresión y Gradiente</h3>
+                <p>Regresión lineal, descenso del gradiente, funciones de coste.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 03</p>
+                <h3>Clasificación binaria</h3>
+                <p>Logística vs SVM, regularización, validación cruzada.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 04</p>
+                <h3>Multiclase y métricas</h3>
+                <p>Algoritmos, matrices de confusión y métricas que importan.
+                </p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 05</p>
+                <h3>No supervisado</h3>
+                <p>K‑Means, centroides e inercia. Hallar patrones ocultos.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 06</p>
+                <h3>Redes neuronales</h3>
+                <p>Perceptrón a MLP, backprop, herramientas y datos propios.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 07</p>
+                <h3>LLMs en profundidad</h3>
+                <p>Transformers, RLHF, prompting seguro y aplicaciones clínicas.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+            <div class="lpc-card lpc-chapter-card">
+                <p class="number">Módulo 08</p>
+                <h3>Casos reales</h3>
+                <p>Frameworks aplicados en medicina y el “viaje de vuelta”.</p>
+                <a href="#" class="link">Ver extracto →</a>
+            </div>
+
+        </div>
+
+        <div class="lpc-cta" style="margin-top:1.2rem">
+            <a href="#" class="lpc-btn lpc-btn-primary">✨ Comenzar el viaje digital</a>
+            <a href="#" class="lpc-btn lpc-btn-secondary">🔎 Leer un capítulo gratis</a>
+        </div>
+    </section>
+
+    <!-- COMPRA -->
+    <section class="lpc-section">
+        <div class="lpc-card">
+            <div class="lpc-amazon">
+                <div class="mock">
+                    <div class="cover" aria-label="Portada del libro"></div>
+                </div>
+                <div>
+                    <h2>Consigue el libro</h2>
+                    <p class="lpc-section-subtitle">
+                        La web te da las herramientas interactivas; el libro te ofrece la historia completa, el
+                        razonamiento técnico y una guía práctica lista para aplicar.
+                    </p>
+                    <a href="#" class="lpc-btn lpc-btn-primary">🛒 Comprar en Amazon</a>
+                    <div class="status">⭐ Próximamente disponible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="lpc-sep" />
+
+    <!-- FAQ -->
+    <section class="lpc-section lpc-faq">
+        <h2>Preguntas frecuentes</h2>
+        <details>
+            <summary>¿Es un libro técnico denso?</summary>
+            <p>Equilibra narrativa y notas. La intuición llega primero; la matemática y los detalles, justo después y
+                con claridad.</p>
+        </details>
+        <details>
+            <summary>¿Necesito saber programar?</summary>
+            <p>No. Se explican los conceptos para comprender cómo y por qué funcionan los modelos. La implementación es
+                un medio, no el fin.</p>
+        </details>
+        <details>
+            <summary>¿Es realmente aplicable?</summary>
+            <p>Sí. Aunque la historia es ficticia, las referencias y los datos técnicos son reales y orientados a
+                decisiones del mundo real.</p>
+        </details>
+        <details>
+            <summary>¿Bilingüe o dos ediciones?</summary>
+            <p>Dos ediciones separadas: Español o Inglés. El glosario aclara términos clave y sus equivalencias.</p>
+        </details>
+        <details>
+            <summary>¿Está orientado solo a medicina?</summary>
+            <p>Los ejemplos son clínicos por su exigencia ética y de validación, pero los principios y técnicas aplican
+                a cualquier sector.</p>
+        </details>
+    </section>
+
+    <!-- AUTOR -->
+    <section class="lpc-section">
+        <h2>Autor y propósito</h2>
+        <div class="lpc-grid lpc-2col" style="grid-template-columns:1fr 1fr">
+            <div class="lpc-card">
+                <h3>Sobre Javier Falcó</h3>
+                <p>Autor e investigador. Su trabajo combina claridad pedagógica con aplicaciones que funcionan fuera del
+                    laboratorio.</p>
+                <p><em>“La mejor manera de entender la IA es vivirla, no solo estudiarla.”</em></p>
+            </div>
+            <div class="lpc-card">
+                <h3>Objetivo del proyecto</h3>
+                <p>Democratizar la IA con una propuesta única: narrativa inmersiva + notas rigurosas + guías prácticas.
+                    Para aprender, aplicar y decidir con criterio.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- ...existing code... -->

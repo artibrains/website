@@ -1,0 +1,68 @@
+{{/*
+Shortcode unificado y mejorado para introducciones de demos interactivas
+Parámetros:
+- lang: Idioma (es/en) - opcional, por defecto usa el del sitio
+- title: Título de la demo
+- medical_scenario: Texto del escenario médico
+- medical_highlight: Texto destacado del contexto médico
+- algorithm_type: Tipo de algoritmo (classification, regression, clustering, etc.) - opcional
+- difficulty: Dificultad (beginner, intermediate, advanced) - opcional
+*/}}
+
+{{ $lang := (.Get "lang") | default .Site.Language.Lang }}
+
+{{/* Diccionario de traducciones */}}
+{{ $translations := dict
+"es" (dict
+"medical_context" "Contexto Médico"
+"type" "Tipo"
+"level" "Nivel"
+"scenario" "Escenario")
+"en" (dict
+"medical_context" "Medical Context"
+"type" "Type"
+"level" "Level"
+"scenario" "Scenario"
+)
+}}
+
+{{ $t := index $translations $lang }}
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+{{ $medical_scenario := .Get "medical_scenario" | default "" }}
+{{ $medical_highlight := .Get "medical_highlight" | default "" }}
+{{ $algorithm_type := .Get "algorithm_type" | default "" }}
+{{ $difficulty := .Get "difficulty" | default "" }}
+
+<!-- Contexto médico mejorado -->
+<div class="medical-context">
+    <h2>{{ $t.medical_context }}</h2>
+    {{ if $algorithm_type }}
+    <div class="algorithm-badge demo-mb-sm">
+        <span class="status-indicator status-info"></span>
+        <strong>{{ $t.type }}:</strong> {{ $algorithm_type | title }}
+        {{ if $difficulty }}
+        | <strong>{{ $t.level }}:</strong> {{ $difficulty | title }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="scenario-text">
+        {{ if $medical_scenario }}
+        <p><strong>{{ $t.scenario }}:</strong> {{ $medical_scenario | markdownify }}</p>
+        {{ end }}
+        {{ if $medical_highlight }}
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            {{ $medical_highlight | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+
+
+<!-- Separador visual antes de la demo -->
+<div class="demo-separator demo-mb-lg"></div>

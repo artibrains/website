@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+<div class="game-container">
+
+    <p> Genera los datos para la comparación de errores entre L1 y L2. Puedes elegir entre generar datos normales o con
+        outliers. Realiza varias iteraciones para observar cómo los errores promedio se estabilizan o cambian con
+        diferentes conjuntos de datos. Observa como en la generación con outliers, en algunos casos, las rectas de
+        regresión pueden verse afectadas de manera significativa.</p>
+
+    </p>
+    <div style="display: flex; justify-content: center; gap: 10px; padding: 10px;">
+        <button id="generateNormal" class="demo-btn demo-btn-primary demo-btn-full-width">Generar datos
+            normales</button>
+        <button id="generateOutliers" class="demo-btn demo-btn-secondary demo-btn-full-width">Generar datos con
+            outliers</button>
+    </div>
+
+    <div class="chart-and-errors"
+        style="display: flex; justify-content: center; align-items: center; flex-direction: column;"></div>
+    <div class="chart-container">
+        <canvas id="gameChart"></canvas>
+        <div id="optimizationStatus" class="optimization-status hidden">
+            <div class="spinner"></div>
+            <span class="optimization-status-message">Calculando regresiones...</span>
+        </div>
+    </div>
+    <div class="error-comparison">
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Error promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>L1 (Error absoluto)</td>
+                    <td id="errorL1">-</td>
+                </tr>
+                <tr>
+                    <td>L2 (Error cuadrático)</td>
+                    <td id="errorL2">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+<!-- Modal de resultados (opcional, si tu JS lo usa) -->
+<div id="resultsModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Resultados:</h3>
+        <p id="resultText"></p>
+        <div class="comparison-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parámetro</th>
+                        <th>Tu solución</th>
+                        <th>Solución óptima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pendiente</td>
+                        <td id="userSlope">-</td>
+                        <td id="optimalSlope">-</td>
+                    </tr>
+                    <tr>
+                        <td>Altura inicial</td>
+                        <td id="userIntercept">-</td>
+                        <td id="optimalIntercept">-</td>
+                    </tr>
+                    <tr>
+                        <td id="errorTypeLabel">Error</td>
+                        <td id="userError">-</td>
+                        <td id="optimalError">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="/js/error-comparison/error-comparison.js"></script>

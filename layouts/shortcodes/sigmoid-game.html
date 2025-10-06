@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="demo-main-layout">
+    <div class="controls-panel">
+        <div class="demo-control-group">
+            <label class="control-label" for="w1Slider">
+                <span>w1:</span>
+                <span id="w1Value" class="demo-range-value">1</span>
+            </label>
+            <input type="range" class="demo-range-input" id="w1Slider" min="-3" max="3" step="0.05" value="1">
+        </div>
+
+        <div class="demo-control-group">
+            <label class="control-label" for="w2Slider">
+                <span>w2:</span>
+                <span id="w2Value" class="demo-range-value">1</span>
+            </label>
+            <input type="range" class="demo-range-input" id="w2Slider" min="-3" max="3" step="0.05" value="1">
+        </div>
+
+        <div class="demo-control-group">
+            <label class="control-label" for="bSlider">
+                <span>b:</span>
+                <span id="bValue" class="demo-range-value">0</span>
+            </label>
+            <input type="range" class="demo-range-input" id="bSlider" min="-5" max="5" step="0.05" value="0">
+        </div>
+
+        <div class="demo-control-group">
+            <label class="control-label" for="thresholdSlider">
+                <span>Umbral:</span>
+                <span id="thresholdValue" class="demo-range-value">0.5</span>
+            </label>
+            <input type="range" class="demo-range-input" id="thresholdSlider" min="0" max="1" step="0.05" value="0.5">
+        </div>
+
+        <div class="demo-control-group">
+            <button id="toggleSigmoid" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                <span class="icon">🎨</span>
+                <span id="toggleText">Ver Probabilidades</span>
+            </button>
+            <div class="demo-info-card demo-mb-sm">
+                <span id="modeText" class="control-label">Modo actual: Clasificación Simple</span>
+                <div class="demo-control-description">
+                    <p><strong>Modo Clasificación Simple:</strong> Muestra en rojo los pacientes clasificados como "no
+                        asistirá" y en azul los que "asistirán".</p>
+                    <p><strong>Modo Probabilidades:</strong> Muestra un degradado de colores que indica la probabilidad
+                        de no asistencia (más rojo = mayor probabilidad).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-control-group">
+            <button id="checkButton" class="demo-btn demo-btn-primary demo-btn-full-width">Comprobar
+                clasificación</button>
+            <button id="resetButton" class="demo-btn demo-btn-secondary demo-btn-full-width">Nueva partida</button>
+        </div>
+    </div>
+
+    <div class="demo-content-panel">
+        <div class="demo-chart-container">
+            <canvas id="gameChart"></canvas>
+        </div>
+        <div class="demo-info-card">
+            <p class="demo-text-center">Objetivo: Lograr una precisión superior al 80%</p>
+        </div>
+    </div>
+</div>
+
+<!-- Cargar Chart.js y el script interactivo -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="/js/sigmoid-game/sigmoid-game.js"></script>

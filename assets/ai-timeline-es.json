@@ -1,0 +1,2757 @@
+{
+    "timeline": [
+        {
+            "id": "bayes-1763",
+            "date": "1763",
+            "title": "Teorema de Bayes",
+            "shortDescription": "Thomas Bayes introduce un marco probabilístico que luego se usaría en IA",
+            "fullDescription": "Thomas Bayes desarrolló una formulación matemática para razonar sobre probabilidades bajo incertidumbre. Aunque no es “IA” per se, el teorema de Bayes más tarde se volvió fundamental para el razonamiento probabilístico, la inferencia bayesiana y muchos métodos de aprendizaje automático usados ampliamente en inteligencia artificial.",
+            "references": [
+                {
+                    "title": "Thomas Bayes - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/"
+                },
+                {
+                    "title": "Teorema de Bayes (Stanford Encyclopedia of Philosophy)",
+                    "url": "https://plato.stanford.edu/entries/bayes-theorem/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "least-squares-1805",
+            "date": "1805",
+            "title": "Legendre formaliza mínimos cuadrados",
+            "shortDescription": "Adrien-Marie Legendre introduce el método de mínimos cuadrados para estimación de parámetros.",
+            "fullDescription": "Adrien-Marie Legendre publicó el método de mínimos cuadrados para estimar parámetros minimizando la suma de errores al cuadrado. Este método se volvió pilar de la regresión, la minimización de error y la optimización moderna usada en estadística y aprendizaje automático.",
+            "references": [
+                {
+                    "title": "Adrien-Marie Legendre - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Legendre/"
+                },
+                {
+                    "title": "Mínimos cuadrados – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/M%C3%ADnimos_cuadrados"
+                },
+                {
+                    "title": "Legendre (1805): Nouvelles méthodes...",
+                    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k9611335p"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "analytical-engine-1843",
+            "date": "1843",
+            "title": "Notas de Ada Lovelace sobre la Máquina Analítica",
+            "shortDescription": "Los apuntes de 1843 anticipan el cómputo programable e incluyen un algoritmo.",
+            "fullDescription": "Las notas de Ada Lovelace sobre la Máquina Analítica de Charles Babbage (1843) delinearon conceptos de cómputo de propósito general programable e incluyeron lo que suele considerarse el primer algoritmo publicado destinado a una máquina. Estas ideas anticipan la computación moderna y la lógica programable que sustenta la IA.",
+            "references": [
+                {
+                    "title": "Máquina Analítica – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/M%C3%A1quina_anal%C3%ADtica"
+                },
+                {
+                    "title": "Ada Lovelace – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Ada_Lovelace"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "boole-laws-of-thought-1854",
+            "date": "1854",
+            "title": "Boole publica ‘Laws of Thought’",
+            "shortDescription": "George Boole formaliza la lógica simbólica y el álgebra booleana.",
+            "fullDescription": "La obra de 1854 de George Boole ‘An Investigation of the Laws of Thought’ estableció la lógica simbólica y el álgebra booleana, base matemática de la lógica digital, sistemas de razonamiento y, posteriormente, de la IA simbólica.",
+            "references": [
+                {
+                    "title": "George Boole - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Boole/"
+                },
+                {
+                    "title": "An Investigation of the Laws of Thought (1854)",
+                    "url": "https://archive.org/details/investigationofl00boolrich"
+                },
+                {
+                    "title": "Álgebra booleana – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/%C3%81lgebra_booleana"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "logic-foundations-1900s",
+            "date": "1900",
+            "title": "Maduración de la teoría de conjuntos y la lógica formal",
+            "shortDescription": "Cantor, Frege, Russell & Whitehead y otros cimentan las bases de la lógica y las matemáticas.",
+            "fullDescription": "Desde principios del siglo XX hasta los años 30, maduraron los fundamentos de la teoría de conjuntos y la lógica formal: la teoría de conjuntos de Cantor, la lógica de predicados de Frege, y los ‘Principia Mathematica’ de Russell y Whitehead. Habilitaron demostraciones formales, lógica de predicados y teoría de modelos que sustentan el razonamiento simbólico en IA.",
+            "references": [
+                {
+                    "title": "Teoría de conjuntos – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Teor%C3%ADa_de_conjuntos"
+                },
+                {
+                    "title": "Principia Mathematica – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Principia_Mathematica"
+                },
+                {
+                    "title": "Lógica de primer orden – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/L%C3%B3gica_de_primer_orden"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "godel-incompleteness-1931",
+            "date": "1931",
+            "title": "Teoremas de incompletitud de Gödel",
+            "shortDescription": "Gödel demuestra límites inherentes de los sistemas axiomáticos formales.",
+            "fullDescription": "Kurt Gödel mostró que todo sistema formal suficientemente potente y consistente no puede demostrar todas las verdades aritméticas dentro del propio sistema. Estos resultados remodelaron la lógica e influyeron en debates sobre los límites del razonamiento mecanizado.",
+            "references": [
+                {
+                    "title": "Kurt Gödel - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Godel/"
+                },
+                {
+                    "title": "Teoremas de incompletitud de Gödel – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Teoremas_de_la_incompletitud_de_G%C3%B6del"
+                },
+                {
+                    "title": "Stanford Encyclopedia: Gödel's Incompleteness Theorems",
+                    "url": "https://plato.stanford.edu/entries/goedel-incompleteness/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "turing-machine-1936",
+            "date": "1936",
+            "title": "Turing define la máquina de Turing universal",
+            "shortDescription": "Alan Turing formaliza el modelo matemático de la computación.",
+            "fullDescription": "En 1936, Alan Turing publicó ‘On Computable Numbers’ describiendo una máquina abstracta capaz de realizar cualquier cómputo que pueda describirse algorítmicamente. La máquina de Turing universal se convirtió en la base de la teoría de la computación y el sustrato de la IA algorítmica.",
+            "references": [
+                {
+                    "title": "On Computable Numbers (1936)",
+                    "url": "https://www.jstor.org/stable/2371049"
+                },
+                {
+                    "title": "Máquina de Turing – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "critical",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "mcculloch-pitts-1943",
+            "date": "1943",
+            "title": "McCulloch & Pitts modelan la primera neurona artificial",
+            "shortDescription": "Unidades umbral binarias realizan operaciones lógicas; nacimiento matemático de las RNA.",
+            "fullDescription": "Warren McCulloch y Walter Pitts propusieron un modelo de neuronas artificiales como unidades umbral binarias capaces de computar funciones lógicas, uniendo neurobiología y lógica y sentando las bases de las redes neuronales artificiales.",
+            "references": [
+                {
+                    "title": "A logical calculus of the ideas immanent in nervous activity (1943)",
+                    "url": "https://link.springer.com/article/10.1007/BF02478259"
+                },
+                {
+                    "title": "Neurona artificial – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Neurona_artificial"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "shannon-information-theory-1948",
+            "date": "1948",
+            "title": "Shannon funda la teoría de la información",
+            "shortDescription": "Entropía e información cuantifican incertidumbre y comunicación.",
+            "fullDescription": "‘A Mathematical Theory of Communication’ de Claude Shannon definió entropía, información mutua y el marco matemático de la comunicación. Estos conceptos sustentan codificación, compresión y funciones de pérdida, y se usan ampliamente en IA.",
+            "references": [
+                {
+                    "title": "Claude Shannon - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Shannon/"
+                },
+                {
+                    "title": "A Mathematical Theory of Communication (1948)",
+                    "url": "https://ieeexplore.ieee.org/document/6773024"
+                },
+                {
+                    "title": "Teoría de la información – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Teor%C3%ADa_de_la_informaci%C3%B3n"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "critical",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "bellman-dp-1957",
+            "date": "1957",
+            "title": "Bellman formaliza la Programación Dinámica",
+            "shortDescription": "Las ecuaciones de Bellman resuelven decisiones secuenciales (MDPs).",
+            "fullDescription": "La programación dinámica de Richard Bellman proporcionó un método general y ecuaciones recursivas (ecuaciones de Bellman) para la toma de decisiones secuenciales óptima. La PD sustenta los procesos de decisión de Markov y el aprendizaje por refuerzo moderno.",
+            "references": [
+                {
+                    "title": "Richard Bellman - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bellman/"
+                },
+                {
+                    "title": "Programación dinámica – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Programaci%C3%B3n_din%C3%A1mica"
+                },
+                {
+                    "title": "Dynamic Programming (1957) — Princeton University Press",
+                    "url": "https://press.princeton.edu/books/hardcover/9780691146683/dynamic-programming"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "fuzzy-logic-1965",
+            "date": "1965",
+            "title": "Zadeh introduce conjuntos difusos y lógica difusa",
+            "shortDescription": "Lotfi A. Zadeh propone conjuntos difusos para modelar vaguedad y verdad parcial.",
+            "fullDescription": "‘Fuzzy Sets’ (1965) de Lotfi Zadeh introdujo un marco matemático para razonar con vaguedad y verdades parciales. La lógica difusa permitió que sistemas de control e IA manejaran información imprecisa.",
+            "references": [
+                {
+                    "title": "Conjunto difuso – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Conjunto_difuso"
+                },
+                {
+                    "title": "Zadeh (1965) Fuzzy Sets, Information and Control",
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S001999586590241X"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "hopfield-1982",
+            "date": "1982",
+            "title": "Redes de Hopfield conectan física y memoria asociativa",
+            "shortDescription": "Redes recurrentes con energía modelan memoria direccionable por contenido.",
+            "fullDescription": "John Hopfield introdujo redes neuronales recurrentes con una función de energía y dinámica de atractores para modelar memoria asociativa, conectando ideas de la física estadística con el cómputo neuronal.",
+            "references": [
+                {
+                    "title": "Neural networks and physical systems... (PNAS, 1982)",
+                    "url": "https://www.pnas.org/doi/10.1073/pnas.79.8.2554"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Era de Sistemas Expertos",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "pearl-bayesian-networks-1985",
+            "date": "1985",
+            "title": "Pearl formaliza redes bayesianas y razonamiento causal",
+            "shortDescription": "Modelos gráficos probabilísticos unifican el razonamiento bajo incertidumbre.",
+            "fullDescription": "Judea Pearl y colegas desarrollaron las redes bayesianas —modelos gráficos que representan dependencias probabilísticas— y algoritmos de inferencia asociados, proporcionando un marco unificador para el razonamiento bajo incertidumbre y la inferencia causal.",
+            "references": [
+                {
+                    "title": "Probabilistic Reasoning in Intelligent Systems (Pearl, 1988)",
+                    "url": "https://es.wikipedia.org/wiki/Probabilistic_Reasoning_in_Intelligent_Systems"
+                },
+                {
+                    "title": "Fusion, Propagation, and Structuring in Belief Networks (1986)",
+                    "url": "https://ieeexplore.ieee.org/document/4304852"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Era de Sistemas Expertos",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "slt-1995",
+            "date": "1995",
+            "title": "Teoría Estadística del Aprendizaje y dimensión VC",
+            "shortDescription": "La SLT de Vapnik fundamenta generalización y complejidad de modelos.",
+            "fullDescription": "La Teoría Estadística del Aprendizaje, incluyendo la dimensión VC y cotas, formalizó cuándo es posible aprender de datos y cómo la complejidad afecta la generalización. Proporcionó la base de las SVMs y gran parte de la teoría moderna del aprendizaje.",
+            "references": [
+                {
+                    "title": "Vapnik (1995) The Nature of Statistical Learning Theory",
+                    "url": "https://link.springer.com/book/10.1007/978-1-4757-2440-0"
+                },
+                {
+                    "title": "Teoría VC – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Teor%C3%ADa_de_Vapnik-Chervonenkis"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "second-ai-winter",
+            "phase_info": {
+                "name": "Segundo Invierno de la IA",
+                "color": "#f0f0f5",
+                "period": "1987-1996"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "cnn-lenet-1998",
+            "date": "1998",
+            "title": "CNNs popularizadas (LeNet-5)",
+            "shortDescription": "LeCun et al. demuestran redes convolucionales para reconocimiento de documentos.",
+            "fullDescription": "LeCun y colegas popularizaron las redes neuronales convolucionales con LeNet-5, mostrando cómo la convolución, el ‘pooling’ y el ‘weight sharing’ permiten reconocimiento robusto en imágenes y documentos —anticipando los grandes avances posteriores en visión profunda.",
+            "references": [
+                {
+                    "title": "Gradient-Based Learning Applied to Document Recognition (1998)",
+                    "url": "https://ieeexplore.ieee.org/document/726791"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "Resurgimiento de la IA",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "kernel-methods-2002",
+            "date": "2002",
+            "title": "Métodos kernel formalizados",
+            "shortDescription": "El libro de Schölkopf & Smola sintetiza el ‘truco del kernel’ para aprendizaje no lineal.",
+            "fullDescription": "Los métodos de kernel mapean los datos de manera implícita a espacios de alta dimensión, impulsando SVMs y otros algoritmos no lineales. ‘Learning with Kernels’ (Schölkopf & Smola) consolidó teoría y práctica del aprendizaje con kernels.",
+            "references": [
+                {
+                    "title": "Learning with Kernels (2002) — MIT Press",
+                    "url": "https://mitpress.mit.edu/9780262194754/learning-with-kernels/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "Resurgimiento de la IA",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "sutton-barto-rl-1998",
+            "date": "1998",
+            "title": "Sutton & Barto unifican la teoría de RL",
+            "shortDescription": "La primera edición de ‘Reinforcement Learning: An Introduction’ consolida fundamentos.",
+            "fullDescription": "El libro de Sutton y Barto unificó las bases conceptuales y algorítmicas del aprendizaje por refuerzo, conectando MDPs, ecuaciones de Bellman, aprendizaje por diferencias temporales y métodos de gradiente de política en un marco coherente.",
+            "references": [
+                {
+                    "title": "Reinforcement Learning: An Introduction (1998) — Libro",
+                    "url": "http://incompleteideas.net/book/first/ebook/the-book.html"
+                },
+                {
+                    "title": "Aprendizaje por refuerzo – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/Aprendizaje_por_refuerzo"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "Resurgimiento de la IA",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "dbn-2006",
+            "date": "2006",
+            "title": "Deep Belief Networks reavivan el aprendizaje profundo",
+            "shortDescription": "Hinton et al. introducen preentrenamiento capa a capa en modelos generativos profundos.",
+            "fullDescription": "Geoffrey Hinton y colegas introdujeron las Deep Belief Networks con un algoritmo rápido de preentrenamiento codicioso capa a capa, reavivando el interés por arquitecturas profundas y el modelado generativo antes del auge supervisado posterior.",
+            "references": [
+                {
+                    "title": "A Fast Learning Algorithm for Deep Belief Nets (2006)",
+                    "url": "https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf"
+                },
+                {
+                    "title": "Reducing the Dimensionality of Data with Neural Networks (Science, 2006)",
+                    "url": "https://www.science.org/doi/10.1126/science.1127647"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "Resurgimiento de la IA",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "turing-1950",
+            "date": "1950",
+            "title": "Test de Turing / ‘Computing Machinery and Intelligence’",
+            "shortDescription": "Alan Turing publica ‘Computing Machinery and Intelligence’, proponiendo el Test de Turing",
+            "fullDescription": "En 1950, Alan Turing publicó el artículo seminal “Computing Machinery and Intelligence” en la revista *Mind*, en el que planteó la pregunta “¿Pueden las máquinas pensar?” En lugar de definir directamente el pensamiento, propuso el juego de imitación (ahora conocido como Test de Turing) como un criterio pragmático para evaluar la inteligencia de una máquina. Esta obra ha influido profundamente el debate filosófico y técnico sobre la IA.",
+            "references": [
+                {
+                    "title": "Computing Machinery and Intelligence – Artículo original",
+                    "url": "https://academic.oup.com/mind/article/LIX/236/433/986238"
+                },
+                {
+                    "title": "El Test de Turing (Stanford Encyclopedia of Philosophy)",
+                    "url": "https://plato.stanford.edu/entries/turing-test/"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/alan-turing.jpg",
+                "caption": "Alan Turing en su juventud",
+                "credit": "Wikimedia Commons",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "snarc-1951",
+            "date": "1951",
+            "title": "SNARC – Primer hardware de red neuronal artificial",
+            "shortDescription": "Marvin Minsky y Dean Edmonds construyen el simulador neuronal SNARC",
+            "fullDescription": "En 1951, Marvin Minsky y Dean Edmonds desarrollaron el SNARC (Stochastic Neural Analog Reinforcement Calculator), un simulador de redes neuronales basado en hardware con tubos de vacío para simular una red de unidades neuronales. Fue uno de los primeros experimentos de hardware que trataba de imitar redes neuronales, y un hito temprano en la investigación de redes artificiales.",
+            "references": [
+                {
+                    "title": "Historia de la Inteligencia Artificial: Cronología completa",
+                    "url": "https://www.techtarget.com/searchenterpriseai/tip/The-history-of-artificial-intelligence-Complete-AI-timeline"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "infrastructure"
+            ],
+            "category_info": [
+                {
+                    "id": "infrastructure",
+                    "name": "Infraestructura",
+                    "color": "#9E9E9E",
+                    "icon": "🔧",
+                    "description": "Hardware, software, and computing platforms"
+                }
+            ]
+        },
+        {
+            "id": "checkers-1952",
+            "date": "1952",
+            "title": "Programa de damas de Arthur Samuel",
+            "shortDescription": "Arthur Samuel programa una máquina para jugar a las damas, demostrando aprendizaje",
+            "fullDescription": "Arthur Samuel desarrolló un programa para jugar a las damas que mejoraba su desempeño a través del aprendizaje a partir de la experiencia, en lugar de usar solo reglas fijas. Fue una demostración temprana de que una máquina puede aprender y adaptarse.",
+            "references": [
+                {
+                    "title": "Historia de la IA: Cronología y futuro",
+                    "url": "https://online.maryville.edu/blog/history-of-ai/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Bases Tempranas",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "dartmouth-1956",
+            "date": "1956",
+            "title": "Taller de Dartmouth y nacimiento de la IA",
+            "shortDescription": "Se acuña el término “Inteligencia Artificial”; taller fundacional en Dartmouth",
+            "fullDescription": "Durante el verano de 1956, se celebró el Dartmouth Summer Research Project on Artificial Intelligence en Dartmouth College. Organizado por John McCarthy, Marvin Minsky, Nathaniel Rochester y Claude Shannon, el taller es considerado como el evento fundacional del campo de la IA y fue allí que por primera vez se usó explícitamente el término “inteligencia artificial” en una propuesta.",
+            "references": [
+                {
+                    "title": "Dartmouth Summer Research Project on Artificial Intelligence",
+                    "url": "https://en.wikipedia.org/wiki/Dartmouth_workshop"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "logic-theorist-1956",
+            "date": "1956",
+            "title": "Logic Theorist",
+            "shortDescription": "Newell, Shaw y Simon crean Logic Theorist, primer programa de razonamiento lógico",
+            "fullDescription": "En 1956, Allen Newell, Herbert A. Simon y Clifford Shaw desarrollaron Logic Theorist, considerado ampliamente como el primer programa diseñado para realizar razonamiento lógico automático. Demostró teoremas del *Principia Mathematica* y halló algunas demostraciones más cortas que las conocidas.",
+            "references": [
+                {
+                    "title": "Logic Theorist (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Logic_Theorist"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "perceptron-1958",
+            "date": "1958",
+            "title": "Perceptrón (Rosenblatt)",
+            "shortDescription": "Frank Rosenblatt introduce el perceptrón, arquitectura neuronal inicial",
+            "fullDescription": "En 1958, Frank Rosenblatt propuso y construyó el perceptrón, una red neuronal de capa única capaz de hacer clasificación binaria. Se le consideraba capaz de aprender por ensayo y error y sentó las bases para la investigación posterior en redes neuronales.",
+            "references": [
+                {
+                    "title": "Historia de la Inteligencia Artificial – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/mark-i-perceptron.jpeg",
+                "caption": "El Mark I Perceptron, primera implementación del perceptrón de Rosenblatt",
+                "credit": "Wikimedia Commons (Public Domain)",
+                "credit_url": "https://en.wikipedia.org/wiki/File:Mark_I_perceptron.jpeg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "lisp-1958",
+            "date": "1958",
+            "title": "Lenguaje LISP",
+            "shortDescription": "John McCarthy crea el lenguaje LISP",
+            "fullDescription": "En 1958, John McCarthy diseñó LISP (LISt Processing), un lenguaje apto para el cómputo simbólico. Introdujo características como recursión, expresiones simbólicas y recolección de basura. LISP llegaría a ser predominante en investigación de IA durante décadas.",
+            "references": [
+                {
+                    "title": "Historia de la Inteligencia Artificial – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "shakey-1966",
+            "date": "1966",
+            "title": "Shakey el Robot",
+            "shortDescription": "SRI desarrolla Shakey, robot móvil con razonamiento",
+            "fullDescription": "En 1966, SRI International desarrolló Shakey, el primer robot de propósito general que podía percibir su entorno, razonar sobre tareas y planear acciones. Integró visión, planificación y navegación, siendo un hito en robótica e IA.",
+            "references": [
+                {
+                    "title": "Shakey the Robot (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Shakey_the_robot"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/shakey-robot.jpg",
+                "caption": "Shakey el Robot, primer robot móvil autónomo con capacidad de razonamiento",
+                "credit": "Wikimedia Commons (Public Domain - SRI International)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:SRI_Shakey_with_callouts.jpg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "eliza-1966",
+            "date": "1966",
+            "title": "Chatbot ELIZA",
+            "shortDescription": "Joseph Weizenbaum construye ELIZA, agente temprano de NLP",
+            "fullDescription": "Joseph Weizenbaum en el MIT creó ELIZA en 1966: un programa de procesamiento de lenguaje natural que simulaba conversación mediante coincidencia de patrones y reglas de sustitución. El guion más famoso, DOCTOR, emulaba a un psicoterapeuta rogeriano. ELIZA mostró tanto las posibilidades como las limitaciones de los agentes conversacionales.",
+            "references": [
+                {
+                    "title": "ELIZA (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/ELIZA"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Nacimiento de la IA",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "first-ai-winter-1974",
+            "date": "1974",
+            "title": "Comienzo del primer invierno de la IA",
+            "shortDescription": "Período de menor financiación y optimismo en IA",
+            "fullDescription": "A mediados de los años 70, las expectativas sobre IA excedían los avances reales. Muchos programas simbólicos tenían dificultades para escalar, los recursos informáticos eran limitados, y surgieron críticas sobre la viabilidad del enfoque. Esto desencadenó una caída en la financiación y ralentización del progreso, conocido como el primer “invierno de la IA”.",
+            "references": [
+                {
+                    "title": "Historia de la IA: Cronología y futuro",
+                    "url": "https://online.maryville.edu/blog/history-of-ai/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "first-ai-winter",
+            "phase_info": {
+                "name": "Primer Invierno de la IA",
+                "color": "#e6f0ff",
+                "period": "1974-1979"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "expert-systems-boom-1980",
+            "date": "1980",
+            "title": "Auge de los sistemas expertos",
+            "shortDescription": "Sistemas expertos obtienen uso comercial (por ejemplo, XCON)",
+            "fullDescription": "Durante la década de 1980, los sistemas expertos basados en reglas se convirtieron en el enfoque dominante de la IA aplicada. Sistemas que codificaban conocimiento especializado se desplegaron en diagnóstico, soporte a decisiones, control industrial y configuración de sistemas. Muchos éxitos comerciales de la IA en esa época provinieron de sistemas expertos.",
+            "references": [
+                {
+                    "title": "La Historia de la Inteligencia Artificial – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Era de Sistemas Expertos",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "second-ai-winter-1987",
+            "date": "1987",
+            "title": "Segundo invierno de la IA",
+            "shortDescription": "Declive del interés en sistemas expertos y IA simbólica",
+            "fullDescription": "A finales de los 80, muchos sistemas expertos demostraron ser frágiles, costosos de mantener y poco adaptativos. Unidos a las dificultades para escalar la IA simbólica, esto provocó una nueva caída en financiación e interés en investigación, conocido como el segundo invierno de la IA.",
+            "references": [
+                {
+                    "title": "La Historia de la Inteligencia Artificial – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "second-ai-winter",
+            "phase_info": {
+                "name": "Segundo Invierno de la IA",
+                "color": "#f0f0f5",
+                "period": "1987-1996"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "backprop-1986",
+            "date": "1986",
+            "title": "Reavivamiento del backpropagation / popularización",
+            "shortDescription": "Rumelhart, Hinton & Williams popularizan backpropagation para redes profundas",
+            "fullDescription": "Aunque el algoritmo de retropropagación (backpropagation) ya se conocía, en 1986 David Rumelhart, Geoffrey Hinton y Ronald Williams lo popularizaron como método para entrenar redes neuronales multicapa usando descenso por gradiente. Esto permitió arquitecturas neuronales más complejas y relanzó el interés por redes neuronales.",
+            "references": [
+                {
+                    "title": "Una breve historia de la IA en 10 momentos clave (WEF)",
+                    "url": "https://www.weforum.org/stories/2024/10/history-of-ai-artificial-intelligence/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Era de Sistemas Expertos",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "deep-blue-1997",
+            "date": "1997",
+            "title": "Deep Blue vence a Garry Kasparov",
+            "shortDescription": "El ordenador Deep Blue de IBM vence al campeón mundial Kasparov",
+            "fullDescription": "En 1997, el sistema de ajedrez Deep Blue de IBM derrotó a Garry Kasparov en una partida. Fue un hito que demostró que las máquinas podían superar a humanos en tareas estratégicas complejas, aunque en un dominio bien delimitado.",
+            "references": [
+                {
+                    "title": "La historia de la IA: cronología de 1940 a 2023",
+                    "url": "https://www.calls9.com/blogs/the-history-of-ai-a-timeline-from-1940-to-2023"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/deep-blue.jpg",
+                "caption": "El ordenador Deep Blue de IBM, que derrotó al campeón mundial de ajedrez Garry Kasparov",
+                "credit": "Wikimedia Commons (Public Domain)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:Deep_Blue.jpg"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "Resurgimiento de la IA",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "imagenet-2012",
+            "date": "2012",
+            "title": "Avance en ImageNet y redes convolucionales",
+            "shortDescription": "AlexNet gana ImageNet, disparando el dominio del deep learning",
+            "fullDescription": "En 2012, una red neuronal convolucional llamada AlexNet (Krizhevsky, Sutskever, Hinton) ganó el concurso de reconocimiento visual ImageNet con una mejora significativa. Este resultado se considera como el disparador de la adopción masiva del deep learning en visión por computador y otras áreas.",
+            "references": [
+                {
+                    "title": "La IA boom (Wikipedia)",
+                    "url": "https://es.wikipedia.org/wiki/AI_boom"
+                }
+            ],
+            "media": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Comparison_image_neural_networks.svg",
+                "caption": "Comparación de arquitecturas de redes neuronales. AlexNet revolucionó la visión por computador",
+                "credit": "Wikimedia Commons (CC BY-SA 4.0)"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "wave-net-2016",
+            "date": "2016",
+            "title": "WaveNet: generación de voz",
+            "shortDescription": "WaveNet de DeepMind genera habla altamente natural",
+            "fullDescription": "En 2016, DeepMind presentó WaveNet, un modelo generativo para audio en crudo que produce habla con entonación y prosodia naturales, superando calidad de métodos anteriores. Fue un avance significativo en generación de voz realista.",
+            "references": [
+                {
+                    "title": "10 hitos de la IA en los últimos 10 años (Royal Institution)",
+                    "url": "https://www.rigb.org/explore-science/explore/blog/10-ai-milestones-last-10-years"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "alphago-2016",
+            "date": "2016",
+            "title": "AlphaGo vence a Lee Sedol",
+            "shortDescription": "IA vence campeón mundial de Go",
+            "fullDescription": "En marzo de 2016, AlphaGo de DeepMind derrotó a Lee Sedol, campeón mundial de Go, en un enfrentamiento de cinco partidas. Go había sido considerado un desafío mayor que el ajedrez por su complejidad combinatoria, y esta victoria representó un salto en la capacidad estratégica, reconocimiento de patrones y aprendizaje de la IA.",
+            "references": [
+                {
+                    "title": "Cronología de la inteligencia artificial (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence"
+                },
+                {
+                    "title": "Humano vs Computadora en Go: revisión y perspectivas",
+                    "url": "https://arxiv.org/abs/1606.02032"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/go-board.jpg",
+                "caption": "Tablero de Go. AlphaGo dominó este juego milenario de complejidad combinatoria extrema",
+                "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:FloorGoban.JPG"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "transformer-2017",
+            "date": "2017",
+            "title": "Se introduce la arquitectura Transformer",
+            "shortDescription": "El artículo ‘Attention Is All You Need’ abre nuevo paradigma para NLP",
+            "fullDescription": "En 2017, el artículo de Google “Attention Is All You Need” presentó la arquitectura Transformer, que utiliza mecanismos de auto-atención. Esta arquitectura permite paralelización eficiente y mejor manejo de dependencias de largo alcance en datos secuenciales. Los Transformers se han convertido en la base de la mayoría de los modelos de lenguaje actuales.",
+            "references": [
+                {
+                    "title": "Transformer (arquitectura de deep learning) – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Transformer_%28deep_learning_architecture%29"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "gan-2014",
+            "date": "2014",
+            "title": "Redes Generativas Antagónicas (GANs)",
+            "shortDescription": "Ian Goodfellow introduce las GANs",
+            "fullDescription": "En 2014, Ian Goodfellow y colaboradores introdujeron las Redes Generativas Antagónicas (GANs), un marco en que dos redes neuronales (generador y discriminador) compiten. Las GANs permitieron la generación de datos sintéticos realistas (imágenes, video, etc.) y han tenido gran influencia en la IA creativa, el aprendizaje no supervisado y los modelos generativos.",
+            "references": [
+                {
+                    "title": "Goodfellow et al., introducción de GANs",
+                    "url": "https://papers.nips.cc/paper/5423-generative-adversarial-nets"
+                },
+                {
+                    "title": "Cronología del aprendizaje automático – GANs (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Timeline_of_machine_learning"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "bert-2018",
+            "date": "2018-10-31",
+            "title": "Lanzamiento de BERT",
+            "shortDescription": "Google AI presenta BERT, avance importante en NLP",
+            "fullDescription": "El 31 de octubre de 2018, Google AI publicó BERT (Bidirectional Encoder Representations from Transformers), un modelo entrenado para comprender el contexto del lenguaje de forma bidireccional. BERT logró resultados de estado del arte en tareas de NLP como preguntas y respuestas, emparejamiento de frases y más.",
+            "references": [
+                {
+                    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+                    "url": "https://arxiv.org/abs/1810.04805"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "gpt-1-2018",
+            "date": "2018-06-11",
+            "title": "Lanzamiento de GPT-1",
+            "shortDescription": "OpenAI publica el primer Transformer Generativo Pre-entrenado",
+            "fullDescription": "En junio de 2018, OpenAI lanzó GPT-1, demostrando que el preentrenamiento no supervisado sobre grandes corpus seguido de ajuste fino podía dar buen desempeño en tareas de NLP. Sentó las bases para GPT-2, GPT-3, etc.",
+            "references": [
+                {
+                    "title": "Blog de OpenAI: Language Unsupervised",
+                    "url": "https://openai.com/blog/language-unsupervised"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "gpt-2-2019",
+            "date": "2019-02",
+            "title": "Anuncio de GPT-2",
+            "shortDescription": "OpenAI lanza GPT-2 con capacidad mucho mayor",
+            "fullDescription": "En febrero de 2019, OpenAI presentó GPT-2, un modelo de lenguaje basado en Transformer con 1,5 mil millones de parámetros. GPT-2 demostró que escalar tamaño del modelo y datos podía generar textos más coherentes y capacidades emergentes. Su lanzamiento completo se retrasó por preocupaciones de seguridad.",
+            "references": [
+                {
+                    "title": "Anuncio de GPT-2 (OpenAI)",
+                    "url": "https://openai.com/blog/better-language-models"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "alphazero-2017",
+            "date": "2017-12",
+            "title": "AlphaZero: aprendizaje general por refuerzo",
+            "shortDescription": "AlphaZero aprende Go, Ajedrez y Shogi mediante auto-juego",
+            "fullDescription": "En diciembre de 2017, DeepMind publicó “Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm” (AlphaZero). Partiendo del juego aleatorio y conociendo solo las reglas, el sistema alcanzó rendimiento superhumano en Go, Ajedrez y Shogi sin usar datos humanos.",
+            "references": [
+                {
+                    "title": "Mastering Chess and Shogi by Self-Play with a General RL Algorithm (AlphaZero)",
+                    "url": "https://arxiv.org/abs/1712.01815"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphafold1-2018",
+            "date": "2018-12",
+            "title": "AlphaFold 1 gana CASP",
+            "shortDescription": "Primer gran éxito en predicción de estructura de proteínas",
+            "fullDescription": "En diciembre de 2018, DeepMind presentó el desempeño de AlphaFold 1 en la competencia CASP (CASP13), alcanzando resultados de vanguardia en predicción de estructuras proteicas. Aunque no perfecto, constituyó un gran avance en la aplicación de IA a la biología.",
+            "references": [
+                {
+                    "title": "Desempeño de AlphaFold en CASP (2018)",
+                    "url": "https://en.wikipedia.org/wiki/Timeline_of_machine_learning"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "gpt-3-2020",
+            "date": "2020-05",
+            "title": "Lanzamiento de GPT-3",
+            "shortDescription": "OpenAI lanza GPT-3, un modelo de lenguaje mucho mayor",
+            "fullDescription": "En mayo de 2020, OpenAI lanzó GPT-3 (175 mil millones de parámetros), demostrando capacidades de aprendizaje con pocos ejemplos (few-shot) y estableciendo un nuevo estándar en generación de lenguaje. Fue accesible mediante API para usuarios selectos. Su habilidad para generar texto casi humano despertó enorme interés público.",
+            "references": [
+                {
+                    "title": "GPT-3 (“Language Models are Few-Shot Learners”)",
+                    "url": "https://arxiv.org/abs/2005.14165"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "alphafold-2021",
+            "date": "2021-07-15",
+            "title": "AlphaFold resuelve el plegamiento de proteínas (Nature 2021)",
+            "shortDescription": "DeepMind reporta predicción de estructuras proteicas con alta precisión",
+            "fullDescription": "En 2021, AlphaFold de DeepMind logró una predicción de estructuras de proteínas con altísima precisión en diversos objetivos, tal y como fue reportado en Nature. Este resultado histórico ha tenido gran impacto en biología y descubrimiento de fármacos, y abrió el camino a bases de datos públicas de estructuras predichas.",
+            "references": [
+                {
+                    "title": "Highly accurate protein structure prediction with AlphaFold (Nature, 2021)",
+                    "url": "https://www.nature.com/articles/s41586-021-03819-2"
+                },
+                {
+                    "title": "AlphaFold – Wikipedia",
+                    "url": "https://es.wikipedia.org/wiki/AlphaFold"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "alphafold2-2020",
+            "date": "2020-11",
+            "title": "Avance de AlphaFold 2",
+            "shortDescription": "DeepMind resuelve el plegamiento de proteínas con alta precisión",
+            "fullDescription": "En noviembre de 2020, AlphaFold 2 de DeepMind logró grandes avances en la competencia CASP, alcanzando alta precisión en la predicción de estructuras proteicas para muchas proteínas. Fue un salto importante en el impacto de la IA en descubrimientos científicos y biomédicos.",
+            "references": [
+                {
+                    "title": "Resultados de AlphaFold 2 (CASP)",
+                    "url": "https://www.nature.com/articles/s41586-021-03819-2"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Teoría",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "eu-ai-act-2024",
+            "date": "2024-08-01",
+            "title": "Entrada en vigor del Acta de Inteligencia Artificial de la UE",
+            "shortDescription": "Comienza legalmente la primera regulación integral de IA en la UE",
+            "fullDescription": "El 1 de agosto de 2024 entró en vigor el Acta de Inteligencia Artificial de la Unión Europea (Reglamento (UE) 2024/1689). Busca crear normas armonizadas para la IA en la UE, abordar riesgos para la salud, la seguridad y derechos fundamentales, clasificar aplicaciones de IA por niveles de riesgo, imponer transparencia y obligaciones a los modelos de IA de propósito general.",
+            "references": [
+                {
+                    "title": "El Acta de IA entra en vigor – Comisión Europea",
+                    "url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en?utm_source=chatgpt.com"
+                },
+                {
+                    "title": "Acta de Inteligencia Artificial (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "eu-ai-act-provisions-2025",
+            "date": "2025-02-02",
+            "title": "Entradas en vigor: prácticas prohibidas y obligaciones de alfabetización en IA",
+            "shortDescription": "Comienzan obligaciones legales bajo el Acta de IA de la UE",
+            "fullDescription": "Desde el 2 de febrero de 2025, bajo el Acta de IA de la UE, ciertas prácticas de IA consideradas inaceptables quedan prohibidas y comienzan a aplicarse requisitos de alfabetización en IA (concienciación pública). Es parte de la implementación faseada del reglamento.",
+            "references": [
+                {
+                    "title": "Cronograma de implementación – Acta de IA UE",
+                    "url": "https://artificialintelligenceact.eu/implementation-timeline/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "eu-ai-act-gpai-2025",
+            "date": "2025-08-02",
+            "title": "Obligaciones para IA de propósito general (GPAI) en la UE comienzan a aplicarse",
+            "shortDescription": "Empiezan a aplicarse reglas para modelos de IA de propósito general en la UE",
+            "fullDescription": "A partir del 2 de agosto de 2025, las disposiciones del Acta de IA relativas a modelos de IA de propósito general comienzan a aplicarse. Esto incluye obligaciones de gobernanza, transparencia, documentación de datos de entrenamiento, etc., conforme al calendario faseado de la ley.",
+            "references": [
+                {
+                    "title": "Acta de IA de la UE: cronogramas y aplicación",
+                    "url": "https://www.lw.com/en/insights/eu-ai-act-published-a-new-era-for-ai"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "framework-ai-convention-2024",
+            "date": "2024-09-05",
+            "title": "Convención Marco sobre IA firmada",
+            "shortDescription": "Tratado del Consejo de Europa sobre IA, derechos humanos, democracia",
+            "fullDescription": "El 5 de septiembre de 2024 fue adoptada la Convención Marco sobre Inteligencia Artificial, Derechos Humanos, Democracia y Estado de Derecho bajo el auspicio del Consejo de Europa. Busca garantizar que el desarrollo y uso de tecnologías de IA se alineen con los derechos fundamentales, valores democráticos y el estado de derecho, abordando riesgos como desinformación, discriminación algorítmica y amenazas institucionales.",
+            "references": [
+                {
+                    "title": "Convención Marco sobre Inteligencia Artificial",
+                    "url": "https://en.wikipedia.org/wiki/Framework_Convention_on_Artificial_Intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "resnet-2015",
+            "date": "2015",
+            "title": "ResNet-152 gana ImageNet; se populariza el aprendizaje residual",
+            "shortDescription": "Las conexiones residuales validan redes CNN mucho más profundas.",
+            "fullDescription": "En 2015, las redes residuales profundas (ResNet) de Microsoft ganaron el desafío ILSVRC ImageNet. Al introducir conexiones de salto (skip/identity), ResNet mitigó el problema del gradiente evanescente y volvió práctico entrenar redes muy profundas, convirtiéndose en base para clasificación, detección y otras tareas de visión.",
+            "references": [
+                {
+                    "title": "Deep Residual Learning for Image Recognition (arXiv 1512.03385)",
+                    "url": "https://arxiv.org/abs/1512.03385"
+                },
+                {
+                    "title": "Deep Residual Learning for Image Recognition (CVPR 2016)",
+                    "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html"
+                },
+                {
+                    "title": "ImageNet Large Scale Visual Recognition Challenge (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/ImageNet_Large_Scale_Visual_Recognition_Challenge"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphago-zero-2017",
+            "date": "2017-10-18",
+            "title": "AlphaGo Zero aprende Go desde cero",
+            "shortDescription": "Auto-juego desde las reglas supera a AlphaGo entrenado con partidas humanas.",
+            "fullDescription": "AlphaGo Zero de DeepMind aprendió a jugar Go únicamente mediante auto-juego partiendo de movimientos aleatorios, usando solo las reglas del juego, y superó al AlphaGo anterior que aprendía también de partidas humanas. Demostró el poder del aprendizaje por refuerzo sin supervisión humana para dominios complejos.",
+            "references": [
+                {
+                    "title": "Mastering the game of Go without human knowledge (Nature, 2017)",
+                    "url": "https://www.nature.com/articles/nature24270"
+                },
+                {
+                    "title": "Cobertura de Axios sobre AlphaGo Zero",
+                    "url": "https://www.axios.com/2017/10/18/alphago-zero-deepmind-ai-1513304101"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "transformer-proliferation-2019",
+            "date": "2019",
+            "title": "Transformers se expanden más allá del NLP (visión, multimodal)",
+            "shortDescription": "La auto-atención se aplica a visión y tareas multimodales.",
+            "fullDescription": "Tras el Transformer, los modelos basados en atención proliferaron más allá del NLP hacia visión y aprendizaje multimodal. Trabajos como Stand-Alone Self-Attention para reconocimiento de imágenes y modelos multimodales como ViLBERT y LXMERT marcaron un cambio respecto a enfoques centrados en CNN/RNN.",
+            "references": [
+                {
+                    "title": "Stand-Alone Self-Attention in Vision Models (2019)",
+                    "url": "https://arxiv.org/abs/1906.05909"
+                },
+                {
+                    "title": "ViLBERT: Pretraining Task-Agnostic V-L Representations (2019)",
+                    "url": "https://arxiv.org/abs/1908.02265"
+                },
+                {
+                    "title": "LXMERT: Learning Cross-Modality Encoder Representations (2019)",
+                    "url": "https://arxiv.org/abs/1908.07490"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Auge del Deep Learning",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "diffusion-2020-2021",
+            "date": "2020-06",
+            "title": "Auge de modelos de difusión en generación de imágenes",
+            "shortDescription": "Modelos de difusión y score-based logran síntesis de alta calidad, diversidad y control.",
+            "fullDescription": "Entre 2020 y 2021, los modelos generativos de difusión (denoising diffusion) y score-based mejoraron rápidamente la calidad, diversidad y controlabilidad de la generación de imágenes. Terminaron superando a las GANs en benchmarks y sentaron las bases de muchos sistemas texto-a-imagen actuales.",
+            "references": [
+                {
+                    "title": "Denoising Diffusion Probabilistic Models (Ho et al., 2020)",
+                    "url": "https://arxiv.org/abs/2006.11239"
+                },
+                {
+                    "title": "Diffusion Models Beat GANs on Image Synthesis (Dhariwal & Nichol, 2021)",
+                    "url": "https://arxiv.org/abs/2105.05233"
+                },
+                {
+                    "title": "Score-Based Generative Modeling through SDEs (Song et al., 2021)",
+                    "url": "https://arxiv.org/abs/2011.13456"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "multimodal-2022",
+            "date": "2022",
+            "title": "Modelos multimodales (texto+imagen) llegan al gran público",
+            "shortDescription": "CLIP, DALL·E, Imagen, Stable Diffusion impulsan el uso de IA multimodal.",
+            "fullDescription": "Para 2022, modelos que conectan lenguaje y visión se volvieron ampliamente capaces y de uso público. CLIP permitió aprender modelos visuales a partir de supervisión en lenguaje natural, mientras DALL·E 2, Imagen y Stable Diffusion llevaron la generación texto-a-imagen de alta calidad a audiencias y productos masivos.",
+            "references": [
+                {
+                    "title": "CLIP: Aprendizaje de modelos visuales desde lenguaje natural",
+                    "url": "https://arxiv.org/abs/2103.00020"
+                },
+                {
+                    "title": "Latent Diffusion Models (Stable Diffusion)",
+                    "url": "https://arxiv.org/abs/2112.10752"
+                },
+                {
+                    "title": "Imagen (Google Research)",
+                    "url": "https://arxiv.org/abs/2205.11487"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphadev-2023",
+            "date": "2023-06",
+            "title": "AlphaDev descubre algoritmos de ordenación más rápidos",
+            "shortDescription": "Aprendizaje por refuerzo profundo descubre algoritmos a bajo nivel más veloces.",
+            "fullDescription": "AlphaDev de DeepMind utilizó aprendizaje por refuerzo profundo para descubrir algoritmos de ordenación mejorados a nivel de instrucciones, superando rutinas diseñadas por humanos durante décadas. Sugiere el potencial de la IA para optimizar componentes básicos de compiladores y sistemas.",
+            "references": [
+                {
+                    "title": "Discovering faster sorting algorithms using deep reinforcement learning (Nature, 2023)",
+                    "url": "https://www.nature.com/articles/s41586-023-06004-9"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "openai-o1-2024",
+            "date": "2024-09",
+            "title": "OpenAI o1 (enfoque en razonamiento)",
+            "shortDescription": "Modelos ‘de razonamiento’ que deliberan más antes de responder.",
+            "fullDescription": "A finales de 2024, OpenAI presentó la familia o1, descrita como modelos ‘de razonamiento’ que dedican más cómputo a pensar deliberadamente antes de responder. Mejoraron el desempeño en matemáticas, ciencia y programación frente a modelos anteriores.",
+            "references": [
+                {
+                    "title": "Introducing OpenAI o1",
+                    "url": "https://openai.com/index/introducing-openai-o1/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Aplicaciones",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "turing-award-2024",
+            "date": "2024",
+            "title": "Premio Turing 2024 — Andrew G. Barto y Richard S. Sutton",
+            "shortDescription": "Reconocidos por contribuciones fundamentales al aprendizaje por refuerzo.",
+            "fullDescription": "ACM nombró a Andrew G. Barto y Richard S. Sutton como ganadores del Premio A.M. Turing 2024 por desarrollar las bases conceptuales y algorítmicas del aprendizaje por refuerzo, incluyendo aprendizaje por diferencias temporales, métodos de gradiente de política y marcos que moldearon el RL moderno.",
+            "references": [
+                {
+                    "title": "Premio A.M. Turing — Ganadores 2024",
+                    "url": "https://awards.acm.org/about/2024-turing"
+                },
+                {
+                    "title": "Premio A.M. Turing (visión general)",
+                    "url": "https://awards.acm.org/turing"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "nobel-physics-2024",
+            "date": "2024-10-08",
+            "title": "Premio Nobel de Física 2024 — John J. Hopfield y Geoffrey Hinton",
+            "shortDescription": "Galardonados por descubrimientos que habilitan el aprendizaje con redes neuronales.",
+            "fullDescription": "La Real Academia de las Ciencias de Suecia otorgó el Premio Nobel de Física 2024 a John J. Hopfield y Geoffrey Hinton por descubrimientos e invenciones fundamentales que habilitan el aprendizaje automático con redes neuronales artificiales.",
+            "references": [
+                {
+                    "title": "Premio Nobel de Física 2024 — Resumen",
+                    "url": "https://www.nobelprize.org/prizes/physics/2024/summary/"
+                },
+                {
+                    "title": "Nota de prensa — Nobel de Física 2024",
+                    "url": "https://www.nobelprize.org/prizes/physics/2024/press-release/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "nobel-chemistry-2024",
+            "date": "2024-10-09",
+            "title": "Premio Nobel de Química 2024 — David Baker, Demis Hassabis y John Jumper",
+            "shortDescription": "Reconoce el diseño computacional de proteínas y la predicción de estructuras (AlphaFold2).",
+            "fullDescription": "El Premio Nobel de Química 2024 fue otorgado con una mitad a David Baker por el diseño computacional de proteínas y la otra mitad conjunta a Demis Hassabis y John Jumper por la predicción de estructuras proteicas, incluido el avance de AlphaFold2.",
+            "references": [
+                {
+                    "title": "Premio Nobel de Química 2024 — Resumen",
+                    "url": "https://www.nobelprize.org/prizes/chemistry/2024/summary/"
+                },
+                {
+                    "title": "Nota de prensa — Nobel de Química 2024",
+                    "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "Era de Avances de la IA",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Avances Clave",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        }
+    ]
+}

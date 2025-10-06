@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How Machines Think :: Artificial Brains</title>
+    <link>http://localhost:1313/index.html</link>
+    <description>An interactive book about Artificial Intelligence</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 - The Beginning of the Journey</title>
+      <link>http://localhost:1313/chapter-1/index.html</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-1/index.html</guid>
+      <description>Minermont Hospital is on the verge of collapse. Unexpected population growth has overwhelmed its systems, generating frustration among staff and patients. In the midst of this crisis, Dr. Victor Salazar, an idealistic physician, sees a possible solution in Artificial Intelligence, but runs into the skepticism of Dr. Carmen Ledesma, an experienced and traditional professional.&#xA;This chapter chronicles the first step of their journey: a visit to the Artificial Intelligence Academy (AIA), which will change their perspective forever. Through the following interactive sections, you will explore the key concepts they discovered that laid the groundwork for the hospital’s transformation.</description>
+    </item>
+    <item>
+      <title>2 - Machine Learning Models</title>
+      <link>http://localhost:1313/chapter-2/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-2/index.html</guid>
+      <description>In this chapter, we delve into the heart of machine learning through the experience of the hospital team. After a failed first attempt with an overly complex system, Victor, Marta, Luis, and Carlos learn a fundamental lesson: sometimes, the simplest solution is the most powerful.&#xA;Guided by the advice of Alma García of AIA, the team embarks on implementing a linear regression model to predict the need for medical supplies. This new approach is not only more manageable but also transparent and interpretable, gaining the trust of even the most skeptical, like Dr. Javier.</description>
+    </item>
+  </channel>
+</rss>

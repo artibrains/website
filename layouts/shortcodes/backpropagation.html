@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="/css/backpropagation.css">
+
+
+<div class="panel">
+    <h2>Visualización de la Red Neuronal</h2>
+    <svg id="network-visualization"></svg>
+</div>
+
+<div class="container">
+    <div class="left-column">
+
+        <div class="panel" id="controls-panel">
+            <h2>Controles de Entrenamiento</h2>
+            <div class="buttons">
+                <button id="step-btn">Avanzar un Paso</button>
+                <button id="run-btn">Ejecutar Completo</button>
+                <button id="reset-btn">Resetear Red</button>
+            </div>
+            <div class="turbo-mode">
+                <input type="checkbox" id="turbo-mode-checkbox">
+                <label for="turbo-mode-checkbox">Modo Turbo (procesa una época por fotograma)</label>
+            </div>
+            <div class="status">
+                <div class="status-item">
+                    <span>Época</span>
+                    <span id="epoch-counter">0</span>
+                </div>
+                <div class="status-item">
+                    <span>Muestra</span>
+                    <span id="sample-counter">0 / 0</span>
+                </div>
+                <div class="status-item">
+                    <span>Error Medio (MSE)</span>
+                    <span id="loss-value">N/A</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel" id="dataset-panel">
+            <h2>Dataset de Entrenamiento</h2>
+            <table id="dataset-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Entrada 1</th>
+                        <th>Entrada 2</th>
+                        <th>Salida Esperada</th>
+                    </tr>
+                </thead>
+                <tbody id="dataset-body">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="right-column">
+
+
+        <div class="panel" id="explanation-panel">
+            <h2>Cálculos Paso a Paso</h2>
+            <div id="explanation-content" class="explanation-content">
+                Presiona "Avanzar un Paso" para iniciar el entrenamiento.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel">
+    <h2>Espacio de Datos y Fronteras de Decisión</h2>
+    <p class="panel-subtitle">Los puntos se colorean según la predicción de la red. Haz clic para predecir un
+        nuevo punto.</p>
+    <div id="data-plot-container">
+        <svg id="data-plot"></svg>
+    </div>
+    <!-- NUEVO PANEL DE INFORMACIÓN -->
+    <div id="data-plot-info">
+        Pasa el ratón sobre un punto para ver sus detalles.
+    </div>
+</div>
+
+<script src="/js/backpropagation/backpropagation.js"></script>

@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto: Descifrando las Notas Clínicas</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>El Desafío de Víctor:</strong> "¿Cómo podemos hacer que una IA entienda miles de informes de
+                alta?
+                Están llenos de abreviaturas como 'Rx' o 'ECG' y términos complejos como 'hipercolesterolemia'".</p>
+            <p class="highlight"><strong>La Solución de Alma:</strong> "Antes de entender, la IA debe aprender a leer
+                nuestro idioma. El algoritmo <strong>Byte-Pair Encoding (BPE)</strong> es como un lingüista que aprende
+                el 'dialecto' del hospital. Identifica y fusiona los fragmentos más comunes ('cardio-', '-patía',
+                '-itis')
+                para crear un vocabulario médico optimizado. Es el primer paso para que el modelo comprenda de
+                verdad."</p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <h1>Visualizador Interactivo de Byte-Pair Encoding (BPE)</h1>
+    <p class="intro">El <strong>Byte-Pair Encoding (BPE)</strong> es un algoritmo de tokenización que aprende a
+        "hablar" el lenguaje de un texto específico. En lugar de usar un diccionario fijo, comienza con caracteres
+        individuales y construye un vocabulario de forma inteligente, fusionando los pares de símbolos que aparecen
+        juntos con más frecuencia. Este método crea un conjunto de tokens optimizado que captura desde morfemas (como
+        prefijos y sufijos) hasta palabras completas, siendo una pieza clave en los modelos de lenguaje modernos.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo replicarás el trabajo del equipo?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>1. Entrena con el Corpus del Hospital</h3>
+                <p>El simulador carga por defecto un texto sobre el Hospital Minermont (el 'corpus'). El algoritmo lo
+                    analizará para encontrar los pares de caracteres más comunes.</p>
+            </div>
+            <div class="column">
+                <h3>2. Construye el Vocabulario</h3>
+                <p>Observa en el "Registro de Fusiones" cómo se construye el vocabulario. En cada paso, el par más
+                    frecuente se une en un nuevo token. Este proceso se repite hasta alcanzar el tamaño que
+                    definas.</p>
+            </div>
+            <div class="column">
+                <h3>3. Tokeniza como un LLM</h3>
+                <p>Una vez entrenado, introduce una nueva frase. La herramienta usará las reglas de fusión aprendidas
+                    para dividirla en los tokens más eficientes, mostrándote cómo la procesaría un LLM.</p>
+            </div>
+        </div>
+    </div>
+</div>

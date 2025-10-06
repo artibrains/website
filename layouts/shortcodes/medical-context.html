@@ -1,0 +1,101 @@
+{{/*
+Shortcode unificado para contextos médicos
+Uso: {{< medical-context type="hospital" level="beginner" scenario="..." highlight="...">}}
+    */}}
+
+    {{ $type := .Get "type" | default "general" }}
+    {{ $level := .Get "level" | default "beginner" }}
+    {{ $scenario := .Get "scenario" }}
+    {{ $highlight := .Get "highlight" }}
+    {{ $intro_text := .Get "intro_text" | default "" }}
+    {{ $steps := .Get "steps" | default "" }}
+
+    {{/* Diccionario de traducciones */}}
+    {{ $translations := dict
+    "es" (dict
+    "how_it_works" "¿Cómo funciona esta herramienta?"
+    )
+    "en" (dict
+    "how_it_works" "How does this tool work?"
+    )
+    }}
+
+    {{ $lang := .Site.Language.Lang | default "en" }}
+    {{ $t := index $translations $lang }}
+
+    <link rel="stylesheet" href="/css/unified-demos.css">
+    <h3 class="medical-context__title">
+        Contexto
+    </h3>
+    <div class="medical-context medical-context--{{ $type }} medical-context--{{ $level }}">
+
+        <div class="medical-context__header">
+
+            <div class="medical-context__icon">
+                {{ if eq $type "hospital" }}🏥
+                {{ else if eq $type "clinic" }}🩺
+                {{ else if eq $type "research" }}🔬
+                {{ else if eq $type "emergency" }}🚨
+                {{ else if eq $type "veterinary" }}🐾
+                {{ else }}⚕️{{ end }}
+            </div>
+            <div class="medical-context__type">
+                <span class="mc-badge mc-badge--type">
+                    <span class="mc-badge__label">Tipo</span>
+                    <span class="mc-badge__value">
+                        {{ if eq $type "hospital" }}Hospital
+                        {{ else if eq $type "clinic" }}Clínica
+                        {{ else if eq $type "research" }}Investigación
+                        {{ else if eq $type "emergency" }}Emergencias
+                        {{ else if eq $type "veterinary" }}Veterinaria
+                        {{ else }}{{ $type }}{{ end }}
+                    </span>
+                </span>
+            </div>
+            <div class="medical-context__level">
+                <span class="level-indicator level-indicator--{{ $level }}">
+                    {{ if eq $level "beginner" }}Principiante
+                    {{ else if eq $level "intermediate" }}Intermedio
+                    {{ else if eq $level "advanced" }}Avanzado
+                    {{ else }}{{ $level }}{{ end }}
+                </span>
+            </div>
+        </div>
+
+        <div class="medical-context__content">
+
+
+            {{ if $scenario }}
+            <div class="medical-context__scenario">
+                <h4>Escenario</h4>
+                <p>{{ $scenario | markdownify }}</p>
+            </div>
+            {{ end }}
+
+            {{ if $highlight }}
+            <div class="medical-context__highlight">
+                <h4>Aplicación Clínica</h4>
+                <p>{{ $highlight | markdownify }}</p>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="intro-text">
+            {{ if $intro_text }}
+            <p>{{ $intro_text | markdownify }}</p>
+            {{ end }}
+        </div>
+        <div class="steps">
+            {{ if $steps }}
+            <h3>{{ $t.how_it_works }}</h3>
+            <ol>
+                {{ range (split $steps "|") }}
+                {{ $step := split . ":" }}
+                <li>
+                    <strong>{{ index $step 0 }}</strong>: {{ index $step 1 | markdownify }}
+                </li>
+                {{ end }}
+            </ol>
+            {{ end }}
+        </div>
+    </div>

@@ -1,0 +1,117 @@
+/* Decision Tree demo - fully integrated with unified system */
+@import url('/css/unified-demos.css');
+
+/* Decision Tree specific visualizations */
+.tree-container {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-lg);
+    margin: var(--demo-spacing-md) 0;
+    overflow-x: auto;
+}
+
+.tree-node {
+    background: var(--demo-bg-secondary);
+    border: 2px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-sm);
+    margin: var(--demo-spacing-xs);
+    text-align: center;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.tree-node.decision {
+    border-color: var(--demo-primary);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.tree-node.leaf {
+    border-color: var(--demo-success);
+    background: rgba(39, 174, 96, 0.1);
+    font-weight: 600;
+}
+
+.tree-node:hover {
+    box-shadow: var(--demo-shadow-hover);
+    transform: scale(1.02);
+}
+
+.tree-edge {
+    stroke: var(--demo-border);
+    stroke-width: 2;
+    fill: none;
+}
+
+.tree-edge-label {
+    font-size: 0.8em;
+    fill: var(--demo-secondary);
+    text-anchor: middle;
+}
+
+/* Patients visualization */
+.patient-card {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-sm);
+    margin: var(--demo-spacing-xs);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.patient-card:hover {
+    box-shadow: var(--demo-shadow-hover);
+    border-color: var(--demo-primary);
+}
+
+.patient-card.selected {
+    border-color: var(--demo-primary);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+/* Performance metrics */
+.metrics-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--demo-spacing-md);
+    margin-top: var(--demo-spacing-lg);
+}
+
+.metric-card {
+    background: var(--demo-bg-secondary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--demo-primary);
+    font-family: var(--demo-font-mono);
+}
+
+.metric-label {
+    font-size: 0.9em;
+    color: var(--demo-secondary);
+    margin-top: var(--demo-spacing-xs);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tree-container {
+        padding: var(--demo-spacing-md);
+    }
+
+    .tree-node {
+        font-size: 0.8em;
+        padding: var(--demo-spacing-xs);
+    }
+
+    .metrics-display {
+        grid-template-columns: 1fr;
+    }
+}

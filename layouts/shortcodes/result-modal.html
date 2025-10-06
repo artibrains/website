@@ -1,0 +1,57 @@
+{{/*
+Shortcode para crear modales de resultados unificados
+Uso: {{< result-modal id="training-results" title="Resultados del Entrenamiento">}}contenido{{< /result-modal>}}
+        */}}
+
+        {{ $id := .Get "id" | default "modal" }}
+        {{ $title := .Get "title" | default "Resultados" }}
+        {{ $type := .Get "type" | default "results" }}
+
+        <link rel="stylesheet" href="/css/unified-demos.css">
+        <div id="{{ $id }}" class="modal modal-{{ $type }}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>{{ $title }}</h3>
+                    <button class="close-button" onclick="closeModal('{{ $id }}')" aria-label="Cerrar">&times;</button>
+                </div>
+                <div class="modal-body">
+                    {{ .Inner | markdownify }}
+                </div>
+                <div class="modal-footer">
+                    <button class="demo-btn demo-btn-primary" onclick="closeModal('{{ $id }}')">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                    if (focusable.length > 0) focusable[0].focus();
+                }
+            }
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            // Escape to close active modal
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    const activeModal = document.querySelector('.modal.active');
+                    if (activeModal) closeModal(activeModal.id);
+                }
+            });
+            // Click outside to close
+            document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (target.classList && target.classList.contains('modal')) {
+                    closeModal(target.id);
+                }
+            });
+        </script>

@@ -1,0 +1,474 @@
+/* Backpropagation demo - using unified system */
+@import url('/css/unified-demos.css');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&family=Inconsolata:wght@400;600&display=swap');
+
+/* Backpropagation specific variables extending the unified system */
+:root {
+    --bp-positive-weight: #198754;
+    --bp-negative-weight: #dc3545;
+    --bp-neuron-activation: #ffc107;
+    --bp-error-delta: #fd7e14;
+    --bp-font-mono: 'Inconsolata', 'SF Mono', 'Menlo', 'Monaco', monospace;
+}
+
+/* Override body styling for backpropagation */
+body {
+    font-family: 'Fira Sans', var(--demo-font-family);
+    background: linear-gradient(135deg, #eef2f3, #f8f9fa);
+    color: var(--demo-secondary);
+    margin: 0;
+    padding: 30px 20px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    text-align: center;
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1800px;
+    align-items: flex-start;
+}
+
+/* --- PANELES INTRODUCTORIOS MEJORADOS --- */
+.intro-panel {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 25px 35px;
+    width: 100%;
+    max-width: 1800px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.intro-panel h2 {
+    text-align: left;
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.intro-panel p,
+.intro-panel li {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #343a40;
+}
+
+.intro-panel ul {
+    padding-left: 25px;
+    list-style-type: '✓ ';
+}
+
+.intro-panel code {
+    background-color: #e9ecef;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--negative-weight);
+    font-weight: 600;
+}
+
+/* --- PANELES CON ESTILO DE TARJETA --- */
+.panel {
+    background-color: var(--panel-bg);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 25px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-top: 4px solid var(--primary-color);
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.left-column {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.right-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 30px;
+}
+
+.panel h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.panel-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* --- VISUALIZACIÓN DE LA RED MEJORADA --- */
+#network-visualization {
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+}
+
+.neuron {
+    stroke: #333;
+    stroke-width: 2.5px;
+    transition: fill 0.3s ease, fill-opacity 0.3s ease;
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2));
+}
+
+.neuron-label {
+    font-size: 14px;
+    fill: #fff;
+    font-weight: bold;
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
+.neuron-value {
+    font-size: 14px;
+    fill: var(--text-color);
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+    font-weight: 600;
+}
+
+.delta-value {
+    font-size: 13px;
+    fill: var(--error-delta);
+    font-weight: bold;
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
+.connection {
+    stroke-width: 2px;
+    transition: stroke 0.3s ease, stroke-width 0.2s ease, opacity 0.3s ease;
+}
+
+.connection:hover {
+    stroke-width: 6px;
+}
+
+.weight-value {
+    font-size: 12px;
+    fill: var(--text-muted);
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
+.layer-label {
+    font-size: 18px;
+    font-weight: bold;
+    text-anchor: middle;
+    fill: var(--text-muted);
+}
+
+/* --- GRÁFICO 2D --- */
+#data-plot-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* Aspect ratio 1:1 */
+}
+
+#data-plot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    cursor: crosshair;
+}
+
+/* --- NUEVOS ESTILOS PARA EL PANEL DE INFO --- */
+#data-plot-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-height: 85px;
+    /* Evita que el layout salte */
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+#data-plot-info b {
+    color: var(--text-color);
+}
+
+#data-plot-info code {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.data-point {
+    stroke: rgba(0, 0, 0, 0.2);
+    stroke-width: 1px;
+    transition: fill 0.4s ease, fill-opacity 0.4s ease;
+}
+
+.prediction-point {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.axis-line {
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.axis-label {
+    font-size: 14px;
+    fill: var(--text-muted);
+}
+
+/* --- Tooltip & Popup --- */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, top 0.1s, left 0.1s;
+    max-width: 350px;
+    word-wrap: break-word;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.tooltip code {
+    background-color: #444;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+}
+
+#prediction-popup {
+    border: 2px solid var(--primary-color);
+}
+
+#prediction-popup h4 {
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #555;
+}
+
+#prediction-popup .popup-detail {
+    margin-bottom: 5px;
+}
+
+
+/* --- CONTROLES Y ESTADO REDISEÑADOS --- */
+#controls-panel {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button#reset-btn {
+    background-color: var(--text-muted);
+}
+
+button#reset-btn:hover {
+    background-color: #5a6268;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.turbo-mode {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+}
+
+.status {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    text-align: center;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-item span:first-child {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.status-item span:last-child {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* --- DATASET Y TABLA MEJORADOS --- */
+#dataset-panel {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#dataset-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dataset-table th,
+#dataset-table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#dataset-table th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: -1px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#dataset-table tbody tr {
+    transition: background-color 0.15s ease-in-out;
+}
+
+#dataset-table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+#dataset-table tr.active-sample {
+    background-color: #cfe2ff;
+    font-weight: bold;
+}
+
+/* --- PANEL DE EXPLICACIONES --- */
+#explanation-panel {
+    min-height: 400px;
+}
+
+.explanation-content {
+    font-family: var(--font-mono);
+    white-space: pre-wrap;
+    background-color: #f1f3f5;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+    border: 1px solid #e0e0e0;
+}
+
+.formula {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.value {
+    color: var(--negative-weight);
+    font-weight: 600;
+}
+
+.highlight {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: 1px solid #ffeeba;
+}
+
+.math-detail {
+    background-color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+    font-size: 13px;
+}

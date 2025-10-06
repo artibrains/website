@@ -1,0 +1,135 @@
+{{ $lang := (.Get "lang") | default .Site.Language.Lang }}
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="demo-wrapper">
+    <div class="demo-info-card">
+        <div class="demo-info-card-header">
+            <h1>
+                {{ if eq $lang "es" }}¿Cómo funciona el juego?{{ else }}How does the game work?{{ end }}
+            </h1>
+        </div>
+        <div class="demo-mb-md">
+            <p class="demo-mb-sm">
+                <strong>{{ if eq $lang "es" }}🐭 Objetivo:{{ else }}🐭 Objective:{{ end }}</strong>
+                {{ if eq $lang "es" }}El ratón debe encontrar el queso (🧀) en el tablero.{{
+                else }}The mouse must find the cheese (🧀) on the board.{{ end }}
+            </p>
+            <p class="demo-mb-sm">
+                <strong>{{ if eq $lang "es" }}🎮 Mecánica:{{ else }}🎮 Mechanics:{{ end }}</strong>
+                {{ if eq $lang "es" }}El ratón aprende mediante refuerzo positivo (encuentra queso) y negativo (cae en
+                trampa).{{ else }}The mouse learns through positive reinforcement (finds cheese) and negative (falls
+                into trap).{{ end }}
+            </p>
+            <p class="demo-mb-sm">
+                <strong>{{ if eq $lang "es" }}📊 Aprendizaje:{{ else }}📊 Learning:{{ end }}</strong>
+                {{ if eq $lang "es" }}Los valores en la tabla muestran la "preferencia" del ratón por cada acción
+                (⬆️ ⬇️ ⬅️ ➡️) desde cada casilla. Valores más altos = mayor probabilidad de elegir esa acción.{{ else
+                }}The
+                values in the table show the mouse's "preference" for each action (⬆️ ⬇️ ⬅️ ➡️) from each square. Higher
+                values = higher probability of choosing that action.{{ end }}
+            </p>
+            <p class="demo-mb-0">
+                <strong>{{ if eq $lang "es" }}⚡ Entrenamiento:{{ else }}⚡ Training:{{ end }}</strong>
+                {{ if eq $lang "es" }}Cada partida actualiza estos valores. Después de muchas partidas, el ratón aprende
+                el camino óptimo.{{ else }}Each game updates these values. After many games, the mouse learns the
+                optimal path.{{ end }}
+            </p>
+        </div>
+    </div>
+    <div class="controls-panel">
+        <h3 class="controls-panel-title  demo-mb-md">{{ if eq $lang "es" }}Controles y Configuración{{ else }}Controls
+            and Configuration{{ end }}</h3>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="gridRows" class="control-label">{{ if eq $lang "es" }}Filas del tablero:{{ else }}Board
+                    rows:{{ end }}</label>
+                <input type="number" id="gridRows" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <label for="gridCols" class="control-label">{{ if eq $lang "es" }}Columnas del tablero:{{ else }}Board
+                    columns:{{ end }}</label>
+                <input type="number" id="gridCols" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <button onclick="reiniciar()" id="btnReiniciar" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    {{ if eq $lang "es" }}🔁 Reiniciar Tablero{{ else }}🔁 Restart Board{{ end }}
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularPartida()" id="btnSimular"
+                    class="demo-btn demo-btn-primary demo-btn-full-width">
+                    {{ if eq $lang "es" }}▶️ Simular 1 Partida (Visual){{ else }}▶️ Simulate 1 Game (Visual){{ end }}
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="numSim" class="control-label">{{ if eq $lang "es" }}Número de partidas:{{ else }}Number of
+                    games:{{ end }}</label>
+                <input type="number" id="numSim" value="10" min="1" max="1000" class="demo-control-input" />
+
+            </div>
+            <div class="demo-control-group">
+                <button onclick="simularMultiplesPartidas()" id="btnSimularMulti"
+                    class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    {{ if eq $lang "es" }}▶️ Simular Múltiples Partidas{{ else }}▶️ Simulate Multiple Games{{ end }}
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularBloquesDeEntrenamiento()" id="btnSimularBloques"
+                    class="demo-btn demo-btn-success demo-btn-full-width">
+                    {{ if eq $lang "es" }}⚡ Entrenar (10 bloques x 100 partidas){{ else }}⚡ Train (10 blocks x 100
+                    games){{ end }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="demo-content-panel demo-flex-container">
+        <div class="demo-chart-container">
+            <h3 class="demo-chart-title">{{ if eq $lang "es" }}Juego del Ratón y el Queso{{ else }}Mouse and Cheese
+                Game{{ end }}</h3>
+            <div class="grid" id="tablero">
+                <!-- El tablero se generará aquí por JS -->
+            </div>
+        </div>
+
+        <div class="demo-info-card">
+            <div class="demo-info-card-header">{{ if eq $lang "es" }}Valores de Acción por Casilla{{ else }}Action
+                Values per Square{{ end }}</div>
+            <div id="estadoVasos" class="overflow-x-auto">
+                <!-- La tabla de vasos se generará aquí por JS -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de progreso -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button onclick="cerrarModal()" class="close-button" aria-label="Cerrar">&times;</button>
+        <h2 class="demo-mb-md">{{ if eq $lang "es" }}Progreso del Entrenamiento{{ else }}Training Progress{{ end }}</h2>
+        <div id="progreso" class="demo-info-card demo-mb-sm">{{ if eq $lang "es" }}Iniciando...{{ else }}Starting...{{
+            end }}</div>
+        <div id="progreso-detalle" class="demo-mb-md" style="font-size: 0.9em; color: var(--MAIN-TEXT-color, #666);">
+        </div>
+        <button onclick="cerrarModal()" class="demo-btn demo-btn-primary">{{ if eq $lang "es" }}Cerrar{{ else }}Close{{
+            end }}</button>
+    </div>
+
+</div>
+
+<script>
+    // Configurar idioma para el JavaScript
+    window.gameLanguage = "{{ $lang }}";
+</script>
+<script src="/js/raton-queso-game.js"></script>

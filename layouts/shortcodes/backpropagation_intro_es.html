@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto Médico: Entrenando un "Ojo" Clínico Artificial</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>Imagina:</strong> Estás entrenando una red neuronal para detectar signos de retinopatía diabética
+                en imágenes de fondo de ojo. La red debe aprender a distinguir patrones sutiles que un ojo humano podría
+                pasar por alto.</p>
+            <p class="highlight">Cuando la red clasifica una imagen incorrectamente, Backpropagation actúa como un
+                "supervisor experto". Le indica a la red qué "neuronas" y conexiones interpretaron mal la imagen,
+                permitiendo que se ajusten para no cometer el mismo error en el futuro y, con el tiempo, desarrollar un
+                "ojo" clínico artificial altamente preciso.</p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <p class="intro">La <strong>Retropropagación (Backpropagation)</strong> es el motor de aprendizaje de las redes
+        neuronales. Funciona como un sistema de "asignación de responsabilidades": cuando la red comete un error, este
+        algoritmo calcula exactamente qué conexiones internas (pesos) contribuyeron al fallo y las ajusta en la
+        dirección correcta. Este proceso iterativo de predicción, cálculo de error y ajuste es lo que permite a la red
+        refinar su "conocimiento" y volverse cada vez más precisa.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo aprende la red de sus errores?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>1. Predicción y Cálculo del Error</h3>
+                <p>La red procesa los datos de entrada (la imagen) a través de sus capas para generar una predicción.
+                    Luego, se compara esta predicción con el resultado correcto para cuantificar el error total.</p>
+            </div>
+            <div class="column">
+                <h3>2. Retropropagación de la "Culpa"</h3>
+                <p>El error se propaga hacia atrás, desde la salida hasta la entrada, calculando cuánto "contribuyó"
+                    cada neurona y conexión al error final. A esta medida se le llama gradiente o delta (δ).</p>
+            </div>
+            <div class="column">
+                <h3>3. Ajuste de Pesos y Aprendizaje</h3>
+                <p>Las conexiones (pesos) se ajustan ligeramente en función de su "culpa" para reducir el error en la
+                    próxima iteración. La tasa de aprendizaje (η) controla la magnitud de este ajuste.</p>
+            </div>
+        </div>
+    </div>
+</div>

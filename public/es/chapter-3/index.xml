@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 - Sistemas de clasificación y evaluación de modelos :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/chapter-3/index.html</link>
+    <description>Con el éxito del modelo de regresión lineal, el equipo del hospital ha ganado confianza y credibilidad. Ahora, se enfrentan a un nuevo tipo de desafío: no solo predecir cantidades, sino clasificar resultados. Su nuevo objetivo es predecir si un paciente faltará a su cita, un problema de clasificación binaria con un gran impacto económico y operativo.&#xA;Este capítulo te sumerge en las técnicas y dilemas que el equipo debe resolver para construir un modelo de clasificación fiable. Aprenderás que crear el modelo es solo el principio; evaluarlo correctamente y asegurar que generalice bien a nuevos casos es igual de importante.</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/chapter-3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El Traductor de Probabilidades: Regresión Logística</title>
+      <link>http://localhost:1313/es/chapter-3/probabilities_translator/traductor-probabilidades-regresion-logistica/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/probabilities_translator/traductor-probabilidades-regresion-logistica/index.html</guid>
+      <description>Demostración interactiva de cómo la regresión logística convierte combinaciones lineales en probabilidades para clasificar pacientes y predecir asistencia a citas médicas.</description>
+    </item>
+    <item>
+      <title>El Clasificador: Función Sigmoide</title>
+      <link>http://localhost:1313/es/chapter-3/juego-sigmoide/clasificador-funcion-sigmoide/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/juego-sigmoide/clasificador-funcion-sigmoide/index.html</guid>
+      <description>Visualización interactiva para comprender cómo la función sigmoide transforma cualquier combinación lineal en una probabilidad entre 0 y 1, convirtiéndose en la pieza clave de la regresión logística.</description>
+    </item>
+    <item>
+      <title>El Gestor de Riesgos</title>
+      <link>http://localhost:1313/es/chapter-3/risk_gestor/gestor-riesgos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/risk_gestor/gestor-riesgos/index.html</guid>
+      <description>El ajuste de parámetros es crucial para el rendimiento óptimo de los modelos predictivos. Si bien la IA es una herramienta potente para la toma de decisiones y la optimización en diversos sectores, su eficacia en el mundo real depende directamente del ajuste de los hiperparámetros y del equilibrio entre las variables implicadas.&#xA;Simulador: El Gestor de Riesgos Tu misión es encontrar el umbral de decisión perfecto para un modelo de IA que predice si un paciente faltará a su cita. El objetivo es minimizar el coste total para la clínica.</description>
+    </item>
+    <item>
+      <title>El Validador Honesto: Validación Cruzada K-Fold</title>
+      <link>http://localhost:1313/es/chapter-3/k_fold_validator/validador-honesto-k-fold/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/k_fold_validator/validador-honesto-k-fold/index.html</guid>
+      <description>Comprende la importancia de una evaluación robusta de modelos y cómo la validación cruzada proporciona estimaciones más confiables que las divisiones simples de datos.</description>
+    </item>
+    <item>
+      <title>El Domador de Complejidad</title>
+      <link>http://localhost:1313/es/chapter-3/complexity/domador-complejidad-regularizacion/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/complexity/domador-complejidad-regularizacion/index.html</guid>
+      <description>Explora visualmente el sobreajuste, la regularización y cómo encontrar el equilibrio perfecto en modelos de IA.</description>
+    </item>
+  </channel>
+</rss>

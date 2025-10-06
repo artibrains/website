@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+<div id="setup-container">
+    <h2>Paso 1: Selecciona los Personajes (entre 2 y 49)</h2>
+    <div class="description-block">
+        <h4>Características de los Personajes</h4>
+        <p>Cada personaje se define por un conjunto de características. Algunas son binarias (con respuestas
+            'Sí' o 'No'), mientras que otras son categóricas (con múltiples valores posibles). El algoritmo
+            utiliza estas características para encontrar las preguntas más eficientes.</p>
+    </div>
+    <div id="controls">
+        <div class="control-group">
+            <label for="random-count">Seleccionar al azar:</label>
+            <input type="number" id="random-count" value="16" min="2" max="49">
+            <button id="random-select-btn">Selección Aleatoria</button>
+        </div>
+    </div>
+    <div id="character-grid">
+        <!-- Los personajes se cargarán aquí con JavaScript -->
+    </div>
+    <div id="training-controls">
+        <div class="control-group">
+            <input type="checkbox" id="binary-questions-only">
+            <label for="binary-questions-only">Solo preguntas Sí/No</label>
+        </div>
+        <div class="control-group">
+            <button id="train-btn" disabled>Entrenar Árbol</button>
+        </div>
+    </div>
+</div>
+
+<div id="training-container" class="hidden">
+    <h2>Paso 2: Construyendo el Árbol...</h2>
+    <div id="current-step-display">
+        <p id="current-step-info">El árbol se está construyendo...</p>
+        <div id="current-group-display"></div>
+    </div>
+    <div id="main-content-area">
+        <div id="tree-container">
+            <div id="cy-container"></div>
+            <div id="spinner" class="hidden"></div>
+            <div id="tree-controls">
+                <button id="zoom-in-btn" title="Acercar">+</button>
+                <button id="zoom-out-btn" title="Alejar">-</button>
+                <button id="fit-btn" title="Centrar Vista">⛶</button>
+            </div>
+        </div>
+        <div id="details-panel">
+            <h3>Detalles de la Decisión</h3>
+            <div id="algorithm-description">
+                <h4>¿Cómo Funciona el Algoritmo?</h4>
+                <p>El árbol se construye usando un algoritmo de 'Divide y Vencerás'. En cada paso, el
+                    sistema
+                    evalúa todas las preguntas posibles y elige la que mejor divide al grupo actual de
+                    personajes.</p>
+                <ul>
+                    <li><strong>Modo Normal:</strong> Se prioriza la pregunta que genera el <strong>mayor
+                            número
+                            de subgrupos</strong>. Como desempate, se elige la que crea el subgrupo más
+                        pequeño.
+                    </li>
+                    <li><strong>Modo Sí/No:</strong> Se elige la pregunta que crea la partición más
+                        <strong>equilibrada</strong>, minimizando la diferencia de tamaño entre el grupo
+                        'Sí' y
+                        el 'No'.
+                    </li>
+            </div>
+            <div id="calculation-details">
+                <p>El árbol se está construyendo... o haz clic en un nodo de pregunta para ver sus cálculos.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="actions-container">
+        <button id="reset-btn" class="hidden">Empezar de Nuevo</button>
+    </div>
+</div>
+
+
+
+<div id="tooltip" class="hidden"></div>
+
+<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+<script src="/js/decision-tree/people-data.js"></script>
+<script src="/js/decision-tree/decision-tree.js"></script>

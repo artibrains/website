@@ -1,0 +1,32 @@
+{{ $lang := .lang | default "es" }}
+{{ $translations := .translations | default (dict "clear_terminal" "Limpiar") }}
+
+{{/* Diccionario de traducciones por defecto */}}
+{{ $defaultTranslations := dict
+"es" (dict
+"clear_terminal" "Limpiar"
+)
+"en" (dict
+"clear_terminal" "Clear"
+)
+}}
+
+{{ $t := index $defaultTranslations $lang }}
+{{ if $translations }}
+{{ $t = $translations }}
+{{ end }}
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="{{ $t.clear_terminal }} Terminal">{{
+            $t.clear_terminal }}</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>

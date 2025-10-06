@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto Médico: Clasificación de Células Tumorales</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>Imagina:</strong> Estás analizando células de una biopsia para determinar si un tumor es benigno
+                o maligno. Dispones de características medibles como el tamaño del núcleo, la textura de la membrana y
+                la uniformidad de la célula.</p>
+            <p class="highlight">El algoritmo K-NN puede clasificar una nueva célula (un caso desconocido) comparándola
+                con las células ya diagnosticadas. Si sus vecinos más cercanos son mayoritariamente malignos, el modelo
+                predecirá que la nueva célula también lo es.</p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <h1>Simulador Interactivo: K-Vecinos más Cercanos (K-NN)</h1>
+    <p class="intro">El algoritmo <strong>K-Vecinos más Cercanos (K-NN)</strong> es un método de clasificación intuitivo
+        que funciona bajo la premisa de que "dime con quién andas y te diré quién eres". Para clasificar un nuevo caso,
+        simplemente identifica a sus 'K' vecinos más cercanos en los datos existentes y adopta la clase más común entre
+        ellos, basándose en una votación mayoritaria.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo funciona la clasificación por proximidad?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>Añade un Caso Nuevo</h3>
+                <p><strong>Haz clic en el gráfico</strong> para añadir un nuevo punto a clasificar (por ejemplo, una
+                    nueva célula). El modelo necesita decidir a qué grupo pertenece basándose en los datos ya conocidos.
+                </p>
+            </div>
+            <div class="column">
+                <h3>Encuentra a los Vecinos</h3>
+                <p>El algoritmo busca los <strong>'K' vecinos más cercanos</strong> al nuevo punto. Usa el control
+                    deslizante para cambiar el valor de 'K' y observa cómo se seleccionan diferentes vecinos en el
+                    gráfico.</p>
+            </div>
+            <div class="column">
+                <h3>Toma una Decisión (Voto)</h3>
+                <p>La clase del nuevo punto se decide por <strong>votación mayoritaria</strong>. Si la mayoría de sus
+                    'K' vecinos son del grupo "A", se clasificará como "A". Observa cómo la predicción cambia al ajustar
+                    'K'.</p>
+            </div>
+        </div>
+    </div>
+    <p>
+        Cuando Alma introdujo el algoritmo <strong>K-Nearest Neighbors (K-NN)</strong>, Marta enseguida señaló el punto
+        clave: "El concepto de 'distancia' es crucial aquí. ¿Cómo combinamos edad, temperatura y presión arterial?
+        Necesitaríamos escalar todo cuidadosamente". Luis y Carlos añadieron la preocupación por el coste computacional
+        y la "maldición de la dimensionalidad".
+    </p>
+    <p>
+        Para ilustrar estos conceptos de forma sencilla, Alma les propuso un ejemplo simple antes de aplicarlo a los
+        datos médicos. Imagina que queremos clasificar mascotas (gatos 🐱 y perros 🐶) basándonos en dos
+        características: su <strong>agilidad</strong> (eje Y) y su <strong>sociabilidad</strong> (eje X).
+    </p>
+    <p>
+        En esta simulación, tú eres el algoritmo K-NN.
+    </p>
+    <ol>
+        <li><strong>Añade puntos de datos</strong> (gatos y perros) en el gráfico o usa los datos de ejemplo.</li>
+        <li>Cambia al modo <strong>"Clasificar"</strong> y haz clic en cualquier lugar del gráfico para introducir una
+            nueva mascota.</li>
+        <li>El algoritmo encontrará los <strong>K vecinos más cercanos</strong> y asignará la clase mayoritaria.</li>
+    </ol>
+    <p>
+        Juega con el valor de <strong>K</strong> y la <strong>métrica de distancia</strong> (Euclidiana vs. Manhattan)
+        para ver cómo afectan a la clasificación. Activa "Mostrar Fronteras" para visualizar cómo cambia el mapa de
+        decisión del modelo. Esto te dará una intuición clara sobre las fortalezas y debilidades que el equipo discutió.
+    </p>
+</div>

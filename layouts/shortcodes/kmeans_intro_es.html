@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto Médico: Descubriendo Subtipos de Enfermedades</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>Imagina:</strong> Estás analizando datos de cientos de pacientes diagnosticados con "diabetes
+                tipo 2". Sospechas que no todos los casos son iguales y que existen subgrupos con diferentes perfiles de
+                riesgo o respuesta a tratamientos.</p>
+            <p class="highlight">K-Means puede analizar estos datos (niveles de glucosa, biomarcadores, edad) y
+                encontrar "clusters" o grupos de pacientes con perfiles similares. Esto permite descubrir subtipos de la
+                enfermedad que no eran evidentes a simple vista, abriendo la puerta a la medicina personalizada.</p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <h1>El Descubridor de Grupos Ocultos (K-Means)</h1>
+    <p class="intro">El algoritmo <strong>K-Means</strong> es una poderosa herramienta de aprendizaje no supervisado
+        cuya misión es explorar un conjunto de datos y descubrir "grupos" o "clusters" ocultos sin necesidad de
+        etiquetas previas. Funciona agrupando los puntos de datos que son más similares entre sí, permitiendo revelar la
+        estructura inherente de la información, como distintos perfiles de pacientes dentro de una misma patología.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo se descubren los grupos ocultos?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>1. Elige el Número de Grupos (K)</h3>
+                <p>Empieza eligiendo el número de grupos (K) que crees que existen. La inicialización
+                    <strong>K-Means++</strong> ayuda a colocar los "centroides" iniciales de forma inteligente para
+                    empezar la búsqueda de forma más eficiente.
+                </p>
+            </div>
+            <div class="column">
+                <h3>2. Ejecuta el Algoritmo</h3>
+                <p>Ejecuta el algoritmo paso a paso o automáticamente. Observa cómo los puntos se asignan al centroide
+                    más cercano (Asignación) y luego los centroides se mueven al centro de sus nuevos grupos
+                    (Actualización).</p>
+            </div>
+            <div class="column">
+                <h3>3. Encuentra el 'K' Óptimo</h3>
+                <p>Usa el <strong>Método del Codo</strong> para encontrar el número ideal de clusters. El gráfico te
+                    mostrará el "punto de inflexión" donde añadir más grupos ya no aporta una mejora significativa,
+                    revelando el K más eficiente.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    Inspirado por el desafío de la directora Elena, el equipo se adentró en el aprendizaje no supervisado. Su
+    herramienta elegida fue <strong>K-Means</strong>, un algoritmo para descubrir agrupaciones naturales en los datos.
+    Como explicó Marta, "es como pedirle a la máquina que encuentre tribus de pacientes con características similares,
+    sin decirle de antemano cuáles son esas tribus".
+</p>
+<p>
+    En esta simulación, puedes replicar su proceso de descubrimiento:
+</p>
+<ol>
+    <li><strong>Genera Datos de Pacientes</strong>: Usa el botón "Reiniciar" para crear un nuevo conjunto de datos de
+        pacientes, donde cada punto representa a una persona en un espacio de características (por ejemplo, edad y nivel
+        de colesterol).</li>
+    <li><strong>Encuentra el K Óptimo</strong>: El primer reto del equipo fue elegir el número correcto de clusters (K).
+        Usa el botón <strong>"Calcular Método del Codo"</strong> para generar el gráfico que les guio. El "codo" de la
+        curva sugiere el número óptimo de grupos y ajustará el slider de K por ti.</li>
+    <li><strong>Agrupa a los Pacientes</strong>: Con el K óptimo seleccionado, pulsa <strong>"Agrupar
+            (Animado)"</strong> para ver cómo el algoritmo K-Means asigna iterativamente a los pacientes a los clusters
+        y mueve los centroides hasta que convergen.</li>
+    <li><strong>Explora Paso a Paso</strong>: Para un análisis más detallado, como el que hizo Marta con Luis, usa
+        <strong>"Iniciar Paso a Paso"</strong> y avanza con "Siguiente Paso" para ver cómo se mueven los centroides en
+        cada iteración.
+    </li>
+</ol>
+<p>
+    Experimenta con la inicialización <strong>K-Means++</strong>, una mejora que el equipo adoptó para obtener mejores
+    resultados. ¿Puedes descubrir los grupos ocultos en los datos, tal como lo hizo el equipo del Hospital Minermont?
+</p>

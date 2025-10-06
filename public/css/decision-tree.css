@@ -1,0 +1,487 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header,
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    cursor: pointer;
+}
+
+#training-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+input[type="number"] {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    width: 60px;
+}
+
+#character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.character-card {
+    background-color: var(--card-bg);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: var(--shadow);
+}
+
+.character-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.character-card p {
+    margin: 0.5rem 0 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.character-card.selected {
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.character-card:not(.selected) {
+    filter: grayscale(80%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.character-card:not(.selected):hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Estilos para la visualización del entrenamiento */
+.hidden {
+    display: none;
+}
+
+#training-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#main-content-area {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#details-panel {
+    flex: 2;
+    min-width: 300px;
+    background: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    height: 75vh;
+    overflow-y: auto;
+}
+
+#algorithm-description {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid #eee;
+}
+
+#algorithm-description h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+#algorithm-description p,
+#algorithm-description ul {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+#algorithm-description ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+}
+
+#details-panel h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#details-panel p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #666;
+}
+
+#calculation-details table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+#calculation-details th,
+#calculation-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#calculation-details th {
+    background-color: #f2f2f2;
+    text-transform: capitalize;
+}
+
+#calculation-details .best-split {
+    background-color: #d4edda;
+    font-weight: bold;
+}
+
+.panel-character-group {
+    margin-top: 1.5rem;
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+}
+
+.panel-character-group h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+}
+
+.miniatures-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.miniatures-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: white;
+}
+
+.special-note {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: var(--border-radius);
+}
+
+.special-note p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: left;
+    color: #594300;
+    font-size: 0.9rem;
+}
+
+.special-note strong {
+    color: #d46b08;
+}
+
+.final-question-note {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.final-question-note p {
+    margin: 0;
+    line-height: 1.5;
+    color: #0050b3;
+    font-size: 0.9rem;
+}
+
+
+/* Estilos del Árbol de Cytoscape.js */
+#tree-container {
+    flex: 3;
+    min-width: 400px;
+    width: 100%;
+    height: 75vh;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background: #fdfdfd;
+    overflow: hidden;
+    position: relative;
+    /* Para posicionar los controles */
+}
+
+#cy-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Detrás de los controles y el spinner */
+}
+
+#tree-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#tree-controls button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    color: #333;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 35px;
+    text-align: center;
+}
+
+#tree-controls button:hover {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Tooltip */
+#tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+    pointer-events: none;
+    /* para que no interfiera con el ratón */
+    box-shadow: var(--shadow);
+    white-space: pre-wrap;
+    z-index: 100;
+    transition: opacity 0.2s;
+    border: 1px solid #eee;
+}
+
+#tooltip ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tooltip li {
+    margin-bottom: 4px;
+}
+
+#tooltip li strong {
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-right: 5px;
+}
+
+.description-block {
+    background-color: #eaf4fc;
+    border-left: 5px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.description-block h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.description-block p,
+.description-block ol {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.description-block ol {
+    padding-left: 25px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    cursor: pointer;
+}
+
+#training-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#current-step-display {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+#current-step-info {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+#current-group-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 50px;
+    /* Para evitar que salte el layout */
+    padding: 0.5rem;
+}
+
+#current-group-display img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: white;
+}

@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="main-container">
+    <div class="graph-panel" style="position:relative;">
+        <canvas id="classification-chart"></canvas>
+        <!-- Pop-up explicativo flotante -->
+        <div id="info-popup"
+            style="display:none; position:absolute; z-index:1000; min-width:270px; max-width:340px; background:white; border-radius:10px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:1.2em 1em; font-size:0.98em; border:1px solid #e0e0e0;">
+            <button id="close-info-popup"
+                style="position:absolute; top:0.3em; right:0.7em; background:none; border:none; font-size:1.3em; color:#888; cursor:pointer;">&times;</button>
+
+            <div style="display: flex; align-items: center;">
+                <h2 style="margin-right: 10px; margin-top: 0; margin-bottom: 1rem;">Predicción del Paciente</h2>
+            </div>
+            <div id="prediction-container">
+                <div class="prediction-box linear">
+                    <h4>Puntuación Lineal (Z)</h4>
+                    <p id="linear-output">N/A</p>
+                </div>
+                <div class="prediction-box logistic">
+                    <h4>Probabilidad de No Acudir (Sigmoid)</h4>
+                    <p id="logistic-output">N/A</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="controls-panel">
+        <button id="regenerate-btn">Generar Nuevos Datos de Pacientes</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/probabilities_translator/probabilities_translator.js"></script>
+<script>
+    (function () {
+        // --- Pop-up explicativo flotante ---
+        const popup = document.getElementById('info-popup');
+        const closeBtn = document.getElementById('close-info-popup');
+        let popupTimeout = null;
+
+        // Función para mostrar el pop-up cerca de un punto (x, y en coordenadas canvas)
+        function showPopupAt(x, y) {
+            if (!popup) return;
+            // Ajuste para que no se salga del canvas
+            const parentRect = popup.parentElement.getBoundingClientRect();
+            let left = x + 20;
+            let top = y - popup.offsetHeight / 2;
+            if (left + popup.offsetWidth > parentRect.width) left = parentRect.width - popup.offsetWidth - 10;
+            if (top < 0) top = 10;
+            if (top + popup.offsetHeight > parentRect.height) top = parentRect.height - popup.offsetHeight - 10;
+            popup.style.left = left + 'px';
+            popup.style.top = top + 'px';
+            popup.style.display = 'block';
+            // Auto-hide after 12s
+            clearTimeout(popupTimeout);
+            popupTimeout = setTimeout(() => { popup.style.display = 'none'; }, 12000);
+        }
+
+        // Cerrar pop-up
+        if (closeBtn) {
+            closeBtn.onclick = function () {
+                popup.style.display = 'none';
+                clearTimeout(popupTimeout);
+            };
+        }
+
+        // Exponer función global para el JS del gráfico
+        window.showProbTranslatorPopup = showPopupAt;
+    })();
+</script>

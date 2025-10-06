@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="controls-panel">
+    <div class="controls-panel-title">Configuración del Algoritmo K-Means</div>
+
+    <section class="control-section">
+        <div class="control-group">
+            <label class="control-label" for="k-slider">
+                Número de Clusters (K): <span class="value-display" id="k-value">3</span>
+            </label>
+            <input type="range" id="k-slider" class="control-slider" min="2" max="10" value="3">
+        </div>
+
+        <div class="control-checkbox-group">
+            <input type="checkbox" id="kmeans-plus-plus-checkbox" class="control-checkbox" checked>
+            <label for="kmeans-plus-plus-checkbox" class="control-label">Usar K-Means++</label>
+            <span id="info-icon" class="info-icon">ⓘ</span>
+        </div>
+    </section>
+
+    <section class="control-section">
+        <button id="cluster-btn" class="control-button-primary">Agrupar con K-Means</button>
+        <button id="reset-btn" class="control-button-secondary">Generar Nuevos Datos</button>
+    </section>
+
+    <section class="control-section">
+        <button id="start-step-btn" class="control-button-primary">Iniciar Paso a Paso</button>
+        <button id="next-step-btn" class="control-button-primary" disabled>Siguiente Paso</button>
+        <button id="play-pause-btn" class="control-button-primary" disabled>Reproducir</button>
+    </section>
+</div>
+
+<main class="kmeans-visualization">
+    <canvas id="kmeans-canvas" width="600" height="400"></canvas>
+    <p id="status-message" class="status-message"></p>
+</main>
+
+<hr class="section-divider">
+
+<div class="controls-panel">
+    <div class="controls-panel-title">Método del Codo</div>
+    <p class="control-description">Usa el Método del Codo para estimar el mejor número de clusters para tus datos.</p>
+
+    <section class="control-section">
+        <button id="elbow-btn" class="control-button-primary">Calcular K Óptimo (Método del Codo)</button>
+    </section>
+
+    <canvas id="elbow-canvas" width="600" height="300" style="display: none;"></canvas>
+    <p id="elbow-status-message" class="status-message"></p>
+</div>
+
+
+
+<script defer src="/js/kmeans/kmeans.js"></script>

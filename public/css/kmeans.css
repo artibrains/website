@@ -1,0 +1,70 @@
+/* K-Means demo - fully integrated with unified system */
+@import url('/css/unified-demos.css');
+
+/* K-means specific adaptations */
+.kmeans-container {
+    /* Integrado con el sistema demo-container */
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+/* K-means specific controls already handled by unified system */
+/* Todos los botones, controles y estilos son manejados por unified-demos.css */
+
+/* Solo elementos muy específicos de K-means */
+.cluster-point {
+    stroke-width: 2;
+    transition: all 0.2s ease;
+}
+
+.cluster-point:hover {
+    stroke-width: 3;
+    r: 6;
+}
+
+.centroid {
+    stroke: #333;
+    stroke-width: 2;
+    r: 8;
+}
+
+.elbow-chart {
+    margin-top: var(--demo-spacing-lg);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    background: var(--demo-bg-primary);
+}
+
+/* Tooltip específico para K-means */
+.kmeans-tooltip {
+    position: absolute;
+    padding: var(--demo-spacing-xs);
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    box-shadow: var(--demo-shadow);
+    font-size: 0.85em;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Responsive para K-means */
+@media (max-width: 768px) {
+    .kmeans-container {
+        padding: var(--demo-spacing-sm);
+    }
+    
+    .cluster-point {
+        r: 4;
+    }
+    
+    .centroid {
+        r: 6;
+    }
+}

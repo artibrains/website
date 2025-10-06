@@ -1,0 +1,121 @@
+<!-- KNN Visualization Shortcode -->
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="visualization-container" class="content-grid">
+    <!-- Ensure proper layout for large and small screens -->
+    <div id="info-panel">
+        <div class="mode-buttons">
+            <button id="add-cats-btn" class="mode-btn" data-mode="cats">🐱 Añadir Gatos</button>
+            <button id="add-dogs-btn" class="mode-btn" data-mode="dogs">🐶 Añadir Perros</button>
+            <button id="classify-btn" class="mode-btn active" data-mode="classify">🔍 Clasificar</button>
+        </div>
+
+        <div class="data-actions-container">
+            <button id="generate-data-btn" class="action-btn primary">
+                <span class="btn-icon">🎲</span>
+                <div class="btn-content">
+                    <span class="btn-text">Generar Datos</span>
+                    <small>Crea 30 puntos de ejemplo</small>
+                </div>
+            </button>
+            <button id="clear-data-btn" class="action-btn secondary">
+                <span class="btn-icon">🗑️</span>
+                <div class="btn-content">
+                    <span class="btn-text">Limpiar Canvas</span>
+                    <small>Elimina todos los datos</small>
+                </div>
+            </button>
+        </div>
+
+        <h3>🎯 Valor de K</h3>
+        <div class="k-control">
+            <input type="range" id="k-slider" min="1" max="15" value="3">
+            <span id="k-value">3</span>
+        </div>
+
+        <h3>📏 Métrica de Distancia</h3>
+        <select id="distance-metric">
+            <option value="euclidean">Euclidiana (línea recta)</option>
+            <option value="manhattan">Manhattan (camino de ciudad)</option>
+        </select>
+
+        <h3>👀 Opciones de Visualización</h3>
+        <div class="viz-buttons">
+            <button id="show-boundaries-btn" class="action-btn toggle-btn">🗺️ Mostrar Fronteras</button>
+            <button id="show-distances-btn" class="action-btn toggle-btn">📏 Mostrar Distancias</button>
+        </div>
+
+        <div id="dataset-stats">
+            <h4>📈 Estadísticas del Dataset</h4>
+            <div id="stats-content">
+                <p>Total de puntos: <span id="total-points">0</span></p>
+                <p>Gatos: <span id="cat-count">0</span></p>
+                <p>Perros: <span id="dog-count">0</span></p>
+                <p>K actual: <span id="current-k">3</span></p>
+            </div>
+        </div>
+
+        <div id="classification-result" class="hidden">
+            <h4>🎯 Resultado de Clasificación</h4>
+            <div id="result-details"></div>
+        </div>
+    </div>
+
+    <div class="canvas-container">
+        <h2>🎯 Espacio de Clasificación</h2>
+
+        <div class="canvas-wrapper">
+            <canvas id="knn-canvas" width="600" height="400"></canvas>
+            <div class="canvas-overlay">
+                <div class="quadrant-labels">
+                    <div class="quadrant top-left">Gatos Típicos<br><small>Alta agilidad<br>Baja
+                            sociabilidad</small></div>
+                    <div class="quadrant top-right">Zona Mixta<br><small>Alta agilidad<br>Alta
+                            sociabilidad</small></div>
+                    <div class="quadrant bottom-left">Zona Neutra<br><small>Baja agilidad<br>Baja
+                            sociabilidad</small></div>
+                    <div class="quadrant bottom-right">Perros Típicos<br><small>Baja agilidad<br>Alta
+                            sociabilidad</small></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="canvas-legend">
+            <div class="legend-section">
+                <h4>🏷️ Leyenda de Puntos</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color cat"></div>
+                        <span>🐱 Gatos (Datos de Entrenamiento)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color dog"></div>
+                        <span>🐶 Perros (Datos de Entrenamiento)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color test"></div>
+                        <span>🔍 Punto a Clasificar</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color neighbor"></div>
+                        <span>📍 Vecinos Más Cercanos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <h4>� Métricas de Distancia</h4>
+                <div class="distance-explanation">
+                    <div class="distance-type">
+                        <strong>Euclidiana:</strong> Distancia "en línea recta" entre puntos
+                    </div>
+                    <div class="distance-type">
+                        <strong>Manhattan:</strong> Distancia "de ciudad" (suma de diferencias X + Y)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="/js/knn/knn.js"></script>

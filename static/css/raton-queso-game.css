@@ -1,0 +1,576 @@
+/* 
+ * CSS específico para el juego del ratón y el queso
+ * Utiliza el sistema CSS unificado de interactive-demos.css
+ */
+
+@import url('/css/unified-demos.css');
+
+/* Grilla del juego */
+.grid {
+    display: grid;
+    gap: 4px;
+    justify-content: center;
+    margin: var(--demo-spacing-lg) 0;
+    background: var(--demo-bg-secondary);
+    padding: var(--demo-spacing-md);
+    border-radius: var(--demo-border-radius);
+}
+
+.cell {
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 2px solid var(--demo-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: var(--demo-bg-primary);
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: calc(var(--demo-border-radius) / 2);
+    cursor: pointer;
+}
+
+.cell:hover {
+    border-color: var(--demo-primary);
+    transform: scale(1.02);
+}
+
+.highlightMouse {
+    background: rgba(52, 152, 219, 0.2) !important;
+    border-color: var(--demo-primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.cheese {
+    background: #f6e05e !important;
+    font-size: 2rem;
+    border-color: #d69e2e;
+}
+
+.cheese::before {
+    content: '🧀';
+}
+
+/* Controles del juego */
+.game-controls {
+    background: var(--demo-bg-secondary);
+    padding: var(--demo-spacing-lg);
+    border-radius: var(--demo-border-radius);
+    border: 1px solid var(--demo-border);
+    margin-bottom: var(--demo-spacing-lg);
+}
+
+.game-controls h3 {
+    color: var(--demo-secondary);
+    margin-top: 0;
+    margin-bottom: var(--demo-spacing-md);
+    text-align: center;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--demo-spacing-sm);
+    margin-bottom: var(--demo-spacing-md);
+}
+
+.control-buttons .demo-btn {
+    margin: 0;
+}
+
+/* Estado del juego */
+.game-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--demo-spacing-md);
+    margin-bottom: var(--demo-spacing-lg);
+}
+
+.status-card {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    text-align: center;
+    box-shadow: var(--demo-shadow);
+}
+
+.status-card h4 {
+    margin: 0 0 var(--demo-spacing-xs) 0;
+    color: var(--demo-secondary);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--demo-primary);
+}
+
+/* Tabla de vasos */
+.vasos-table-container {
+    background: var(--demo-bg-primary);
+    border: 1px solid var(--demo-border);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    margin-top: var(--demo-spacing-lg);
+    overflow-x: auto;
+}
+
+.vasos-table-container h3 {
+    color: var(--demo-secondary);
+    margin-top: 0;
+    margin-bottom: var(--demo-spacing-md);
+    text-align: center;
+}
+
+.vasos-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.vasos-table th,
+.vasos-table td {
+    padding: var(--demo-spacing-xs) var(--demo-spacing-sm);
+    border: 1px solid var(--demo-border);
+    text-align: center;
+}
+
+.vasos-table th {
+    background: var(--demo-bg-secondary);
+    font-weight: 600;
+    color: var(--demo-secondary);
+}
+
+.vasos-table tr:nth-child(even) {
+    background: rgba(52, 152, 219, 0.02);
+}
+
+.vasos-table tr:hover {
+    background: rgba(52, 152, 219, 0.05);
+}
+
+/* Indicadores de pasos */
+.step-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--demo-spacing-xs);
+    background: var(--demo-bg-secondary);
+    padding: var(--demo-spacing-xs) var(--demo-spacing-sm);
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--demo-secondary);
+}
+
+.step-number {
+    background: var(--demo-primary);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+/* Animaciones específicas del juego */
+.cell.path-highlight {
+    animation: pathPulse 1s ease-in-out;
+}
+
+@keyframes pathPulse {
+
+    0%,
+    100% {
+        background: var(--demo-bg-primary);
+        border-color: var(--demo-border);
+    }
+
+    50% {
+        background: rgba(39, 174, 96, 0.2);
+        border-color: var(--demo-success);
+        transform: scale(1.05);
+    }
+}
+
+.mouse-move {
+    animation: mouseMove 0.5s ease-in-out;
+}
+
+@keyframes mouseMove {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cell {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.2rem;
+    }
+
+    .control-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .game-status {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vasos-table-container {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cell {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+
+    .game-status {
+        grid-template-columns: 1fr;
+    }
+}
+
+.raton {
+    font-size: 2rem;
+    /* Slightly smaller mouse */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+.vasos-table {
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    /* Increased margin */
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    /* Tailwind shadow-md */
+    border-radius: 0.375rem;
+    /* Tailwind rounded-md */
+    overflow: hidden;
+    width: auto;
+    max-width: 100%;
+}
+
+.vasos-table th,
+.vasos-table td {
+    border: 1px solid #e2e8f0;
+    /* Tailwind border-gray-200 */
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 0.875rem;
+    /* Tailwind text-sm */
+    min-width: 40px;
+}
+
+.vasos-table th {
+    background-color: #edf2f7;
+    /* Tailwind gray-200 */
+    font-weight: 600;
+    /* Tailwind font-semibold */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.vasos-table tr:nth-child(even) td {
+    background-color: var(--demo-bg-secondary) 80%;
+}
+
+.vasos-table td.font-semibold {
+    background-color: #f7fafc;
+    /* Tailwind gray-100 */
+}
+
+.vaso-anim-refuerzo {
+    background: #9ae6b4 !important;
+    /* Tailwind green-300 */
+    transition: background 0.6s ease-out;
+    font-weight: bold;
+}
+
+.vaso-anim-penaliza {
+    background: #feb2b2 !important;
+    /* Tailwind red-300 */
+    transition: background 0.6s ease-out;
+    font-weight: bold;
+}
+
+.path {
+    background-color: #faf089 !important;
+    /* Tailwind yellow-200 */
+    opacity: 0.7;
+    transition: background-color 0.1s linear;
+    /* Faster transition for path */
+}
+
+/* Modal Styles */
+#modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #cbd5e0;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 450px;
+    /* Wider modal */
+}
+
+#modal h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#modal button {
+    margin-top: 1rem;
+}
+
+/* Button Styles removed, now handled by .control-button-* in main.css and Tailwind overrides in HTML */
+/* Removed:
+button { ... }
+button:hover { ... }
+button:disabled { ... }
+button#btnReiniciar { ... }
+button#btnReiniciar:hover { ... }
+*/
+
+/* Details/Summary Styles */
+details.explanation-section {
+    background-color: #e2e8f0;
+    /* Tailwind gray-200 */
+    padding: 1rem;
+    /* Tailwind p-4 */
+    border-radius: 0.5rem;
+    /* Tailwind rounded-lg */
+    margin: 1.5rem 0;
+    /* Tailwind my-6 */
+    border: 1px solid #cbd5e0;
+    /* Tailwind border-gray-300 */
+}
+
+details.explanation-section summary {
+    cursor: pointer;
+    font-weight: 700;
+    /* Tailwind font-bold */
+    font-size: 1.1rem;
+    /* Slightly larger */
+    margin-bottom: 0.5rem;
+    /* Space below summary */
+}
+
+details.explanation-section h4 {
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    color: #2d3748;
+    /* Tailwind gray-800 */
+}
+
+details.explanation-section p,
+details.explanation-section ul {
+    font-size: 0.9rem;
+    /* Slightly smaller text */
+    color: #4a5568;
+    /* Tailwind gray-700 */
+    line-height: 1.6;
+}
+
+details.explanation-section ul {
+    margin-left: 1rem;
+    list-style-type: disc;
+    padding-left: 0.5rem;
+}
+
+details.explanation-section li {
+    margin-bottom: 0.25rem;
+}
+
+details.explanation-section b {
+    color: #2d3748;
+}
+
+/* Control Panel Customizations */
+.control-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    /* Space between control groups */
+}
+
+.control-row+.control-row {
+    margin-top: 1rem;
+    /* Space between the two rows */
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    /* Separator line */
+}
+
+/* Contenedor flexible para pantallas grandes */
+.demo-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.demo-chart-container,
+.demo-info-card {
+    flex: 1 1 calc(50% - 1rem);
+    /* Ocupa el 50% del ancho menos el espacio del gap */
+    min-width: 300px;
+    /* Asegura que no se reduzca demasiado en pantallas pequeñas */
+}
+
+/* Alineación vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+    .demo-flex-container {
+        flex-direction: column;
+    }
+}
+
+/* Section Styling */
+.section-container {
+    background-color: white;
+    padding: 1.5rem;
+    /* Tailwind p-6 */
+    border-radius: 0.5rem;
+    /* Tailwind rounded-lg */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    /* Tailwind shadow */
+    margin-bottom: 1.5rem;
+    /* Tailwind mb-6 */
+}
+
+.explanation-text {
+    background-color: #f7fafc;
+    /* Tailwind gray-100 */
+    border: 1px solid #e2e8f0;
+    /* Tailwind border-gray-200 */
+    box-shadow: none;
+}
+
+/* Wrapper for side-by-side layout on large screens */
+@media (min-width: 1024px) {
+    .main-content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        /* Tailwind gap-6 */
+        align-items: start;
+        /* Align items to the top */
+    }
+
+    .main-content-wrapper .section-container {
+        margin-bottom: 0;
+        /* Remove bottom margin when in columns */
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    /* Tailwind text-2xl */
+    font-weight: 700;
+    /* Tailwind font-bold */
+    color: #2d3748;
+    /* Tailwind gray-800 */
+    margin-bottom: 1rem;
+    /* Tailwind mb-4 */
+    border-bottom: 2px solid #e2e8f0;
+    /* Tailwind border-gray-200 */
+    padding-bottom: 0.5rem;
+    /* Tailwind pb-2 */
+}
+
+/* Dark Theme Styles */
+.vasos-table-container {
+    background: var(--demo-surface-alt);
+    border: 1px solid var(--demo-border);
+}
+
+.vasos-table th {
+    background: var(--demo-surface);
+    color: var(--demo-accent);
+}
+
+.vasos-table td {
+    background: var(--demo-surface-muted);
+    color: var(--demo-text);
+}
+
+.vasos-table tr:nth-child(even) td {
+    background: color-mix(in srgb, var(--demo-surface-muted) 50%, var(--demo-bg));
+}
+
+.vasos-table tr:nth-child(odd) td {
+    background: color-mix(in srgb, var(--demo-surface-muted) 95%, var(--demo-bg));
+}
+
+.vasos-table tr:hover td {
+    background: color-mix(in srgb, var(--demo-surface-muted) 95%, var(--demo-bg));
+}
+
+.cell {
+    background: var(--demo-surface);
+    border-color: var(--demo-border);
+    color: var(--demo-text);
+}
+
+.cell:hover {
+    border-color: var(--demo-accent);
+}
+
+.highlightMouse {
+    background: color-mix(in srgb, var(--demo-accent) 15%, var(--demo-surface));
+    border-color: var(--demo-accent);
+}
+
+.cheese {
+    background: linear-gradient(135deg, #ffe08a, #f6c344);
+    border-color: #d69e2e;
+}

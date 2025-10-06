@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Technical comparison between Deep Blue and AlphaGo, two milestones in the history of artificial intelligence.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="1.5 Deep Blue vs AlphaGo :: Artificial Brains">
+    <meta name="twitter:description" content="Technical comparison between Deep Blue and AlphaGo, two milestones in the history of artificial intelligence.">
+    <meta property="og:url" content="http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html">
+    <meta property="og:site_name" content="Artificial Brains">
+    <meta property="og:title" content="1.5 Deep Blue vs AlphaGo :: Artificial Brains">
+    <meta property="og:description" content="Technical comparison between Deep Blue and AlphaGo, two milestones in the history of artificial intelligence.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="1 - The Beginning of the Journey">
+    <meta property="article:published_time" content="2025-04-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-18T00:00:00+00:00">
+    <meta itemprop="name" content="1.5 Deep Blue vs AlphaGo :: Artificial Brains">
+    <meta itemprop="description" content="Technical comparison between Deep Blue and AlphaGo, two milestones in the history of artificial intelligence.">
+    <meta itemprop="datePublished" content="2025-04-18T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2025-04-18T00:00:00+00:00">
+    <meta itemprop="wordCount" content="552">
+    <title>1.5 Deep Blue vs AlphaGo :: Artificial Brains</title>
+    <link href="http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759709457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759709457" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759709457" rel="stylesheet">
+    <link href="/css/theme.css?1759709457" rel="stylesheet">
+    <link href="/css/format-html.css?1759709457" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/\/chapter-1\/deep-blue-vs-alphago\/deep-blue-vs-alphago\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#history-of-deep-blue-and-alphago">History of Deep Blue and AlphaGo</a>
+      <ul>
+        <li><a href="#deep-blue">Deep Blue</a></li>
+        <li><a href="#alphago">AlphaGo</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ul>
+    </li>
+    <li><a href="#technical-comparison-of-two-milestones-in-artificial-intelligence-history">Technical comparison of two milestones in Artificial Intelligence history.</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">How Machines Think</span><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/chapter-1/index.html"><span itemprop="name">1 - The Beginning of the Journey</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">1.5 Deep Blue vs AlphaGo</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html" title="1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="15-deep-blue-vs-alphago">1.5 Deep Blue vs AlphaGo</h1>
+
+<h1 id="deep-blue-vs-alphago">Deep Blue vs AlphaGo</h1>
+<h2 id="history-of-deep-blue-and-alphago">History of Deep Blue and AlphaGo</h2>
+<h3 id="deep-blue">Deep Blue</h3>
+<p>Deep Blue began as a project called &ldquo;Deep Thought&rdquo; at Carnegie Mellon University in 1985. It was developed by three graduate students: Feng-hsiung Hsu, Murray Campbell and Thomas Anatharaman. The project evolved with IBM&rsquo;s support, which invested 10 million dollars to turn it into a machine capable of competing against humans in chess.</p>
+<p>In 1996, Deep Blue faced world chess champion Garry Kasparov, losing the match with a score of 4:2. However, after a year of improvements, Deep Blue managed to beat Kasparov in 1997, becoming the first machine to defeat a world champion in a standard match. This achievement was possible thanks to its ability to calculate 200 million positions per second, using 480 chess-specialized processors.</p>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KF6sLCeBj0s" title="Deep Blue vs Kasparov"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p style="font-size: 0.9em; color: #555;">An analysis of the historic confrontation between Deep Blue and Garry Kasparov in 1997.</p>
+</div>
+<h3 id="alphago">AlphaGo</h3>
+<p>AlphaGo, developed by DeepMind, marked a completely different approach from Deep Blue. Instead of relying on predefined rules and brute force, AlphaGo used deep neural networks and reinforcement learning. Its supervised learning policy was based on millions of games played by humans, while its value network evaluated positions to determine the best moves.</p>
+<p>AlphaGo surprised the world in 2016 by defeating Go world champion Lee Sedol, in a game that many considered too complex for machines due to its vast search space.</p>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NP8xt8o4_5Q" title="AlphaGo vs Lee Sedol"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p style="font-size: 0.9em; color: #555;">A summary of the iconic match where AlphaGo defeated world champion Lee Sedol.</p>
+</div>
+<p>Unlike Deep Blue, AlphaGo didn&rsquo;t try to predict all possible outcomes, but rather analyzed positions and made decisions based on success probabilities.</p>
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WXuK6gekU1Y" title="How AlphaGo works"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p style="font-size: 0.9em; color: #555;">A technical explanation about the algorithms behind AlphaGo.</p>
+</div>
+<h3 id="impact">Impact</h3>
+<p>While Deep Blue demonstrated machines&rsquo; ability to surpass humans in specific tasks through brute force, AlphaGo represented a paradigm shift by showing how machines can learn and develop strategies beyond human understanding. Both milestones have inspired significant advances in artificial intelligence and machine learning.</p>
+<h2 id="technical-comparison-of-two-milestones-in-artificial-intelligence-history">Technical comparison of two milestones in Artificial Intelligence history.</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Category</th>
+          <th>Deep Blue (Chess)</th>
+          <th>AlphaGo (Go)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Board</td>
+          <td>8x8</td>
+          <td>19x19</td>
+      </tr>
+      <tr>
+          <td>Moves per turn</td>
+          <td>~35</td>
+          <td>~250</td>
+      </tr>
+      <tr>
+          <td>Possible games</td>
+          <td>~10¹²⁰  This number is known as the <strong>Shannon Number</strong>, a classic estimation of chess complexity.</td>
+          <td>&gt;10⁷⁶⁰ The number of possible Go games is so large that it exceeds the number of atoms in the observable universe.</td>
+      </tr>
+      <tr>
+          <td>Paradigm</td>
+          <td>Search + human heuristics</td>
+          <td>Deep learning + Monte Carlo search</td>
+      </tr>
+      <tr>
+          <td>Decision model</td>
+          <td>Deterministic (no learning)</td>
+          <td>Data-based, learns through reinforcement</td>
+      </tr>
+      <tr>
+          <td>Processing</td>
+          <td>~200 million positions/second</td>
+          <td>Thousands of intelligent evaluations/second</td>
+      </tr>
+      <tr>
+          <td>Key elements</td>
+          <td>- Alpha-beta search - Manual evaluation - Opening/endgame databases</td>
+          <td>- Policy network - Value network - Monte Carlo Tree Search</td>
+      </tr>
+      <tr>
+          <td>Historical significance</td>
+          <td>Dominates with brute force a complex but manageable space</td>
+          <td>Learns emergent strategies in an unmanageable space</td>
+      </tr>
+  </tbody>
+</table>
+<p>In summary, Deep Blue and AlphaGo represent two distinct approaches to artificial intelligence: one based on brute force and expert knowledge, and the other on deep learning and exploration. Both achieved impressive milestones in their respective fields and have paved the way for future advances in AI. Both systems, although different in their approach, have demonstrated the potential of artificial intelligence to address complex problems. Deep Blue and AlphaGo not only marked milestones in their respective fields, but also opened the path for future innovations in machine learning and artificial intelligence.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.rebellionresearch.com/blog/ibm-s-deep-blue-vs-google-s-alphago-gary-kasparov" rel="external" target="_blank">IBM&rsquo;s Deep Blue vs Google&rsquo;s AlphaGo - Rebellion Research</a></li>
+<li><a href="https://www.ibm.com/ibm/history/ibm100/us/en/icons/deepblue/" rel="external" target="_blank">Deep Blue - IBM Research</a></li>
+<li><a href="https://deepmind.com/research/highlighted-research/alphago" rel="external" target="_blank">AlphaGo - DeepMind</a></li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> Apr 18, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="">
+            <div class="logo-title">Artificial Brains</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/chapter-1/index.html"><a class="padding" href="/chapter-1/index.html">1 - The Beginning of the Journey</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter-1/ai-timeline/history-ai-timeline/index.html"><a class="padding" href="/chapter-1/ai-timeline/history-ai-timeline/index.html"> 1.4 History of Artificial Intelligence</a></li>
+            <li class="" data-nav-id="/chapter-1/lighthill/lighthill-report-ai-winter/index.html"><a class="padding" href="/chapter-1/lighthill/lighthill-report-ai-winter/index.html">1.4 - The Lighthill Report</a></li>
+            <li class="" data-nav-id="/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html"><a class="padding" href="/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html">1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning)</a></li>
+            <li class="active " data-nav-id="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html"><a class="padding" href="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html">1.5 Deep Blue vs AlphaGo</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Language</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" lang="es">Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" lang="en" selected data-selected>English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759709457" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759709457" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759709457"></script>
+    <script src="/js/theme.js?1759709457" defer></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Error Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>Debug Test Page</h1>
+
+    <div class="slider-container">
+        <label for="userSlopeRange">Pendiente:</label>
+        <input id="userSlopeRange" type="range" min="1.0" max="3.0" step="0.01" value="1.50">
+        <input id="userSlopeInput" type="number" step="0.01" value="1.50" style="width: 90px;">
+    </div>
+
+    <div class="slider-container">
+        <label for="userInterceptRange">Intercepto:</label>
+        <input id="userInterceptRange" type="range" min="0" max="30" step="0.1" value="15.0">
+        <input id="userInterceptInput" type="number" step="0.1" value="15.0" style="width: 90px;">
+    </div>
+
+    <button id="compareButton">Comparar con óptimo</button>
+    <button id="generateNormal">Generar datos normales</button>
+
+    <canvas id="gameChart" width="400" height="400"></canvas>
+
+    <div id="resultsModal" style="display: none;">
+        <div>
+            <span id="closeButton">&times;</span>
+            <h3>Resultados:</h3>
+            <p id="resultText"></p>
+            <table>
+                <tr>
+                    <td>Pendiente</td>
+                    <td id="userSlope">-</td>
+                    <td id="optimalSlope">-</td>
+                </tr>
+                <tr>
+                    <td>Intercepto</td>
+                    <td id="userIntercept">-</td>
+                    <td id="optimalIntercept">-</td>
+                </tr>
+                <tr>
+                    <td id="errorTypeLabel">Error</td>
+                    <td id="userError">-</td>
+                    <td id="optimalError">-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        console.log('Test page loaded');
+        console.log('Chart available:', typeof Chart !== 'undefined');
+        console.log('Slope input exists:', !!document.getElementById('userSlopeInput'));
+        console.log('Compare button exists:', !!document.getElementById('compareButton'));
+
+        // Simple test handlers
+        const slopeRange = document.getElementById('userSlopeRange');
+        const slopeInput = document.getElementById('userSlopeInput');
+
+        if (slopeRange && slopeInput) {
+            slopeRange.addEventListener('input', () => {
+                console.log('Slider moved to:', slopeRange.value);
+                slopeInput.value = parseFloat(slopeRange.value).toFixed(2);
+            });
+
+            slopeInput.addEventListener('change', () => {
+                console.log('Input changed to:', slopeInput.value);
+                slopeRange.value = slopeInput.value;
+            });
+        }
+
+        const compareBtn = document.getElementById('compareButton');
+        if (compareBtn) {
+            compareBtn.addEventListener('click', () => {
+                console.log('Compare button clicked!');
+                alert('Compare clicked - slope: ' + slopeInput.value);
+            });
+        }
+    </script>
+</body>
+
+</html>

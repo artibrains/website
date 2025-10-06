@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Demostración interactiva de cómo la regresión logística convierte combinaciones lineales en probabilidades para clasificar pacientes y predecir asistencia a citas médicas.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="El Traductor de Probabilidades: Regresión Logística :: Cerebros Artificiales">
+    <meta name="twitter:description" content="Demostración interactiva de cómo la regresión logística convierte combinaciones lineales en probabilidades para clasificar pacientes y predecir asistencia a citas médicas.">
+    <meta property="og:url" content="http://localhost:1313/es/chapter-3/probabilities_translator/probabilities_translator/index.html">
+    <meta property="og:site_name" content="Cerebros Artificiales">
+    <meta property="og:title" content="El Traductor de Probabilidades: Regresión Logística :: Cerebros Artificiales">
+    <meta property="og:description" content="Demostración interactiva de cómo la regresión logística convierte combinaciones lineales en probabilidades para clasificar pacientes y predecir asistencia a citas médicas.">
+    <meta property="og:locale" content="es">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="3 - Sistemas de clasificación y evaluación de modelos">
+    <meta property="article:published_time" content="2025-04-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="name" content="El Traductor de Probabilidades: Regresión Logística :: Cerebros Artificiales">
+    <meta itemprop="description" content="Demostración interactiva de cómo la regresión logística convierte combinaciones lineales en probabilidades para clasificar pacientes y predecir asistencia a citas médicas.">
+    <meta itemprop="datePublished" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="wordCount" content="407">
+    <title>El Traductor de Probabilidades: Regresión Logística :: Cerebros Artificiales</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759571811" rel="stylesheet">
+    <link href="/css/theme.css?1759571811" rel="stylesheet">
+    <link href="/css/format-html.css?1759571811" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/es\/chapter-3\/probabilities_translator\/probabilities_translator\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar en el portapapeles`;
+      window.T_Copied_to_clipboard = `¡Copiado al portapapeles!`;
+      window.T_Copy_link_to_clipboard = `Copiar enlace al portapapeles`;
+      window.T_Link_copied_to_clipboard = `¡Enlace copiado al portapapeles!`;
+      window.T_Reset_view = `Restablecer vista`;
+      window.T_View_reset = `¡Ver reajuste!`;
+      window.T_No_results_found = `No se han encontrado resultados para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/es/chapter-3/probabilities_translator/probabilities_translator/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menú (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Tabla de contenido (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#demostración-interactiva">Demostración Interactiva</a></li>
+    <li><a href="#conceptos-fundamentales">Conceptos Fundamentales</a>
+      <ul>
+        <li><a href="#interpretación-en-el-contexto-médico">Interpretación en el Contexto Médico</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/index.html"><span itemprop="name">Cerebros Artificiales: Cómo piensan las máquinas</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/chapter-3/index.html"><span itemprop="name">3 - Sistemas de clasificación y evaluación de modelos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">El Traductor de Probabilidades: Regresión Logística</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-3/index.html" title="3 - Sistemas de clasificación y evaluación de modelos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-3/juego-sigmoide/juego-sigmoide/index.html" title="El Clasificador: Función Sigmoide (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Más"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="el-traductor-de-probabilidades-regresión-logística">El Traductor de Probabilidades: Regresión Logística</h1>
+
+<h2 id="introducción">Introducción</h2>
+<p>La <strong>Regresión Logística</strong> es un modelo fundamental para predecir resultados categóricos, como decidir si un paciente pertenece a un grupo u otro. En lugar de predecir un valor continuo, calcula la probabilidad de que un caso (por ejemplo, un paciente) pertenezca a una categoría específica (como &ldquo;no acudirá a la cita&rdquo;), convirtiéndola en una herramienta esencial para la clasificación.</p>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/unified-demos.css">
+    <h3 class="medical-context__title">
+        Contexto
+    </h3>
+    <div class="medical-context medical-context--clinic medical-context--intermediate">
+
+        <div class="medical-context__header">
+
+            <div class="medical-context__icon">
+                🩺
+                
+            </div>
+            <div class="medical-context__type">
+                <span class="mc-badge mc-badge--type">
+                    <span class="mc-badge__label">Tipo</span>
+                    <span class="mc-badge__value">
+                        Clínica
+                        
+                    </span>
+                </span>
+            </div>
+            <div class="medical-context__level">
+                <span class="level-indicator level-indicator--intermediate">
+                    Intermedio
+                    
+                </span>
+            </div>
+        </div>
+
+        <div class="medical-context__content">
+
+
+            
+            <div class="medical-context__scenario">
+                <h4>Escenario</h4>
+                <p>Tu centro de salud quiere reducir el número de citas a las que los pacientes no acuden. Para ello, necesitas un modelo que identifique qué pacientes tienen una alta probabilidad de faltar, basándose en su historial de asistencia y características demográficas.</p>
+            </div>
+            
+
+            
+            <div class="medical-context__highlight">
+                <h4>Aplicación Clínica</h4>
+                <p>La regresión logística permite predecir la probabilidad de inasistencia basándose en factores como edad y días desde la última visita. Esto permite al centro tomar medidas preventivas como llamadas de recordatorio o reprogramación proactiva de citas.</p>
+            </div>
+            
+        </div>
+
+        <div class="intro-text">
+            
+        </div>
+        <div class="steps">
+            
+        </div>
+    </div>
+<h2 id="demostración-interactiva">Demostración Interactiva</h2>
+
+
+
+
+
+<div class="demo-container ">
+    
+    <h3 class="demo-title">Predictor de Asistencia a Citas Médicas</h3>
+    
+
+    
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="main-container">
+    <div class="graph-panel" style="position:relative;">
+        <canvas id="classification-chart"></canvas>
+        
+        <div id="info-popup"
+            style="display:none; position:absolute; z-index:1000; min-width:270px; max-width:340px; background:white; border-radius:10px; box-shadow:0 4px 24px rgba(0,0,0,0.18); padding:1.2em 1em; font-size:0.98em; border:1px solid #e0e0e0;">
+            <button id="close-info-popup"
+                style="position:absolute; top:0.3em; right:0.7em; background:none; border:none; font-size:1.3em; color:#888; cursor:pointer;">&times;</button>
+
+            <div style="display: flex; align-items: center;">
+                <h2 style="margin-right: 10px; margin-top: 0; margin-bottom: 1rem;">Predicción del Paciente</h2>
+            </div>
+            <div id="prediction-container">
+                <div class="prediction-box linear">
+                    <h4>Puntuación Lineal (Z)</h4>
+                    <p id="linear-output">N/A</p>
+                </div>
+                <div class="prediction-box logistic">
+                    <h4>Probabilidad de No Acudir (Sigmoid)</h4>
+                    <p id="logistic-output">N/A</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="controls-panel">
+        <button id="regenerate-btn">Generar Nuevos Datos de Pacientes</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/probabilities_translator/probabilities_translator.js"></script>
+<script>
+    (function () {
+        
+        const popup = document.getElementById('info-popup');
+        const closeBtn = document.getElementById('close-info-popup');
+        let popupTimeout = null;
+
+        
+        function showPopupAt(x, y) {
+            if (!popup) return;
+            
+            const parentRect = popup.parentElement.getBoundingClientRect();
+            let left = x + 20;
+            let top = y - popup.offsetHeight / 2;
+            if (left + popup.offsetWidth > parentRect.width) left = parentRect.width - popup.offsetWidth - 10;
+            if (top < 0) top = 10;
+            if (top + popup.offsetHeight > parentRect.height) top = parentRect.height - popup.offsetHeight - 10;
+            popup.style.left = left + 'px';
+            popup.style.top = top + 'px';
+            popup.style.display = 'block';
+            
+            clearTimeout(popupTimeout);
+            popupTimeout = setTimeout(() => { popup.style.display = 'none'; }, 12000);
+        }
+
+        
+        if (closeBtn) {
+            closeBtn.onclick = function () {
+                popup.style.display = 'none';
+                clearTimeout(popupTimeout);
+            };
+        }
+
+        
+        window.showProbTranslatorPopup = showPopupAt;
+    })();
+</script>
+
+
+</div>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    ¿Cómo Funciona la Regresión Logística?
+  </summary>
+  <div class="box-content">
+<p>La regresión logística transforma una combinación lineal de variables en una probabilidad entre 0 y 1:</p>
+<ol>
+<li><strong>Combinación lineal</strong>: <code>z = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ</code></li>
+<li><strong>Función sigmoide</strong>: <code>p = 1 / (1 + e^(-z))</code></li>
+<li><strong>Interpretación</strong>: <code>p</code> es la probabilidad del evento (ej: no asistir)</li>
+<li><strong>Clasificación</strong>: Si <code>p &gt; 0.5</code> → predicción positiva, si <code>p ≤ 0.5</code> → predicción negativa</li>
+</ol>
+  </div>
+</details>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Ventajas de la Regresión Logística
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Probabilidades interpretables</strong>: Ofrece probabilidades reales, no solo clasificaciones</li>
+<li><strong>No asume linealidad</strong>: Aunque es lineal en log-odds, la relación con probabilidades es no lineal</li>
+<li><strong>Robusto</strong>: Menos sensible a outliers que modelos lineales tradicionales</li>
+<li><strong>Eficiente</strong>: Computacionalmente rápido para entrenamiento y predicción</li>
+<li><strong>Baseline sólido</strong>: Excelente punto de partida para problemas de clasificación</li>
+</ul>
+  </div>
+</details>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Limitaciones Importantes
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Separabilidad lineal</strong>: Assume que las clases son separables por una frontera lineal</li>
+<li><strong>Independencia</strong>: Las observaciones deben ser independientes entre sí</li>
+<li><strong>Tamaño de muestra</strong>: Necesita suficientes datos para estimar parámetros confiablemente</li>
+<li><strong>Multicolinealidad</strong>: Variables predictoras altamente correlacionadas pueden causar problemas</li>
+</ul>
+  </div>
+</details>
+<h3 id="interpretación-en-el-contexto-médico">Interpretación en el Contexto Médico</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Análisis de Probabilidades
+  </summary>
+  <div class="box-content">
+<p>En el contexto de asistencia a citas:</p>
+<ul>
+<li><strong>Probabilidad &lt; 0.3</strong>: Paciente confiable, baja probabilidad de inasistencia</li>
+<li><strong>Probabilidad 0.3-0.7</strong>: Zona de incertidumbre, considerar recordatorios</li>
+<li><strong>Probabilidad &gt; 0.7</strong>: Alto riesgo de inasistencia, intervención recomendada</li>
+</ul>
+<p><strong>Variables del modelo:</strong></p>
+<ul>
+<li><strong>Edad</strong>: Pacientes jóvenes y muy mayores pueden tener patrones diferentes</li>
+<li><strong>Días desde última visita</strong>: Intervalos muy largos pueden indicar desconexión</li>
+<li><strong>Historial</strong>: Comportamiento pasado es predictor del futuro</li>
+</ul>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Limpiar Terminal">Limpiar</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal iniciado...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> 17 abr. 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/es/index.html">
+            <div class="logo-title">Cerebros Artificiales</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/es/index.html"><a class="padding" href="/es/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-1/index.html"><a class="padding" href="/es/chapter-1/index.html">1 - El Comienzo del Viaje</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-2/index.html"><a class="padding" href="/es/chapter-2/index.html">2 - Modelos de aprendizaje automático</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/es/chapter-3/index.html"><a class="padding" href="/es/chapter-3/index.html">3 - Sistemas de clasificación y evaluación de modelos</a><ul id="R-subsections-9a957cc6839aa1b33676870e792c5474" class="collapsible-menu">
+            <li class="active " data-nav-id="/es/chapter-3/probabilities_translator/probabilities_translator/index.html"><a class="padding" href="/es/chapter-3/probabilities_translator/probabilities_translator/index.html">El Traductor de Probabilidades: Regresión Logística</a></li>
+            <li class="" data-nav-id="/es/chapter-3/juego-sigmoide/juego-sigmoide/index.html"><a class="padding" href="/es/chapter-3/juego-sigmoide/juego-sigmoide/index.html">El Clasificador: Función Sigmoide</a></li>
+            <li class="" data-nav-id="/es/chapter-3/risk_gestor/risk_gestor/index.html"><a class="padding" href="/es/chapter-3/risk_gestor/risk_gestor/index.html">El Gestor de Riesgos</a></li>
+            <li class="" data-nav-id="/es/chapter-3/k_fold_validator/k_fold_validator/index.html"><a class="padding" href="/es/chapter-3/k_fold_validator/k_fold_validator/index.html">El Validador Honesto: Validación Cruzada K-Fold</a></li>
+            <li class="" data-nav-id="/es/chapter-3/complexity/complexity/index.html"><a class="padding" href="/es/chapter-3/complexity/complexity/index.html">El Domador de Complejidad</a></li></ul></li>
+            <li class="" data-nav-id="/es/chapter-4/index.html"><a class="padding" href="/es/chapter-4/index.html">4 - Algoritmos de Clasificación en Profundidad</a><ul id="R-subsections-c227eed7e9ba3e21264f72020206734e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-5/index.html"><a class="padding" href="/es/chapter-5/index.html">5 - Aprendizaje No Supervisado: Descubriendo lo Invisible</a><ul id="R-subsections-84f97cef1a12d542f1272e0c68ba3612" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-6/index.html"><a class="padding" href="/es/chapter-6/index.html">6 - Dentro de la Mente de la Máquina: Redes Neuronales</a><ul id="R-subsections-353c43515a76f18e138bc04573502da7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-7/index.html"><a class="padding" href="/es/chapter-7/index.html">7 - La Revolución del Lenguaje - Entendiendo los LLMs </a><ul id="R-subsections-211eabc86fd80b431779fcc37efd887b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/conference-notes/index.html"><a class="padding" href="/es/conference-notes/index.html">8 - Recursos de IA</a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Idioma</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-3/probabilities_translator/probabilities_translator/index.html" lang="es" selected data-selected>Español</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Tema</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759571811" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759571811" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759571811"></script>
+    <script src="/js/theme.js?1759571811" defer></script>
+  </body>
+</html>

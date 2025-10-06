@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="bpe-app">
+    <section class="section">
+        <h2>Parte 1: Entrenar el Tokenizador</h2>
+        <div class="control-group">
+            <div class="label-with-button">
+                <label for="corpus-input">1. Texto de entrenamiento (corpus):</label>
+                <button id="clear-corpus-btn" class="secondary-btn">Limpiar</button>
+            </div>
+            <textarea id="corpus-input"></textarea>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <label for="max-vocab-size">2. Tamaño máximo del vocabulario:</label>
+                <input type="number" id="max-vocab-size" value="300" min="20" max="1000">
+            </div>
+            <button id="train-bpe-btn">3. Entrenar BPE</button>
+        </div>
+        <div id="status-box" class="status-box"></div>
+        <div id="training-results" class="results-area" style="display: none;">
+            <h3>Registro de Fusiones (Merges)</h3>
+            <pre id="merge-log"></pre>
+            <h3>Vocabulario Final (ordenado por frecuencia)</h3>
+            <div id="final-vocab"></div>
+            <div id="vocab-controls">
+                <button id="show-more-vocab-btn" class="secondary-btn">Mostrar más</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-disabled" id="tokenization-section">
+        <h2>Parte 2: Visualizar Tokenización</h2>
+        <label for="sentence-input">Introduce una frase para tokenizar:</label>
+        <div class="controls">
+            <input type="text" id="sentence-input" placeholder="Prueba con: un hidalgo flaco...">
+            <button id="tokenize-btn">Tokenizar</button>
+        </div>
+        <div id="tokenized-output"></div>
+    </section>
+</div>
+
+<script src="/js/tokenizer_bpe/tokenizer_bpe.js"></script>

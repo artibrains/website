@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7 - La Revolución del Lenguaje - Entendiendo los LLMs  :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/chapter-7/index.html</link>
+    <description>Con una sólida base en modelos predictivos, el equipo del Hospital Minermont se enfrenta a su frontera más compleja hasta la fecha: el vasto universo de datos no estructurados. Cada día, se generan miles de informes de alta, notas clínicas y evoluciones de pacientes, un tesoro de información encerrado en texto libre. ¿Podría la IA ayudarles a extraer conocimiento de estas narrativas clínicas?&#xA;Esta pregunta les abre la puerta al mundo de los Modelos de Lenguaje Grandes (LLMs). Alma García, de AIA, les explica que antes de que un modelo pueda analizar, resumir o generar texto, debe aprender a “leer”. Y el primer paso para leer no es entender palabras, sino descomponerlas en piezas manejables.</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <atom:link href="http://localhost:1313/es/chapter-7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El Artesano de Palabras: El Tokenizador BPE</title>
+      <link>http://localhost:1313/es/chapter-7/tokenizer_bpe/tokenizador-bpe/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-7/tokenizer_bpe/tokenizador-bpe/index.html</guid>
+      <description>Visualizador interactivo del algoritmo de tokenización Byte-Pair Encoding (BPE), la base de los LLMs.</description>
+    </item>
+  </channel>
+</rss>

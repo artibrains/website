@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Una simulación interactiva para entender cómo las Inteligencias Artificiales aprenden mediante refuerzo.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo) :: Cerebros Artificiales">
+    <meta name="twitter:description" content="Una simulación interactiva para entender cómo las Inteligencias Artificiales aprenden mediante refuerzo.">
+    <meta property="og:url" content="http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html">
+    <meta property="og:site_name" content="Cerebros Artificiales">
+    <meta property="og:title" content="1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo) :: Cerebros Artificiales">
+    <meta property="og:description" content="Una simulación interactiva para entender cómo las Inteligencias Artificiales aprenden mediante refuerzo.">
+    <meta property="og:locale" content="es">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="1 - El Comienzo del Viaje">
+    <meta property="article:published_time" content="2023-10-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="name" content="1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo) :: Cerebros Artificiales">
+    <meta itemprop="description" content="Una simulación interactiva para entender cómo las Inteligencias Artificiales aprenden mediante refuerzo.">
+    <meta itemprop="datePublished" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2023-10-27T00:00:00+00:00">
+    <meta itemprop="wordCount" content="518">
+    <title>1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo) :: Cerebros Artificiales</title>
+    <link href="http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759709459" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759709459" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759709459" rel="stylesheet">
+    <link href="/css/theme.css?1759709459" rel="stylesheet">
+    <link href="/css/format-html.css?1759709459" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/\/es\/chapter-1\/cheese-mouse-game\/raton-queso-aprendizaje-refuerzo\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar en el portapapeles`;
+      window.T_Copied_to_clipboard = `¡Copiado al portapapeles!`;
+      window.T_Copy_link_to_clipboard = `Copiar enlace al portapapeles`;
+      window.T_Link_copied_to_clipboard = `¡Enlace copiado al portapapeles!`;
+      window.T_Reset_view = `Restablecer vista`;
+      window.T_View_reset = `¡Ver reajuste!`;
+      window.T_No_results_found = `No se han encontrado resultados para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menú (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Tabla de contenido (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#conceptos-teóricos-fundamentales">Conceptos Teóricos Fundamentales</a>
+      <ul>
+        <li><a href="#elementos-del-aprendizaje-por-refuerzo">Elementos del Aprendizaje por Refuerzo</a></li>
+        <li><a href="#metodología-de-aprendizaje">Metodología de Aprendizaje</a></li>
+      </ul>
+    </li>
+    <li><a href="#entrenamiento-por-bloques-robustez-estadística">Entrenamiento por Bloques: Robustez Estadística</a>
+      <ul>
+        <li><a href="#aplicaciones-en-el-mundo-real">Aplicaciones en el Mundo Real</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Cerebros Artificiales: Cómo piensan las máquinas</span><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/chapter-1/index.html"><span itemprop="name">1 - El Comienzo del Viaje</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo)</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html" title="1.4 - El informe Lighthill (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" title="1.5 Deep Blue vs AlphaGo (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Más"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="14-juego-interactivo-el-ratón-y-el-queso-aprendizaje-por-refuerzo">1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo)</h1>
+
+<h2 id="introducción">Introducción</h2>
+<p>El Aprendizaje por Refuerzo (Reinforcement Learning) es un tipo de IA que aprende a tomar decisiones mediante prueba y error, de forma similar a como un animal aprende a navegar un laberinto para encontrar comida. El &ldquo;agente&rdquo; (nuestro ratón) explora un entorno y recibe &ldquo;recompensas&rdquo; por las acciones que lo acercan a su objetivo.</p>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/unified-demos.css">
+    <h3 class="medical-context__title">
+        Contexto
+    </h3>
+    <div class="medical-context medical-context--research medical-context--basic">
+
+        <div class="medical-context__header">
+
+            <div class="medical-context__icon">
+                🔬
+                
+            </div>
+            <div class="medical-context__type">
+                <span class="mc-badge mc-badge--type">
+                    <span class="mc-badge__label">Tipo</span>
+                    <span class="mc-badge__value">
+                        Investigación
+                        
+                    </span>
+                </span>
+            </div>
+            <div class="medical-context__level">
+                <span class="level-indicator level-indicator--basic">
+                    basic
+                </span>
+            </div>
+        </div>
+
+        <div class="medical-context__content">
+
+
+            
+            <div class="medical-context__scenario">
+                <h4>Escenario</h4>
+                <p>El ratón debe aprender a encontrar el queso en un tablero. Para ello, el ratón debe elegir una secuencia de acciones para alcanzar un objetivo, navegando por un espacio de posibles estados. Las acciones que llevan al éxito se refuerzan positivamente, volviéndose más probables en el futuro. El entrenamiento extensivo permite encontrar estrategias consistentemente efectivas y robustas.</p>
+            </div>
+            
+
+            
+            <div class="medical-context__highlight">
+                <h4>Aplicación Clínica</h4>
+                <p>explora diferentes estrategias, centrándose en las acciones que hacen conseguir queso. Cuando una secuencia lleva al éxito, esa ruta se refuerza positivamente. Con el tiempo, aprende la estrategia más eficiente.</p>
+            </div>
+            
+        </div>
+
+        <div class="intro-text">
+            
+            <p>El <strong>Aprendizaje por Refuerzo</strong> permite que la IA descubra por sí misma las mejores estrategias sin necesidad de ejemplos previos etiquetados, solo mediante la experiencia y el feedback del entorno.</p>
+            
+        </div>
+        <div class="steps">
+            
+            <h3>¿Cómo funciona esta herramienta?</h3>
+            <ol>
+                
+                
+                <li>
+                    <strong>🐭 Objetivo</strong>: El ratón debe encontrar el queso (🧀) en el tablero.
+                </li>
+                
+                
+                <li>
+                    <strong>🎮 Mecánica</strong>: El ratón aprende mediante refuerzo positivo (encuentra queso) y negativo (cae en trampa).
+                </li>
+                
+                
+                <li>
+                    <strong>📊 Aprendizaje</strong>: Los valores en la tabla muestran la &ldquo;preferencia&rdquo; del ratón por cada acción (⬆️ ⬇️ ⬅️ ➡️) desde cada casilla. Valores más altos = mayor probabilidad de elegir esa acción.
+                </li>
+                
+                
+                <li>
+                    <strong> Entrenamiento</strong>: Cada partida actualiza estos valores. Después de muchas partidas, el ratón aprende el camino óptimo.
+                </li>
+                
+            </ol>
+            
+        </div>
+    </div>
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+<link rel="stylesheet" href="/css/raton-queso-game.css">
+
+<div class="demo-wrapper">
+    <div class="controls-panel">
+        <h3 class="controls-panel-title  demo-mb-md">Controles y Configuración</h3>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="gridRows" class="control-label">Filas del tablero:</label>
+                <input type="number" id="gridRows" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <label for="gridCols" class="control-label">Columnas del tablero:</label>
+                <input type="number" id="gridCols" value="3" min="2" max="10" class="demo-control-input" />
+            </div>
+
+            <div class="demo-control-group">
+                <button onclick="reiniciar()" id="btnReiniciar" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    🔁 Reiniciar Tablero
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularPartida()" id="btnSimular"
+                    class="demo-btn demo-btn-primary demo-btn-full-width">
+                    ▶️ Simular 1 Partida (Visual)
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="numSim" class="control-label">Número de partidas:</label>
+                <input type="number" id="numSim" value="10" min="1" max="1000" class="demo-control-input" />
+
+            </div>
+            <div class="demo-control-group">
+                <button onclick="simularMultiplesPartidas()" id="btnSimularMulti"
+                    class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    ▶️ Simular Múltiples Partidas
+                </button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button onclick="simularBloquesDeEntrenamiento()" id="btnSimularBloques"
+                    class="demo-btn demo-btn-success demo-btn-full-width">
+                    ⚡ Entrenar (10 bloques x 100 partidas)
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="demo-content-panel demo-flex-container">
+        <div class="demo-chart-container">
+            <h3 class="demo-chart-title">Juego del Ratón y el Queso</h3>
+            <div class="grid" id="tablero">
+                
+            </div>
+        </div>
+
+        <div class="demo-info-card">
+            <div class="demo-info-card-header">Valores de Acción por Casilla</div>
+            <div id="estadoVasos" class="overflow-x-auto">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modal" class="demo-modal">
+    <div class="demo-modal-content">
+        <button onclick="cerrarModal()" class="demo-modal-close">&times;</button>
+        <h2 class="demo-mb-md">Progreso del Entrenamiento</h2>
+        <div id="progreso" class="demo-info-card demo-mb-sm">Iniciando...</div>
+        <div id="progreso-detalle" class="demo-mb-md" style="font-size: 0.9em; color: var(--MAIN-TEXT-color, #666);">
+        </div>
+        <button onclick="cerrarModal()" class="demo-btn demo-btn-primary">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    
+    window.gameLanguage = "es";
+</script>
+<script src="/js/raton-queso-game.js"></script>
+<h2 id="conceptos-teóricos-fundamentales">Conceptos Teóricos Fundamentales</h2>
+<h3 id="elementos-del-aprendizaje-por-refuerzo">Elementos del Aprendizaje por Refuerzo</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Componentes Básicos
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Agente:</strong> El ratón que toma decisiones</li>
+<li><strong>Entorno:</strong> El tablero con casillas, queso y trampas</li>
+<li><strong>Estados:</strong> Cada posición (fila, columna) en el tablero</li>
+<li><strong>Acciones:</strong> Movimientos posibles (↑↓←→)</li>
+<li><strong>Recompensas:</strong> Feedback positivo (queso) o negativo (trampa)</li>
+<li><strong>Política:</strong> La estrategia aprendida para elegir acciones</li>
+</ul>
+  </div>
+</details>
+<h3 id="metodología-de-aprendizaje">Metodología de Aprendizaje</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Proceso de Refuerzo
+  </summary>
+  <div class="box-content">
+<ol>
+<li><strong>Exploración inicial:</strong> El agente toma acciones semi-aleatorias basadas en probabilidades equiprobables</li>
+<li><strong>Experiencia:</strong> Cada trayectoria genera una secuencia estado-acción-recompensa</li>
+<li><strong>Actualización:</strong> Las acciones exitosas incrementan su probabilidad de selección</li>
+<li><strong>Convergencia:</strong> Gradualmente, emerge una política óptima</li>
+</ol>
+  </div>
+</details>
+<h2 id="entrenamiento-por-bloques-robustez-estadística">Entrenamiento por Bloques: Robustez Estadística</h2>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    ¿Por Qué Entrenar en Bloques Independientes?
+  </summary>
+  <div class="box-content">
+<p>El entrenamiento por bloques (10 experimentos × 100 partidas) simula un proceso científico riguroso:</p>
+<ul>
+<li><strong>Validación cruzada:</strong> Cada bloque es un experimento independiente que debe llegar a conclusiones similares</li>
+<li><strong>Reducción de varianza:</strong> Múltiples experimentos minimizan el efecto de la aleatoriedad inicial</li>
+<li><strong>Convergencia robusta:</strong> Asegura que el aprendizaje no depende de condiciones iniciales específicas</li>
+<li><strong>Agregación de conocimiento:</strong> El resultado final combina el aprendizaje de múltiples &ldquo;agentes virtuales&rdquo;</li>
+</ul>
+  </div>
+</details>
+<h3 id="aplicaciones-en-el-mundo-real">Aplicaciones en el Mundo Real</h3>
+<p>Este tipo de aprendizaje por refuerzo tiene aplicaciones directas en:</p>
+<ul>
+<li><strong>Medicina personalizada:</strong> Optimización de protocolos de tratamiento</li>
+<li><strong>Robótica:</strong> Navegación autónoma en entornos complejos</li>
+<li><strong>Finanzas:</strong> Estrategias de trading adaptativas</li>
+<li><strong>Juegos:</strong> Desarrollo de IA que supera a jugadores humanos (AlphaGo, OpenAI Five)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Limpiar Terminal">Limpiar</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal iniciado...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> 27 oct. 2023
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="">
+            <div class="logo-title">Cerebros Artificiales</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/es/chapter-1/index.html"><a class="padding" href="/es/chapter-1/index.html">1 - El Comienzo del Viaje</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html"><a class="padding" href="/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html">1.4 Historia de la Inteligencia Artificial</a></li>
+            <li class="" data-nav-id="/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html"><a class="padding" href="/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html">1.4 - El informe Lighthill</a></li>
+            <li class="active " data-nav-id="/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html"><a class="padding" href="/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html">1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo)</a></li>
+            <li class="" data-nav-id="/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html"><a class="padding" href="/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html">1.5 Deep Blue vs AlphaGo</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Idioma</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html" lang="es" selected data-selected>Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html" lang="en">English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Tema</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759709459" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759709459" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759709459"></script>
+    <script src="/js/theme.js?1759709459" defer></script>
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Referencias académicas, tutoriales y recursos adicionales para profundizar en los conceptos de Inteligencia Artificial presentados en este capítulo">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="📚 Regresión lineal :: Cerebros Artificiales">
+    <meta name="twitter:description" content="Referencias académicas, tutoriales y recursos adicionales para profundizar en los conceptos de Inteligencia Artificial presentados en este capítulo">
+    <meta property="og:url" content="http://localhost:1313/es/chapter-2/bibliography/bibliography-linear-regresion/index.html">
+    <meta property="og:site_name" content="Cerebros Artificiales">
+    <meta property="og:title" content="📚 Regresión lineal :: Cerebros Artificiales">
+    <meta property="og:description" content="Referencias académicas, tutoriales y recursos adicionales para profundizar en los conceptos de Inteligencia Artificial presentados en este capítulo">
+    <meta property="og:locale" content="es">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2 - Modelos de aprendizaje automático">
+    <meta itemprop="name" content="📚 Regresión lineal :: Cerebros Artificiales">
+    <meta itemprop="description" content="Referencias académicas, tutoriales y recursos adicionales para profundizar en los conceptos de Inteligencia Artificial presentados en este capítulo">
+    <meta itemprop="wordCount" content="383">
+    <title>📚 Regresión lineal :: Cerebros Artificiales</title>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759571811" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759571811" rel="stylesheet">
+    <link href="/css/theme.css?1759571811" rel="stylesheet">
+    <link href="/css/format-html.css?1759571811" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/es\/chapter-2\/bibliography\/bibliography-linear-regresion\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copiar en el portapapeles`;
+      window.T_Copied_to_clipboard = `¡Copiado al portapapeles!`;
+      window.T_Copy_link_to_clipboard = `Copiar enlace al portapapeles`;
+      window.T_Link_copied_to_clipboard = `¡Enlace copiado al portapapeles!`;
+      window.T_Reset_view = `Restablecer vista`;
+      window.T_View_reset = `¡Ver reajuste!`;
+      window.T_No_results_found = `No se han encontrado resultados para "{0}"`;
+      window.T_N_results_found = `{1} resultados encontrados para "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menú (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Tabla de contenido (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#índice">Índice</a></li>
+    <li><a href="#1-fundamentos-teóricos">1. Fundamentos teóricos</a>
+      <ul>
+        <li><a href="#básico">Básico</a></li>
+        <li><a href="#avanzado">Avanzado</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-material-audiovisual">2. Material audiovisual</a></li>
+    <li><a href="#4-implementación-práctica">4. Implementación práctica</a>
+      <ul>
+        <li><a href="#ejercicios-guiados">Ejercicios Guiados</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-lecturas-complementarias">5. Lecturas complementarias</a>
+      <ul>
+        <li><a href="#blogs-corporativos">Blogs Corporativos</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/index.html"><span itemprop="name">Cerebros Artificiales: Cómo piensan las máquinas</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/es/chapter-2/index.html"><span itemprop="name">2 - Modelos de aprendizaje automático</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">📚 Regresión lineal</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-2/code/linear-regresion-sklearn/index.html" title="⚡ Regresión lineal con sklearn (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/es/chapter-2/bibliography/bibliography-gradient-descent/index.html" title="📚 Descenso del Gradiente (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Más"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="-regresión-lineal">📚 Regresión lineal</h1>
+
+<p>Una colección cuidadosamente curada de recursos para distintos niveles y objetivos. Se sugiere avanzar por fases: comprensión → práctica → profundización. Nota: los recursos no disponibles en castellano se indican como (en inglés) y con 🇬🇧.</p>
+<hr>
+<h2 id="índice">Índice</h2>
+<ol>
+<li><a href="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html#fundamentos-teóricos">Fundamentos teóricos</a></li>
+<li><a href="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html#material-audiovisual">Material audiovisual</a></li>
+<li><a href="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html#implementación-práctica">Implementación práctica</a></li>
+<li><a href="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html#lecturas-complementarias">Lecturas complementarias</a></li>
+</ol>
+<hr>
+<h2 id="1-fundamentos-teóricos">1. Fundamentos teóricos</h2>
+<p>Textos introductorios y avanzados para comprender la base conceptual y estadística de la regresión lineal.</p>
+<h3 id="básico">Básico</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Recurso</th>
+          <th>Tipo</th>
+          <th>Idioma</th>
+          <th>Enlace / Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LibreTexts</td>
+          <td>Artículo</td>
+          <td>🇪🇸 Español</td>
+          <td><a href="https://espanol.libretexts.org" rel="external" target="_blank">Introducción visual a regresión lineal</a></td>
+      </tr>
+      <tr>
+          <td>Universidad de los Andes</td>
+          <td>Blog</td>
+          <td>🇪🇸 Español</td>
+          <td><a href="https://programas.uniandes.edu.co" rel="external" target="_blank">Explicación conceptual accesible</a></td>
+      </tr>
+      <tr>
+          <td>Wikipedia</td>
+          <td>Artículo</td>
+          <td>🇪🇸 Español</td>
+          <td><a href="https://es.wikipedia.org" rel="external" target="_blank">Visión general y fórmulas</a></td>
+      </tr>
+      <tr>
+          <td>StatQuest</td>
+          <td>YouTube</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td><a href="https://youtube.com" rel="external" target="_blank">Vídeos animados sobre regresión</a></td>
+      </tr>
+      <tr>
+          <td>Essence of Linear Algebra</td>
+          <td>YouTube</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td><a href="https://youtube.com" rel="external" target="_blank">Serie visual sobre álgebra lineal</a></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="avanzado">Avanzado</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Título</th>
+          <th>Autor(es)</th>
+          <th>Idioma</th>
+          <th>Enfoque</th>
+          <th>Acceso</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>The Elements of Statistical Learning</td>
+          <td>Hastie et al.</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td>Teórico (métodos lineales y regularización)</td>
+          <td><a href="https://www.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576" rel="external" target="_blank">Comprar</a></td>
+      </tr>
+      <tr>
+          <td>An Introduction to Statistical Learning</td>
+          <td>James et al.</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td>Introductorio-práctico (cap. de regresión)</td>
+          <td><a href="https://www.statlearning.com/" rel="external" target="_blank">Descargar</a></td>
+      </tr>
+      <tr>
+          <td>Aprendizaje Automático con Scikit-Learn, Keras y TensorFlow</td>
+          <td>A. Géron</td>
+          <td>🇪🇸 Español</td>
+          <td>Práctico (regresión y regularización)</td>
+          <td><a href="https://www.amazon.es/Aprende-Machine-Learning-Scikit-Learn-TensorFlow/dp/8441548048" rel="external" target="_blank">Comprar</a></td>
+      </tr>
+      <tr>
+          <td>Applied Linear Regression</td>
+          <td>S. Weisberg</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td>Regresión aplicada (diagnóstico, selección)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td>Robust Regression and Outlier Detection</td>
+          <td>Rousseeuw &amp; Leroy</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td>Regresión robusta, outliers</td>
+          <td>—</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="2-material-audiovisual">2. Material audiovisual</h2>
+<p>Canales y vídeos para reforzar conceptos de manera visual (complementarios a los básicos).</p>
+<table>
+  <thead>
+      <tr>
+          <th>Canal / Vídeo</th>
+          <th>Contenido Destacado</th>
+          <th>Idioma</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Full Project: Linear Regression in Python</td>
+          <td>Proyecto práctico de inicio a fin</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+      <tr>
+          <td>Statistics 101: Linear Regression</td>
+          <td>Fundamentos de regresión</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="4-implementación-práctica">4. Implementación práctica</h2>
+<p>Tutoriales y documentación para poner en marcha modelos de regresión en Python.</p>
+<ul>
+<li><strong><a href="https://scikit-learn.org" rel="external" target="_blank">Scikit-learn - Modelos lineales 🇬🇧</a></strong></li>
+<li><strong><a href="https://tensorflow.org" rel="external" target="_blank">TensorFlow Regression Tutorial 🇬🇧</a></strong></li>
+<li><strong><a href="https://qu4nt.github.io" rel="external" target="_blank">Guía Scikit-learn traducida 🇪🇸</a></strong></li>
+</ul>
+<h3 id="ejercicios-guiados">Ejercicios Guiados</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Plataforma</th>
+          <th>Curso</th>
+          <th>Idioma</th>
+          <th>Enlace</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DataCamp</td>
+          <td>Regresión con <code>sklearn</code></td>
+          <td>🇪🇸 Español</td>
+          <td><a href="http://datacamp.com/es/tutorial/sklearn-linear-regression" rel="external" target="_blank">Acceder</a></td>
+      </tr>
+      <tr>
+          <td>Kaggle Learn</td>
+          <td>Intro to ML</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+          <td><a href="https://kaggle.com/learn" rel="external" target="_blank">Acceder</a></td>
+      </tr>
+      <tr>
+          <td>TensorFlow</td>
+          <td>Regresión básica: eficiencia de gasolina</td>
+          <td>🇪🇸 Español</td>
+          <td><a href="https://www.tensorflow.org/tutorials/keras/regression?hl=es-419" rel="external" target="_blank">Acceder</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="5-lecturas-complementarias">5. Lecturas complementarias</h2>
+<p>Blogs con artículos técnicos y perspectivas industriales.</p>
+<h3 id="blogs-corporativos">Blogs Corporativos</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Fuente</th>
+          <th>Tema</th>
+          <th>Idioma</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Google Developers Blog</td>
+          <td>Regresión lineal práctica</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+      <tr>
+          <td>Google AI Blog</td>
+          <td>Interpretabilidad</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+      <tr>
+          <td>Google Cloud Blog</td>
+          <td>Explicabilidad en ML</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+      <tr>
+          <td>Microsoft Azure Docs</td>
+          <td>Regresión en Azure</td>
+          <td>🇬🇧 Inglés (en inglés)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="comunidad">Comunidad</h3>
+<ul>
+<li><strong><a href="https://towardsdatascience.com" rel="external" target="_blank">Towards Data Science</a></strong>: Artículos claros sobre regresión y sus supuestos. 🇬🇧 Inglés</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/es/index.html">
+            <div class="logo-title">Cerebros Artificiales</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/es/index.html"><a class="padding" href="/es/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-1/index.html"><a class="padding" href="/es/chapter-1/index.html">1 - El Comienzo del Viaje</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/es/chapter-2/index.html"><a class="padding" href="/es/chapter-2/index.html">2 - Modelos de aprendizaje automático</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu">
+            <li class="" data-nav-id="/es/chapter-2/linear-regression/linear_regresion_game/index.html"><a class="padding" href="/es/chapter-2/linear-regression/linear_regresion_game/index.html">2.1 - Juego de Regresión Lineal</a></li>
+            <li class="" data-nav-id="/es/chapter-2/error-comparison/error_comparation/index.html"><a class="padding" href="/es/chapter-2/error-comparison/error_comparation/index.html">2.2 - Comparando Error Absoluto (L1) vs Error Cuadrático (L2)</a></li>
+            <li class="" data-nav-id="/es/chapter-2/metodo-descenso-gradiente/metodo-del-descenco-del-gradiente/index.html"><a class="padding" href="/es/chapter-2/metodo-descenso-gradiente/metodo-del-descenco-del-gradiente/index.html">2.5 - El Método del Descenso del Gradiente</a></li>
+            <li class="" data-nav-id="/es/chapter-2/code/linear-regresion/index.html"><a class="padding" href="/es/chapter-2/code/linear-regresion/index.html">⚡ Regresión lineal desde cero</a></li>
+            <li class="" data-nav-id="/es/chapter-2/code/linear-regresion-sklearn/index.html"><a class="padding" href="/es/chapter-2/code/linear-regresion-sklearn/index.html">⚡ Regresión lineal con sklearn</a></li>
+            <li class="active " data-nav-id="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html"><a class="padding" href="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html">📚 Regresión lineal</a></li>
+            <li class="" data-nav-id="/es/chapter-2/bibliography/bibliography-gradient-descent/index.html"><a class="padding" href="/es/chapter-2/bibliography/bibliography-gradient-descent/index.html">📚 Descenso del Gradiente</a></li></ul></li>
+            <li class="" data-nav-id="/es/chapter-3/index.html"><a class="padding" href="/es/chapter-3/index.html">3 - Sistemas de clasificación y evaluación de modelos</a><ul id="R-subsections-9a957cc6839aa1b33676870e792c5474" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-4/index.html"><a class="padding" href="/es/chapter-4/index.html">4 - Algoritmos de Clasificación en Profundidad</a><ul id="R-subsections-c227eed7e9ba3e21264f72020206734e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-5/index.html"><a class="padding" href="/es/chapter-5/index.html">5 - Aprendizaje No Supervisado: Descubriendo lo Invisible</a><ul id="R-subsections-84f97cef1a12d542f1272e0c68ba3612" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-6/index.html"><a class="padding" href="/es/chapter-6/index.html">6 - Dentro de la Mente de la Máquina: Redes Neuronales</a><ul id="R-subsections-353c43515a76f18e138bc04573502da7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/chapter-7/index.html"><a class="padding" href="/es/chapter-7/index.html">7 - La Revolución del Lenguaje - Entendiendo los LLMs </a><ul id="R-subsections-211eabc86fd80b431779fcc37efd887b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/es/conference-notes/index.html"><a class="padding" href="/es/conference-notes/index.html">8 - Recursos de IA</a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Idioma</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-2/bibliography/bibliography-linear-regresion/index.html" lang="es" selected data-selected>Español</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Tema</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759571811" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759571811" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759571811"></script>
+    <script src="/js/theme.js?1759571811" defer></script>
+  </body>
+</html>

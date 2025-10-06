@@ -1,0 +1,57 @@
+/* Probabilities Translator demo - using unified system */
+@import url('/css/unified-demos.css');
+
+/* Specific styles for probability translator */
+.graph-panel {
+    flex: 2;
+    padding: var(--demo-spacing-lg);
+    border-right: 1px solid var(--demo-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--demo-bg-primary);
+}
+
+#classification-chart {
+    width: 100% !important;
+    height: 600px !important;
+    min-height: 420px !important;
+    max-height: 600px;
+    display: block;
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+}
+
+.probability-display {
+    background: var(--demo-bg-secondary);
+    border: 1px solid var(--demo-border-light);
+    border-radius: var(--demo-border-radius);
+    padding: var(--demo-spacing-md);
+    margin: var(--demo-spacing-sm) 0;
+    text-align: center;
+}
+
+.probability-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--demo-primary);
+    font-family: var(--demo-font-mono);
+}
+
+.probability-label {
+    font-size: 0.9em;
+    color: var(--demo-secondary);
+    margin-top: var(--demo-spacing-xs);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .graph-panel {
+        padding: var(--demo-spacing-md);
+    }
+
+    #classification-chart {
+        height: 400px !important;
+        min-height: 300px !important;
+    }
+}

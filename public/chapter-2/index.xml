@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 - Machine Learning Models :: Artificial Brains</title>
+    <link>http://localhost:1313/chapter-2/index.html</link>
+    <description>In this chapter, we delve into the heart of machine learning through the experience of the hospital team. After a failed first attempt with an overly complex system, Victor, Marta, Luis, and Carlos learn a fundamental lesson: sometimes, the simplest solution is the most powerful.&#xA;Guided by the advice of Alma García of AIA, the team embarks on implementing a linear regression model to predict the need for medical supplies. This new approach is not only more manageable but also transparent and interpretable, gaining the trust of even the most skeptical, like Dr. Javier.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/chapter-2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 - Linear Regression Game</title>
+      <link>http://localhost:1313/chapter-2/linear-regression/linear-regression-game/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-2/linear-regression/linear-regression-game/index.html</guid>
+      <description>Learn linear regression interactively by finding the best line that predicts continuous outcomes.</description>
+    </item>
+    <item>
+      <title>2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2)</title>
+      <link>http://localhost:1313/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html</guid>
+      <description>Interactive demo to understand the differences between L1 and L2 error functions and how they affect the evaluation of machine learning models in medical contexts.</description>
+    </item>
+    <item>
+      <title>2.5 - The Gradient Descent Method</title>
+      <link>http://localhost:1313/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html</guid>
+      <description>Learn how the gradient descent algorithm finds minimum points of complex functions to optimize machine learning models.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 - El Comienzo del Viaje :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/chapter-1/index.html</link>
+    <description>El Hospital Minermont está al borde del colapso. El crecimiento inesperado de la población ha desbordado sus sistemas, generando frustración entre el personal y los pacientes. En medio de esta crisis, el Dr. Víctor Salazar, un médico idealista, ve una posible solución en la Inteligencia Artificial, pero choca con el escepticismo de la Dra. Carmen Ledesma, una profesional experimentada y anclada en la tradición.&#xA;Este capítulo narra el primer paso de su viaje: una visita a la Academia de Inteligencia Artificial (AIA) que cambiará su perspectiva para siempre. A través de las siguientes secciones interactivas, explorarás los conceptos clave que descubrieron y que sentaron las bases para la transformación del hospital.</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/chapter-1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.4 Historia de la Inteligencia Artificial</title>
+      <link>http://localhost:1313/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html</guid>
+      <description>Una línea del tiempo interactiva de los eventos más importantes en la historia de la IA</description>
+    </item>
+    <item>
+      <title>1.4 - El informe Lighthill</title>
+      <link>http://localhost:1313/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html</guid>
+      <description>El informe Lighthill de 1973 criticó la IA, contribuyendo al primer &#39;invierno de la IA&#39;.</description>
+    </item>
+    <item>
+      <title>1.4 Juego Interactivo: El Ratón y el Queso (Aprendizaje por Refuerzo)</title>
+      <link>http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html</link>
+      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html</guid>
+      <description>Una simulación interactiva para entender cómo las Inteligencias Artificiales aprenden mediante refuerzo.</description>
+    </item>
+    <item>
+      <title>1.5 Deep Blue vs AlphaGo</title>
+      <link>http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html</guid>
+      <description>Comparación técnica entre Deep Blue y AlphaGo, dos hitos en la historia de la inteligencia artificial.</description>
+    </item>
+  </channel>
+</rss>

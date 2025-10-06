@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="interactive-description">
+    <!-- (puedes omitir si ya está en el markdown) -->
+</div>
+<div class="controls">
+    <div class="control-group"><label for="species1">Clase 1 (Roja)</label><select id="species1" disabled></select>
+    </div>
+    <div class="control-group"><label for="species2">Clase 2 (Azul)</label><select id="species2" disabled></select>
+    </div>
+    <div class="control-group"><button id="trainEpochBtn" disabled>Entrenar 1 Época</button></div>
+    <div class="control-group"><button id="trainAutoBtn" disabled>Entrenar Automático</button></div>
+    <div class="control-group"><button id="resetBtn" disabled>Reiniciar Modelo</button></div>
+    <div class="control-group"><label for="lrSlider">Tasa Aprendizaje (η): <span id="lrValue">0.1</span></label><input
+            type="range" id="lrSlider" min="0.01" max="1" step="0.01" value="0.1" disabled></div>
+    <div class="control-group"><label for="speedSlider">Velocidad (ms): <span id="speedValue">100</span></label><input
+            type="range" id="speedSlider" min="10" max="500" step="10" value="100" disabled></div>
+</div>
+<div class="canvas-area">
+    <div class="canvas-container"><canvas id="perceptronCanvas" width="600" height="400"></canvas></div>
+    <div id="info-panel">
+        <h3>Estado del Modelo</h3>
+        <p>Época: <span id="epochDisplay">0</span></p>
+        <p>Error Época: <span id="errorDisplay">N/A</span></p>
+        <p>Mejor Error: <span id="minErrorDisplay">N/A</span></p>
+        <p>Peso w₁: <span id="w1Display">N/A</span></p>
+        <p>Peso w₂: <span id="w2Display">N/A</span></p>
+        <p>Sesgo b: <span id="bDisplay">N/A</span></p>
+    </div>
+</div>
+
+<script src="/js/perceptron/perceptron.js"></script>

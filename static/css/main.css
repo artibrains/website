@@ -1,0 +1,1166 @@
+/* main.css limpio: solo estilos específicos no cubiertos por el tema Hugo */
+
+/* Ejemplo: estilos para componentes interactivos propios */
+
+/* Paneles de teoría y explicación específicos */
+.theory-panel,
+.explanation-box,
+.info-box {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 0.95em;
+    color: #495057;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botón de inicio de juego específico */
+#startGame {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#startGame:hover {
+    background-color: #27ae60;
+}
+
+/* Contenedores de tarjetas de paciente (solo si no lo cubre el tema) */
+.patients-container,
+.patient-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Botones de pregunta personalizados */
+.question-btn {
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    font-size: 1em;
+    padding: 12px 18px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.question-btn:hover {
+    background-color: #2c3e50;
+}
+
+/* Base modal styles (unificado) */
+.modal {
+    display: none;
+    /* Hidden by default; use .active to show */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25);
+    max-width: 95vw;
+    min-width: 320px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.2s;
+    align-self: center;
+}
+
+@keyframes modalIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #222;
+}
+
+/* Optional: style the table inside the modal for clarity */
+.comparison-tables table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.comparison-tables th,
+.comparison-tables td {
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+}
+
+.comparison-tables th {
+    background: #f7f7f7;
+    font-weight: bold;
+}
+
+/* Responsive solo para elementos propios */
+@media (max-width: 1024px) {
+    .theory-panel {
+        width: auto;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1rem 0.5rem;
+        min-width: 0;
+        width: 95vw;
+    }
+}
+
+/* Chart container and optimization status overlay */
+.chart-container {
+    position: relative;
+}
+
+.optimization-status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d7be0;
+    z-index: 10;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    opacity: 1;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    flex-direction: column;
+}
+
+.optimization-status .spinner {
+    width: 2.5em;
+    height: 2.5em;
+    border: 0.4em solid #e3eaf6;
+    border-top: 0.4em solid #2d7be0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1em;
+}
+
+.optimization-status-message {
+    text-shadow: 0 2px 8px rgba(0, 123, 224, 0.18), 0 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.optimization-status.hidden {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+/* Variante ligera y discreta para overlay de comparación */
+.optimization-status--light {
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.spinner--small {
+    width: 1.6em !important;
+    height: 1.6em !important;
+    margin-bottom: .6em !important;
+    border-width: 0.3em !important;
+}
+
+/* Utility class for hiding elements */
+.hidden {
+    display: none !important;
+}
+
+/* Timeline styles */
+.timeline-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-item .date {
+    color: #2d7be0;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-item .title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.timeline-item .description {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.timeline-modal .modal-content {
+    max-width: 800px;
+}
+
+.timeline-modal .references {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.timeline-modal .references a {
+    display: block;
+    color: #2d7be0;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.timeline-modal .references a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for Plot Containers */
+.plot-container {
+    width: 100%;
+    height: 500px !important;
+    /* Force taller height with !important */
+    min-height: 500px !important;
+    /* Force minimum height as well */
+    margin-bottom: 15px;
+    /* Add some space below the plot */
+}
+
+/* Styles for the Gradient Descent Terminal */
+#terminalOutput {
+    background-color: #f5f5f5;
+    /* Light grey background */
+    border: 1px solid #ccc;
+    /* Grey border */
+    padding: 10px;
+    /* Some padding */
+    height: 400px;
+    /* Increased from 300px to 400px */
+    min-height: 300px;
+    /* Ensure minimum height */
+    overflow-y: auto;
+    /* Make it scrollable */
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospaced font */
+    font-size: 0.9em;
+    /* Slightly smaller font */
+    white-space: pre-wrap;
+    /* Wrap long lines but preserve spaces */
+    word-wrap: break-word;
+    /* Break words if necessary */
+    color: #333;
+    /* Dark grey text color */
+    margin-top: 0;
+    /* Remove default margin from pre if main-title is above */
+    display: block;
+    /* Ensure it's not hidden */
+}
+
+.terminal .main-title {
+    /* Adjust title margin if needed */
+    margin-bottom: 5px;
+}
+
+.demo-wrapper {
+    /* Add a nice background and frame for the demos*/
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    /* Add some space around the demo */
+
+}
+
+/* Shared Control Styles */
+.control-section {
+    margin-bottom: 1.5rem;
+    /* Space below a section of controls */
+    display: flex;
+    /* Allow control groups to sit side-by-side */
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+    align-items: flex-start;
+    /* Align groups to the top */
+    gap: 1rem;
+    /* Spacing between control groups */
+}
+
+.control-group {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
+    align-items: center;
+    gap: 0.5rem;
+    /* Spacing between label and input, and between groups */
+    margin-bottom: 1rem;
+    /* Space below each control group */
+}
+
+.control-label {
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+    /* font-medium */
+    color: #374151;
+    /* gray-700 (adjust if your site has a dark theme overall) */
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+    /* Prevent label from shrinking too much */
+}
+
+.control-label span.value-display {
+    font-weight: 600;
+    color: #1f2937;
+    /* gray-800 */
+}
+
+.control-input,
+.control-input-number,
+.control-input-text,
+.control-select {
+    padding: 0.5rem 0.75rem;
+    /* p-2 px-3 */
+    border: 1px solid #D1D5DB;
+    /* border-gray-300 */
+    border-radius: 0.375rem;
+    /* rounded-md */
+    background-color: #FFFFFF;
+    /* bg-white */
+    color: #111827;
+    /* gray-900 */
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    flex-grow: 1;
+    /* Allow input to take available space */
+    min-width: 60px;
+    /* Minimum width for inputs */
+}
+
+.control-input-number {
+    width: 5rem;
+    /* Default width for number inputs, can be overridden */
+    flex-grow: 0;
+    /* Don't let number inputs grow too much by default */
+}
+
+.control-input:focus,
+.control-input-number:focus,
+.control-input-text:focus,
+.control-select:focus {
+    outline: none;
+    border-color: #3B82F6;
+    /* blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    /* focus:ring-blue-500 focus:ring-opacity-30 */
+}
+
+.control-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    /* Make slider take full width of its container */
+    height: 0.5rem;
+    /* 8px */
+    background: #D1D5DB;
+    /* gray-300 */
+    border-radius: 9999px;
+    /* rounded-full */
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .15s ease-in-out;
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+.control-slider:hover {
+    opacity: 1;
+}
+
+.control-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25rem;
+    /* 20px */
+    height: 1.25rem;
+    /* 20px */
+    background: #3B82F6;
+    /* blue-500 */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.control-slider::-moz-range-thumb {
+    width: 1.25rem;
+    /* 20px */
+    height: 1.25rem;
+    /* 20px */
+    background: #3B82F6;
+    /* blue-500 */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.control-button-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    background-color: #3B82F6;
+    /* blue-500 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.control-button-primary:hover {
+    background-color: #2563EB;
+    /* blue-600 */
+}
+
+.control-button-primary:disabled {
+    background-color: #9CA3AF;
+    /* gray-400 */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.control-button-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    background-color: #6B7280;
+    /* gray-500 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.control-button-secondary:hover {
+    background-color: #4B5563;
+    /* gray-600 */
+}
+
+.control-button-secondary:disabled {
+    background-color: #9CA3AF;
+    /* gray-400 */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Styles for checkbox */
+.control-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.control-checkbox {
+    height: 1.25rem;
+    /* h-5 */
+    width: 1.25rem;
+    /* w-5 */
+    border-radius: 0.25rem;
+    /* rounded */
+    border: 1px solid #D1D5DB;
+    /* border-gray-300 */
+    cursor: pointer;
+}
+
+.control-checkbox:checked {
+    background-color: #3B82F6;
+    /* blue-500 */
+    border-color: #3B82F6;
+    /* blue-500 */
+}
+
+.control-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.control-description {
+    font-size: 0.75rem;
+    /* text-xs */
+    color: #6B7280;
+    /* gray-500 */
+    margin-top: 0.25rem;
+    width: 100%;
+    /* Make description take full width below the control */
+}
+
+/* New styles for the controls panel wrapper */
+.controls-panel {
+    background-color: #FFFFFF;
+    /* Tailwind white, to make it pop if page bg is slightly gray */
+    padding: 1.25rem;
+    /* p-5 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    border: 1px solid #D1D5DB;
+    /* Tailwind gray-300, standard border */
+    border-top: 4px solid #3B82F6;
+    /* Tailwind blue-500, accent on top */
+    /* A slightly more pronounced shadow than default, but not too heavy */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    /* mb-6 */
+}
+
+.controls-panel-title {
+    font-size: 1.25rem;
+    /* text-xl */
+    font-weight: 600;
+    /* font-semibold */
+    color: #1F2937;
+    /* Tailwind gray-800 */
+    margin-bottom: 1rem;
+    /* mb-4 */
+    padding-bottom: 0.5rem;
+    /* pb-2 */
+    border-bottom: 1px solid #D1D5DB;
+    /* Tailwind gray-300 */
+}
+
+/* K-Means specific styles integrated with existing design system */
+.kmeans-visualization {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.kmeans-visualization canvas {
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.status-message {
+    margin-top: 1rem;
+    font-weight: 500;
+    min-height: 24px;
+    color: #3B82F6;
+    /* blue-500 */
+    font-size: 0.875rem;
+}
+
+.section-divider {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #D1D5DB;
+}
+
+.info-icon {
+    cursor: pointer;
+    font-weight: bold;
+    color: #3B82F6;
+    /* blue-500 */
+    border: 1px solid #3B82F6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    margin-left: 0.5rem;
+}
+
+.info-icon:hover {
+    background-color: #3B82F6;
+    color: white;
+}
+
+/* Slider enhancements for K-Means */
+.control-slider {
+    min-width: 150px;
+    /* Ensure adequate width for K-Means slider */
+}
+
+/* Canvas responsive adjustments */
+@media (max-width: 768px) {
+    .kmeans-visualization canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .control-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-group {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+
+    .control-slider {
+        min-width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+
+/* Basic Resets & Box-Sizing for elements within #app-explanation */
+#app-explanation *,
+#app-explanation *::before,
+#app-explanation *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#app-explanation {
+    /* This outer container styles the frame itself */
+    max-width: 1200px;
+    /* Max width for larger screens */
+    margin: 40px auto;
+    /* Center the container with good vertical spacing */
+    background-color: #ffffff;
+    /* White background for the content */
+    border-radius: 12px;
+    /* Slightly rounded corners for the frame */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* Soft, prominent shadow */
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    /* Subtle border */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Apply font here for inheritance */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- Typography within #app-explanation --- */
+#app-explanation h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    /* Darker blue for main titles */
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#app-explanation h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    /* Blue accent under H1 */
+    border-radius: 2px;
+}
+
+#app-explanation h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    /* Slightly lighter dark blue for sub-titles */
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+#app-explanation h3 {
+    font-size: 1.3em;
+    color: #3498db;
+    /* Accent blue for column titles */
+    margin-bottom: 15px;
+    text-align: center;
+    /* Center h3 in columns */
+}
+
+#app-explanation p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+#app-explanation .intro {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#app-explanation strong {
+    color: #2980b9;
+    /* Stronger blue for emphasized text */
+}
+
+/* --- How It Works Section within #app-explanation --- */
+#app-explanation .how-it-works {
+    background-color: #ecf0f1;
+    /* Light grey background for this section */
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 40px;
+    border: 1px solid #dde1e2;
+}
+
+#app-explanation .explanation-columns {
+    display: flex;
+    flex-direction: column;
+    /* Stacks columns on small screens */
+    gap: 25px;
+    /* Space between columns */
+}
+
+#app-explanation .explanation-columns .column {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    text-align: left;
+    /* Align text within columns */
+}
+
+#app-explanation .explanation-columns .column p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* --- Responsive Design (Media Queries) for elements within #app-explanation --- */
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+    #app-explanation h1 {
+        font-size: 2.5em;
+    }
+
+    #app-explanation h2 {
+        font-size: 2em;
+    }
+
+    #app-explanation .intro {
+        font-size: 1.2em;
+    }
+
+    #app-explanation .explanation-columns {
+        flex-direction: row;
+        /* Two columns on medium screens */
+        flex-wrap: wrap;
+    }
+
+    #app-explanation .explanation-columns .column {
+        flex: 1 1 calc(50% - 25px);
+        /* Two columns, taking almost 50% width each */
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    #app-explanation h1 {
+        font-size: 2.8em;
+    }
+
+    #app-explanation h2 {
+        font-size: 2.2em;
+    }
+
+    #app-explanation .explanation-columns {
+        flex-direction: row;
+        /* Three columns on large screens */
+        flex-wrap: nowrap;
+        /* Prevent wrapping if space allows */
+    }
+
+    #app-explanation .explanation-columns .column {
+        flex: 1;
+        /* Distribute space equally among three columns */
+        min-width: 30%;
+        /* Ensure columns don't get too small */
+    }
+}
+
+/* Very large screens (optional, for even wider layouts) */
+@media (min-width: 1400px) {
+    #app-explanation {
+        max-width: 1400px;
+        padding: 50px;
+    }
+}
+
+
+
+/* APP INFORMATION HEADER */
+
+/* MEDICAL CONTEXT */
+
+.medical-context {
+    background: linear-gradient(135deg, #f8fffe 0%, #e8f8f5 100%);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.medical-context h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #047857;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.medical-scenario {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.scenario-text {
+    line-height: 1.6;
+}
+
+.scenario-text p {
+    margin-bottom: 15px;
+    color: #374151;
+}
+
+.highlight {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-weight: 500;
+    color: #92400e !important;
+}
+
+/* HOW IT WORKS SECTION */
+
+/* Basic Resets & Box-Sizing for elements within #app-explanation */
+#app-explanation *,
+#app-explanation *::before,
+#app-explanation *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#app-explanation {
+    /* This outer container styles the frame itself */
+    max-width: 1200px;
+    /* Max width for larger screens */
+    margin: 40px auto;
+    /* Center the container with good vertical spacing */
+    background-color: #fcfcfc;
+    /* Very light, almost white background for a fresh feel */
+    border-radius: 15px;
+    /* More rounded corners for a softer look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* A bit more pronounced but soft shadow */
+    padding: 40px;
+    /* More padding inside the main box */
+    border: 1px solid #e9ecef;
+    /* Very subtle light border */
+    font-family: 'Open Sans', sans-serif;
+    /* A common, clean font (or 'Segoe UI' if preferred) */
+    line-height: 1.7;
+    /* Slightly more spacious line height for readability */
+    color: #343a40;
+    /* Darker grey for body text, easy on the eyes */
+}
+
+/* --- Typography within #app-explanation --- */
+#app-explanation h1 {
+    font-size: 2.6em;
+    /* Slightly larger main title */
+    color: #2c3e50;
+    /* Deep blue for main titles */
+    text-align: center;
+    margin-bottom: 30px;
+    /* More space below */
+    position: relative;
+    padding-bottom: 15px;
+    /* More space for the underline */
+    letter-spacing: -0.5px;
+    /* A bit tighter letter spacing for modern look */
+}
+
+#app-explanation h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px;
+    /* Wider underline */
+    height: 5px;
+    /* Thicker underline */
+    background-color: #4a90e2;
+    /* A more vibrant blue accent */
+    border-radius: 3px;
+    /* Rounded ends for the underline */
+}
+
+#app-explanation h2 {
+    font-size: 2em;
+    /* Slightly larger sub-title */
+    color: #34495e;
+    /* Darker grey-blue for sub-titles */
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    /* More space above */
+}
+
+#app-explanation h3 {
+    font-size: 1.4em;
+    /* Slightly larger column titles */
+    color: #4a90e2;
+    /* Vibrant blue for column titles */
+    margin-bottom: 18px;
+    /* More space below */
+    text-align: center;
+}
+
+#app-explanation p {
+    font-size: 1.05em;
+    /* Slightly larger paragraph text */
+    margin-bottom: 18px;
+    line-height: 1.8;
+    /* Generous line height */
+    color: #495057;
+    /* Softer grey for body text */
+}
+
+#app-explanation .intro {
+    font-size: 1.25em;
+    /* Larger intro text */
+    text-align: center;
+    margin-bottom: 40px;
+    /* More space below */
+    color: #5a6268;
+    /* Slightly darker grey for intro */
+    max-width: 900px;
+    /* Wider intro text for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#app-explanation strong {
+    color: #205c9e;
+    /* Deeper blue for emphasized text */
+    font-weight: 600;
+    /* A bit bolder */
+}
+
+/* --- How It Works Section within #app-explanation --- */
+#app-explanation .how-it-works {
+    background-color: #eff6fc;
+    /* Very light blue tint for the section background */
+    border-radius: 12px;
+    /* Softly rounded corners */
+    padding: 35px;
+    /* More padding */
+    margin-top: 45px;
+    border: 1px solid #d4e3f3;
+    /* Subtle light blue border */
+}
+
+#app-explanation .explanation-columns {
+    display: flex;
+    flex-direction: column;
+    /* **Default: Stacks columns on small screens** */
+    gap: 30px;
+    /* More space between columns */
+}
+
+#app-explanation .explanation-columns .column {
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* Softer corners for columns */
+    padding: 30px;
+    /* More padding inside columns */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover effect */
+}
+
+#app-explanation .explanation-columns .column:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Slightly more prominent shadow on hover */
+}
+
+#app-explanation .explanation-columns .column p {
+    font-size: 1em;
+    color: #5a6268;
+    /* Softer grey for column text */
+}
+
+/* --- Responsive Design (Media Queries) for elements within #app-explanation --- */
+
+/* Medium screens (e.g., tablets - 768px and up) */
+@media (min-width: 768px) {
+    #app-explanation h1 {
+        font-size: 3em;
+    }
+
+    #app-explanation h2 {
+        font-size: 2.4em;
+    }
+
+    #app-explanation .intro {
+        font-size: 1.35em;
+    }
+
+    #app-explanation .explanation-columns {
+        flex-direction: row;
+        /* Two columns on medium screens */
+        flex-wrap: wrap;
+        /* Allows columns to wrap if necessary */
+        justify-content: space-between;
+        /* Distribute space between columns */
+    }
+
+    #app-explanation .explanation-columns .column {
+        flex: 1 1 calc(50% - 15px);
+        /* Two columns, taking almost 50% width each, accounting for gap */
+    }
+}
+
+/* Large screens (e.g., desktops - 1024px and up) */
+@media (min-width: 1024px) {
+    #app-explanation h1 {
+        font-size: 3.5em;
+    }
+
+    #app-explanation h2 {
+        font-size: 2.8em;
+    }
+
+    #app-explanation .explanation-columns {
+        flex-direction: row;
+        /* Three columns on large screens */
+        flex-wrap: nowrap;
+        /* Prevent wrapping if space allows */
+        justify-content: space-between;
+        /* Distribute space evenly */
+    }
+
+    #app-explanation .explanation-columns .column {
+        flex: 1;
+        /* Distribute space equally among three columns */
+        min-width: 30%;
+        /* Ensure columns don't get too small */
+    }
+}
+
+/* Very large screens (optional, for even wider layouts - 1400px and up) */
+@media (min-width: 1400px) {
+    #app-explanation {
+        max-width: 1400px;
+        padding: 60px;
+    }
+}

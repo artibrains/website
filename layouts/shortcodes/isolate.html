@@ -1,0 +1,64 @@
+{{- /* Reusable shortcode to isolate another shortcode inside an iframe */ -}}
+{{- $name := .Get "name" -}}
+{{- $params := .Get "params" -}}
+{{- $width := or (.Get "width") "100%" -}}
+{{- $height := or (.Get "height") "700px" -}}
+{{- $sandbox := or (.Get "sandbox") "allow-scripts allow-same-origin allow-popups allow-forms" -}}
+{{- $title := or (.Get "title") (printf "Embed %s" (or $name "contenido")) -}}
+{{- $class := .Get "class" -}}
+
+{{- /* Build inner content string from name+params (no nested .Inner to keep it self-closing) */ -}}
+{{- if not $name -}}
+{{- errorf "shortcode 'isolate' requires param 'name' (shortcode to embed) on page %q" .Page.File.Path -}}
+{{- end -}}
+{{- $sp := cond (ne (len (trim $params " \t\n\r")) 0) " " "" -}}
+{{- $inner := printf "{{< %s%s%s>}}" $name $sp (or $params "") -}}
+
+    {{- /* Render the inner content as the current page would (process shortcodes/markdown) */ -}}
+    {{- $rendered := .Page.RenderString $inner -}}
+
+    {{- /* Create a unique output path for the embedded resource (avoid collisions) */ -}}
+    {{- $nm := or $name "inline" -}}
+    {{- $hash := (md5 $rendered) -}}
+    {{- $outPath := printf "embed/%s-%s-%s.html" .Page.File.BaseFileName $nm $hash -}}
+
+    {{- /* Execute the wrapper HTML template with the rendered inner content */ -}}
+    {{- $tpl := (resources.Get "embed/iframe-wrapper.html") | resources.ExecuteAsTemplate $outPath (dict "Content"
+    $rendered) -}}
+
+    {{- /* Generate unique ID for auto-resize functionality */ -}}
+    {{- $iframeId := printf "iframe-%s" $hash -}}
+
+    <div class="isolate-container"
+        style="margin: 1rem 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.1);">
+        <iframe id="{{ $iframeId }}" src="{{ $tpl.RelPermalink }}" title="{{ $title }}" loading="lazy"
+            sandbox="{{ $sandbox }}" {{ if $class }}class="{{ $class }}" {{ end }} width="{{ $width }}"
+            height="{{ $height }}"
+            style="border: 0; width: 100%; display: block; transition: height 0.3s ease;"></iframe>
+    </div>
+
+    <script>
+        (function () {
+            const iframe = document.getElementById('{{ $iframeId }}');
+
+            // Listen for resize messages from iframe content
+            window.addEventListener('message', function (event) {
+                if (event.source === iframe.contentWindow) {
+                    if (event.data.type === 'resize') {
+                        iframe.style.height = event.data.height + 'px';
+                    }
+                    if (event.data.type === 'theme') {
+                        // Update container styling based on theme
+                        const container = iframe.parentElement;
+                        if (event.data.isDark) {
+                            container.style.borderColor = 'rgba(255,255,255,0.1)';
+                            container.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+                        } else {
+                            container.style.borderColor = 'rgba(0,0,0,0.1)';
+                            container.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                        }
+                    }
+                }
+            });
+        })();
+    </script>

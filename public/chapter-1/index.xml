@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 - The Beginning of the Journey :: Artificial Brains</title>
+    <link>http://localhost:1313/chapter-1/index.html</link>
+    <description>Minermont Hospital is on the verge of collapse. Unexpected population growth has overwhelmed its systems, generating frustration among staff and patients. In the midst of this crisis, Dr. Victor Salazar, an idealistic physician, sees a possible solution in Artificial Intelligence, but runs into the skepticism of Dr. Carmen Ledesma, an experienced and traditional professional.&#xA;This chapter chronicles the first step of their journey: a visit to the Artificial Intelligence Academy (AIA), which will change their perspective forever. Through the following interactive sections, you will explore the key concepts they discovered that laid the groundwork for the hospital’s transformation.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/chapter-1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> 1.4 History of Artificial Intelligence</title>
+      <link>http://localhost:1313/chapter-1/ai-timeline/history-ai-timeline/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-1/ai-timeline/history-ai-timeline/index.html</guid>
+      <description>An interactive timeline of the most important events in AI history</description>
+    </item>
+    <item>
+      <title>1.4 - The Lighthill Report</title>
+      <link>http://localhost:1313/chapter-1/lighthill/lighthill-report-ai-winter/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-1/lighthill/lighthill-report-ai-winter/index.html</guid>
+      <description>The 1973 Lighthill Report criticized AI, contributing to the first &#39;AI winter.&#39;</description>
+    </item>
+    <item>
+      <title>1.4 Interactive Game: Mouse and Cheese (Reinforcement Learning)</title>
+      <link>http://localhost:1313/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html</link>
+      <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html</guid>
+      <description>An interactive simulation to understand how Artificial Intelligence learns through reinforcement.</description>
+    </item>
+    <item>
+      <title>1.5 Deep Blue vs AlphaGo</title>
+      <link>http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html</guid>
+      <description>Technical comparison between Deep Blue and AlphaGo, two milestones in the history of artificial intelligence.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,39 @@
+baseURL = 'https://example.org/'
+title = 'Artificial Brains'
+theme = 'hugo-theme-relearn'
+
+[security]
+  enableInlineShortcodes = true
+
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+
+# Configuración multilingüe
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.es]
+    languageName = 'Español'
+    weight = 1
+    title = 'Cerebros Artificiales'
+    contentDir = 'content'
+
+  [languages.en]
+    languageName = 'English'
+    weight = 2
+    title = 'Artificial Brains'
+    contentDir = 'content'
+
+[params]
+
+  themeVariant = ['auto','zen-light', 'zen-dark']
+    themeVariantAuto = ['zen-light', 'zen-dark']
+
+  # Mostrar selector de idiomas
+  showLanguageSwitcher = true
+  # alwaysopen = true
+  disableSearch = true

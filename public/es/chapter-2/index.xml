@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 - Modelos de aprendizaje automático :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/chapter-2/index.html</link>
+    <description>En este capítulo, nos adentramos en el corazón del aprendizaje automático a través de la experiencia del equipo del hospital. Después de un primer intento fallido con un sistema demasiado complejo, Víctor, Marta, Luis y Carlos aprenden una lección fundamental: a veces, la solución más simple es la más poderosa.&#xA;Guiados por el consejo de Alma García de AIA, el equipo se embarca en la implementación de un modelo de regresión lineal para predecir la necesidad de suministros médicos. Este nuevo enfoque no solo es más manejable, sino también transparente e interpretable, lo que permite ganar la confianza de los más escépticos, como el doctor Javier.</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/chapter-2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 - Juego de Regresión Lineal</title>
+      <link>http://localhost:1313/es/chapter-2/linear-regression/juego-regresion-lineal/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/linear-regression/juego-regresion-lineal/index.html</guid>
+      <description>Aprende regresión lineal de forma interactiva encontrando la mejor línea que prediga resultados continuos.</description>
+    </item>
+    <item>
+      <title>2.2 - Comparando Error Absoluto (L1) vs Error Cuadrático (L2)</title>
+      <link>http://localhost:1313/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html</guid>
+      <description>Demostración interactiva para comprender las diferencias entre las funciones de error L1 y L2, y cómo afectan la evaluación de modelos de machine learning en contextos médicos.</description>
+    </item>
+    <item>
+      <title>2.5 - El Método del Descenso del Gradiente</title>
+      <link>http://localhost:1313/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/metodo-descenso-gradiente/metodo-descenso-gradiente/index.html</guid>
+      <description>Aprende cómo el algoritmo de descenso del gradiente encuentra puntos mínimos de funciones complejas para optimizar modelos de machine learning.</description>
+    </item>
+    <item>
+      <title>⚡ Regresión lineal desde cero</title>
+      <link>http://localhost:1313/es/chapter-2/code/regresion-lineal-desde-cero/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/code/regresion-lineal-desde-cero/index.html</guid>
+      <description>Demostración interactiva: cómo crear un modelo de regresión lineal desde cero y aplicarlo.</description>
+    </item>
+    <item>
+      <title>⚡ Regresión lineal con sklearn</title>
+      <link>http://localhost:1313/es/chapter-2/code/regresion-lineal-sklearn/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/code/regresion-lineal-sklearn/index.html</guid>
+      <description>Demostración interactiva: cómo crear un modelo de regresión lineal utilizando la biblioteca scikit-learn.</description>
+    </item>
+    <item>
+      <title>📚 Regresión lineal</title>
+      <link>http://localhost:1313/es/chapter-2/bibliography/bibliografia-regresion-lineal/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/bibliography/bibliografia-regresion-lineal/index.html</guid>
+      <description>Referencias académicas, tutoriales y recursos adicionales para profundizar en los conceptos de Inteligencia Artificial presentados en este capítulo</description>
+    </item>
+    <item>
+      <title>📚 Descenso del Gradiente</title>
+      <link>http://localhost:1313/es/chapter-2/bibliography/bibliografia-descenso-gradiente/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/bibliography/bibliografia-descenso-gradiente/index.html</guid>
+      <description>Materiales teóricos, prácticos y visuales para comprender e implementar el descenso del gradiente en aprendizaje automático</description>
+    </item>
+  </channel>
+</rss>

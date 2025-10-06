@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/chapter-1/index.html</loc>
+    <lastmod>2025-04-18T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/chapter-1/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/chapter-1/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/chapter-1/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/chapter-1/ai-timeline/history-ai-timeline/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/chapter-1/ai-timeline/historia-ia-linea-tiempo/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/chapter-1/ai-timeline/history-ai-timeline/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/chapter-1/lighthill/lighthill-report-ai-winter/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/chapter-1/lighthill/informe-lighthill-invierno-ia/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/chapter-1/lighthill/lighthill-report-ai-winter/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html</loc>
+    <lastmod>2023-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/chapter-1/cheese-mouse-game/raton-queso-aprendizaje-refuerzo/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/chapter-1/cheese-mouse-game/mouse-cheese-reinforcement-learning/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html</loc>
+    <lastmod>2025-04-18T00:00:00+00:00</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/chapter-1/deep-blue-vs-alphago/deep-blue-vs-alphago/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/categories/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/categories/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/categories/index.html" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:1313/es/tags/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="http://localhost:1313/es/tags/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="http://localhost:1313/tags/index.html" />
+  </url>
+</urlset>

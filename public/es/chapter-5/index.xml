@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5 - Aprendizaje No Supervisado: Descubriendo lo Invisible :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/chapter-5/index.html</link>
+    <description>Tras consolidar sus modelos de clasificación, el equipo del Hospital Minermont, impulsado por la visión de la directora Elena, se embarca en un desafío aún más ambicioso: pasar de la medicina reactiva a la proactiva. El objetivo ya no es solo clasificar casos conocidos, sino descubrir grupos de riesgo ocultos en su población de pacientes antes de que la enfermedad se manifieste.&#xA;Este nuevo reto les introduce en el fascinante mundo del aprendizaje no supervisado, una rama de la IA donde no hay etiquetas ni respuestas correctas. El algoritmo debe explorar los datos por sí mismo para encontrar patrones y estructuras inherentes.</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <atom:link href="http://localhost:1313/es/chapter-5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El Descubridor de Grupos Ocultos: K-Means Interactivo</title>
+      <link>http://localhost:1313/es/chapter-5/kmeans/kmeans-grupos-ocultos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-5/kmeans/kmeans-grupos-ocultos/index.html</guid>
+      <description>Visualizador interactivo del algoritmo K-Means para descubrir perfiles de pacientes ocultos, inspirado en el proyecto del Hospital Minermont.</description>
+    </item>
+  </channel>
+</rss>

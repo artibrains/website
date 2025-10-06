@@ -1,0 +1,1245 @@
+{{ $language := .Site.Language.Lang }}
+{{ $translations := dict "es" (dict
+"references" "Referencias"
+"caption" "La evolución de la Inteligencia Artificial"
+"headline" "Historia de la Inteligencia Artificial"
+"description" "Un recorrido por los eventos más importantes en el desarrollo de la IA"
+"legend_title" "Leyenda"
+"importance_levels" "Niveles de Importancia"
+"critical" "Crítico"
+"high" "Alta"
+"medium" "Media"
+"ai_phases" "Fases de la IA"
+"categories" "Categorías"
+"filter_categories" "Filtrar por Categorías"
+"show_all" "Mostrar Todas"
+"breakthrough" "Avance"
+"theory" "Teoría"
+"applications" "Aplicaciones"
+"infrastructure" "Infraestructura"
+"mathematics" "Matemáticas"
+"early_foundations" "Bases Tempranas (1763-1955)"
+"birth_of_ai" "Nacimiento de la IA (1956-1973)"
+"first_ai_winter" "Primer Invierno de la IA (1974-1979)"
+"expert_systems" "Era de Sistemas Expertos (1980-1986)"
+"second_ai_winter" "Segundo Invierno de la IA (1987-1996)"
+"ai_resurgence" "Resurgimiento de la IA (1997-2011)"
+"deep_learning_boom" "Auge del Deep Learning (2012-2019)"
+"ai_breakthrough" "Era de Avances de la IA (2020-presente)")
+"en" (dict
+"references" "References"
+"caption" "The Evolution of Artificial Intelligence"
+"headline" "History of Artificial Intelligence"
+"description" "A journey through the most important events in AI development"
+"legend_title" "Legend"
+"importance_levels" "Importance Levels"
+"critical" "Critical"
+"high" "High"
+"medium" "Medium"
+"ai_phases" "AI Phases"
+"categories" "Categories"
+"filter_categories" "Filter by Categories"
+"show_all" "Show All"
+"breakthrough" "Breakthrough"
+"theory" "Theory"
+"applications" "Applications"
+"infrastructure" "Infrastructure"
+"mathematics" "Mathematics"
+"early_foundations" "Early Foundations (1763-1955)"
+"birth_of_ai" "Birth of AI (1956-1973)"
+"first_ai_winter" "First AI Winter (1974-1979)"
+"expert_systems" "Expert Systems Era (1980-1986)"
+"second_ai_winter" "Second AI Winter (1987-1996)"
+"ai_resurgence" "AI Resurgence (1997-2011)"
+"deep_learning_boom" "Deep Learning Boom (2012-2019)"
+"ai_breakthrough" "AI Breakthrough Era (2020-present)") }}
+
+<!-- Timeline.js CSS and JS -->
+<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+{{ $jsonPath := printf "ai-timeline-%s.json" $language }}
+{{ $timelineResource := resources.Get $jsonPath }}
+{{ if $timelineResource }}
+{{ $timelineData := $timelineResource | transform.Unmarshal }}
+{{ $timelineJson := $timelineData | jsonify }}
+{{ $translationsJson := index $translations $language | jsonify }}
+
+<!-- Category Filter Controls -->
+<div class="timeline-controls">
+    <h3>{{ index $translations $language "filter_categories" }}</h3>
+    <div class="category-filters">
+        <button class="category-filter active" data-category="all">{{ index $translations $language "show_all"
+            }}</button>
+        <button class="category-filter" data-category="breakthrough">{{ index $translations $language "breakthrough"
+            }}</button>
+        <button class="category-filter" data-category="theory">{{ index $translations $language "theory"
+            }}</button>
+        <button class="category-filter" data-category="applications">{{ index $translations $language "applications"
+            }}</button>
+        <button class="category-filter" data-category="infrastructure">{{ index $translations $language "infrastructure"
+            }}</button>
+    </div>
+</div>
+
+<div id='ai-timeline-embed' style='width: 100%; height: 700px' data-timeline="{{ $timelineJson | safeHTML }}"
+    data-translations="{{ $translationsJson | safeHTML }}" data-language="{{ $language }}"></div>
+
+<!-- Timeline Legend -->
+<div class="timeline-legend">
+    <h3>{{ index $translations $language "legend_title" }}</h3>
+    <div class="legend-content">
+        <div class="legend-section">
+            <h4>{{ index $translations $language "importance_levels" }}</h4>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="legend-indicator critical"></span>
+                    <span>{{ index $translations $language "critical" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-indicator high"></span>
+                    <span>{{ index $translations $language "high" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-indicator medium"></span>
+                    <span>{{ index $translations $language "medium" }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="legend-section">
+            <h4>{{ index $translations $language "ai_phases" }}</h4>
+            <div class="legend-items phases">
+                <div class="legend-item">
+                    <span class="legend-phase early-foundations"></span>
+                    <span>{{ index $translations $language "early_foundations" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase birth-of-ai"></span>
+                    <span>{{ index $translations $language "birth_of_ai" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase first-ai-winter"></span>
+                    <span>{{ index $translations $language "first_ai_winter" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase expert-systems"></span>
+                    <span>{{ index $translations $language "expert_systems" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase second-ai-winter"></span>
+                    <span>{{ index $translations $language "second_ai_winter" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase ai-resurgence"></span>
+                    <span>{{ index $translations $language "ai_resurgence" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase deep-learning-boom"></span>
+                    <span>{{ index $translations $language "deep_learning_boom" }}</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-phase ai-breakthrough"></span>
+                    <span>{{ index $translations $language "ai_breakthrough" }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="legend-section">
+            <h4>{{ index $translations $language "categories" }}</h4>
+            <div class="legend-items categories">
+                <div class="legend-item">
+                    <span class="category-badge"
+                        style="background-color: #FF980020; border: 1px solid #FF9800; color: var(--MAIN-TEXT-color);">
+                        <span class="category-icon">🚀</span>
+                        {{ index $translations $language "breakthrough" }}
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="category-badge"
+                        style="background-color: #4CAF5020; border: 1px solid #4CAF50; color: var(--MAIN-TEXT-color);">
+                        <span class="category-icon">�</span>
+                        {{ index $translations $language "theory" }}
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="category-badge"
+                        style="background-color: #2196F320; border: 1px solid #2196F3; color: var(--MAIN-TEXT-color);">
+                        <span class="category-icon">💻</span>
+                        {{ index $translations $language "applications" }}
+                    </span>
+                </div>
+                <div class="legend-item">
+                    <span class="category-badge"
+                        style="background-color: #9E9E9E20; border: 1px solid #9E9E9E; color: var(--MAIN-TEXT-color);">
+                        <span class="category-icon">🔧</span>
+                        {{ index $translations $language "infrastructure" }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('ai-timeline-embed');
+            if (!container) {
+                console.error('Timeline container not found');
+                return;
+            }
+
+            var translations = JSON.parse(container.dataset.translations);
+            var rawData = JSON.parse(container.dataset.timeline);
+            var language = container.dataset.language;
+            var timelineInstance = null;
+            var originalEvents = rawData.timeline.slice(); // Keep original data for filtering
+
+            console.log('Timeline data loaded:', originalEvents.length, 'events');
+
+            function createTimelineData(eventsToShow) {
+                return {
+                    events: eventsToShow.map(function (event) {
+                        // Determine CSS classes based on importance, phase, and categories
+                        var importanceClass = event.importance ? 'importance-' + event.importance : 'importance-low';
+                        var phaseClass = event.phase ? 'phase-' + event.phase : 'phase-early-foundations';
+                        var categoryClasses = event.categories ? event.categories.map(function (cat) { return 'category-' + cat; }).join(' ') : '';
+
+                        // Generate category badges
+                        var categoryBadges = '';
+                        if (event.category_info && event.category_info.length > 0) {
+                            categoryBadges = '<div class="category-badges">' +
+                                event.category_info.map(function (cat) {
+                                    return '<span class="category-badge" style="background-color: ' + cat.color + '20; border: 1px solid ' + cat.color + '; color: var(--MAIN-TEXT-color);">' +
+                                        '<span class="category-icon">' + cat.icon + '</span>' +
+                                        cat.name + '</span>';
+                                }).join('') +
+                                '</div>';
+                        }
+
+                        return {
+                            start_date: {
+                                year: parseInt(event.date)
+                            },
+                            text: {
+                                headline: event.title,
+                                text: '<div class="timeline-event ' + importanceClass + ' ' + phaseClass + ' ' + categoryClasses + '">' +
+                                    categoryBadges +
+                                    '<p class="short-description">' + event.shortDescription + '</p>' +
+                                    '<div class="full-description">' + event.fullDescription + '</div>' +
+                                    (event.phase_info ? '<div class="phase-indicator"><span class="phase-name">' + event.phase_info.name + '</span> <span class="phase-period">(' + event.phase_info.period + ')</span></div>' : '') +
+                                    '<div class="references">' +
+                                    '<h4>' + translations.references + '</h4>' +
+                                    event.references.map(function (ref) {
+                                        return '<p><a href="' + ref.url + '" target="_blank" rel="noopener noreferrer">' + ref.title + '</a></p>';
+                                    }).join('') +
+                                    '</div>' +
+                                    '</div>'
+                            },
+                            media: (event.media && event.media.url) ? {
+                                url: event.media.url,
+                                caption: event.media.caption,
+                                credit: event.media.credit_url ? '<a href="' + event.media.credit_url + '" target="_blank" rel="noopener noreferrer">' + event.media.credit + '</a>' : event.media.credit
+                            } : undefined,
+                            background: event.background || { color: '#ffffff' }
+                        };
+                    }),
+                    title: {
+                        media: {
+                            url: '/img/evolutionAI-en.png',
+
+                        },
+                        text: {
+                            headline: translations.headline,
+                            text: translations.description
+                        }
+                    }
+                };
+            }
+
+            function initializeTimeline(events) {
+                events = events || originalEvents; // Ensure events is defined
+                console.log('Initializing timeline with', events.length, 'events');
+                var timelineData = createTimelineData(events);
+
+                if (timelineInstance) {
+                    // Recreate timeline (Timeline.js doesn't have good update methods)
+                    document.getElementById('ai-timeline-embed').innerHTML = '';
+                }
+
+                try {
+                    timelineInstance = new TL.Timeline('ai-timeline-embed', timelineData, {
+                        start_at_end: false,
+                        default_bg_color: "var(--MAIN-BG-color, #f9f9f9)",
+                        scale_factor: 2,
+                        timenav_height_percentage: 40,
+                        language: language
+                    });
+                    console.log('Timeline initialized successfully');
+                } catch (error) {
+                    console.error('Error initializing timeline:', error);
+                    return;
+                }
+
+                // Apply category colors to timeline markers after timeline is loaded
+                setTimeout(function () {
+                    try {
+                        applyCategoryColors(events);
+                        // Temporarily disable phase backgrounds as they're interfering with timeline markers
+                        // applyPhaseBackgrounds(events);
+                    } catch (error) {
+                        console.error('Error applying timeline styling:', error);
+                    }
+                }, 500);
+            }
+
+            function applyCategoryColors(events) {
+                setTimeout(function () {
+                    var markers = document.querySelectorAll('.tl-timemarker');
+                    var slides = document.querySelectorAll('.tl-slide');
+
+                    markers.forEach(function (marker, index) {
+                        if (events[index] && events[index].category_info && events[index].category_info.length > 0) {
+                            var primaryCategory = events[index].category_info[0];
+                            var categoryColor = primaryCategory.color;
+
+                            // Style the timeline marker with full opacity
+                            var markerContent = marker.querySelector('.tl-timemarker-content-container');
+                            if (markerContent) {
+                                markerContent.style.setProperty('background-color', categoryColor, 'important');
+                            }
+                            marker.style.setProperty('background-color', categoryColor, 'important');
+                            marker.style.setProperty('border-color', categoryColor, 'important');
+
+                            // Apply consistent category styling to the slide
+                            if (slides[index]) {
+                                var slideContainer = slides[index].querySelector('.timeline-event');
+                                if (slideContainer) {
+                                    // Border left with full opacity
+                                    slideContainer.style.setProperty('border-left-color', categoryColor, 'important');
+                                    slideContainer.style.setProperty('border-left-width', '5px', 'important');
+                                    slideContainer.style.setProperty('border-left-style', 'solid', 'important');
+
+                                    // Background with low opacity (10%)
+                                    slideContainer.style.setProperty('background-color', categoryColor + '1a', 'important');
+                                }
+
+                                // Apply category color to h2 headline with full opacity
+                                var headlines = slides[index].querySelectorAll('h2, .tl-headline h2');
+                                headlines.forEach(function (headline) {
+                                    headline.style.setProperty('color', categoryColor, 'important');
+                                    headline.style.setProperty('text-shadow', 'none', 'important');
+                                });
+
+                                // Apply consistent styling to descriptions
+                                var shortDesc = slides[index].querySelector('.short-description');
+                                if (shortDesc) {
+                                    shortDesc.style.setProperty('background-color', categoryColor + '0d', 'important');
+                                    shortDesc.style.setProperty('border-left', '3px solid ' + categoryColor, 'important');
+                                    shortDesc.style.setProperty('padding-left', '12px', 'important');
+                                    shortDesc.style.setProperty('margin-left', '8px', 'important');
+                                    shortDesc.style.setProperty('border-radius', '4px', 'important');
+                                }
+
+                                // Apply consistent styling to full description
+                                var fullDesc = slides[index].querySelector('.full-description');
+                                if (fullDesc) {
+                                    fullDesc.style.setProperty('border-left', '2px solid ' + categoryColor + '66', 'important');
+                                    fullDesc.style.setProperty('padding-left', '10px', 'important');
+                                    fullDesc.style.setProperty('margin-left', '8px', 'important');
+                                }
+
+                                // Style category badges consistently
+                                var categoryBadges = slides[index].querySelectorAll('.category-badge');
+                                categoryBadges.forEach(function (badge) {
+                                    badge.style.setProperty('background-color', categoryColor + '20', 'important');
+                                    badge.style.setProperty('border-color', categoryColor, 'important');
+                                    badge.style.setProperty('color', categoryColor, 'important');
+                                });
+                            }
+                        }
+                    });
+
+                    // Also apply to elements found by class name as backup
+                    events.forEach(function (event, index) {
+                        if (event.category_info && event.category_info.length > 0) {
+                            var primaryCategory = event.category_info[0];
+                            var categoryColor = primaryCategory.color;
+                            var eventElements = document.querySelectorAll('.timeline-event.category-' + primaryCategory.id);
+
+                            eventElements.forEach(function (element) {
+                                // Consistent border and background
+                                element.style.setProperty('border-left-color', categoryColor, 'important');
+                                element.style.setProperty('border-left-width', '5px', 'important');
+                                element.style.setProperty('border-left-style', 'solid', 'important');
+                                element.style.setProperty('background-color', categoryColor + '1a', 'important');
+
+                                // Apply to all headlines in this slide
+                                var parentSlide = element.closest('.tl-slide');
+                                if (parentSlide) {
+                                    var allHeadlines = parentSlide.querySelectorAll('h2, .tl-headline h2');
+                                    allHeadlines.forEach(function (h2) {
+                                        h2.style.setProperty('color', categoryColor, 'important');
+                                        h2.style.setProperty('text-shadow', 'none', 'important');
+                                    });
+
+                                    // Apply to descriptions
+                                    var shortDesc = parentSlide.querySelector('.short-description');
+                                    if (shortDesc) {
+                                        shortDesc.style.setProperty('background-color', categoryColor + '0d', 'important');
+                                        shortDesc.style.setProperty('border-left', '3px solid ' + categoryColor, 'important');
+                                        shortDesc.style.setProperty('padding-left', '12px', 'important');
+                                        shortDesc.style.setProperty('margin-left', '8px', 'important');
+                                        shortDesc.style.setProperty('border-radius', '4px', 'important');
+                                    }
+
+                                    var fullDesc = parentSlide.querySelector('.full-description');
+                                    if (fullDesc) {
+                                        fullDesc.style.setProperty('border-left', '2px solid ' + categoryColor + '66', 'important');
+                                        fullDesc.style.setProperty('padding-left', '10px', 'important');
+                                        fullDesc.style.setProperty('margin-left', '8px', 'important');
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }, 1000); // Increased timeout to ensure Timeline.js is fully loaded
+            }
+
+            function applyPhaseBackgrounds(events) {
+                setTimeout(function () {
+                    // Define phase periods and colors
+                    var phaseData = {
+                        'early-foundations': { start: 1763, end: 1955, color: '#65a30d' },
+                        'birth-of-ai': { start: 1956, end: 1973, color: '#22c55e' },
+                        'first-ai-winter': { start: 1974, end: 1979, color: '#9ca3af' },
+                        'expert-systems': { start: 1980, end: 1986, color: '#f59e0b' },
+                        'second-ai-winter': { start: 1987, end: 1996, color: '#6b7280' },
+                        'ai-resurgence': { start: 1997, end: 2011, color: '#3b82f6' },
+                        'deep-learning-boom': { start: 2012, end: 2019, color: '#8b4513' },
+                        'ai-breakthrough': { start: 2020, end: 2025, color: '#a855f7' }
+                    };
+
+                    // Create phase background elements in the timeline navigation
+                    var timeNav = document.querySelector('.tl-timenav');
+                    if (timeNav) {
+                        // Remove existing phase backgrounds
+                        var existingPhases = timeNav.querySelectorAll('.phase-background');
+                        existingPhases.forEach(function (el) { el.remove(); });
+
+                        // Add new phase backgrounds
+                        Object.keys(phaseData).forEach(function (phaseKey) {
+                            var phase = phaseData[phaseKey];
+                            var phaseElement = document.createElement('div');
+                            phaseElement.className = 'phase-background phase-' + phaseKey;
+
+                            // Set CSS properties individually for better compatibility
+                            phaseElement.style.position = 'absolute';
+                            phaseElement.style.top = '0';
+                            phaseElement.style.bottom = '0';
+                            phaseElement.style.background = 'linear-gradient(to bottom, ' + phase.color + '1a, ' + phase.color + '0d)';
+                            phaseElement.style.pointerEvents = 'none';
+                            phaseElement.style.zIndex = '1';
+                            phaseElement.style.borderLeft = '2px solid ' + phase.color + '66';
+                            phaseElement.style.borderRight = '2px solid ' + phase.color + '66';
+
+                            // Calculate position based on timeline scale
+                            // This is approximate positioning - Timeline.js doesn't expose easy positioning APIs
+                            var timelineStart = 1763; // Earliest event
+                            var timelineEnd = 2025; // Latest event
+                            var totalTimespan = timelineEnd - timelineStart;
+                            var phaseStart = ((phase.start - timelineStart) / totalTimespan) * 100;
+                            var phaseWidth = ((phase.end - phase.start) / totalTimespan) * 100;
+
+                            phaseElement.style.left = phaseStart + '%';
+                            phaseElement.style.width = phaseWidth + '%'; timeNav.appendChild(phaseElement);
+                        });
+                    }
+                }, 1500); // Give extra time for Timeline.js to fully render
+            }
+
+            function filterByCategory(category) {
+                if (category === 'all') {
+                    initializeTimeline(originalEvents);
+                } else {
+                    var filteredEvents = originalEvents.filter(function (event) {
+                        return event.categories && event.categories.includes(category);
+                    });
+                    initializeTimeline(filteredEvents);
+                }
+            }
+
+            // Initialize timeline with all events
+            initializeTimeline();
+
+            // Setup category filtering
+            var categoryButtons = document.querySelectorAll('.category-filter');
+            categoryButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Filter timeline
+                    var category = this.getAttribute('data-category');
+                    filterByCategory(category);
+                });
+            });
+        });
+    })();
+</script>
+{{ else }}
+<div class="notice warning">
+    <p>{{ if eq $language "es" }}No se pudo cargar los datos de la línea del tiempo{{ else }}Could not load timeline
+        data{{ end }}</p>
+</div>
+{{ end }}
+
+<style>
+    .tl-timeline {
+        font-family: var(--MAIN-font) !important;
+    }
+
+    .tl-timeline h1,
+    .tl-timeline h2,
+    .tl-timeline h3,
+    .tl-timeline h4,
+    .tl-timeline h5 {
+        font-family: var(--MAIN-font) !important;
+        color: var(--MAIN-TEXT-color) !important;
+        text-shadow: none !important;
+        /* Remove any text shadows */
+    }
+
+    .tl-timeline .tl-headline-date,
+    .tl-timeline .tl-headline {
+        color: var(--MAIN-TEXT-color) !important;
+        text-shadow: none !important;
+        /* Remove any text shadows */
+    }
+
+    /* Remove text shadows from all timeline text */
+    .tl-timeline .tl-text,
+    .tl-timeline .tl-text p,
+    .tl-timeline .tl-text div,
+    .tl-timeline .tl-text span {
+        text-shadow: none !important;
+    }
+
+    .tl-timeline .short-description {
+        font-size: 1.1em;
+        font-weight: 500;
+        margin-bottom: 1em;
+        color: var(--MAIN-TEXT-color) !important;
+        text-shadow: none !important;
+        /* Remove text shadow */
+    }
+
+    .tl-timeline .full-description {
+        margin: 1.5em 0;
+        line-height: 1.6;
+        text-shadow: none !important;
+        /* Remove text shadow */
+    }
+
+    .tl-timeline .references {
+        margin-top: 1.5em;
+        padding-top: 1em;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        text-shadow: none !important;
+    }
+
+    .tl-timeline .references a {
+        color: var(--MAIN-LINK-color);
+        text-decoration: none;
+        display: inline-block;
+        margin: 0.3em 0;
+        text-shadow: none !important;
+    }
+
+    .tl-timeline .references a:hover {
+        color: var(--MAIN-LINK-HOVER-color);
+        text-decoration: underline;
+    }
+
+    /* Light mode specific fixes */
+    .timeline-event .short-description,
+    .timeline-event .short-description p {
+        color: var(--MAIN-TEXT-color) !important;
+    }
+
+    /* Override Timeline.js default styling for headlines to allow category colors */
+    .tl-slide .tl-headline h2,
+    .tl-slide.tl-full-color-background .tl-headline h2,
+    .tl-slide.tl-full-color-background h2 {
+        color: inherit !important;
+        text-shadow: none !important;
+    }
+
+    .timeline-event .full-description,
+    .timeline-event .full-description p {
+        color: #000000 !important;
+    }
+
+    .timeline-event .references a {
+        color: #0066cc !important;
+    }
+
+    /* Changed: allow images to use viewport height and preserve aspect ratio so they are not cropped */
+    .tl-timeline .tl-media-content img,
+    .tl-timeline .tl-head .tl-media-content img {
+        max-height: 70vh;
+        /* allow image to occupy up to 70% of viewport height */
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        /* ensure full image fits inside container */
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Importance-based styling */
+    .timeline-event.importance-critical {
+        border-left: 4px solid #ff4757;
+        padding-left: 12px;
+        background: linear-gradient(to right, rgba(255, 71, 87, 0.05), transparent);
+    }
+
+    .timeline-event.importance-critical .short-description {
+        color: var(--MAIN-TEXT-color) !important;
+        font-weight: 600;
+    }
+
+    .timeline-event.importance-high {
+        border-left: 4px solid #26d0ce;
+        padding-left: 12px;
+        background: linear-gradient(to right, rgba(38, 208, 206, 0.05), transparent);
+    }
+
+    .timeline-event.importance-high .short-description {
+        color: var(--MAIN-TEXT-color) !important;
+        font-weight: 600;
+    }
+
+    .timeline-event.importance-medium {
+        border-left: 3px solid #ffd93d;
+        padding-left: 10px;
+        background: linear-gradient(to right, rgba(255, 217, 61, 0.05), transparent);
+    }
+
+
+    .timeline-event.importance-medium .short-description {
+        color: var(--MAIN-TEXT-color) !important;
+        font-weight: 500;
+    }
+
+    .timeline-event.importance-low {
+        border-left: 2px solid #c0c0c0;
+        padding-left: 8px;
+    }
+
+    /* Phase indicators */
+    .phase-indicator {
+        margin: 15px 0;
+        padding: 10px 15px;
+        border-radius: 20px;
+        background: var(--MAIN-BORDER-color, rgba(0, 0, 0, 0.05));
+        font-size: 0.9em;
+        text-align: center;
+        border: 2px solid var(--MAIN-BORDER-color, #e0e0e0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .phase-name {
+        font-weight: 700;
+        font-size: 1.1em;
+    }
+
+    .phase-period {
+        font-style: italic;
+        font-size: 0.9em;
+        margin-top: 5px;
+        display: block;
+        color: #000;
+    }
+
+    /* Phase-specific background styling with enhanced visibility and distinct colors */
+    .timeline-event.phase-early-foundations {
+        background: linear-gradient(to right, rgba(101, 163, 13, 0.3), rgba(101, 163, 13, 0.05));
+        border-left: 4px solid #65a30d !important;
+    }
+
+    .timeline-event.phase-birth-of-ai {
+        background: linear-gradient(to right, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.05));
+        border-left: 4px solid #22c55e !important;
+    }
+
+    .timeline-event.phase-first-ai-winter {
+        background: linear-gradient(to right, rgba(156, 163, 175, 0.4), rgba(156, 163, 175, 0.1));
+        border-left: 4px dashed #9ca3af !important;
+    }
+
+    .timeline-event.phase-expert-systems {
+        background: linear-gradient(to right, rgba(245, 158, 11, 0.3), rgba(245, 158, 11, 0.05));
+        border-left: 4px solid #f59e0b !important;
+    }
+
+    .timeline-event.phase-second-ai-winter {
+        background: linear-gradient(to right, rgba(107, 114, 128, 0.4), rgba(107, 114, 128, 0.1));
+        border-left: 4px dashed #6b7280 !important;
+    }
+
+    .timeline-event.phase-ai-resurgence {
+        background: linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.05));
+        border-left: 4px solid #3b82f6 !important;
+    }
+
+    .timeline-event.phase-deep-learning-boom {
+        background: linear-gradient(to right, rgba(139, 69, 19, 0.3), rgba(139, 69, 19, 0.05));
+        border-left: 4px solid #8b4513 !important;
+    }
+
+    .timeline-event.phase-ai-breakthrough {
+        background: linear-gradient(to right, rgba(168, 85, 247, 0.3), rgba(168, 85, 247, 0.05));
+        border-left: 4px solid #a855f7 !important;
+    }
+
+    /* Category-specific border colors (will be overridden by JavaScript) */
+    .timeline-event.category-breakthrough {
+        border-left-color: #FF9800 !important;
+    }
+
+    .timeline-event.category-theory {
+        border-left-color: #4CAF50 !important;
+    }
+
+    .timeline-event.category-applications {
+        border-left-color: #2196F3 !important;
+    }
+
+    .timeline-event.category-infrastructure {
+        border-left-color: #9E9E9E !important;
+    }
+
+    /* Winter periods get special styling */
+    .timeline-event.phase-first-ai-winter .phase-indicator,
+    .timeline-event.phase-second-ai-winter .phase-indicator {
+        background: linear-gradient(45deg, #e6f0ff, #f0f0f5);
+        border: 2px dashed #d0d0d8;
+        color: #666;
+    }
+
+    .timeline-event.phase-first-ai-winter .phase-indicator .phase-name,
+    .timeline-event.phase-second-ai-winter .phase-indicator .phase-name {
+        color: #222;
+    }
+
+    /* Phase-specific phase indicator colors */
+    .timeline-event.phase-early-foundations .phase-indicator {
+        background: linear-gradient(45deg, #e8f4fd, #f0f8ff);
+        border-color: #b3d9ff;
+    }
+
+    .timeline-event.phase-birth-of-ai .phase-indicator {
+        background: linear-gradient(45deg, #b3d9ff, #e0f0ff);
+        border-color: #80b3ff;
+    }
+
+    .timeline-event.phase-expert-systems .phase-indicator {
+        background: linear-gradient(45deg, #fff4e6, #fff8f0);
+        border-color: #ffcc80;
+    }
+
+    .timeline-event.phase-ai-resurgence .phase-indicator {
+        background: linear-gradient(45deg, #f0f8ff, #f8fcff);
+        border-color: #b3d9ff;
+    }
+
+    .timeline-event.phase-deep-learning-boom .phase-indicator {
+        background: linear-gradient(45deg, #e8ffe8, #f0fff0);
+        border-color: #80cc80;
+    }
+
+    .timeline-event.phase-ai-breakthrough .phase-indicator {
+        background: linear-gradient(45deg, #fff0f5, #fff8fc);
+        border-color: #ffb3d9;
+    }
+
+    /* Timeline Legend */
+    .timeline-legend {
+        margin-top: 20px;
+        padding: 20px;
+        background: var(--MAIN-BG-color, #f8f9fa);
+        border-radius: 8px;
+        border: 1px solid var(--MAIN-BORDER-color, #e9ecef);
+        color: var(--MAIN-TEXT-color, #333333);
+    }
+
+    .timeline-legend h3 {
+        margin: 0 0 15px 0;
+        color: var(--MAIN-TEXT-color, #333333);
+        font-size: 1.2em;
+    }
+
+    .legend-section h4 {
+        margin: 0 0 10px 0;
+        color: var(--MAIN-TEXT-color, #333333);
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .legend-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+    }
+
+    .legend-section h4 {
+        margin: 0 0 10px 0;
+        color: var(--MAIN-TEXT-color);
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    .legend-items {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .legend-items.phases {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 6px;
+    }
+
+    .legend-items.categories {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+    }
+
+    .legend-items.categories .legend-item {
+        flex: 0 0 auto;
+        min-width: auto;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9em;
+    }
+
+    .legend-indicator {
+        width: 20px;
+        height: 4px;
+        border-radius: 2px;
+        display: inline-block;
+    }
+
+    .legend-indicator.critical {
+        background: #ff4757;
+    }
+
+    .legend-indicator.high {
+        background: #26d0ce;
+    }
+
+    .legend-indicator.medium {
+        background: #ffd93d;
+    }
+
+    .legend-phase {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .legend-phase.early-foundations {
+        background: #65a30d;
+    }
+
+    .legend-phase.birth-of-ai {
+        background: #22c55e;
+    }
+
+    .legend-phase.first-ai-winter {
+        background: #9ca3af;
+        border-style: dashed;
+    }
+
+    .legend-phase.expert-systems {
+        background: #f59e0b;
+    }
+
+    .legend-phase.second-ai-winter {
+        background: #6b7280;
+        border-style: dashed;
+    }
+
+    .legend-phase.ai-resurgence {
+        background: #3b82f6;
+    }
+
+    .legend-phase.deep-learning-boom {
+        background: #8b4513;
+    }
+
+    .legend-phase.ai-breakthrough {
+        background: #a855f7;
+    }
+
+    .tl-timeline .tl-caption,
+    .tl-timeline .tl-credit {
+        font-family: var(--MAIN-font);
+    }
+
+    @media (max-width: 768px) {
+        #ai-timeline-embed {
+            height: 600px;
+        }
+
+        /* Responsive: reduce allowed image height on small screens */
+        .tl-timeline .tl-media-content img,
+        .tl-timeline .tl-head .tl-media-content img {
+            max-height: 50vh;
+        }
+
+        /* Responsive legend */
+        .legend-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .legend-items.phases {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ============================================
+       CATEGORY FILTER CONTROLS
+       ============================================ */
+    .timeline-controls {
+        margin-bottom: 20px;
+        padding: 20px;
+        background: var(--MAIN-BG-color, #ffffff);
+        border: 1px solid var(--MAIN-BORDER-color, #e0e0e0);
+        border-radius: 8px;
+        color: var(--MAIN-TEXT-color, #333333);
+    }
+
+    .timeline-controls h3 {
+        margin: 0 0 15px 0;
+        color: var(--MAIN-TEXT-color, #333333);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .category-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .category-filter {
+        padding: 8px 16px;
+        border: 2px solid var(--MAIN-BORDER-color, #e0e0e0);
+        background: var(--MAIN-BG-color, #ffffff);
+        color: var(--MAIN-TEXT-color, #333333);
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .category-filter:hover {
+        background: var(--MAIN-ACCENT-color, #007acc);
+        color: var(--MAIN-BG-color, #ffffff);
+        border-color: var(--MAIN-ACCENT-color, #007acc);
+    }
+
+    .category-filter.active {
+        background: var(--MAIN-ACCENT-color, #007acc);
+        color: var(--MAIN-BG-color, #ffffff);
+        border-color: var(--MAIN-ACCENT-color, #007acc);
+    }
+
+    /* ============================================
+       CATEGORY BADGES IN TIMELINE EVENTS
+       ============================================ */
+    .category-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .category-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 500;
+        white-space: nowrap;
+        border: 1px solid;
+    }
+
+    .category-icon {
+        font-size: 12px;
+        display: inline-block;
+    }
+
+    /* Specific category badge colors */
+    .category-badge[style*="#FF9800"] {
+        background-color: #FF980020 !important;
+        border-color: #FF9800 !important;
+        color: var(--MAIN-TEXT-color) !important;
+    }
+
+    .category-badge[style*="#4CAF50"] {
+        background-color: #4CAF5020 !important;
+        border-color: #4CAF50 !important;
+        color: var(--MAIN-TEXT-color) !important;
+    }
+
+    .category-badge[style*="#2196F3"] {
+        background-color: #2196F320 !important;
+        border-color: #2196F3 !important;
+        color: var(--MAIN-TEXT-color) !important;
+    }
+
+    .category-badge[style*="#9E9E9E"] {
+        background-color: #9E9E9E20 !important;
+        border-color: #9E9E9E !important;
+        color: var(--MAIN-TEXT-color) !important;
+    }
+
+    /* ============================================
+       TIMELINE.JS THEME ADAPTATION
+       ============================================ */
+
+    /* Main timeline container */
+    .tl-timeline {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    /* Timeline navigation bar */
+    .tl-timenav {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+        border-top: 2px solid var(--MAIN-BORDER-color, #e0e0e0) !important;
+    }
+
+    /* Timeline slides */
+    .tl-slide {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+    }
+
+    /* Text content in slides */
+    .tl-text {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .tl-text h1,
+    .tl-text h2,
+    .tl-text h3,
+    .tl-text h4,
+    .tl-text h5,
+    .tl-text h6 {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .tl-text p {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    /* Headlines */
+    .tl-headline {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .tl-headline h1,
+    .tl-headline h2,
+    .tl-headline h3 {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    /* Navigation elements */
+    .tl-timemarker {
+        background-color: var(--MAIN-ACCENT-color, #007acc) !important;
+    }
+
+    .tl-timemarker.tl-timemarker-active {
+        background-color: var(--MAIN-ACCENT-color, #007acc) !important;
+    }
+
+    /* Time axis */
+    .tl-timeaxis {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .tl-timeaxis-tick {
+        border-color: var(--MAIN-BORDER-color, #e0e0e0) !important;
+    }
+
+    .tl-timeaxis-minor-tick {
+        border-color: var(--MAIN-BORDER-color, #e0e0e0) !important;
+    }
+
+    .tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-content .tl-timeaxis-time {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    /* Slider navigation */
+    .tl-slider {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+    }
+
+    /* Media elements */
+    .tl-media {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+    }
+
+    .tl-media .tl-media-content {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+    }
+
+    /* Navigation buttons */
+    .tl-slidenav-next,
+    .tl-slidenav-previous {
+        background-color: transparent !important;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+        border: 1px solid var(--MAIN-BORDER-color, #e0e0e0) !important;
+    }
+
+    .tl-slidenav-next:hover,
+    .tl-slidenav-previous:hover {
+        background-color: var(--MAIN-BORDER-color, rgba(0, 0, 0, 0.1)) !important;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    /* Timeline markers on navigation */
+    .tl-timenav-line {
+        background-color: var(--MAIN-BORDER-color, #e0e0e0) !important;
+    }
+
+    .tl-timenav .tl-timemarker .tl-timemarker-content-container {
+        background-color: var(--MAIN-ACCENT-color, #007acc) !important;
+    }
+
+    .tl-timenav .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-text {
+        color: var(--MAIN-BG-color, #ffffff) !important;
+    }
+
+    /* Fix for timeline event text readability */
+    .timeline-event {
+        background-color: var(--MAIN-BG-color, #ffffff) !important;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid var(--MAIN-BORDER-color, #e0e0e0);
+    }
+
+    .timeline-event h1,
+    .timeline-event h2,
+    .timeline-event h3,
+    .timeline-event h4,
+    .timeline-event h5,
+    .timeline-event h6 {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .timeline-event p {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .timeline-event .short-description {
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: var(--MAIN-TEXT-color, #333333) !important;
+    }
+
+    .timeline-event .full-description {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+        line-height: 1.6;
+    }
+
+
+
+
+
+    .timeline-event .references {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid var(--MAIN-BORDER-color, #e0e0e0);
+        text-shadow: none !important;
+    }
+
+    .timeline-event .references h4 {
+        color: var(--MAIN-TEXT-color, #333333) !important;
+        margin-bottom: 10px;
+        text-shadow: none !important;
+    }
+
+    .timeline-event .references a {
+        color: var(--MAIN-ACCENT-color, #007acc) !important;
+        text-decoration: none;
+        text-shadow: none !important;
+    }
+
+    .timeline-event .references a:hover {
+        color: var(--MAIN-ACCENT-color, #005580) !important;
+        text-decoration: underline;
+    }
+
+    /* Phase indicators */
+    .phase-indicator {
+        margin-top: 10px;
+        padding: 8px;
+        background: var(--MAIN-BORDER-color, #f0f0f0);
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .phase-name {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Responsive adjustments for category filters */
+    @media (max-width: 768px) {
+        .category-filters {
+            gap: 6px;
+        }
+
+        .category-filter {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .category-badges {
+            gap: 4px;
+        }
+
+        .category-badge {
+            padding: 3px 6px;
+            font-size: 10px;
+        }
+    }
+</style>

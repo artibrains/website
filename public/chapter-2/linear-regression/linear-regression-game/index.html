@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Learn linear regression interactively by finding the best line that predicts continuous outcomes.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2.1 - Linear Regression Game :: Artificial Brains">
+    <meta name="twitter:description" content="Learn linear regression interactively by finding the best line that predicts continuous outcomes.">
+    <meta property="og:url" content="http://localhost:1313/chapter-2/linear-regression/linear-regression-game/index.html">
+    <meta property="og:site_name" content="Artificial Brains">
+    <meta property="og:title" content="2.1 - Linear Regression Game :: Artificial Brains">
+    <meta property="og:description" content="Learn linear regression interactively by finding the best line that predicts continuous outcomes.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2 - Machine Learning Models">
+    <meta itemprop="name" content="2.1 - Linear Regression Game :: Artificial Brains">
+    <meta itemprop="description" content="Learn linear regression interactively by finding the best line that predicts continuous outcomes.">
+    <meta itemprop="wordCount" content="288">
+    <title>2.1 - Linear Regression Game :: Artificial Brains</title>
+    <link href="http://localhost:1313/es/chapter-2/linear-regression/juego-regresion-lineal/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-2/linear-regression/juego-regresion-lineal/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-2/linear-regression/linear-regression-game/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708798" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708798" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759708798" rel="stylesheet">
+    <link href="/css/theme.css?1759708798" rel="stylesheet">
+    <link href="/css/format-html.css?1759708798" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/chapter-2\/linear-regression\/linear-regression-game\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/chapter-2/linear-regression/linear-regression-game/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#fundamental-concepts">Fundamental Concepts</a>
+      <ul>
+        <li><a href="#error-methods">Error Methods</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">How Machines Think</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/chapter-2/index.html"><span itemprop="name">2 - Machine Learning Models</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2.1 - Linear Regression Game</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-2/index.html" title="2 - Machine Learning Models (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html" title="2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="21---linear-regression-game">2.1 - Linear Regression Game</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Linear regression allows us to find the best relationship between different variables to predict continuous outcomes when the variables are linearly related. It is one of the fundamental algorithms in machine learning and the basis for understanding more complex methods.</p>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+
+
+
+
+
+
+
+<div class="medical-context">
+    <h2>Medical Context</h2>
+    
+    <div class="algorithm-badge demo-mb-sm">
+        <span class="status-indicator status-info"></span>
+        <strong>Type:</strong> Supervised Regression
+        
+        | <strong>Level:</strong> Beginner
+        
+    </div>
+    
+
+    <div class="scenario-text">
+        
+        <p><strong>Scenario:</strong> A medical researcher wants to predict the optimal dose of a drug based on a patient&rsquo;s weight. Using historical data from previous patients, he needs to find the mathematical relationship that best describes this relationship.</p>
+        
+        
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            Linear regression allows you to find the &rsquo;line of best fit&rsquo; that minimizes prediction errors. In medicine, this translates into more accurate dosing protocols, reducing both the risk of underdosing (ineffectiveness) and overdosing (toxicity).
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<div class="demo-separator demo-mb-lg"></div>
+
+
+
+
+
+<div class="demo-container ">
+    
+    <h3 class="demo-title">Linear Regression Optimizer</h3>
+    
+
+    
+
+<div id="gameResultsModal" class="game-results-modal">
+    <div class="game-results-modal-content">
+        <span id="gameResultsCloseButton" class="game-results-close-button">&times;</span>
+        <h3 id="gameResultsTitle">Resultados del Juego</h3>
+        <p id="gameResultsSummary">Aquí se mostrará un resumen de tu desempeño.</p>
+        <div id="gameResultsDetailsContainer">
+            
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/css/game-results.css">
+<script src="/js/game-results.js"></script>
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="demo-main-layout">
+    <div class="demo-content-panel">
+        <div class="demo-chart-container">
+            <h3 class="demo-chart-title">Gráfico de Regresión Lineal</h3>
+            <canvas id="gameChart"></canvas>
+            <div id="optimizationStatus" class="demo-status-indicator demo-status-warning demo-hidden">
+                <div class="spinner"></div>
+                <span>Encontrando la mejor solución...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-panel">
+        <h3 class="demo-text-center demo-mb-md">Controles del Juego</h3>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="errorType" class="control-label">Método de error:</label>
+            </div>
+            <div class="demo-control-group">
+                <select id="errorType" class="demo-control-input">
+                    <option value="L1">Error Medio Absoluto (L1)</option>
+                    <option value="L2">Error Cuadrático Medio (L2)</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="slopeSlider" class="control-label">
+                    Pendiente: <span id="slopeValue" class="demo-range-value">1</span>
+                </label>
+                <input type="range" id="slopeSlider" min="0" max="5" step="0.1" value="1" class="demo-range-input">
+            </div>
+
+
+            <div class="demo-control-group">
+                <label for="interceptSlider" class="control-label">
+                    Altura inicial: <span id="interceptValue" class="demo-range-value">0</span>
+                </label>
+                <input type="range" id="interceptSlider" min="0" max="100" step="1" value="10" class="demo-range-input">
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button id="checkButton" class="demo-btn demo-btn-primary demo-btn-full-width">
+                    Verificar Resultado
+                </button>
+            </div>
+
+
+            <div class="demo-control-group">
+                <button id="resetButton" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    Nuevo Juego
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="/js/linear-regression-game/linear-regression-game.js"></script>
+
+
+</div>
+<h2 id="fundamental-concepts">Fundamental Concepts</h2>
+<h3 id="error-methods">Error Methods</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Types of Error Metrics
+  </summary>
+  <div class="box-content">
+<p>There are two main ways to measure how well our prediction line fits the data:</p>
+<dl>
+<dt><strong>Mean Absolute Error (L1)</strong></dt>
+<dd>Calculates the average of the absolute differences between predicted and actual values. It is more robust against outliers and is preferred when the data is noisy.</dd>
+<dt><strong>Mean Squared Error (L2)</strong></dt>
+<dd>Calculates the average of the squared differences between predicted and actual values. It penalizes large errors more and is the most common method in linear regression.</dd>
+</dl>
+  </div>
+</details>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Optimization Strategies
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Manual Tuning</strong>: Allows you to intuitively understand how parameters affect the fit</li>
+<li><strong>Automatic Optimization</strong>: The algorithm finds the optimal parameters by minimizing the error function</li>
+<li><strong>Visual Validation</strong>: Observe how the line fits the data to detect problems</li>
+</ul>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Clear Terminal">Clear</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal started...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Artificial Brains</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter-1/index.html"><a class="padding" href="/chapter-1/index.html">1 - The Beginning of the Journey</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter-2/index.html"><a class="padding" href="/chapter-2/index.html">2 - Machine Learning Models</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu">
+            <li class="active " data-nav-id="/chapter-2/linear-regression/linear-regression-game/index.html"><a class="padding" href="/chapter-2/linear-regression/linear-regression-game/index.html">2.1 - Linear Regression Game</a></li>
+            <li class="" data-nav-id="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html"><a class="padding" href="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html">2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2)</a></li>
+            <li class="" data-nav-id="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html"><a class="padding" href="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html">2.5 - The Gradient Descent Method</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Language</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-2/linear-regression/juego-regresion-lineal/index.html" lang="es">Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-2/linear-regression/linear-regression-game/index.html" lang="en" selected data-selected>English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759708798" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759708798" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759708798"></script>
+    <script src="/js/theme.js?1759708798" defer></script>
+  </body>
+</html>

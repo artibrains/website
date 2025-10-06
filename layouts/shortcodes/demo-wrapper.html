@@ -1,0 +1,17 @@
+{{/*
+Shortcode para crear el contenedor principal de demostraciones interactivas
+Parámetros:
+- title: Título de la demo (opcional)
+- class: Clases CSS adicionales (opcional)
+*/}}
+
+{{ $title := .Get "title" | default "" }}
+{{ $class := .Get "class" | default "" }}
+
+<div class="demo-container {{ $class }}">
+    {{ if $title }}
+    <h3 class="demo-title">{{ $title }}</h3>
+    {{ end }}
+
+    {{ .Inner }}
+</div>

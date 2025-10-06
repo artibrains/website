@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cerebros Artificiales: Cómo piensan las máquinas :: Cerebros Artificiales</title>
+    <link>http://localhost:1313/es/index.html</link>
+    <description>Un viaje guiado al corazón de la máquina - La inteligencia artificial explicada a través de una narrativa cautivadora en el Hospital Minermont</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 - El Comienzo del Viaje</title>
+      <link>http://localhost:1313/es/chapter-1/index.html</link>
+      <pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-1/index.html</guid>
+      <description>El Hospital Minermont está al borde del colapso. El crecimiento inesperado de la población ha desbordado sus sistemas, generando frustración entre el personal y los pacientes. En medio de esta crisis, el Dr. Víctor Salazar, un médico idealista, ve una posible solución en la Inteligencia Artificial, pero choca con el escepticismo de la Dra. Carmen Ledesma, una profesional experimentada y anclada en la tradición.&#xA;Este capítulo narra el primer paso de su viaje: una visita a la Academia de Inteligencia Artificial (AIA) que cambiará su perspectiva para siempre. A través de las siguientes secciones interactivas, explorarás los conceptos clave que descubrieron y que sentaron las bases para la transformación del hospital.</description>
+    </item>
+    <item>
+      <title>2 - Modelos de aprendizaje automático</title>
+      <link>http://localhost:1313/es/chapter-2/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-2/index.html</guid>
+      <description>En este capítulo, nos adentramos en el corazón del aprendizaje automático a través de la experiencia del equipo del hospital. Después de un primer intento fallido con un sistema demasiado complejo, Víctor, Marta, Luis y Carlos aprenden una lección fundamental: a veces, la solución más simple es la más poderosa.&#xA;Guiados por el consejo de Alma García de AIA, el equipo se embarca en la implementación de un modelo de regresión lineal para predecir la necesidad de suministros médicos. Este nuevo enfoque no solo es más manejable, sino también transparente e interpretable, lo que permite ganar la confianza de los más escépticos, como el doctor Javier.</description>
+    </item>
+    <item>
+      <title>3 - Sistemas de clasificación y evaluación de modelos</title>
+      <link>http://localhost:1313/es/chapter-3/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-3/index.html</guid>
+      <description>Con el éxito del modelo de regresión lineal, el equipo del hospital ha ganado confianza y credibilidad. Ahora, se enfrentan a un nuevo tipo de desafío: no solo predecir cantidades, sino clasificar resultados. Su nuevo objetivo es predecir si un paciente faltará a su cita, un problema de clasificación binaria con un gran impacto económico y operativo.&#xA;Este capítulo te sumerge en las técnicas y dilemas que el equipo debe resolver para construir un modelo de clasificación fiable. Aprenderás que crear el modelo es solo el principio; evaluarlo correctamente y asegurar que generalice bien a nuevos casos es igual de importante.</description>
+    </item>
+    <item>
+      <title>4 - Algoritmos de Clasificación en Profundidad</title>
+      <link>http://localhost:1313/es/chapter-4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-4/index.html</guid>
+      <description>Después de explorar las estrategias generales para la clasificación multiclase, el equipo del Hospital Minermont, bajo la tutela de Alma en AIA, se adentra en el funcionamiento interno de los algoritmos específicos. El objetivo ya no es solo entender qué hacen, sino cómo lo hacen, evaluando sus fortalezas y debilidades para el delicado desafío del triaje en urgencias.&#xA;En este capítulo, te unirás al equipo en el análisis de dos de los algoritmos más fundamentales e interpretables del aprendizaje automático. A través de simulaciones interactivas, experimentarás de primera mano los conceptos que el equipo discutió.</description>
+    </item>
+    <item>
+      <title>5 - Aprendizaje No Supervisado: Descubriendo lo Invisible</title>
+      <link>http://localhost:1313/es/chapter-5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-5/index.html</guid>
+      <description>Tras consolidar sus modelos de clasificación, el equipo del Hospital Minermont, impulsado por la visión de la directora Elena, se embarca en un desafío aún más ambicioso: pasar de la medicina reactiva a la proactiva. El objetivo ya no es solo clasificar casos conocidos, sino descubrir grupos de riesgo ocultos en su población de pacientes antes de que la enfermedad se manifieste.&#xA;Este nuevo reto les introduce en el fascinante mundo del aprendizaje no supervisado, una rama de la IA donde no hay etiquetas ni respuestas correctas. El algoritmo debe explorar los datos por sí mismo para encontrar patrones y estructuras inherentes.</description>
+    </item>
+    <item>
+      <title>6 - Dentro de la Mente de la Máquina: Redes Neuronales</title>
+      <link>http://localhost:1313/es/chapter-6/index.html</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-6/index.html</guid>
+      <description>Después de haber implementado con éxito modelos de regresión, clasificación y clustering, el equipo del Hospital Minermont se encuentra en un punto de reflexión. Han visto lo que la IA puede hacer, pero ahora anhelan comprender cómo lo hace. ¿Qué ocurre realmente dentro de esas “cajas negras”? ¿Cómo aprende una red neuronal a partir de los datos?&#xA;Guiados por Alma, el equipo se embarca en un viaje a los fundamentos del deep learning. Dejan de lado por un momento las arquitecturas complejas para centrarse en los dos conceptos que lo hacen todo posible: la neurona artificial y el algoritmo que le permite aprender.</description>
+    </item>
+    <item>
+      <title>7 - La Revolución del Lenguaje - Entendiendo los LLMs </title>
+      <link>http://localhost:1313/es/chapter-7/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/chapter-7/index.html</guid>
+      <description>Con una sólida base en modelos predictivos, el equipo del Hospital Minermont se enfrenta a su frontera más compleja hasta la fecha: el vasto universo de datos no estructurados. Cada día, se generan miles de informes de alta, notas clínicas y evoluciones de pacientes, un tesoro de información encerrado en texto libre. ¿Podría la IA ayudarles a extraer conocimiento de estas narrativas clínicas?&#xA;Esta pregunta les abre la puerta al mundo de los Modelos de Lenguaje Grandes (LLMs). Alma García, de AIA, les explica que antes de que un modelo pueda analizar, resumir o generar texto, debe aprender a “leer”. Y el primer paso para leer no es entender palabras, sino descomponerlas en piezas manejables.</description>
+    </item>
+    <item>
+      <title>8 - Recursos de IA</title>
+      <link>http://localhost:1313/es/conference-notes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/conference-notes/index.html</guid>
+      <description>Congreso de novedades en inteligencia artificial.</description>
+    </item>
+  </channel>
+</rss>

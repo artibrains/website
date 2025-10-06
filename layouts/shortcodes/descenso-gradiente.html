@@ -1,0 +1,182 @@
+<link rel="stylesheet" href="/css/gradient-descens-graphs.css">
+<div class="container responsive-container">
+    <!-- Parámetros y Explicaciones -->
+    <div class="tabs" style="margin-left: 10px;">
+        <button class="tab-button active" onclick="showTab('1d')">1D (y = f(x))</button>
+        <button class="tab-button" onclick="showTab('2d')">2D (z = f(x, y))</button>
+    </div>
+    <div class="controls-panel">
+
+
+        <h3 class="controls-panel-title  demo-mb-md">Controles y Configuración</h3>
+
+        <div id="controls-1d" class="active ">
+            <div class="control-section">
+                <div class="demo-control-group">
+                    <label for="functionInput1D" class="control-label">Función f(x):</label>
+                    <input type="text" id="functionInput1D" value="x^2">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputX" class="control-label">Punto Inicial (x₀):</label>
+                    <input type="number" id="startPointInputX" value="8" step="any">
+                </div>
+            </div>
+        </div>
+        <!-- Controles para 2D -->
+        <div id="controls-2d">
+            <div class="control-section">
+                <div class="demo-control-group">
+                    <label for="functionInput2D" class="control-label">Función f(x, y):</label>
+                    <input type="text" id="functionInput2D" value="(x^2 + y - 11)^2 + (x + y^2 - 7)^2">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputX2D">Punto Inicial (x₀):</label>
+                    <input type="number" id="startPointInputX2D" value="-4" step="any">
+                </div>
+                <div class="demo-control-group">
+                    <label for="startPointInputY2D">Punto Inicial (y₀):</label>
+                    <input type="number" id="startPointInputY2D" value="4" step="any">
+                </div>
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group"><label for="learningRateType">Tipo de Tasa de Aprendizaje
+                    (α):</label>
+                <select id="learningRateType">
+                    <option value="constant" selected>Constante</option>
+                    <option value="decaySimple">Decreciente (Simple: α₀ / √iter)</option>
+                    <option value="decayExponential">Decreciente (Exponencial: α₀ * γ^iter)</option>
+                </select>
+            </div>
+            <!-- Mover la explicación dentro de controls y separar el texto del botón -->
+            <div id="lrExplanationDiv" class="explanation-box" style="margin: 20px 0;">
+                <div id="lrExplanationText" style="margin-bottom: 15px;">
+                    Selecciona un tipo de tasa de aprendizaje para ver su descripción.
+                </div>
+                <button id="showLrModalBtn">Comparar modos</button>
+            </div>
+
+        </div>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <div id="lrConstantDiv">
+                    <label for="learningRateConstant">Valor de α (Constante o Inicial α₀):</label>
+                    <input type="number" id="learningRateConstant" value="0.1" step="any" min="0">
+                </div>
+            </div>
+            <div class="demo-control-group">
+                <div id="lrExponentialDiv" style="display: none;">
+                    <label for="learningRateDecayRate">Factor Decaimiento Exponencial (γ):</label>
+                    <input type="number" id="learningRateDecayRate" value="0.95" step="0.01" min="0.1" max="1.0">
+                    <small>Valor entre 0 y 1 (e.g., 0.95). Más cercano a 1, más lento decae.</small>
+                </div>
+            </div>
+            <div class="demo-control-group">
+                <label for="maxIterations">Máx. Iteraciones (N):</label>
+                <input type="number" id="maxIterations" value="50" min="1" step="1">
+            </div>
+            <div class="demo-control-group">
+                <label for="tolerance">Tolerancia (|∇f|):</label>
+                <input type="number" id="tolerance" value="0.001" step="any" min="0">
+            </div>
+        </div>
+
+        <div class="button-group controls-below-plot">
+            <button class="demo-btn demo-btn-primary demo-btn-full-width" id="startButton">Iniciar /
+                Continuar</button>
+            <button class="demo-btn demo-btn-primary demo-btn-full-width" id="stepButton">Paso
+                Siguiente</button>
+            <button class="demo-btn demo-btn-secondary demo-btn-full-width" id="resetButton">Reiniciar</button>
+        </div>
+    </div>
+
+
+    <!-- NUEVO: Modal para comparación de modos de convergencia -->
+    <div id="lrModal" class="modal-lr" style="display:none;">
+        <div class="modal-lr-content">
+            <span id="closeLrModalBtn" class="modal-lr-close">&times;</span>
+            <h2>Comparativa de Modos de Convergencia</h2>
+            <table class="lr-compare-table">
+                <thead>
+                    <tr>
+                        <th>Modo</th>
+                        <th>Ventajas</th>
+                        <th>Inconvenientes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Constante</strong><br><small>α fijo</small></td>
+                        <td>
+                            <ul>
+                                <li>Fácil de entender y configurar.</li>
+                                <li>Puede ser eficiente si se elige bien α.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Si α es muy grande, puede diverger (no converge).</li>
+                                <li>Si α es muy pequeño, la convergencia es muy lenta.</li>
+                                <li>No se adapta a la cercanía del mínimo.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decreciente Simple</strong><br><small>α₀ / √iter</small></td>
+                        <td>
+                            <ul>
+                                <li>Empieza con pasos grandes y los reduce automáticamente.</li>
+                                <li>Reduce el riesgo de saltarse el mínimo al final.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Puede reducir demasiado rápido y estancarse lejos del mínimo.</li>
+                                <li>La velocidad de reducción depende mucho de α₀.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decreciente Exponencial</strong><br><small>α₀ · γ^iter</small></td>
+                        <td>
+                            <ul>
+                                <li>Permite controlar con precisión la velocidad de reducción.</li>
+                                <li>Puede ajustarse para converger rápido y luego afinar despacio.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Requiere ajustar dos parámetros (α₀ y γ).</li>
+                                <li>Si γ es muy bajo, puede dejar de avanzar pronto.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Área de Visualización Principal -->
+    <main class="main-panel responsive-main" style="grid-area: visualization;">
+        <div class="main-content-wrapper">
+            <h2 class="main-title">Gráfica de la Función</h2>
+            <div id="plotDiv1D" class="plot-container tab-content active" style="height:500px; min-height:300px;">
+            </div>
+            <div id="plotDiv2D" class="plot-container tab-content" style="height:500px; min-height:300px;"></div>
+            <div id="finalResultBox" class="explanation-box" style="display:none; margin-top:18px;"></div>
+        </div>
+
+        <div class="bottom-panels">
+            <div class="error-plot-area">
+                <h2 class="main-title">Evolución del Error (|∇f|)</h2>
+                <div id="errorPlotDiv" class="plot-container"></div>
+            </div>
+        </div>
+    </main>
+</div>
+<!-- Librería Math.js para cálculos -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+<!-- Librería Plotly.js para gráficas -->
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<script src="/js/Metodo-del-descenco-del-gradiente/descenso-gradiente.js"></script>

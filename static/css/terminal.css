@@ -1,0 +1,138 @@
+.terminal-container {
+    background: var(--terminal-bg, #181c20);
+    color: var(--terminal-text, #b6ffb6);
+    font-family: var(--demo-font-mono, 'Fira Mono', 'Consolas', monospace);
+    padding: 0;
+    border-radius: var(--demo-border-radius, 8px);
+    min-height: 200px;
+    box-shadow: var(--demo-shadow-large, 0 4px 15px rgba(0, 0, 0, 0.1)),
+        0 1.5px 0 var(--terminal-border-inset, #333) inset;
+    overflow: hidden;
+    border: 2px solid var(--terminal-border, #333);
+    max-width: 700px;
+    margin: var(--demo-spacing-lg, 2rem) auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.terminal-header {
+    background: var(--terminal-header-bg, linear-gradient(90deg, #23272e 80%, #3a3f4b 100%));
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    border-bottom: 1px solid var(--terminal-border, #333);
+}
+
+.terminal-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 7px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.terminal-header .dot:hover {
+    transform: scale(1.1);
+}
+
+.terminal-header .dot.red {
+    background: #ff5f56;
+}
+
+.terminal-header .dot.yellow {
+    background: #ffbd2e;
+}
+
+.terminal-header .dot.green {
+    background: #27c93f;
+}
+
+.terminal-clear-button {
+    background-color: var(--terminal-button-bg, #4a525a);
+    color: var(--terminal-button-text, #c0c5cb);
+    border: 1px solid var(--terminal-border, #333);
+    border-radius: var(--demo-border-radius, 4px);
+    padding: 3px 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.terminal-clear-button:hover {
+    background-color: var(--terminal-button-hover, #5a626a);
+    transform: translateY(-1px);
+}
+
+.terminal-clear-button:active {
+    background-color: var(--terminal-button-active, #3a424a);
+    transform: translateY(0);
+}
+
+.terminal-body {
+    padding: 1em;
+    overflow-y: auto;
+    max-height: 350px;
+    min-height: 150px;
+    background: var(--terminal-body-bg, transparent);
+}
+
+.terminal-container pre {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.05em;
+    text-shadow: var(--terminal-text-shadow, 0 0 2px #0f0a, 0 0 8px #0f0a);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-container pre.prompt {
+    color: var(--terminal-prompt, #000000);
+    font-weight: bold;
+}
+
+.terminal-container pre.output {
+    color: var(--terminal-output, #075c07);
+}
+
+.terminal-container::-webkit-scrollbar,
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+    background: var(--terminal-scrollbar-bg, #23272e);
+}
+
+.terminal-container::-webkit-scrollbar-thumb,
+.terminal-body::-webkit-scrollbar-thumb {
+    background: var(--terminal-scrollbar-thumb, #333);
+    border-radius: 4px;
+}
+
+.terminal-container::-webkit-scrollbar-thumb:hover {
+    background: var(--terminal-scrollbar-thumb-hover, #555);
+}
+
+/* Variables CSS para modo oscuro del terminal */
+[data-theme="dark"] {
+    --terminal-bg: #0d1117;
+    --terminal-text: #c9d1d9;
+    --terminal-border: #30363d;
+    --terminal-border-inset: #21262d;
+    --terminal-header-bg: linear-gradient(90deg, #161b22 80%, #21262d 100%);
+    --terminal-button-bg: #21262d;
+    --terminal-button-text: #c9d1d9;
+    --terminal-button-hover: #30363d;
+    --terminal-button-active: #161b22;
+    --terminal-prompt: #58a6ff;
+    --terminal-output: #7ee787;
+    --terminal-scrollbar-bg: #161b22;
+    --terminal-scrollbar-thumb: #30363d;
+    --terminal-scrollbar-thumb-hover: #484f58;
+    --terminal-text-shadow: 0 0 2px rgba(126, 231, 135, 0.3);
+}

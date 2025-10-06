@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.139.2">
+    <meta name="generator" content="Relearn 7.6.1+b0c6bb558d7728ac4535a2ac677c5f47297203cc">
+    <meta name="description" content="Interactive demo to understand the differences between L1 and L2 error functions and how they affect the evaluation of machine learning models in medical contexts.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2) :: Artificial Brains">
+    <meta name="twitter:description" content="Interactive demo to understand the differences between L1 and L2 error functions and how they affect the evaluation of machine learning models in medical contexts.">
+    <meta property="og:url" content="http://localhost:1313/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html">
+    <meta property="og:site_name" content="Artificial Brains">
+    <meta property="og:title" content="2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2) :: Artificial Brains">
+    <meta property="og:description" content="Interactive demo to understand the differences between L1 and L2 error functions and how they affect the evaluation of machine learning models in medical contexts.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="2 - Machine Learning Models">
+    <meta property="article:published_time" content="2025-04-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="name" content="2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2) :: Artificial Brains">
+    <meta itemprop="description" content="Interactive demo to understand the differences between L1 and L2 error functions and how they affect the evaluation of machine learning models in medical contexts.">
+    <meta itemprop="datePublished" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="dateModified" content="2025-04-17T00:00:00+00:00">
+    <meta itemprop="wordCount" content="476">
+    <title>2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2) :: Artificial Brains</title>
+    <link href="http://localhost:1313/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html" rel="alternate" hreflang="x-default">
+    <link href="http://localhost:1313/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html" rel="alternate" hreflang="es">
+    <link href="http://localhost:1313/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html" rel="alternate" hreflang="en">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708798" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1759708798" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1759708798" rel="stylesheet">
+    <link href="/css/theme.css?1759708798" rel="stylesheet">
+    <link href="/css/format-html.css?1759708798" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/chapter-2\/error-comparison\/error-comparison-l1-vs-l2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['en'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#fundamental-concepts">Fundamental Concepts</a>
+      <ul>
+        <li><a href="#selection-guide">Selection Guide</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">How Machines Think</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/chapter-2/index.html"><span itemprop="name">2 - Machine Learning Models</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2)</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-2/linear-regression/linear-regression-game/index.html" title="2.1 - Linear Regression Game (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html" title="2.5 - The Gradient Descent Method (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter-2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="22---comparing-absolute-error-l1-vs-mean-squared-error-l2">2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2)</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>When developing machine learning models for medical applications, the choice of error function is crucial. This demo will help you visually understand the differences between Mean Absolute Error (L1) and Mean Squared Error (L2), and how each responds differently to outliers.</p>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/unified-demos.css">
+    <h3 class="medical-context__title">
+        Contexto
+    </h3>
+    <div class="medical-context medical-context--research medical-context--intermediate">
+
+        <div class="medical-context__header">
+
+            <div class="medical-context__icon">
+                🔬
+                
+            </div>
+            <div class="medical-context__type">
+                <span class="mc-badge mc-badge--type">
+                    <span class="mc-badge__label">Tipo</span>
+                    <span class="mc-badge__value">
+                        Investigación
+                        
+                    </span>
+                </span>
+            </div>
+            <div class="medical-context__level">
+                <span class="level-indicator level-indicator--intermediate">
+                    Intermedio
+                    
+                </span>
+            </div>
+        </div>
+
+        <div class="medical-context__content">
+
+
+            
+            <div class="medical-context__scenario">
+                <h4>Escenario</h4>
+                <p>You are developing a model to predict blood glucose levels in diabetic patients based on variables such as diet, exercise, and insulin dose. Some patients have extreme or inconsistent values that could affect the model&rsquo;s accuracy.</p>
+            </div>
+            
+
+            
+            <div class="medical-context__highlight">
+                <h4>Aplicación Clínica</h4>
+                <p>The choice between L1 and L2 as the error function determines how the model responds to these outliers. L1 is more robust to outliers, while L2 penalizes large errors more severely, which can be crucial for patient safety.</p>
+            </div>
+            
+        </div>
+
+        <div class="intro-text">
+            
+        </div>
+        <div class="steps">
+            
+        </div>
+    </div>
+
+
+
+
+
+<div class="demo-container ">
+    
+    <h3 class="demo-title">L1 vs L2 Error Function Comparison</h3>
+    
+
+    
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+<div class="game-container">
+
+    <p> Genera los datos para la comparación de errores entre L1 y L2. Puedes elegir entre generar datos normales o con
+        outliers. Realiza varias iteraciones para observar cómo los errores promedio se estabilizan o cambian con
+        diferentes conjuntos de datos. Observa como en la generación con outliers, en algunos casos, las rectas de
+        regresión pueden verse afectadas de manera significativa.</p>
+
+    </p>
+    <div style="display: flex; justify-content: center; gap: 10px; padding: 10px;">
+        <button id="generateNormal" class="demo-btn demo-btn-primary demo-btn-full-width">Generar datos
+            normales</button>
+        <button id="generateOutliers" class="demo-btn demo-btn-secondary demo-btn-full-width">Generar datos con
+            outliers</button>
+    </div>
+
+    <div class="chart-and-errors"
+        style="display: flex; justify-content: center; align-items: center; flex-direction: column;"></div>
+    <div class="chart-container">
+        <canvas id="gameChart"></canvas>
+        <div id="optimizationStatus" class="optimization-status hidden">
+            <div class="spinner"></div>
+            <span class="optimization-status-message">Calculando regresiones...</span>
+        </div>
+    </div>
+    <div class="error-comparison">
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Error promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>L1 (Error absoluto)</td>
+                    <td id="errorL1">-</td>
+                </tr>
+                <tr>
+                    <td>L2 (Error cuadrático)</td>
+                    <td id="errorL2">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+<div id="resultsModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Resultados:</h3>
+        <p id="resultText"></p>
+        <div class="comparison-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parámetro</th>
+                        <th>Tu solución</th>
+                        <th>Solución óptima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pendiente</td>
+                        <td id="userSlope">-</td>
+                        <td id="optimalSlope">-</td>
+                    </tr>
+                    <tr>
+                        <td>Altura inicial</td>
+                        <td id="userIntercept">-</td>
+                        <td id="optimalIntercept">-</td>
+                    </tr>
+                    <tr>
+                        <td id="errorTypeLabel">Error</td>
+                        <td id="userError">-</td>
+                        <td id="optimalError">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="/js/error-comparison/error-comparison.js"></script>
+
+
+</div>
+<h2 id="fundamental-concepts">Fundamental Concepts</h2>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Mean Absolute Error (L1 - MAE)
+  </summary>
+  <div class="box-content">
+<p>Mean Absolute Error measures the average of the absolute differences between actual and predicted values:</p>
+<p><strong>Formula</strong>: <code>MAE = (1/n) × Σ|yi - ŷi|</code></p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li><strong>Robust against outliers</strong>: Extreme values do not dominate the calculation</li>
+<li><strong>Intuitive interpretation</strong>: Every unit of error counts equally</li>
+<li><strong>Linear</strong>: The error grows proportionally with the deviation</li>
+<li><strong>Useful for</strong>: Data with measurement errors or exceptional cases</li>
+</ul>
+  </div>
+</details>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Mean Squared Error (L2 - MSE)
+  </summary>
+  <div class="box-content">
+<p>The Mean Squared Error measures the average of the squares of the differences:</p>
+<p><strong>Formula</strong>: <code>MSE = (1/n) × Σ(yi - ŷi)²</code></p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li><strong>Sensitive to outliers</strong>: Large errors are penalized exponentially</li>
+<li><strong>Precision-boosting</strong>: Aggressively minimizes large deviations</li>
+<li><strong>Quadratic</strong>: The penalty grows exponentially with the error</li>
+<li><strong>Useful for</strong>: When large errors are especially costly</li>
+</ul>
+  </div>
+</details>
+<h3 id="selection-guide">Selection Guide</h3>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    When to use L1?
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Noisy data</strong>: Presence of many outliers or measurement errors</li>
+<li><strong>Robustness</strong>: You need a stable and predictable model</li>
+<li><strong>Error fairness</strong>: Small and large errors have similar importance</li>
+<li><strong>Interpretability</strong>: You want metrics to be easy to understand</li>
+</ul>
+  </div>
+</details>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    When to use L2?
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Critical Errors</strong>: Large errors are especially problematic</li>
+<li><strong>Clean Data</strong>: The dataset is relatively reliable</li>
+<li><strong>Extreme Accuracy</strong>: You need to heavily penalize incorrect predictions</li>
+<li><strong>Optimization</strong>: L2 is differentiable and facilitates optimization algorithms</li>
+</ul>
+  </div>
+</details>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Considerations in Medicine
+  </summary>
+  <div class="box-content">
+<p>In medical applications, the choice is especially critical:</p>
+<ul>
+<li><strong>Diagnosis</strong>: L2 may be preferable to avoid serious false negatives</li>
+<li><strong>Dosing</strong>: L1 may be more reliable in the face of inconsistent patient data</li>
+<li><strong>Monitoring</strong>: L2 to detect critical changes quickly</li>
+<li><strong>Research</strong>: L1 for robust analysis of heterogeneous populations</li>
+</ul>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="custom-terminal" class="terminal-container">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <button id="terminal-clear-btn" class="terminal-clear-button" title="Clear Terminal">Clear</button>
+    </div>
+    <div class="terminal-body" id="custom-terminal-body"></div>
+</div>
+<link rel="stylesheet" href="/css/terminal.css">
+<script src="/js/terminal.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.CustomTerminal) {
+            window.CustomTerminal.write("Terminal started...");
+        }
+    });
+</script>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> Apr 17, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Artificial Brains</div>
+          </a>
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/chapter-1/index.html"><a class="padding" href="/chapter-1/index.html">1 - The Beginning of the Journey</a><ul id="R-subsections-e93d6cf5740b48cdba66523d4f6c712b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/chapter-2/index.html"><a class="padding" href="/chapter-2/index.html">2 - Machine Learning Models</a><ul id="R-subsections-d39b58aff91603124397d77c5455d09a" class="collapsible-menu">
+            <li class="" data-nav-id="/chapter-2/linear-regression/linear-regression-game/index.html"><a class="padding" href="/chapter-2/linear-regression/linear-regression-game/index.html">2.1 - Linear Regression Game</a></li>
+            <li class="active " data-nav-id="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html"><a class="padding" href="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html">2.2 - Comparing Absolute Error (L1) vs. Mean Squared Error (L2)</a></li>
+            <li class="" data-nav-id="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html"><a class="padding" href="/chapter-2/metodo-descenso-gradiente/gradient-descent-method/index.html">2.5 - The Gradient Descent Method</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+			<li class="R-languageswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-language"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-language">Language</label>
+                  <select id="R-select-language">
+                    <option id="R-select-language-es" value="es" data-url="/es/chapter-2/error-comparison/comparacion-error-l1-vs-l2/index.html" lang="es">Español</option>
+                    <option id="R-select-language-en" value="en" data-url="/chapter-2/error-comparison/error-comparison-l1-vs-l2/index.html" lang="en" selected data-selected>English</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1759708798" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1759708798" defer></script>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1759708798"></script>
+    <script src="/js/theme.js?1759708798" defer></script>
+  </body>
+</html>

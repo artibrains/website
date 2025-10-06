@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div id="app-container">
+    <!-- Navegación por pestañas -->
+    <div class="tab-navigation">
+        <button class="tab-button active" data-tab="overfitting">Explorar Sobreajuste</button>
+        <button class="tab-button" data-tab="regularization">Aplicar Regularización</button>
+    </div>
+
+    <div id="main-content" class="complexity-layout">
+        <div class="graph-panel">
+            <h3 id="chart-title">Ajuste del Modelo</h3>
+            <div class="chart-container">
+                <canvas id="model-fit-chart"></canvas>
+            </div>
+            <h3>Curvas de Error</h3>
+            <div class="chart-container">
+                <canvas id="error-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <!-- Pestaña 1: Sobreajuste -->
+            <div id="overfitting-tab" class="tab-content active">
+                <h2>Explorar el Sobreajuste</h2>
+                <p>Ajusta la complejidad del modelo y observa cómo el error de entrenamiento (azul) disminuye, pero
+                    el error de validación (naranja) eventualmente aumenta.</p>
+
+                <div class="control-group">
+                    <label for="complexity-slider">Complejidad del Modelo: <span id="complexity-value">1</span></label>
+                    <input type="range" id="complexity-slider" min="1" max="12" value="1">
+                </div>
+
+                <div class="info-box">
+                    <h4>¿Qué observas?</h4>
+                    <ul>
+                        <li><strong>Complejidad baja:</strong> El modelo es muy simple y no captura los patrones.
+                        </li>
+                        <li><strong>Complejidad media:</strong> Buen equilibrio entre sesgo y varianza.</li>
+                        <li><strong>Complejidad alta:</strong> El modelo memoriza los datos de entrenamiento.</li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <!-- Pestaña 2: Regularización -->
+            <div id="regularization-tab" class="tab-content">
+                <h2>Controlar con Regularización</h2>
+                <p>Ajusta la complejidad y la regularización para encontrar el modelo que mejor generaliza (menor
+                    error de validación).</p>
+
+                <div class="control-group">
+                    <label>Complejidad del Modelo: <span id="current-complexity-display">10</span></label>
+                    <div class="readonly-indicator">Puedes cambiarla con el slider superior</div>
+                </div>
+
+                <div class="control-group">
+                    <label for="lambda-slider">Fuerza de Regularización (λ, escala log): <span
+                            id="lambda-value">0.00</span></label>
+                    <input type="range" id="lambda-slider" min="0" max="1" step="0.001" value="0">
+                </div>
+
+                <button id="reset-regularization-btn">Reiniciar Regularización</button>
+            </div>
+
+            <!-- Sección de Optimización -->
+
+        </div>
+
+    </div>
+
+
+    <div class="optimization-section">
+        <button id="find-best-btn">🏆 Encontrar Mejor Modelo</button>
+        <!-- NUEVO: Contenedor para mostrar los resultados -->
+        <div id="best-model-results" class="info-box result-box" style="display: none;">
+            <h4>Mejor Modelo Encontrado</h4>
+            <p><strong>Complejidad:</strong> <span id="best-complexity-result"></span></p>
+            <p><strong>Lambda (λ):</strong> <span id="best-lambda-result"></span></p>
+            <p><strong>Error de Validación:</strong> <span id="best-error-result"></span></p>
+        </div>
+    </div>
+    <button id="generate-new-data-btn">Generar Nuevos Datos</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/complexity/complexity.js"></script>

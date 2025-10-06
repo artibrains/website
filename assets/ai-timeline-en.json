@@ -1,0 +1,2365 @@
+{
+    "timeline": [
+        {
+            "id": "bayes-1763",
+            "date": "1763",
+            "title": "Bayes' Theorem",
+            "shortDescription": "Thomas Bayes introduces probabilistic framework later used in AI",
+            "fullDescription": "Thomas Bayes developed a mathematical formulation for reasoning about probabilities under uncertainty. While not 'AI' per se, Bayes' theorem later became foundational for probabilistic reasoning, Bayesian inference, and many machine learning methods used extensively in AI.",
+            "references": [
+                {
+                    "title": "Thomas Bayes - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/"
+                },
+                {
+                    "title": "Bayes' Theorem (Stanford Encyclopedia of Philosophy)",
+                    "url": "https://plato.stanford.edu/entries/bayes-theorem/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "least-squares-1805",
+            "date": "1805",
+            "title": "Legendre formalizes least squares",
+            "shortDescription": "Adrien-Marie Legendre introduces the method of least squares for parameter estimation.",
+            "fullDescription": "Adrien-Marie Legendre published the method of least squares to estimate parameters by minimizing the sum of squared residuals. Least squares became a cornerstone of regression, error minimization, and modern optimization used throughout statistics and machine learning.",
+            "references": [
+                {
+                    "title": "Adrien-Marie Legendre - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Legendre/"
+                },
+                {
+                    "title": "Least squares – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Least_squares"
+                },
+                {
+                    "title": "Legendre (1805): Nouvelles méthodes pour la détermination des orbites des comètes",
+                    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k9611335p"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "analytical-engine-1843",
+            "date": "1843",
+            "title": "Lovelace's Notes on Babbage's Analytical Engine",
+            "shortDescription": "Ada Lovelace's 1843 notes anticipate programmable computation and include an algorithm.",
+            "fullDescription": "Ada Lovelace's notes on Charles Babbage's Analytical Engine (1843) outlined concepts of general-purpose programmable computation and included what is often regarded as the first published algorithm intended for a machine. These ideas presage modern computing and programmable logic that underpins AI.",
+            "references": [
+                {
+                    "title": "Analytical Engine – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Analytical_Engine"
+                },
+                {
+                    "title": "Ada Lovelace – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Ada_Lovelace"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "boole-laws-of-thought-1854",
+            "date": "1854",
+            "title": "Boole publishes 'Laws of Thought'",
+            "shortDescription": "George Boole formalizes symbolic logic and Boolean algebra.",
+            "fullDescription": "George Boole's 1854 work 'An Investigation of the Laws of Thought' established symbolic logic and Boolean algebra, forming the mathematical basis of digital logic, reasoning systems, and later symbolic AI.",
+            "references": [
+                {
+                    "title": "George Boole - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Boole/"
+                },
+                {
+                    "title": "An Investigation of the Laws of Thought (1854)",
+                    "url": "https://archive.org/details/investigationofl00boolrich"
+                },
+                {
+                    "title": "Boolean algebra – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Boolean_algebra"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "logic-foundations-1900s",
+            "date": "1900",
+            "title": "Foundations of set theory and formal logic mature",
+            "shortDescription": "Cantor, Frege, Russell & Whitehead, and others formalize foundations for logic and mathematics.",
+            "fullDescription": "From the early 1900s through the 1930s, foundational work in set theory and formal logic matured—including Cantor's set theory, Frege's predicate logic, and Russell & Whitehead's Principia Mathematica—enabling formal proofs, predicate logic, and model theory that underlie symbolic reasoning in AI.",
+            "references": [
+                {
+                    "title": "Set theory – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Set_theory"
+                },
+                {
+                    "title": "Principia Mathematica – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Principia_Mathematica"
+                },
+                {
+                    "title": "Predicate logic – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/First-order_logic"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "godel-incompleteness-1931",
+            "date": "1931",
+            "title": "Gödel's incompleteness theorems",
+            "shortDescription": "Gödel proves inherent limits of formal axiomatic systems.",
+            "fullDescription": "Kurt Gödel showed that any sufficiently powerful consistent formal system cannot prove all truths about arithmetic within the system. These results reshaped logic and influenced debates about the limits of mechanized reasoning.",
+            "references": [
+                {
+                    "title": "Kurt Gödel - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Godel/"
+                },
+                {
+                    "title": "On Formally Undecidable Propositions (English translation)",
+                    "url": "https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems"
+                },
+                {
+                    "title": "Stanford Encyclopedia: Gödel's Incompleteness Theorems",
+                    "url": "https://plato.stanford.edu/entries/goedel-incompleteness/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "turing-machine-1936",
+            "date": "1936",
+            "title": "Turing defines the universal Turing machine",
+            "shortDescription": "Alan Turing formalizes the mathematical model of computation.",
+            "fullDescription": "In 1936, Alan Turing published 'On Computable Numbers' describing an abstract machine capable of performing any computation that can be algorithmically described. The universal Turing machine became the foundation of computation theory and the substrate for algorithmic AI.",
+            "references": [
+                {
+                    "title": "On Computable Numbers (1936)",
+                    "url": "https://www.jstor.org/stable/2371049"
+                },
+                {
+                    "title": "Turing machine – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Turing_machine"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "critical",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "mcculloch-pitts-1943",
+            "date": "1943",
+            "title": "McCulloch & Pitts model the first artificial neuron",
+            "shortDescription": "Binary threshold units perform logical operations; mathematical birth of ANNs.",
+            "fullDescription": "Warren McCulloch and Walter Pitts proposed a model of artificial neurons as binary threshold units capable of computing logical functions, linking neurobiology with logic and laying the groundwork for artificial neural networks.",
+            "references": [
+                {
+                    "title": "A logical calculus of the ideas immanent in nervous activity (1943)",
+                    "url": "https://link.springer.com/article/10.1007/BF02478259"
+                },
+                {
+                    "title": "McCulloch–Pitts neuron – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Artificial_neuron"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "shannon-information-theory-1948",
+            "date": "1948",
+            "title": "Shannon founds information theory",
+            "shortDescription": "Entropy and information provide quantitative tools for uncertainty and communication.",
+            "fullDescription": "Claude Shannon's 'A Mathematical Theory of Communication' defined entropy, mutual information, and the mathematical framework for communication. These concepts underpin coding, compression, and loss functions and are widely used across AI.",
+            "references": [
+                {
+                    "title": "Claude Shannon - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Shannon/"
+                },
+                {
+                    "title": "A Mathematical Theory of Communication (1948)",
+                    "url": "https://ieeexplore.ieee.org/document/6773024"
+                },
+                {
+                    "title": "Information theory – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Information_theory"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "critical",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "bellman-dp-1957",
+            "date": "1957",
+            "title": "Bellman formalizes Dynamic Programming",
+            "shortDescription": "Richard Bellman's DP provides equations for sequential decision-making (MDPs).",
+            "fullDescription": "Richard Bellman's dynamic programming provided a general method and recursive equations (Bellman equations) for optimal sequential decision-making. DP underlies Markov decision processes and modern reinforcement learning.",
+            "references": [
+                {
+                    "title": "Richard Bellman - MacTutor History of Mathematics",
+                    "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Bellman/"
+                },
+                {
+                    "title": "Dynamic programming – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Dynamic_programming"
+                },
+                {
+                    "title": "Bellman, Dynamic Programming (1957) — Princeton University Press",
+                    "url": "https://press.princeton.edu/books/hardcover/9780691146683/dynamic-programming"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "fuzzy-logic-1965",
+            "date": "1965",
+            "title": "Zadeh introduces fuzzy sets and fuzzy logic",
+            "shortDescription": "Lotfi A. Zadeh proposes fuzzy sets to model vagueness and partial truth.",
+            "fullDescription": "Lotfi Zadeh's 'Fuzzy Sets' (1965) introduced a mathematical framework for reasoning with vagueness and partial truths. Fuzzy logic enabled control systems and AI to handle imprecise information.",
+            "references": [
+                {
+                    "title": "Fuzzy set – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Fuzzy_set"
+                },
+                {
+                    "title": "Zadeh (1965) Fuzzy Sets, Information and Control",
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S001999586590241X"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "hopfield-1982",
+            "date": "1982",
+            "title": "Hopfield networks connect physics and associative memory",
+            "shortDescription": "Energy-based recurrent networks model content-addressable memory.",
+            "fullDescription": "John Hopfield introduced recurrent neural networks with an energy function and attractor dynamics to model associative memory, linking ideas from statistical physics to neural computation.",
+            "references": [
+                {
+                    "title": "Neural networks and physical systems with emergent collective computational abilities (PNAS, 1982)",
+                    "url": "https://www.pnas.org/doi/10.1073/pnas.79.8.2554"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Expert Systems Era",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "pearl-bayesian-networks-1985",
+            "date": "1985",
+            "title": "Pearl formalizes Bayesian networks and causal reasoning",
+            "shortDescription": "Probabilistic graphical models unify reasoning under uncertainty.",
+            "fullDescription": "Judea Pearl and colleagues developed Bayesian networks—graphical models that represent probabilistic dependencies—and associated inference algorithms, providing a unifying framework for reasoning under uncertainty and causal inference.",
+            "references": [
+                {
+                    "title": "Probabilistic Reasoning in Intelligent Systems (Pearl, 1988)",
+                    "url": "https://en.wikipedia.org/wiki/Probabilistic_Reasoning_in_Intelligent_Systems"
+                },
+                {
+                    "title": "Fusion, Propagation, and Structuring in Belief Networks (1986)",
+                    "url": "https://ieeexplore.ieee.org/document/4304852"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Expert Systems Era",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "slt-1995",
+            "date": "1995",
+            "title": "Statistical Learning Theory and VC dimension",
+            "shortDescription": "Vapnik's SLT provides a rigorous basis for generalization and model complexity.",
+            "fullDescription": "Statistical Learning Theory, including VC dimension and bounds, formalized when learning from data is possible and how complexity affects generalization. It provided the foundation for SVMs and much of modern ML theory.",
+            "references": [
+                {
+                    "title": "Vapnik (1995) The Nature of Statistical Learning Theory",
+                    "url": "https://link.springer.com/book/10.1007/978-1-4757-2440-0"
+                },
+                {
+                    "title": "Vapnik–Chervonenkis theory – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/VC_theory"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "second-ai-winter",
+            "phase_info": {
+                "name": "Second AI Winter",
+                "color": "#f0f0f5",
+                "period": "1987-1996"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "cnn-lenet-1998",
+            "date": "1998",
+            "title": "CNNs popularized (LeNet-5)",
+            "shortDescription": "LeCun et al. demonstrate convolutional networks for document recognition.",
+            "fullDescription": "LeCun and colleagues popularized convolutional neural networks with LeNet-5, showing how convolution, pooling, and weight sharing enable robust recognition in images and documents—foreshadowing later deep vision breakthroughs.",
+            "references": [
+                {
+                    "title": "Gradient-Based Learning Applied to Document Recognition (1998)",
+                    "url": "https://ieeexplore.ieee.org/document/726791"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "AI Resurgence",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "kernel-methods-2002",
+            "date": "2002",
+            "title": "Kernel methods formalized",
+            "shortDescription": "Schölkopf & Smola's book synthesizes the kernel trick for non-linear learning.",
+            "fullDescription": "Kernel methods map data implicitly into high-dimensional spaces, powering SVMs and other non-linear algorithms. Schölkopf and Smola's 'Learning with Kernels' consolidated the theory and practice of kernel-based learning.",
+            "references": [
+                {
+                    "title": "Learning with Kernels (2002) — MIT Press",
+                    "url": "https://mitpress.mit.edu/9780262194754/learning-with-kernels/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "AI Resurgence",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "sutton-barto-rl-1998",
+            "date": "1998",
+            "title": "Sutton & Barto unify RL theory",
+            "shortDescription": "The first edition of 'Reinforcement Learning: An Introduction' consolidates RL foundations.",
+            "fullDescription": "Sutton and Barto's textbook unified the conceptual and algorithmic foundations of reinforcement learning, connecting MDPs, Bellman equations, temporal-difference learning, and policy gradient methods into a coherent framework.",
+            "references": [
+                {
+                    "title": "Reinforcement Learning: An Introduction (1998) — Book",
+                    "url": "http://incompleteideas.net/book/first/ebook/the-book.html"
+                },
+                {
+                    "title": "Reinforcement learning – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Reinforcement_learning"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "AI Resurgence",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "dbn-2006",
+            "date": "2006",
+            "title": "Deep Belief Networks revive deep learning",
+            "shortDescription": "Hinton et al. introduce layer-wise pretraining for deep generative models.",
+            "fullDescription": "Geoffrey Hinton and colleagues introduced Deep Belief Networks with a fast, greedy layer-wise pretraining algorithm, reviving interest in deep architectures and generative modeling ahead of the later supervised deep learning boom.",
+            "references": [
+                {
+                    "title": "A Fast Learning Algorithm for Deep Belief Nets (2006)",
+                    "url": "https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf"
+                },
+                {
+                    "title": "Reducing the Dimensionality of Data with Neural Networks (Science, 2006)",
+                    "url": "https://www.science.org/doi/10.1126/science.1127647"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "AI Resurgence",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "turing-1950",
+            "date": "1950",
+            "title": "Turing Test / 'Computing Machinery and Intelligence'",
+            "shortDescription": "Alan Turing publishes 'Computing Machinery and Intelligence', introducing the Turing Test",
+            "fullDescription": "In 1950, Alan Turing published the seminal paper 'Computing Machinery and Intelligence' in the journal Mind, in which he posed the question 'Can machines think?' Rather than attempt to define thinking, he proposed the imitation game (now known as the Turing Test) as a pragmatic criterion for machine intelligence. This work has deeply influenced philosophical and technical discussion about AI.",
+            "references": [
+                {
+                    "title": "Computing Machinery and Intelligence – Original paper",
+                    "url": "https://academic.oup.com/mind/article/LIX/236/433/986238"
+                },
+                {
+                    "title": "The Turing Test (Stanford Encyclopedia of Philosophy)",
+                    "url": "https://plato.stanford.edu/entries/turing-test/"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/alan-turing.jpg",
+                "caption": "Alan Turing in his youth",
+                "credit": "Wikimedia Commons",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "snarc-1951",
+            "date": "1951",
+            "title": "SNARC – First artificial neural network hardware",
+            "shortDescription": "Marvin Minsky and Dean Edmonds build the SNARC neural network simulator",
+            "fullDescription": "In 1951, Marvin Minsky and Dean Edmonds developed the SNARC (Stochastic Neural Analog Reinforcement Calculator), a neural network simulator using vacuum tubes. It was one of the earliest hardware experiments simulating networks of neuron-like units, and an early step toward neural network AI.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence: Complete AI timeline",
+                    "url": "https://www.techtarget.com/searchenterpriseai/tip/The-history-of-artificial-intelligence-Complete-AI-timeline"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "checkers-1952",
+            "date": "1952",
+            "title": "Samuel's Checkers Program",
+            "shortDescription": "Arthur Samuel programs a checkers-playing machine, early instance of machine learning",
+            "fullDescription": "Arthur Samuel developed a checkers-playing program that improved its performance via learning from experience rather than only hard-coded rules. This was an early demonstration of machine learning and adaptive algorithms.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence (Maryville University)",
+                    "url": "https://online.maryville.edu/blog/history-of-ai/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "early-foundations",
+            "phase_info": {
+                "name": "Early Foundations",
+                "color": "#e8f4fd",
+                "period": "1763-1955"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "dartmouth-1956",
+            "date": "1956",
+            "title": "Dartmouth AI Workshop & birth of the field",
+            "shortDescription": "Term 'Artificial Intelligence' is coined; foundational workshop at Dartmouth",
+            "fullDescription": "In the summer of 1956, the Dartmouth Summer Research Project on Artificial Intelligence was held at Dartmouth College. Organized by John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon, the workshop is considered the founding event of AI as a field, and it was there that the term 'artificial intelligence' was first used in a proposal.",
+            "references": [
+                {
+                    "title": "Dartmouth workshop (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Dartmouth_workshop"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "logic-theorist-1956",
+            "date": "1956",
+            "title": "Logic Theorist",
+            "shortDescription": "Newell, Shaw & Simon create Logic Theorist, first AI reasoning program",
+            "fullDescription": "In 1956, Allen Newell, Herbert A. Simon, and Clifford Shaw developed the Logic Theorist, widely regarded as the first program specifically designed to execute automated logical reasoning. It proved a number of theorems from *Principia Mathematica*, showing that machines could manipulate symbols to do formal reasoning.",
+            "references": [
+                {
+                    "title": "Logic Theorist (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Logic_Theorist"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "perceptron-1958",
+            "date": "1958",
+            "title": "Perceptron (Rosenblatt)",
+            "shortDescription": "Frank Rosenblatt introduces the perceptron, first neural architecture",
+            "fullDescription": "In 1958, Frank Rosenblatt proposed and built the perceptron, a single-layer neural network capable of binary classification. It was seen as potentially capable of learning via trial and error and laid groundwork for later neural network research.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/mark-i-perceptron.jpeg",
+                "caption": "The Mark I Perceptron, first implementation of Rosenblatt's perceptron",
+                "credit": "Wikimedia Commons (Public Domain)",
+                "credit_url": "https://en.wikipedia.org/wiki/File:Mark_I_perceptron.jpeg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "lisp-1958",
+            "date": "1958",
+            "title": "LISP Programming Language",
+            "shortDescription": "John McCarthy invents the LISP programming language",
+            "fullDescription": "In 1958, John McCarthy designed LISP (LISt Processing), a programming language suited for symbolic computation. LISP introduced powerful features such as recursion, symbolic expressions, and garbage collection. It became a dominant language in early AI research for many decades.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "shakey-1966",
+            "date": "1966",
+            "title": "Shakey the Robot",
+            "shortDescription": "SRI develops Shakey, a reasoning mobile robot",
+            "fullDescription": "In 1966, SRI International developed Shakey, the first general-purpose mobile robot that could perceive its environment, reason about tasks, and plan actions. Shakey integrated vision, planning, navigation, and task decomposition. This represented a milestone in robotics and AI.",
+            "references": [
+                {
+                    "title": "Shakey the robot (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Shakey_the_robot"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/shakey-robot.jpg",
+                "caption": "Shakey the Robot, first autonomous mobile robot with reasoning capabilities",
+                "credit": "Wikimedia Commons (Public Domain - SRI International)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:SRI_Shakey_with_callouts.jpg"
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "eliza-1966",
+            "date": "1966",
+            "title": "ELIZA Chatbot",
+            "shortDescription": "Joseph Weizenbaum builds ELIZA, an early NLP agent",
+            "fullDescription": "Joseph Weizenbaum at MIT created ELIZA in 1966—an early natural language processing program that simulated conversations via pattern matching and substitution rules. The best-known script, DOCTOR, emulated a Rogerian psychotherapist. It showed both promise and limits in conversational AI.",
+            "references": [
+                {
+                    "title": "ELIZA (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/ELIZA"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#fffbec"
+            },
+            "importance": "medium",
+            "phase": "birth-of-ai",
+            "phase_info": {
+                "name": "Birth of AI",
+                "color": "#b3d9ff",
+                "period": "1956-1973"
+            },
+            "importance_style": {
+                "border_color": "#ffd93d",
+                "accent_color": "#ffe66d"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "first-ai-winter-1974",
+            "date": "1974",
+            "title": "First AI Winter begins",
+            "shortDescription": "Period of reduced funding and optimism in AI",
+            "fullDescription": "By the mid-1970s, expectations from AI had grown very high, but progress was slower. Many symbolic AI programs could not scale, computational resources and data were limited, and critiques emerged about feasibility. This triggered a period of reduced funding and slower progress, often called the first AI winter.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence (Maryville University)",
+                    "url": "https://online.maryville.edu/blog/history-of-ai/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "first-ai-winter",
+            "phase_info": {
+                "name": "First AI Winter",
+                "color": "#e6f0ff",
+                "period": "1974-1979"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "expert-systems-boom-1980",
+            "date": "1980",
+            "title": "Rise of Expert Systems",
+            "shortDescription": "Expert systems gain commercial use (e.g. XCON)",
+            "fullDescription": "In the 1980s, rule-based expert systems became a major focus in AI. Systems encoding domain-specific knowledge were deployed in diagnostics, industrial control, decision support, and configuration tools. Many commercial AI successes in this era used expert systems.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Expert Systems Era",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "infrastructure"
+            ],
+            "category_info": [
+                {
+                    "id": "infrastructure",
+                    "name": "Infrastructure",
+                    "color": "#9E9E9E",
+                    "icon": "🔧",
+                    "description": "Hardware, software, and computing platforms"
+                }
+            ]
+        },
+        {
+            "id": "second-ai-winter-1987",
+            "date": "1987",
+            "title": "Second AI Winter begins",
+            "shortDescription": "Decline in expert system funding and symbolic AI interest",
+            "fullDescription": "By the late 1980s, many expert systems were considered brittle, maintenance was costly, and symbolic AI had difficulty scaling. The combination of disappointments in performance and cost led to a second AI winter, with reduced funding and slower growth in AI research.",
+            "references": [
+                {
+                    "title": "The history of artificial intelligence – IBM",
+                    "url": "https://www.ibm.com/think/topics/history-of-artificial-intelligence"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "second-ai-winter",
+            "phase_info": {
+                "name": "Second AI Winter",
+                "color": "#f0f0f5",
+                "period": "1987-1996"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "backprop-1986",
+            "date": "1986",
+            "title": "Backpropagation resurgence / popularization",
+            "shortDescription": "Rumelhart, Hinton & Williams popularize backpropagation for neural networks",
+            "fullDescription": "Though the algorithm was known earlier, in 1986 David Rumelhart, Geoffrey Hinton, and Ronald Williams popularized backpropagation as a method to train multilayer neural networks via gradient descent. This allowed more complex neural architectures and learning from data, and revitalized neural network research.",
+            "references": [
+                {
+                    "title": "A short history of AI in 10 landmark moments (WEF)",
+                    "url": "https://www.weforum.org/stories/2024/10/history-of-ai-artificial-intelligence/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "expert-systems",
+            "phase_info": {
+                "name": "Expert Systems Era",
+                "color": "#fff4e6",
+                "period": "1980-1986"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "theory"
+            ],
+            "category_info": [
+                {
+                    "id": "theory",
+                    "name": "Theory",
+                    "color": "#4CAF50",
+                    "icon": "📐",
+                    "description": "Mathematical foundations and theoretical work"
+                }
+            ]
+        },
+        {
+            "id": "deep-blue-1997",
+            "date": "1997",
+            "title": "Deep Blue defeats Garry Kasparov",
+            "shortDescription": "IBM's Deep Blue chess computer beats world champion Kasparov",
+            "fullDescription": "In 1997, IBM's Deep Blue defeated Garry Kasparov in a match for the first time. This was a landmark demonstration that machines could beat human experts in complex strategic board games, though with a well-defined, constrained domain. It had both technical and symbolic importance for public perception of AI.",
+            "references": [
+                {
+                    "title": "The history of AI: A timeline from 1940 to 2023",
+                    "url": "https://www.calls9.com/blogs/the-history-of-ai-a-timeline-from-1940-to-2023"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/deep-blue.jpg",
+                "caption": "IBM's Deep Blue computer, which defeated world chess champion Garry Kasparov",
+                "credit": "Wikimedia Commons (Public Domain)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:Deep_Blue.jpg"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-resurgence",
+            "phase_info": {
+                "name": "AI Resurgence",
+                "color": "#f0f8ff",
+                "period": "1997-2011"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "imagenet-2012",
+            "date": "2012",
+            "title": "ImageNet breakthrough",
+            "shortDescription": "Large-scale image dataset and deep learning lower error dramatically",
+            "fullDescription": "In 2012, a University of Toronto team using convolutional neural networks (AlexNet) won the ImageNet Large Scale Visual Recognition Challenge, significantly reducing error rates and demonstrating the power of deep learning for vision tasks. This event is widely seen as catalyzing the modern AI boom.",
+            "references": [
+                {
+                    "title": "AI boom (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/AI_boom"
+                }
+            ],
+            "media": {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Comparison_image_neural_networks.svg",
+                "caption": "Comparison of neural network architectures. AlexNet revolutionized computer vision",
+                "credit": "Wikimedia Commons (CC BY-SA 4.0)"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "gan-2014",
+            "date": "2014",
+            "title": "Generative Adversarial Networks (GANs)",
+            "shortDescription": "Goodfellow et al. introduce GANs for realistic data generation",
+            "fullDescription": "In 2014, Ian Goodfellow and colleagues introduced Generative Adversarial Nets (GANs), where a generator and discriminator compete in a minimax game. GANs enabled highly realistic synthetic data generation (images, video, etc.) and influenced creative AI, unsupervised learning, and generative modeling.",
+            "references": [
+                {
+                    "title": "Generative Adversarial Nets (NeurIPS 2014)",
+                    "url": "https://proceedings.neurips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf"
+                },
+                {
+                    "title": "arXiv: Generative Adversarial Nets (2014)",
+                    "url": "https://arxiv.org/abs/1406.2661"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphago-2016",
+            "date": "2016",
+            "title": "AlphaGo defeats Lee Sedol",
+            "shortDescription": "AI beats world champion at Go",
+            "fullDescription": "In March 2016, DeepMind's AlphaGo defeated Lee Sedol, world Go champion, in a five-game match. Go had been considered a much harder challenge than chess due to its combinatorial complexity, and this victory represented a leap in strategic capability, pattern recognition, and learning in AI.",
+            "references": [
+                {
+                    "title": "Timeline of artificial intelligence (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence"
+                },
+                {
+                    "title": "Human vs Computer Go: review and prospects",
+                    "url": "https://arxiv.org/abs/1606.02032"
+                }
+            ],
+            "media": {
+                "url": "/img/timeline/go-board.jpg",
+                "caption": "Go board. AlphaGo mastered this ancient game of extreme combinatorial complexity",
+                "credit": "Wikimedia Commons (CC BY-SA 3.0)",
+                "credit_url": "https://commons.wikimedia.org/wiki/File:FloorGoban.JPG"
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "transformer-2017",
+            "date": "2017",
+            "title": "Transformer architecture introduced",
+            "shortDescription": "The paper 'Attention Is All You Need' proposes the Transformer",
+            "fullDescription": "In 2017, the paper 'Attention Is All You Need' introduced the Transformer, an architecture based solely on attention mechanisms. Transformers parallelize sequence processing and model long-range dependencies effectively, becoming the foundation of most modern language models.",
+            "references": [
+                {
+                    "title": "Attention Is All You Need (arXiv 1706.03762)",
+                    "url": "https://arxiv.org/abs/1706.03762"
+                },
+                {
+                    "title": "Transformer (deep learning) – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Transformer_%28deep_learning_architecture%29"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "gpt-3-2020",
+            "date": "2020-05",
+            "title": "GPT-3 released",
+            "shortDescription": "OpenAI's 175B-parameter model shows strong few-shot learning",
+            "fullDescription": "In May 2020, OpenAI released GPT-3 (175 billion parameters), demonstrating strong few-shot performance across many NLP tasks and setting a new bar for text generation. Access was provided via API to selected users, spurring broad public interest in large language models.",
+            "references": [
+                {
+                    "title": "Language Models are Few-Shot Learners (arXiv 2005.14165)",
+                    "url": "https://arxiv.org/abs/2005.14165"
+                },
+                {
+                    "title": "GPT-3 – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/GPT-3"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "alphafold-2021",
+            "date": "2021-07-15",
+            "title": "AlphaFold solves protein folding (Nature 2021)",
+            "shortDescription": "DeepMind reports highly accurate protein structure prediction",
+            "fullDescription": "In 2021, DeepMind's AlphaFold achieved highly accurate protein structure prediction across diverse targets, as reported in Nature. This landmark result has had major impact on biology and drug discovery, and opened the way for public databases of predicted structures.",
+            "references": [
+                {
+                    "title": "Highly accurate protein structure prediction with AlphaFold (Nature, 2021)",
+                    "url": "https://www.nature.com/articles/s41586-021-03819-2"
+                },
+                {
+                    "title": "AlphaFold – Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/AlphaFold"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "resnet-2015",
+            "date": "2015",
+            "title": "ResNet-152 wins ImageNet; residual learning popularized",
+            "shortDescription": "Very deep residual networks validate skip connections and enable much deeper CNNs.",
+            "fullDescription": "In 2015, Microsoft's deep residual networks (ResNet) won the ILSVRC ImageNet competition. By introducing identity skip connections, ResNets alleviated vanishing gradients and made training very deep networks practical, quickly becoming a foundation for image classification, detection, and many vision tasks.",
+            "references": [
+                {
+                    "title": "Deep Residual Learning for Image Recognition (arXiv 1512.03385)",
+                    "url": "https://arxiv.org/abs/1512.03385"
+                },
+                {
+                    "title": "Deep Residual Learning for Image Recognition (CVPR 2016)",
+                    "url": "https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html"
+                },
+                {
+                    "title": "ImageNet Large Scale Visual Recognition Challenge (Wikipedia)",
+                    "url": "https://en.wikipedia.org/wiki/ImageNet_Large_Scale_Visual_Recognition_Challenge"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphago-zero-2017",
+            "date": "2017-10-18",
+            "title": "AlphaGo Zero learns Go from scratch",
+            "shortDescription": "Self-play system surpasses human-data-based AlphaGo; pure reinforcement learning from rules only.",
+            "fullDescription": "DeepMind's AlphaGo Zero learned to play Go solely via self-play starting from random moves, using only the game's rules, and surpassed the earlier AlphaGo that learned partly from human games. It demonstrated the power of reinforcement learning without human supervision for complex domains.",
+            "references": [
+                {
+                    "title": "Mastering the game of Go without human knowledge (Nature, 2017)",
+                    "url": "https://www.nature.com/articles/nature24270"
+                },
+                {
+                    "title": "Axios coverage of AlphaGo Zero",
+                    "url": "https://www.axios.com/2017/10/18/alphago-zero-deepmind-ai-1513304101"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "bert-2018",
+            "date": "2018-10-31",
+            "title": "BERT released",
+            "shortDescription": "Deep bidirectional Transformers deliver big leaps across NLP tasks.",
+            "fullDescription": "Google's BERT (Bidirectional Encoder Representations from Transformers) introduced deep bidirectional pretraining for language understanding and rapidly became a standard backbone for NLP, boosting performance on QA, inference, and many downstream tasks.",
+            "references": [
+                {
+                    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+                    "url": "https://arxiv.org/abs/1810.04805"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "transformer-proliferation-2019",
+            "date": "2019",
+            "title": "Transformers spread beyond NLP (vision, multimodal)",
+            "shortDescription": "Attention-based architectures expand to vision and multimodal tasks.",
+            "fullDescription": "Following the Transformer, attention-based models proliferated beyond NLP into vision and multimodal learning. Works like Stand-Alone Self-Attention for image recognition and multimodal models like ViLBERT and LXMERT signaled a shift away from purely CNN/RNN-centric methods.",
+            "references": [
+                {
+                    "title": "Stand-Alone Self-Attention in Vision Models (2019)",
+                    "url": "https://arxiv.org/abs/1906.05909"
+                },
+                {
+                    "title": "ViLBERT: Pretraining Task-Agnostic V-L Representations (2019)",
+                    "url": "https://arxiv.org/abs/1908.02265"
+                },
+                {
+                    "title": "LXMERT: Learning Cross-Modality Encoder Representations (2019)",
+                    "url": "https://arxiv.org/abs/1908.07490"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "gpt-2-2019",
+            "date": "2019-02",
+            "title": "GPT-2 announced",
+            "shortDescription": "Scaled Transformer LM (1.5B params) shows coherent generation and transfer.",
+            "fullDescription": "OpenAI's GPT-2 demonstrated that scaling model and data size yields more coherent text generation and transfer learning capabilities. Full release was initially staged due to misuse concerns.",
+            "references": [
+                {
+                    "title": "Better Language Models and Their Implications (OpenAI, 2019)",
+                    "url": "https://openai.com/blog/better-language-models"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "deep-learning-boom",
+            "phase_info": {
+                "name": "Deep Learning Boom",
+                "color": "#e8ffe8",
+                "period": "2012-2019"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "diffusion-2020-2021",
+            "date": "2020-06",
+            "title": "Diffusion models surge in image generation",
+            "shortDescription": "Score-based and diffusion models enable high-quality, diverse, controllable synthesis; later beat GANs.",
+            "fullDescription": "From 2020 to 2021, denoising diffusion and score-based generative models rapidly improved image generation quality, diversity, and controllability. Improvements culminated in results that surpassed GANs on image synthesis benchmarks and laid the foundations for many modern text-to-image systems.",
+            "references": [
+                {
+                    "title": "Denoising Diffusion Probabilistic Models (Ho et al., 2020)",
+                    "url": "https://arxiv.org/abs/2006.11239"
+                },
+                {
+                    "title": "Diffusion Models Beat GANs on Image Synthesis (Dhariwal & Nichol, 2021)",
+                    "url": "https://arxiv.org/abs/2105.05233"
+                },
+                {
+                    "title": "Score-Based Generative Modeling through SDEs (Song et al., 2021)",
+                    "url": "https://arxiv.org/abs/2011.13456"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#ffe6e6"
+            },
+            "importance": "critical",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#ff4757",
+                "accent_color": "#ff6b6b"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "multimodal-2022",
+            "date": "2022",
+            "title": "Multimodal models (text+image) reach mainstream",
+            "shortDescription": "CLIP, DALL·E, Imagen, Stable Diffusion drive widespread multimodal AI use.",
+            "fullDescription": "By 2022, multimodal models that connect language and vision became widely capable and publicly used. CLIP enabled learning visual models from natural language supervision, while systems like DALL·E 2, Imagen, and Stable Diffusion brought high-quality text-to-image generation to broad audiences and products.",
+            "references": [
+                {
+                    "title": "Learning Transferable Visual Models From Natural Language Supervision (CLIP)",
+                    "url": "https://arxiv.org/abs/2103.00020"
+                },
+                {
+                    "title": "High-Resolution Image Synthesis with Latent Diffusion Models (Stable Diffusion/LDMS)",
+                    "url": "https://arxiv.org/abs/2112.10752"
+                },
+                {
+                    "title": "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding (Imagen)",
+                    "url": "https://arxiv.org/abs/2205.11487"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "alphadev-2023",
+            "date": "2023-06",
+            "title": "AlphaDev discovers faster sorting algorithms",
+            "shortDescription": "Deep reinforcement learning finds new, faster low-level algorithms.",
+            "fullDescription": "DeepMind's AlphaDev used deep reinforcement learning to discover improved sorting algorithms at the instruction level, outperforming long-standing human-designed routines. This suggests potential for AI to optimize core components in compilers and systems.",
+            "references": [
+                {
+                    "title": "Discovering faster sorting algorithms using deep reinforcement learning (Nature, 2023)",
+                    "url": "https://www.nature.com/articles/s41586-023-06004-9"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "openai-o1-2024",
+            "date": "2024-09",
+            "title": "OpenAI o1 released (reasoning-focused)",
+            "shortDescription": "First of OpenAI's 'reasoning' models emphasizes deliberate thinking and improved problem solving.",
+            "fullDescription": "In late 2024, OpenAI introduced the o1 family, billed as 'reasoning' models that spend more computation on deliberate thinking before answering. They improved performance on math, science, and programming tasks compared to prior models.",
+            "references": [
+                {
+                    "title": "Introducing OpenAI o1",
+                    "url": "https://openai.com/index/introducing-openai-o1/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "applications"
+            ],
+            "category_info": [
+                {
+                    "id": "applications",
+                    "name": "Applications",
+                    "color": "#2196F3",
+                    "icon": "💻",
+                    "description": "Practical implementations and real-world applications"
+                }
+            ]
+        },
+        {
+            "id": "turing-award-2024",
+            "date": "2024",
+            "title": "ACM A.M. Turing Award 2024 — Andrew G. Barto & Richard S. Sutton",
+            "shortDescription": "Honored for foundational contributions to reinforcement learning.",
+            "fullDescription": "ACM named Andrew G. Barto and Richard S. Sutton recipients of the 2024 ACM A.M. Turing Award for developing the conceptual and algorithmic foundations of reinforcement learning, including temporal-difference learning, policy-gradient methods, and frameworks that shaped modern RL.",
+            "references": [
+                {
+                    "title": "ACM A.M. Turing Award — 2024 recipients",
+                    "url": "https://awards.acm.org/about/2024-turing"
+                },
+                {
+                    "title": "ACM A.M. Turing Award (overview)",
+                    "url": "https://awards.acm.org/turing"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "nobel-physics-2024",
+            "date": "2024-10-08",
+            "title": "Nobel Prize in Physics 2024 — John J. Hopfield & Geoffrey Hinton",
+            "shortDescription": "Awarded for foundational discoveries enabling machine learning with neural networks.",
+            "fullDescription": "The Royal Swedish Academy of Sciences awarded the Nobel Prize in Physics 2024 to John J. Hopfield and Geoffrey Hinton for foundational discoveries and inventions that enable machine learning with artificial neural networks.",
+            "references": [
+                {
+                    "title": "Nobel Prize in Physics 2024 — Summary",
+                    "url": "https://www.nobelprize.org/prizes/physics/2024/summary/"
+                },
+                {
+                    "title": "Press release — Nobel Prize in Physics 2024",
+                    "url": "https://www.nobelprize.org/prizes/physics/2024/press-release/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        },
+        {
+            "id": "nobel-chemistry-2024",
+            "date": "2024-10-09",
+            "title": "Nobel Prize in Chemistry 2024 — David Baker, Demis Hassabis & John Jumper",
+            "shortDescription": "Recognizes computational protein design and protein structure prediction (AlphaFold2).",
+            "fullDescription": "The Nobel Prize in Chemistry 2024 was awarded with one half to David Baker for computational protein design and the other half jointly to Demis Hassabis and John Jumper for protein structure prediction, including the AlphaFold2 breakthrough.",
+            "references": [
+                {
+                    "title": "Nobel Prize in Chemistry 2024 — Summary",
+                    "url": "https://www.nobelprize.org/prizes/chemistry/2024/summary/"
+                },
+                {
+                    "title": "Press release — Nobel Prize in Chemistry 2024",
+                    "url": "https://www.nobelprize.org/prizes/chemistry/2024/press-release/"
+                }
+            ],
+            "media": {
+                "url": null,
+                "caption": null,
+                "credit": null
+            },
+            "background": {
+                "color": "#e6fffe"
+            },
+            "importance": "high",
+            "phase": "ai-breakthrough",
+            "phase_info": {
+                "name": "AI Breakthrough Era",
+                "color": "#fff0f5",
+                "period": "2020-present"
+            },
+            "importance_style": {
+                "border_color": "#26d0ce",
+                "accent_color": "#4ecdc4"
+            },
+            "categories": [
+                "breakthrough"
+            ],
+            "category_info": [
+                {
+                    "id": "breakthrough",
+                    "name": "Breakthrough",
+                    "color": "#FF9800",
+                    "icon": "🚀",
+                    "description": "Major discoveries and revolutionary advances"
+                }
+            ]
+        }
+    ]
+}

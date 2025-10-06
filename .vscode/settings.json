@@ -1,0 +1,8 @@
+{
+    "i18n-ally.localesPaths": [
+        "i18n",
+        "themes/hugo-theme-relearn/i18n",
+        "themes/hugo-theme-relearn/exampleSite/i18n",
+        "themes/hugo-theme-relearn/docs/i18n"
+    ]
+}

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+<div class="demo-main-layout">
+    <div class="demo-content-panel">
+        <div class="demo-chart-container">
+            <h3 class="demo-chart-title">Gráfico de Regresión Lineal</h3>
+            <canvas id="gameChart"></canvas>
+            <div id="optimizationStatus" class="demo-status-indicator demo-status-warning demo-hidden">
+                <div class="spinner"></div>
+                <span>Encontrando la mejor solución...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-panel">
+        <h3 class="demo-text-center demo-mb-md">Controles del Juego</h3>
+
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="errorType" class="control-label">Método de error:</label>
+            </div>
+            <div class="demo-control-group">
+                <select id="errorType" class="demo-control-input">
+                    <option value="L1">Error Medio Absoluto (L1)</option>
+                    <option value="L2">Error Cuadrático Medio (L2)</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <label for="slopeSlider" class="control-label">
+                    Pendiente: <span id="slopeValue" class="demo-range-value">1</span>
+                </label>
+                <input type="range" id="slopeSlider" min="0" max="5" step="0.1" value="1" class="demo-range-input">
+            </div>
+
+
+            <div class="demo-control-group">
+                <label for="interceptSlider" class="control-label">
+                    Altura inicial: <span id="interceptValue" class="demo-range-value">0</span>
+                </label>
+                <input type="range" id="interceptSlider" min="0" max="100" step="1" value="10" class="demo-range-input">
+            </div>
+        </div>
+        <div class="control-section">
+            <div class="demo-control-group">
+                <button id="checkButton" class="demo-btn demo-btn-primary demo-btn-full-width">
+                    Verificar Resultado
+                </button>
+            </div>
+
+
+            <div class="demo-control-group">
+                <button id="resetButton" class="demo-btn demo-btn-secondary demo-btn-full-width">
+                    Nuevo Juego
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="/js/linear-regression-game/linear-regression-game.js"></script>

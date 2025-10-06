@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/main.css">
+
+<div class="medical-context">
+    <h2>🏥 Contexto Médico: Optimización de Parámetros Terapéuticos</h2>
+    <div class="medical-scenario">
+        <div class="scenario-text">
+            <p><strong>Imagina:</strong> Tu modelo de IA requiere ajusta de forma automática sus parámetros. Para
+                realizar ajustes precisos, es crucial encontrar los valores óptimos que minimicen la función de
+                pérdida del modelo. </p>
+            </p>
+            <p class="highlight">El descenso del gradiente ayuda a identificar los valores que minimizan la función de
+                pérdida, alcanzando un mínimo. El valor mínimo que se alcanza depende de la tasa de aprendizaje y del
+                punto de partida.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="app-explanation">
+    <p class="intro">Explora en 1D y 2D cómo el descenso del gradiente converge hacia el mínimo de una función. Ajusta
+        el tipo de tasa de aprendizaje y el punto de partida para comprender mejor su comportamiento en entornos médicos
+        reales.</p>
+
+    <div class="how-it-works">
+        <h2>¿Cómo funciona?</h2>
+        <div class="explanation-columns">
+            <div class="column">
+                <h3>Selecciona la función</h3>
+                <p>Introduce una función que simule la pérdida del modelo (por ejemplo, error en niveles sanguíneos) y
+                    elige un punto inicial.</p>
+            </div>
+            <div class="column">
+                <h3>Ajusta la tasa de aprendizaje</h3>
+                <p>Prueba con tasa constante o decreciente (simple o exponencial) y observa cómo afecta la velocidad y
+                    estabilidad de la convergencia.</p>
+            </div>
+            <div class="column">
+                <h3>Observa el proceso</h3>
+                <p>Visualiza paso a paso cómo el algoritmo desciende hasta el mínimo, controlando también normatividad
+                    del gradiente para detenerse en un punto óptimo.</p>
+            </div>
+        </div>
+    </div>
+
+    <p>
+        Después de que el equipo decidiera usar la regresión lineal, Marta explicó cómo el <strong>método del descenso
+            del gradiente</strong> les permitiría encontrar automáticamente los mejores valores para los parámetros
+        <em>w</em> (peso) y <em>b</em> (sesgo). Como él mismo dijo, es como "bajar una montaña a ciegas", donde en cada
+        paso se busca la dirección de máxima pendiente para descender.
+    </p>
+    <p>
+        En esta simulación, puedes visualizar ese proceso. El gráfico de la izquierda muestra la superficie de la
+        función de coste (en este caso, el Error Cuadrático Medio o MSE). Cada punto en esta superficie representa el
+        error total para una combinación específica de <em>w</em> y <em>b</em>. El objetivo es encontrar el punto más
+        bajo del valle.
+    </p>
+    <p>
+        Usa los controles para iniciar el algoritmo. Observa cómo los parámetros se actualizan en cada iteración
+        (gráfico de la derecha), siguiendo la dirección opuesta al gradiente, hasta converger en la solución óptima que
+        minimiza el error. Puedes experimentar con diferentes tasas de aprendizaje (<em>learning rate</em>) para ver
+        cómo afecta a la velocidad y estabilidad del proceso, un punto que Marta y Luis discutieron para afinar su
+        modelo.
+    </p>
+</div>

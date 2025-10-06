@@ -1,0 +1,97 @@
+{{/*
+Shortcode unificado y mejorado para introducciones de demos interactivas
+Parámetros:
+- lang: Idioma (es/en) - opcional, por defecto usa el del sitio
+- title: Título de la demo
+- medical_scenario: Texto del escenario médico
+- medical_highlight: Texto destacado del contexto médico
+- intro_text: Texto introductorio de la aplicación
+- steps: Array de pasos explicativos (título:descripción|título:descripción)
+- algorithm_type: Tipo de algoritmo (classification, regression, clustering, etc.) - opcional
+- difficulty: Dificultad (beginner, intermediate, advanced) - opcional
+*/}}
+
+{{ $lang := (.Get "lang") | default .Site.Language.Lang }}
+
+{{/* Diccionario de traducciones */}}
+{{ $translations := dict
+"es" (dict
+"medical_context" "Contexto Médico"
+"type" "Tipo"
+"level" "Nivel"
+"scenario" "Escenario"
+"how_it_works" "¿Cómo funciona esta herramienta?"
+"step" "Paso"
+"demo_title_default" "Demo Interactiva de IA"
+)
+"en" (dict
+"medical_context" "Medical Context"
+"type" "Type"
+"level" "Level"
+"scenario" "Scenario"
+"how_it_works" "How does this tool work?"
+"step" "Step"
+"demo_title_default" "Interactive AI Demo"
+)
+}}
+
+{{ $t := index $translations $lang }}
+
+<link rel="stylesheet" href="/css/unified-demos.css">
+
+{{ $title := .Get "title" | default $t.demo_title_default }}
+{{ $medical_scenario := .Get "medical_scenario" | default "" }}
+{{ $medical_highlight := .Get "medical_highlight" | default "" }}
+{{ $intro_text := .Get "intro_text" | default "" }}
+{{ $algorithm_type := .Get "algorithm_type" | default "" }}
+{{ $difficulty := .Get "difficulty" | default "" }}
+{{ $steps := .Get "steps" | default "" }}
+
+<!-- Contexto médico mejorado -->
+<div class="medical-context">
+    <h2>{{ $t.medical_context }}</h2>
+    {{ if $algorithm_type }}
+    <div class="algorithm-badge demo-mb-sm">
+        <span class="status-indicator status-info"></span>
+        <strong>{{ $t.type }}:</strong> {{ $algorithm_type | title }}
+        {{ if $difficulty }}
+        | <strong>{{ $t.level }}:</strong> {{ $difficulty | title }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="scenario-text">
+        {{ if $medical_scenario }}
+        <p><strong>{{ $t.scenario }}:</strong> {{ $medical_scenario | markdownify }}</p>
+        {{ end }}
+        {{ if $medical_highlight }}
+        <div class="highlight">
+            <span class="status-indicator status-success"></span>
+            {{ $medical_highlight | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="intro-text">
+        {{ if $intro_text }}
+        <p>{{ $intro_text | markdownify }}</p>
+        {{ end }}
+    </div>
+    <div class="steps">
+        {{ if $steps }}
+        <h3>{{ $t.how_it_works }}</h3>
+        <ol>
+            {{ range (split $steps "|") }}
+            {{ $step := split . ":" }}
+            <li>
+                <strong>{{ index $step 0 }}</strong>: {{ index $step 1 | markdownify }}
+            </li>
+            {{ end }}
+        </ol>
+        {{ end }}
+    </div>
+</div>
+
+
+<!-- Separador visual antes de la demo -->
+<div class="demo-separator demo-mb-lg"></div>
